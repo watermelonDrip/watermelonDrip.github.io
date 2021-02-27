@@ -6,7 +6,7 @@
   <link href="http://watermelondrip.github.io/atom.xml" rel="self"/>
   
   <link href="http://watermelondrip.github.io/"/>
-  <updated>2021-02-27T02:47:01.111Z</updated>
+  <updated>2021-02-27T05:20:45.333Z</updated>
   <id>http://watermelondrip.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一天坚持坚持</title>
+    <link href="http://watermelondrip.github.io/2021/02/27/firstday/"/>
+    <id>http://watermelondrip.github.io/2021/02/27/firstday/</id>
+    <published>2021-02-27T05:19:03.000Z</published>
+    <updated>2021-02-27T05:20:45.333Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一次记录一下</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;第一次记录一下&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
