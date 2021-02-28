@@ -175,7 +175,7 @@ body {
   height: 100%;
 }
 body {
-  background: url("https://acg.sx/images");
+  background: url("/images/watermelon2.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -1179,7 +1179,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #605ce4;
+  background: #ff9e86;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
