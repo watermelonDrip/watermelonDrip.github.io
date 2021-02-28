@@ -175,7 +175,7 @@ body {
   height: 100%;
 }
 body {
-  background: url("/images/watermelon_background.jpg");
+  background: url("/images/watermelon1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -1179,7 +1179,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #57ff5b;
+  background: #ffad08;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
