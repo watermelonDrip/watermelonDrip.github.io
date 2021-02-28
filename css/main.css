@@ -175,11 +175,15 @@ body {
   height: 100%;
 }
 body {
-  background: var(--body-bg-color);
+  background: url("/images/watermelon_background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   color: var(--text-color);
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
   line-height: 2;
+  opacity: 0.9;
 }
 @media (max-width: 991px) {
   body {
@@ -1175,7 +1179,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffff52;
+  background: #57ff5b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
