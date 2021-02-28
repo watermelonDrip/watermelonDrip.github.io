@@ -175,7 +175,7 @@ body {
   height: 100%;
 }
 body {
-  background: url("/images/watermelon1.jpg");
+  background: url("https://acg.sx/images");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -183,7 +183,7 @@ body {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
   line-height: 2;
-  opacity: 0.9;
+  opacity: 0.5;
 }
 @media (max-width: 991px) {
   body {
@@ -1179,7 +1179,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffad08;
+  background: #605ce4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
