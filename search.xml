@@ -43,6 +43,18 @@
       </tags>
   </entry>
   <entry>
+    <title>第一天坚持坚持</title>
+    <url>/2021/02/27/firstday/</url>
+    <content><![CDATA[<p>第一次记录一下</p>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Day 1 - Max</title>
     <url>/2021/03/06/firstday_max/</url>
     <content><![CDATA[<h1><span id="day-1">Day 1</span></h1><p><em>by max</em></p>
@@ -59,81 +71,6 @@
       </categories>
       <tags>
         <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一天坚持坚持</title>
-    <url>/2021/02/27/firstday/</url>
-    <content><![CDATA[<p>第一次记录一下</p>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode lc 395（至少有k个重复字符的最长子串）</title>
-    <url>/2021/03/06/lc395/</url>
-    <content><![CDATA[<p>至少有k个重复字符的最长子串</p>
-<span id="more"></span>
-
-<p>date: 2021-02-27 16:19:03</p>
-<h2><span id="分类">分类</span></h2><ul>
-<li>递归<h2><span id="题目地址">题目地址</span></h2></li>
-</ul>
-<p><a href="https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/">https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/</a></p>
-<h2><span id="题目描述">题目描述</span></h2><p>给你一个字符串 s 和一个整数 k ，请你找出 s 中的最长子串， 要求该子串中的每一字符出现次数都不少于 k 。返回这一子串的长度。（难度中等）
- </p>
-<p>示例 1：</p>
-<p>输入：s = “aaabb”, k = 3<br>输出：3<br>解释：最长子串为 “aaa” ，其中 ‘a’ 重复了 3 次。<br>示例 2：</p>
-<p>输入：s = “ababbc”, k = 2<br>输出：5<br>解释：最长子串为 “ababb” ，其中 ‘a’ 重复了 2 次， ‘b’ 重复了 3 次。
- </p>
-<p>提示：</p>
-<p>1 &lt;= s.length &lt;= 104<br>s 仅由小写英文字母组成<br>1 &lt;= k &lt;= 105</p>
-<h2><span id="前置知识">前置知识</span></h2><ul>
-<li><p>递归</p>
-<h2><span id="公司">公司</span></h2></li>
-<li><p>暂无</p>
-</li>
-</ul>
-<h2><span id="解题思路">解题思路</span></h2><ul>
-<li>首先我是没想出来，看了答案发现了这个思路</li>
-<li>要连续子序列也就是想当于如果出现了个数最少的字母，我们需要从那个最少的字母那里断开这个序列，直到把所有少于k的字母全部断开，然后从断开的所有子序列里找个最长的</li>
-</ul>
-<ul>
-<li>对于split 那个function 还是不太清晰，我觉得有必要我整理一下<ul>
-<li>The split() method splits a string into a list. 比如： txt = “hello, my name is Peter, I am 26 years old”； x = txt.split(“, “)  output: x=[‘hello’, ‘my name is Peter’, ‘I am 26 years old’]<h2><span id="代码">代码</span></h2></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestSubstring</span>(<span class="params">self, s, k</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(s)&lt;k:  <span class="comment">#base </span></span><br><span class="line">             <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">set</span>(s):</span><br><span class="line">            <span class="keyword">if</span> s.count(c) &lt; k:</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">max</span>( self.longestSubstring(t, k) <span class="keyword">for</span> t <span class="keyword">in</span> s.split(c) )</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(s)</span><br></pre></td></tr></table></figure>
-<p><strong>注意事项</strong></p>
-<ul>
-<li>return 那块，前面self.longestSubstring，前面已经有self,后面的括号里就不要加了</li>
-<li>s.split(c) 这个语句中，如果输入是“aaabb”. 输出是[“aaa”,”,”]</li>
-</ul>
-<p><strong>复杂度分析</strong></p>
-<ul>
-<li>时间复杂度：$O(n<em>26)$  n(字符串长度)</em>(字符集) 因为递归最多26次（26个英文字母）</li>
-<li>空间复杂度：$O(26^2)$  每层需要开辟26个字母的空间</li>
-</ul>
-<h2><span id="大佬解题">大佬解题</span></h2><ul>
-<li><a href="https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/solution/jie-ben-ti-bang-zhu-da-jia-li-jie-di-gui-obla/">https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/solution/jie-ben-ti-bang-zhu-da-jia-li-jie-di-gui-obla/</a></li>
-<li><a href="https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/solution/jiang-yuan-zi-fu-chuan-yi-shu-liang-bu-gou-de-zi-f/">https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/solution/jiang-yuan-zi-fu-chuan-yi-shu-liang-bu-gou-de-zi-f/</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>递归</tag>
       </tags>
   </entry>
   <entry>
@@ -199,8 +136,71 @@
         <category>力扣</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>双指针</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode lc 395（至少有k个重复字符的最长子串）</title>
+    <url>/2021/03/06/lc395/</url>
+    <content><![CDATA[<p>至少有k个重复字符的最长子串</p>
+<span id="more"></span>
+
+<p>date: 2021-02-27 16:19:03</p>
+<h2><span id="分类">分类</span></h2><ul>
+<li>递归<h2><span id="题目地址">题目地址</span></h2></li>
+</ul>
+<p><a href="https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/">https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/</a></p>
+<h2><span id="题目描述">题目描述</span></h2><p>给你一个字符串 s 和一个整数 k ，请你找出 s 中的最长子串， 要求该子串中的每一字符出现次数都不少于 k 。返回这一子串的长度。（难度中等）
+ </p>
+<p>示例 1：</p>
+<p>输入：s = “aaabb”, k = 3<br>输出：3<br>解释：最长子串为 “aaa” ，其中 ‘a’ 重复了 3 次。<br>示例 2：</p>
+<p>输入：s = “ababbc”, k = 2<br>输出：5<br>解释：最长子串为 “ababb” ，其中 ‘a’ 重复了 2 次， ‘b’ 重复了 3 次。
+ </p>
+<p>提示：</p>
+<p>1 &lt;= s.length &lt;= 104<br>s 仅由小写英文字母组成<br>1 &lt;= k &lt;= 105</p>
+<h2><span id="前置知识">前置知识</span></h2><ul>
+<li><p>递归</p>
+<h2><span id="公司">公司</span></h2></li>
+<li><p>暂无</p>
+</li>
+</ul>
+<h2><span id="解题思路">解题思路</span></h2><ul>
+<li>首先我是没想出来，看了答案发现了这个思路</li>
+<li>要连续子序列也就是想当于如果出现了个数最少的字母，我们需要从那个最少的字母那里断开这个序列，直到把所有少于k的字母全部断开，然后从断开的所有子序列里找个最长的</li>
+</ul>
+<ul>
+<li>对于split 那个function 还是不太清晰，我觉得有必要我整理一下<ul>
+<li>The split() method splits a string into a list. 比如： txt = “hello, my name is Peter, I am 26 years old”； x = txt.split(“, “)  output: x=[‘hello’, ‘my name is Peter’, ‘I am 26 years old’]<h2><span id="代码">代码</span></h2></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestSubstring</span>(<span class="params">self, s, k</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(s)&lt;k:  <span class="comment">#base </span></span><br><span class="line">             <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">set</span>(s):</span><br><span class="line">            <span class="keyword">if</span> s.count(c) &lt; k:</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">max</span>( self.longestSubstring(t, k) <span class="keyword">for</span> t <span class="keyword">in</span> s.split(c) )</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(s)</span><br></pre></td></tr></table></figure>
+<p><strong>注意事项</strong></p>
+<ul>
+<li>return 那块，前面self.longestSubstring，前面已经有self,后面的括号里就不要加了</li>
+<li>s.split(c) 这个语句中，如果输入是“aaabb”. 输出是[“aaa”,”,”]</li>
+</ul>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：$O(n<em>26)$  n(字符串长度)</em>(字符集) 因为递归最多26次（26个英文字母）</li>
+<li>空间复杂度：$O(26^2)$  每层需要开辟26个字母的空间</li>
+</ul>
+<h2><span id="大佬解题">大佬解题</span></h2><ul>
+<li><a href="https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/solution/jie-ben-ti-bang-zhu-da-jia-li-jie-di-gui-obla/">https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/solution/jie-ben-ti-bang-zhu-da-jia-li-jie-di-gui-obla/</a></li>
+<li><a href="https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/solution/jiang-yuan-zi-fu-chuan-yi-shu-liang-bu-gou-de-zi-f/">https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/solution/jiang-yuan-zi-fu-chuan-yi-shu-liang-bu-gou-de-zi-f/</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>递归</tag>
       </tags>
   </entry>
   <entry>
