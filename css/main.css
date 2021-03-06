@@ -175,7 +175,7 @@ body {
   height: 100%;
 }
 body {
-  background: url("/images/watermelon2.jpg");
+  background: url("/images/test1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -1204,7 +1204,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9cff24;
+  background: #f5f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2527,13 +2527,13 @@ hr {
   border-bottom-color: var(--btn-default-hover-border-color);
 }
 .sidebar {
-  left: -320px;
+  left: -240px;
 }
 .sidebar.sidebar-active {
   left: 0;
 }
 .sidebar {
-  width: 320px;
+  width: 240px;
   z-index: 1200;
   transition-delay: 0s;
   transition-duration: 0.2s;
@@ -2566,4 +2566,22 @@ hr {
 }
 .sub-menu .menu-item {
   display: inline-block;
+}
+.content-wrap {
+  opacity: 0.9;
+}
+.sidebar {
+  opacity: 0.9;
+}
+.header-inner {
+  background: rgba(255,255,255,0.9);
+}
+.popup {
+  opacity: 0.9;
+}
+.post-block {
+  background: #fff;
+  border-radius: initial;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+  padding: 40px;
 }
