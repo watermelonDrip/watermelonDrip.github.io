@@ -175,10 +175,10 @@ body {
   height: 100%;
 }
 body {
-  background: url("/images/test1.jpg");
+  background: url("/images/wilmer-martinez-aPEVwpqhQgU-unsplash.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
   color: var(--text-color);
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
@@ -1204,7 +1204,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f5f;
+  background: #d08bff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
