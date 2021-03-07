@@ -137,168 +137,6 @@
       </tags>
   </entry>
   <entry>
-    <title>双指针</title>
-    <url>/2021/03/06/%E5%8F%8C%E6%8C%87%E9%92%88/</url>
-    <content><![CDATA[<p>#双指针 (<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8F%8C%E6%8C%87%E9%92%88.md#1-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84-two-sum">顺序</a>)</p>
-<p>双指针用于遍历数组，两个指针指向不同的元素，从而共同的完成一个任务。</p>
-<span id="more"></span>
-
-<p>（1）共同完成一个和的target</p>
-<p><strong>目录 (Table of Contents)</strong></p>
-<p>[TOCM]</p>
-<p>[TOC]</p>
-<p>##1. (LC167) 两数之和 II - 输入有序数组   <a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/">两数之和II</a></p>
-<h3><span id="题目">题目</span></h3><p>给定一个已按照 升序排列  的整数数组 numbers ，请你从数组中找出两个数满足相加之和等于目标数 target 。</p>
-<p>函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 1 开始计数 ，所以答案数组应当满足 1 &lt;= answer[0] &lt; answer[1] &lt;= numbers.length 。</p>
-<p>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。<br> 示例 1：</p>
-<p>输入：numbers = [2,7,11,15], target = 9<br>输出：[1,2]<br>解释：2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。</p>
-<h3><span id="思路">思路</span></h3><p>双指针<br>如何想到双指针，我觉得首先是这个数组是有序的，然后就是由两个数构成，这就想到了双指针了</p>
-<h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span>(<span class="params">self, numbers: List[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; List[int]:</span></span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(numbers)-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left&lt; right:</span><br><span class="line">            total = numbers[left] + numbers[right]</span><br><span class="line">            <span class="keyword">if</span> total &gt; target:</span><br><span class="line">                right-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> total &lt; target:</span><br><span class="line">                left+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> [left+<span class="number">1</span>, right+<span class="number">1</span>]                </span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：$O(n)$ 只是遍历了一次</li>
-<li>空间复杂度：$O(1)$ 只用了两个额外的变量（不考虑输出变量空间，只考虑额外的）</li>
-</ul>
-<p>##2. (LC633) 两数平方和   <a href="https://leetcode-cn.com/problems/sum-of-square-numbers/description/">两数平方和</a></p>
-<h3><span id="题目">题目</span></h3><p>给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。</p>
-<p>示例 1：</p>
-<p>输入：c = 5<br>输出：true<br>解释：1 * 1 + 2 * 2 = 5<br>范围：0 &lt;= c &lt;= 2^31 - 1</p>
-<h3><span id="思路">思路</span></h3><p>首先这个又是两个整数的，我们想如果出现两个整数共同来完成一件事，这两个整数在一个范围内，是不是都可以用双指针呢。<br>但是这里面有平方比较麻烦了，所以上面那个不是和吗，我想如果求出c的根号是不是在这附近的数就比较好找了</p>
-<h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">judgeSquareSum</span>(<span class="params">self, c: <span class="built_in">int</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> c == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">sqr</span>(<span class="params">c</span>):</span></span><br><span class="line">            x0 = c/<span class="number">2</span></span><br><span class="line">            x1 = x0/<span class="number">2</span> + c/(x0*<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">while</span> <span class="built_in">abs</span>(x1-x0) &gt; <span class="number">1</span>:</span><br><span class="line">                x0 = x1</span><br><span class="line">                x1 = x0/<span class="number">2</span> + c/(x0*<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">return</span> x1</span><br><span class="line">        right,left = <span class="built_in">int</span>(sqr(c)),<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">            print(left**<span class="number">2</span> + right**<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">if</span> left**<span class="number">2</span> + right**<span class="number">2</span> &gt; c:</span><br><span class="line">                right-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> left**<span class="number">2</span> + right**<span class="number">2</span> &lt; c:</span><br><span class="line">                left+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span> </span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>时间复杂度：$O(sqr(c)*n1)$ 只是遍历了一次 def sqrt(c)</p>
-</li>
-<li><p>空间复杂度：$O(1)$ 只用了两个额外的变量</p>
-<p>##3. (LC345) 反转字符串中的元音字母<a href="https://leetcode-cn.com/problems/reverse-vowels-of-a-string/" title="反转字符串中的元音字母">反转字符串中的元音字母</a>  </p>
-<h3><span id="题目">题目</span></h3><p>编写一个函数，以字符串作为输入，反转该字符串中的元音字母。<br>示例 1：<br>输入：”hello”<br>输出：”holle”</p>
-<h3><span id="思路">思路</span></h3></li>
-</ul>
-<ol>
-<li><p>首先使用双指针是因为，反转字符串中，是两个两个一对的换，通俗的意思是，如果是简单的反转字母是, ‘abc’ 反转之后变为 ‘cba’</p>
-</li>
-<li><p>有一个概念很重要，就是<a href="https://zhuanlan.zhihu.com/p/34395671" title="可变对象和不可变对象">可变对象和不可变对象</a><br> (1) 可变：list, dic, set （2）不可变：tuple, string, int, float, bool</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 可变对象</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">1</span>] = <span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>]</span><br><span class="line"><span class="comment"># 不可变对象</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b[<span class="number">1</span>] = <span class="number">4</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: <span class="string">&#x27;tuple&#x27;</span> <span class="built_in">object</span> does <span class="keyword">not</span> support item assignment</span><br></pre></td></tr></table></figure>
-<p>从上面的例子可以看出来，可变对象是可以直接被改变的，而不可变对象则不可以</p>
-<h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseVowels</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; str:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">list</span>(s))&lt;=<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        front = <span class="number">0</span></span><br><span class="line">        end = <span class="built_in">len</span>(s)-<span class="number">1</span></span><br><span class="line">        vowels = &#123;<span class="string">&quot;a&quot;</span>,<span class="string">&quot;e&quot;</span>,<span class="string">&quot;i&quot;</span>,<span class="string">&quot;o&quot;</span>,<span class="string">&quot;u&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="string">&quot;E&quot;</span>,<span class="string">&quot;I&quot;</span>,<span class="string">&quot;O&quot;</span>,<span class="string">&quot;U&quot;</span>&#125; </span><br><span class="line">        s = <span class="built_in">list</span>(s)</span><br><span class="line">        <span class="keyword">while</span> front&lt; end:</span><br><span class="line">            <span class="keyword">if</span> s[front] <span class="keyword">in</span> vowels <span class="keyword">and</span> s[end] <span class="keyword">in</span> vowels:</span><br><span class="line">                s[front], s[end] = s[end] , s[front]</span><br><span class="line">                front+=<span class="number">1</span></span><br><span class="line">                end-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> s[end] <span class="keyword">not</span> <span class="keyword">in</span> vowels:</span><br><span class="line">                end-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> s[front] <span class="keyword">not</span> <span class="keyword">in</span> vowels:</span><br><span class="line">                front+=<span class="number">1</span>   </span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join(s)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<ul>
-<li>时间复杂度：$ $</li>
-<li>空间复杂度：$ $  </li>
-</ul>
-<p>##4. (LC680)  验证回文字符串 Ⅱ <a href="https://leetcode-cn.com/problems/valid-palindrome-ii/" title="验证回文字符串 Ⅱ">验证回文字符串 Ⅱ</a></p>
-<h3><span id="题目">题目</span></h3><p>编写一个函数，以字符串作为输入，反转该字符串中的元音字母。<br>示例 1：<br>输入：”hello”<br>输出：”holle”</p>
-<h3><span id="思路">思路</span></h3><ol>
-<li>Lambda 函数<br>lambda 函数是一个小型匿名函数。lambda 函数可以接受任意数量的参数，但只能有一个表达式。<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Function that returns square of any number</span></span><br><span class="line">&gt;&gt;&gt;sqr = <span class="keyword">lambda</span> x: x * x</span><br><span class="line">&gt;&gt;&gt;sqr(<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">100</span></span><br></pre></td></tr></table></figure></li>
-<li> 优美的一行代码<br><a href="https://zhuanlan.zhihu.com/p/345055254" title="25条很棒的Python一行代码，建议收藏！">25条很棒的Python一行代码，建议收藏！</a><h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">validPalindrome</span>(<span class="params">self, s</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        isPalindrome = <span class="keyword">lambda</span> s: s == s[::-<span class="number">1</span>]</span><br><span class="line">        strPart = <span class="keyword">lambda</span> s, x: s[:x] + s[x + <span class="number">1</span>:]</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(s) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left &lt; right:</span><br><span class="line">            <span class="keyword">if</span> s[left] != s[right]:</span><br><span class="line">                <span class="keyword">return</span> isPalindrome(strPart(s, left)) <span class="keyword">or</span> isPalindrome(strPart(s, right))</span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<ul>
-<li>时间复杂度：$ $</li>
-<li>空间复杂度：$ $</li>
-</ul>
-]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>双指针</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序 （熟到可以默写）</title>
-    <url>/2021/03/07/%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<h2><span id="排序顺序">排序</span></h2><p>思路是：</p>
-<p>（1）快速选择，用于求解第k个元素的问题</p>
-<p>（2）堆:堆的中心就一个，那就是动态求极值。 堆可以用二叉树实现，叫做二叉堆。二叉堆的性质就是堆的性质不变。</p>
-<p> (3) 三向快排： 快排的核心思想是选择一个枢纽，左边的都比枢纽小，右边的都比枢纽大。 然后堆分成的两部分再进行递归快排。 但是如果有很多重复元素的时候呢，因为快排会对一个都是重复元素的数组再进行递归，其实我们已经知道了， 不用再进行递归了，因为已经是有序的了。 怎么实现呢？<br>    - 三向排序： 对于一个数组，一次扫描要有三个指针。</p>
-<p><strong>目录 (Table of Contents)</strong></p>
-<p>[TOCM]</p>
-<p>[TOC]</p>
-<p>##1. (LC215) Kth Element <a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/description/">Kth Element</a></p>
-<h3><span id="题目">题目</span></h3><p>在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。<br> 示例 1：<br>输入: [3,2,1,5,6,4] 和 k = 2<br>输出: 5</p>
-<h3><span id="思路">思路</span></h3><ol>
-<li>最简单的是排序想法，直接把数组排序，然后找到k个就好了</li>
-<li>堆， 堆是一种数据结构，一个很牛的<a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/solution/ge-chong-pai-xu-suan-fa-tu-xie-zong-jie-by-ke-ai-x/">题解</a>和一个英文<a href="https://towardsdatascience.com/data-structure-heap-23d4c78a6962">解释</a> 和一个中文<a href="https://guguoyu.blog.csdn.net/article/details/81283998?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs">解释</a></li>
-<li><a href="https://docs.python.org/3/library/heapq.html">heapq</a> 模块： 可能在面试过程中，有的面试官不让用，但是这个heapq还是很方便的。 (1)hq.heapqpush(heap,item) ：压入堆的意思，压入的是item （2）hq.heappop(heap)：弹出且返回最小的。hq.heappushpop(heap,item):先压入iem，然后弹出堆里最小的项。</li>
-</ol>
-<h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest1</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment">#1. 排序</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        <span class="keyword">return</span> nums[-k]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest2</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment"># 2. 最大堆  用heapq模块</span></span><br><span class="line">        <span class="keyword">import</span> heapq <span class="keyword">as</span> hq</span><br><span class="line">        heap = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums:</span><br><span class="line">            hq.heappush(heap,i)</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(heap) &gt; k:</span><br><span class="line">                hq.heappop(heap)</span><br><span class="line">        <span class="keyword">return</span> heap[<span class="number">0</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest3</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment"># 3.  最大堆， 构造堆模块</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">min_heapify</span>(<span class="params">array, i</span>):</span></span><br><span class="line">            left = <span class="number">2</span> * i + <span class="number">1</span></span><br><span class="line">            right = <span class="number">2</span> * i + <span class="number">2</span></span><br><span class="line">            length = <span class="built_in">len</span>(array) - <span class="number">1</span></span><br><span class="line">            smallest = i</span><br><span class="line">            <span class="keyword">if</span> left &lt;= length <span class="keyword">and</span> array[i] &gt; array[left]:</span><br><span class="line">                smallest = left</span><br><span class="line">            <span class="keyword">if</span> right &lt;= length <span class="keyword">and</span> array[smallest] &gt; array[right]:</span><br><span class="line">                smallest = right</span><br><span class="line">            <span class="keyword">if</span> smallest != i:</span><br><span class="line">                array[i], array[smallest] = array[smallest], array[i]</span><br><span class="line">                min_heapify(array, smallest)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">build_min_heap</span>(<span class="params">array</span>):</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">reversed</span>(<span class="built_in">range</span>(<span class="built_in">len</span>(array)//<span class="number">2</span>)):</span><br><span class="line">                min_heapify(array, i)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">heapsort</span>(<span class="params">array</span>):</span></span><br><span class="line">            <span class="comment">#array = array.copy()</span></span><br><span class="line">            build_min_heap(array)</span><br><span class="line">            sorted_array = []</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(array)):</span><br><span class="line">                array[<span class="number">0</span>], array[-<span class="number">1</span>] = array[-<span class="number">1</span>], array[<span class="number">0</span>]</span><br><span class="line">                sorted_array.append(array.pop())</span><br><span class="line">                min_heapify(array, <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> sorted_array</span><br><span class="line">        result = heapsort(nums)</span><br><span class="line">        <span class="keyword">return</span> result[-k]</span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest4</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment"># 4. 快速排序 [快速排序](https://jackkuo666.github.io/Data_Structure_with_Python_book/chapter6/section4.html)</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">partition</span>(<span class="params">alist, low ,high</span>):</span></span><br><span class="line">            mid_value = alist[low]</span><br><span class="line">            <span class="keyword">while</span> low &lt; high:</span><br><span class="line"></span><br><span class="line">                <span class="keyword">while</span> low &lt; high <span class="keyword">and</span> alist[high] &gt;= mid_value:</span><br><span class="line">                    high-=<span class="number">1</span></span><br><span class="line">                alist[low] = alist[high]</span><br><span class="line">                <span class="keyword">while</span> low &lt; high <span class="keyword">and</span> alist[low] &lt;= mid_value:</span><br><span class="line">                    low+=<span class="number">1</span></span><br><span class="line">                alist[high] = alist[low]</span><br><span class="line">            alist[low] = mid_value</span><br><span class="line">            <span class="keyword">return</span> low</span><br><span class="line">        k = <span class="built_in">len</span>(nums) - k</span><br><span class="line">        low = <span class="number">0</span></span><br><span class="line">        high = <span class="built_in">len</span>(nums) -<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> low &lt;= high:</span><br><span class="line">            p = partition(nums,low ,high)</span><br><span class="line">            <span class="keyword">if</span> k &lt; p:</span><br><span class="line">                high = p - <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> k &gt; p:</span><br><span class="line">                low = p + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> nums[p]</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">         </span><br></pre></td></tr></table></figure>
-<p>##2. (LC347) 前 K 个高频元素 <a href="https://leetcode-cn.com/problems/top-k-frequent-elements/">前 K 个高频元素</a></p>
-<h3><span id="题目">题目</span></h3><p>给定一个非空的整数数组，返回其中出现频率前 k 高的元素<br> 示例 1：<br>输入: nums = [1,1,1,2,2,3], k = 2<br>输出: [1,2]</p>
-<h3><span id="思路">思路</span></h3><ol>
-<li>最简单的是排序想法，直接把数组排序，但是不满足时间复杂度的要求， 这里有个一个点是sort()函数，单独有一篇文章讲。</li>
-<li>进一步，为了满足时间复杂度的要求，需要对解法一的排序过程进行改进。因为最终需要返回前k个频率最大的元素，可以想到借助堆这种数据结构。通过维护一个元素数目为k的最小堆，每次都将新的元素与对顶端的元素（也就是堆中频率最小的元素）进行比较，如果新的元素的频率比堆顶端的元素大，则弹出堆顶端的元素，将新的元素添加进堆中。最终，堆中的k个元素即为前k个高频元素。 其中用到了.items(), #The items() method returns a view object. The view object contains the key-value pairs of the dictionary, as tuples in a list.</li>
-<li>桶排序(bucket sort)，用空间复杂度换取时间复杂度的方法。为每一个数字设置一个桶，桶中是该数字出现的次数，然后对桶进行排序，实际上，上面的排序算法就说使用普通的排序方法对频率桶进行了排序，现在我们使用桶排序对频次惊醒排序。 桶排序为了进一步优化时间复杂度。 先统计数组中元素的频次。接着，将数组中的元素按着出现频次进行分组，即出现频次为i的元素存放在第i个桶，最后从桶中逆序取出前k个元素。</li>
-</ol>
-<h3><span id="代码">代码</span></h3><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">topKFrequent_1</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; List[int]:</span> <span class="comment"># 1. 排序</span></span><br><span class="line">        freq_dict = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums: <span class="comment"># 统计元素的频率</span></span><br><span class="line">            freq_dict[num] = freq_dict.get(num , <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        freq_dict_sort = <span class="built_in">sorted</span>(freq_dict.items(), key = <span class="keyword">lambda</span> x:x[<span class="number">1</span>], reverse = <span class="literal">True</span>)</span><br><span class="line">        ret = <span class="built_in">list</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">            ret.append(freq_dict_sort[i][<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">topKFrequent_2</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; List[int]:</span> <span class="comment"># 2. 堆排序</span></span><br><span class="line">		freq_dict = <span class="built_in">dict</span>() <span class="comment"># 统计元素的频率</span></span><br><span class="line">		<span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">			freq_dict[num] = freq_dict.get(num,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        <span class="comment"># 维护一个大小为k的最小堆，使得堆中的元素即为前k个高频元素</span></span><br><span class="line">		pq = <span class="built_in">list</span>()</span><br><span class="line">		<span class="keyword">for</span> key,value <span class="keyword">in</span> freq_dict.items(): </span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">len</span>(pq)&lt; k:</span><br><span class="line">				heapq.heappush(pq, (value,key))</span><br><span class="line">			<span class="keyword">elif</span> value &gt; pq[<span class="number">0</span>][<span class="number">0</span>]:</span><br><span class="line">				heapq.heapreplace(pq, (value,key))</span><br><span class="line">		ret = <span class="built_in">list</span>()</span><br><span class="line">		<span class="keyword">while</span> pq:</span><br><span class="line">			ret.append(heapq.heappop(pq)[<span class="number">1</span>])</span><br><span class="line">		<span class="keyword">return</span> ret</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">topKFrequent_3</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; List[int]:</span> <span class="comment"># 3. 桶排序</span></span><br><span class="line">		freq_dict = <span class="built_in">dict</span>() <span class="comment"># 统计元素频率</span></span><br><span class="line">		<span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">			freq_dict[num] = freq_dict.get(num, <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">		bucket = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)+ <span class="number">1</span>)]</span><br><span class="line">		<span class="keyword">for</span> key, value <span class="keyword">in</span> freq_dict.items():</span><br><span class="line">			bucket[value].append(key)</span><br><span class="line">		ret = <span class="built_in">list</span>() <span class="comment">#  逆序取出前k个元素</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">reversed</span>(<span class="built_in">range</span>(<span class="built_in">len</span>(nums))):</span><br><span class="line">			<span class="keyword">if</span> bucket[i]:</span><br><span class="line">				ret.extend(bucket[i])</span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">len</span>(ret)&gt;=k:</span><br><span class="line">				<span class="keyword">break</span></span><br><span class="line">		<span class="keyword">return</span> ret[:k]</span><br></pre></td></tr></table></figure>
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ol>
-<li>排序</li>
-</ol>
-<ul>
-<li>时间复杂度：$O(nlogn)$</li>
-<li>空间复杂度：$O(n)$ : 最极端的情况下（每个元素都不同），用于存储元素及其频率的map需要存储n个键值对</li>
-</ul>
-<ol start="2">
-<li>堆排序</li>
-</ol>
-<ul>
-<li>时间复杂度：$O(nlogk)$ 其中n表示数组的长度。首先，遍历一遍数组统计元素的频率，这一系列操作的时间复杂度是O(n);接着，遍历用于存储元素频率的map，如果元素的频率大于最小堆中顶部的元素，则将顶部的元素删除并将该元素加入堆中，这一系列操作的时间复杂度是O(nlogk)的；最后，弹出堆中的元素所需要的时间复杂度O(klogk)。因此总的时间复杂度是O(nlogk)</li>
-<li>空间复杂度：$O(n)$</li>
-</ul>
-<ol start="2">
-<li>桶排序</li>
-</ol>
-<ul>
-<li>时间复杂度：$O(n)$ 数组的长度</li>
-<li>空间复杂度：$O(n)$</li>
-</ul>
-<p>##3. (LC75) 颜色分类 <a href="https://leetcode-cn.com/problems/sort-colors/">颜色分类</a></p>
-<h2><span id="题目描述">题目描述</span></h2><p>给定一个包含红色、白色和蓝色，一共 n 个元素的数组，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。<br>此题中，我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums &#x3D; [2,0,2,1,1,0]</span><br><span class="line">输出：[0,0,1,1,2,2]</span><br></pre></td></tr></table></figure>
-
-<h2><span id="前置知识">前置知识</span></h2><ul>
-<li>三路快排</li>
-</ul>
-<h2><span id="思路">思路</span></h2><ul>
-<li>在快排的基础上，将组数分为三个部分，及大于、等于、小于三个部分，其中大于和小于部分继续递归快排  </li>
-<li>（lc官方解题）我们使用一个指针ptr表示头部位置的范围，ptr中存储了一个整数，表示数组nums从位置0到位置ptr - 1都属于【头部】。ptr的初始值为0，表示还没数处于【头部】。 在第一次遍历中，我们从左向右遍历整个数组，如果找到了0，那么就需要将0与【头部】位置的元素位置进行交换，并将【头部】向后扩充一位，结束后头部只有0。第二次同上。但是我们想要一次遍历怎么办，我们就要俩个指针。 </li>
-<li>我们用指针p0 来交换 0， p1来交换1，初始值都是0。当从左向右遍历整个数组时:<br>  (1) 如果找到1， 那么将其与nums[p1]进行交换，并将p1向后移动一个位置。<br>  （2) 如果找到了0， 那么将其与nums[p0]交换的话，可能把1也交换出去。当p0 &lt; p1时，我们需要再将nums[i] 与nums[p1]进行交换，其中</li>
-</ul>
-<h2><span id="关键点">关键点</span></h2><ul>
-<li> 双指针</li>
-</ul>
-<h2><span id="代码">代码</span></h2><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortColors</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        p0 = p1 = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> nums[i] == <span class="number">1</span>:</span><br><span class="line">                nums[i] , nums[p1] = nums[p1] , nums[i]</span><br><span class="line">                p1+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums[i] == <span class="number">0</span>:</span><br><span class="line">                nums[i] , nums[p0] = nums[p0] , nums[i]</span><br><span class="line">                <span class="keyword">if</span> p0 &lt; p1:</span><br><span class="line">                    nums[i] , nums[p1] = nums[p1] , nums[i]</span><br><span class="line">                p0+=<span class="number">1</span></span><br><span class="line">                p1+=<span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-<h3><span id="大佬解题">大佬解题</span></h3><ol>
-<li><a href="https://www.cnblogs.com/xugenpeng/p/9950007.html#%E6%8F%8F%E8%BF%B0">【LeetCode题解】347_前K个高频元素（Top-K-Frequent-Elements）</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>堆</tag>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
     <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1><span id="排序算法">排序算法</span></h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
@@ -413,6 +251,73 @@
       </tags>
   </entry>
   <entry>
+    <title>双指针</title>
+    <url>/2021/03/06/%E5%8F%8C%E6%8C%87%E9%92%88/</url>
+    <content><![CDATA[<p>#双指针 (<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8F%8C%E6%8C%87%E9%92%88.md#1-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84-two-sum">顺序</a>)</p>
+<p>双指针用于遍历数组，两个指针指向不同的元素，从而共同的完成一个任务。</p>
+<span id="more"></span>
+
+<p>（1）共同完成一个和的target</p>
+<p><strong>目录 (Table of Contents)</strong></p>
+<p>[TOCM]</p>
+<p>[TOC]</p>
+<p>##1. (LC167) 两数之和 II - 输入有序数组   <a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/">两数之和II</a></p>
+<h3><span id="题目">题目</span></h3><p>给定一个已按照 升序排列  的整数数组 numbers ，请你从数组中找出两个数满足相加之和等于目标数 target 。</p>
+<p>函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 1 开始计数 ，所以答案数组应当满足 1 &lt;= answer[0] &lt; answer[1] &lt;= numbers.length 。</p>
+<p>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。<br> 示例 1：</p>
+<p>输入：numbers = [2,7,11,15], target = 9<br>输出：[1,2]<br>解释：2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。</p>
+<h3><span id="思路">思路</span></h3><p>双指针<br>如何想到双指针，我觉得首先是这个数组是有序的，然后就是由两个数构成，这就想到了双指针了</p>
+<h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span>(<span class="params">self, numbers: List[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; List[int]:</span></span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(numbers)-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left&lt; right:</span><br><span class="line">            total = numbers[left] + numbers[right]</span><br><span class="line">            <span class="keyword">if</span> total &gt; target:</span><br><span class="line">                right-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> total &lt; target:</span><br><span class="line">                left+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> [left+<span class="number">1</span>, right+<span class="number">1</span>]                </span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：$O(n)$ 只是遍历了一次</li>
+<li>空间复杂度：$O(1)$ 只用了两个额外的变量（不考虑输出变量空间，只考虑额外的）</li>
+</ul>
+<p>##2. (LC633) 两数平方和   <a href="https://leetcode-cn.com/problems/sum-of-square-numbers/description/">两数平方和</a></p>
+<h3><span id="题目">题目</span></h3><p>给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。</p>
+<p>示例 1：</p>
+<p>输入：c = 5<br>输出：true<br>解释：1 * 1 + 2 * 2 = 5<br>范围：0 &lt;= c &lt;= 2^31 - 1</p>
+<h3><span id="思路">思路</span></h3><p>首先这个又是两个整数的，我们想如果出现两个整数共同来完成一件事，这两个整数在一个范围内，是不是都可以用双指针呢。<br>但是这里面有平方比较麻烦了，所以上面那个不是和吗，我想如果求出c的根号是不是在这附近的数就比较好找了</p>
+<h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">judgeSquareSum</span>(<span class="params">self, c: <span class="built_in">int</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> c == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">sqr</span>(<span class="params">c</span>):</span></span><br><span class="line">            x0 = c/<span class="number">2</span></span><br><span class="line">            x1 = x0/<span class="number">2</span> + c/(x0*<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">while</span> <span class="built_in">abs</span>(x1-x0) &gt; <span class="number">1</span>:</span><br><span class="line">                x0 = x1</span><br><span class="line">                x1 = x0/<span class="number">2</span> + c/(x0*<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">return</span> x1</span><br><span class="line">        right,left = <span class="built_in">int</span>(sqr(c)),<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">            print(left**<span class="number">2</span> + right**<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">if</span> left**<span class="number">2</span> + right**<span class="number">2</span> &gt; c:</span><br><span class="line">                right-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> left**<span class="number">2</span> + right**<span class="number">2</span> &lt; c:</span><br><span class="line">                left+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span> </span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>时间复杂度：$O(sqr(c)*n1)$ 只是遍历了一次 def sqrt(c)</p>
+</li>
+<li><p>空间复杂度：$O(1)$ 只用了两个额外的变量</p>
+<p>##3. (LC345) 反转字符串中的元音字母<a href="https://leetcode-cn.com/problems/reverse-vowels-of-a-string/" title="反转字符串中的元音字母">反转字符串中的元音字母</a>  </p>
+<h3><span id="题目">题目</span></h3><p>编写一个函数，以字符串作为输入，反转该字符串中的元音字母。<br>示例 1：<br>输入：”hello”<br>输出：”holle”</p>
+<h3><span id="思路">思路</span></h3></li>
+</ul>
+<ol>
+<li><p>首先使用双指针是因为，反转字符串中，是两个两个一对的换，通俗的意思是，如果是简单的反转字母是, ‘abc’ 反转之后变为 ‘cba’</p>
+</li>
+<li><p>有一个概念很重要，就是<a href="https://zhuanlan.zhihu.com/p/34395671" title="可变对象和不可变对象">可变对象和不可变对象</a><br> (1) 可变：list, dic, set （2）不可变：tuple, string, int, float, bool</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 可变对象</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">1</span>] = <span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>]</span><br><span class="line"><span class="comment"># 不可变对象</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b[<span class="number">1</span>] = <span class="number">4</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: <span class="string">&#x27;tuple&#x27;</span> <span class="built_in">object</span> does <span class="keyword">not</span> support item assignment</span><br></pre></td></tr></table></figure>
+<p>从上面的例子可以看出来，可变对象是可以直接被改变的，而不可变对象则不可以</p>
+<h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseVowels</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; str:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">list</span>(s))&lt;=<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        front = <span class="number">0</span></span><br><span class="line">        end = <span class="built_in">len</span>(s)-<span class="number">1</span></span><br><span class="line">        vowels = &#123;<span class="string">&quot;a&quot;</span>,<span class="string">&quot;e&quot;</span>,<span class="string">&quot;i&quot;</span>,<span class="string">&quot;o&quot;</span>,<span class="string">&quot;u&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="string">&quot;E&quot;</span>,<span class="string">&quot;I&quot;</span>,<span class="string">&quot;O&quot;</span>,<span class="string">&quot;U&quot;</span>&#125; </span><br><span class="line">        s = <span class="built_in">list</span>(s)</span><br><span class="line">        <span class="keyword">while</span> front&lt; end:</span><br><span class="line">            <span class="keyword">if</span> s[front] <span class="keyword">in</span> vowels <span class="keyword">and</span> s[end] <span class="keyword">in</span> vowels:</span><br><span class="line">                s[front], s[end] = s[end] , s[front]</span><br><span class="line">                front+=<span class="number">1</span></span><br><span class="line">                end-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> s[end] <span class="keyword">not</span> <span class="keyword">in</span> vowels:</span><br><span class="line">                end-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> s[front] <span class="keyword">not</span> <span class="keyword">in</span> vowels:</span><br><span class="line">                front+=<span class="number">1</span>   </span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join(s)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>时间复杂度：$ $</li>
+<li>空间复杂度：$ $  </li>
+</ul>
+<p>##4. (LC680)  验证回文字符串 Ⅱ <a href="https://leetcode-cn.com/problems/valid-palindrome-ii/" title="验证回文字符串 Ⅱ">验证回文字符串 Ⅱ</a></p>
+<h3><span id="题目">题目</span></h3><p>编写一个函数，以字符串作为输入，反转该字符串中的元音字母。<br>示例 1：<br>输入：”hello”<br>输出：”holle”</p>
+<h3><span id="思路">思路</span></h3><ol>
+<li>Lambda 函数<br>lambda 函数是一个小型匿名函数。lambda 函数可以接受任意数量的参数，但只能有一个表达式。<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Function that returns square of any number</span></span><br><span class="line">&gt;&gt;&gt;sqr = <span class="keyword">lambda</span> x: x * x</span><br><span class="line">&gt;&gt;&gt;sqr(<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">100</span></span><br></pre></td></tr></table></figure></li>
+<li> 优美的一行代码<br><a href="https://zhuanlan.zhihu.com/p/345055254" title="25条很棒的Python一行代码，建议收藏！">25条很棒的Python一行代码，建议收藏！</a><h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">validPalindrome</span>(<span class="params">self, s</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        isPalindrome = <span class="keyword">lambda</span> s: s == s[::-<span class="number">1</span>]</span><br><span class="line">        strPart = <span class="keyword">lambda</span> s, x: s[:x] + s[x + <span class="number">1</span>:]</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(s) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left &lt; right:</span><br><span class="line">            <span class="keyword">if</span> s[left] != s[right]:</span><br><span class="line">                <span class="keyword">return</span> isPalindrome(strPart(s, left)) <span class="keyword">or</span> isPalindrome(strPart(s, right))</span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>时间复杂度：$ $</li>
+<li>空间复杂度：$ $</li>
+</ul>
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
     <title></title>
     <url>/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1><span id="声学信号处理系列一声学信号处理基础知识">声学信号处理系列（一）–声学信号处理基础知识</span></h1><p><em>by max</em></p>
@@ -442,5 +347,101 @@
 <h2><span id="参考资料列表">参考资料列表</span></h2><p>[1] 维基百科-声音词条：<a href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3">https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3</a></p>
 <p>[2] 赵力. 语音信号处理[M]. 机械工业出版社, 2016.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>排序 （熟到可以默写）</title>
+    <url>/2021/03/07/%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h2><span id="排序顺序">排序</span></h2><p>思路是：</p>
+<span id="more"></span>
+<p>（1）快速选择，用于求解第k个元素的问题</p>
+<p>（2）堆:堆的中心就一个，那就是动态求极值。 堆可以用二叉树实现，叫做二叉堆。二叉堆的性质就是堆的性质不变。</p>
+<p> (3) 三向快排： 快排的核心思想是选择一个枢纽，左边的都比枢纽小，右边的都比枢纽大。 然后堆分成的两部分再进行递归快排。 但是如果有很多重复元素的时候呢，因为快排会对一个都是重复元素的数组再进行递归，其实我们已经知道了， 不用再进行递归了，因为已经是有序的了。 怎么实现呢？<br>    - 三向排序： 对于一个数组，一次扫描要有三个指针。</p>
+<p><strong>目录 (Table of Contents)</strong></p>
+<p>[TOCM]</p>
+<p>[TOC]</p>
+<p>##1. (LC215) Kth Element <a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/description/">Kth Element</a></p>
+<h3><span id="题目">题目</span></h3><p>在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。<br> 示例 1：<br>输入: [3,2,1,5,6,4] 和 k = 2<br>输出: 5</p>
+<h3><span id="思路">思路</span></h3><ol>
+<li>最简单的是排序想法，直接把数组排序，然后找到k个就好了</li>
+<li>堆， 堆是一种数据结构，一个很牛的<a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/solution/ge-chong-pai-xu-suan-fa-tu-xie-zong-jie-by-ke-ai-x/">题解</a>和一个英文<a href="https://towardsdatascience.com/data-structure-heap-23d4c78a6962">解释</a> 和一个中文<a href="https://guguoyu.blog.csdn.net/article/details/81283998?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs">解释</a></li>
+<li><a href="https://docs.python.org/3/library/heapq.html">heapq</a> 模块： 可能在面试过程中，有的面试官不让用，但是这个heapq还是很方便的。 (1)hq.heapqpush(heap,item) ：压入堆的意思，压入的是item （2）hq.heappop(heap)：弹出且返回最小的。hq.heappushpop(heap,item):先压入iem，然后弹出堆里最小的项。</li>
+</ol>
+<h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest1</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment">#1. 排序</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        <span class="keyword">return</span> nums[-k]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest2</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment"># 2. 最大堆  用heapq模块</span></span><br><span class="line">        <span class="keyword">import</span> heapq <span class="keyword">as</span> hq</span><br><span class="line">        heap = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums:</span><br><span class="line">            hq.heappush(heap,i)</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(heap) &gt; k:</span><br><span class="line">                hq.heappop(heap)</span><br><span class="line">        <span class="keyword">return</span> heap[<span class="number">0</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest3</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment"># 3.  最大堆， 构造堆模块</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">min_heapify</span>(<span class="params">array, i</span>):</span></span><br><span class="line">            left = <span class="number">2</span> * i + <span class="number">1</span></span><br><span class="line">            right = <span class="number">2</span> * i + <span class="number">2</span></span><br><span class="line">            length = <span class="built_in">len</span>(array) - <span class="number">1</span></span><br><span class="line">            smallest = i</span><br><span class="line">            <span class="keyword">if</span> left &lt;= length <span class="keyword">and</span> array[i] &gt; array[left]:</span><br><span class="line">                smallest = left</span><br><span class="line">            <span class="keyword">if</span> right &lt;= length <span class="keyword">and</span> array[smallest] &gt; array[right]:</span><br><span class="line">                smallest = right</span><br><span class="line">            <span class="keyword">if</span> smallest != i:</span><br><span class="line">                array[i], array[smallest] = array[smallest], array[i]</span><br><span class="line">                min_heapify(array, smallest)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">build_min_heap</span>(<span class="params">array</span>):</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">reversed</span>(<span class="built_in">range</span>(<span class="built_in">len</span>(array)//<span class="number">2</span>)):</span><br><span class="line">                min_heapify(array, i)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">heapsort</span>(<span class="params">array</span>):</span></span><br><span class="line">            <span class="comment">#array = array.copy()</span></span><br><span class="line">            build_min_heap(array)</span><br><span class="line">            sorted_array = []</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(array)):</span><br><span class="line">                array[<span class="number">0</span>], array[-<span class="number">1</span>] = array[-<span class="number">1</span>], array[<span class="number">0</span>]</span><br><span class="line">                sorted_array.append(array.pop())</span><br><span class="line">                min_heapify(array, <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> sorted_array</span><br><span class="line">        result = heapsort(nums)</span><br><span class="line">        <span class="keyword">return</span> result[-k]</span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest4</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment"># 4. 快速排序 [快速排序](https://jackkuo666.github.io/Data_Structure_with_Python_book/chapter6/section4.html)</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">partition</span>(<span class="params">alist, low ,high</span>):</span></span><br><span class="line">            mid_value = alist[low]</span><br><span class="line">            <span class="keyword">while</span> low &lt; high:</span><br><span class="line"></span><br><span class="line">                <span class="keyword">while</span> low &lt; high <span class="keyword">and</span> alist[high] &gt;= mid_value:</span><br><span class="line">                    high-=<span class="number">1</span></span><br><span class="line">                alist[low] = alist[high]</span><br><span class="line">                <span class="keyword">while</span> low &lt; high <span class="keyword">and</span> alist[low] &lt;= mid_value:</span><br><span class="line">                    low+=<span class="number">1</span></span><br><span class="line">                alist[high] = alist[low]</span><br><span class="line">            alist[low] = mid_value</span><br><span class="line">            <span class="keyword">return</span> low</span><br><span class="line">        k = <span class="built_in">len</span>(nums) - k</span><br><span class="line">        low = <span class="number">0</span></span><br><span class="line">        high = <span class="built_in">len</span>(nums) -<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> low &lt;= high:</span><br><span class="line">            p = partition(nums,low ,high)</span><br><span class="line">            <span class="keyword">if</span> k &lt; p:</span><br><span class="line">                high = p - <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> k &gt; p:</span><br><span class="line">                low = p + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> nums[p]</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">         </span><br></pre></td></tr></table></figure>
+<p>##2. (LC347) 前 K 个高频元素 <a href="https://leetcode-cn.com/problems/top-k-frequent-elements/">前 K 个高频元素</a></p>
+<h3><span id="题目">题目</span></h3><p>给定一个非空的整数数组，返回其中出现频率前 k 高的元素<br> 示例 1：<br>输入: nums = [1,1,1,2,2,3], k = 2<br>输出: [1,2]</p>
+<h3><span id="思路">思路</span></h3><ol>
+<li>最简单的是排序想法，直接把数组排序，但是不满足时间复杂度的要求， 这里有个一个点是sort()函数，单独有一篇文章讲。</li>
+<li>进一步，为了满足时间复杂度的要求，需要对解法一的排序过程进行改进。因为最终需要返回前k个频率最大的元素，可以想到借助堆这种数据结构。通过维护一个元素数目为k的最小堆，每次都将新的元素与对顶端的元素（也就是堆中频率最小的元素）进行比较，如果新的元素的频率比堆顶端的元素大，则弹出堆顶端的元素，将新的元素添加进堆中。最终，堆中的k个元素即为前k个高频元素。 其中用到了.items(), #The items() method returns a view object. The view object contains the key-value pairs of the dictionary, as tuples in a list.</li>
+<li>桶排序(bucket sort)，用空间复杂度换取时间复杂度的方法。为每一个数字设置一个桶，桶中是该数字出现的次数，然后对桶进行排序，实际上，上面的排序算法就说使用普通的排序方法对频率桶进行了排序，现在我们使用桶排序对频次惊醒排序。 桶排序为了进一步优化时间复杂度。 先统计数组中元素的频次。接着，将数组中的元素按着出现频次进行分组，即出现频次为i的元素存放在第i个桶，最后从桶中逆序取出前k个元素。</li>
+</ol>
+<h3><span id="代码">代码</span></h3><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">topKFrequent_1</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; List[int]:</span> <span class="comment"># 1. 排序</span></span><br><span class="line">        freq_dict = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums: <span class="comment"># 统计元素的频率</span></span><br><span class="line">            freq_dict[num] = freq_dict.get(num , <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        freq_dict_sort = <span class="built_in">sorted</span>(freq_dict.items(), key = <span class="keyword">lambda</span> x:x[<span class="number">1</span>], reverse = <span class="literal">True</span>)</span><br><span class="line">        ret = <span class="built_in">list</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">            ret.append(freq_dict_sort[i][<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">topKFrequent_2</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; List[int]:</span> <span class="comment"># 2. 堆排序</span></span><br><span class="line">		freq_dict = <span class="built_in">dict</span>() <span class="comment"># 统计元素的频率</span></span><br><span class="line">		<span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">			freq_dict[num] = freq_dict.get(num,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        <span class="comment"># 维护一个大小为k的最小堆，使得堆中的元素即为前k个高频元素</span></span><br><span class="line">		pq = <span class="built_in">list</span>()</span><br><span class="line">		<span class="keyword">for</span> key,value <span class="keyword">in</span> freq_dict.items(): </span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">len</span>(pq)&lt; k:</span><br><span class="line">				heapq.heappush(pq, (value,key))</span><br><span class="line">			<span class="keyword">elif</span> value &gt; pq[<span class="number">0</span>][<span class="number">0</span>]:</span><br><span class="line">				heapq.heapreplace(pq, (value,key))</span><br><span class="line">		ret = <span class="built_in">list</span>()</span><br><span class="line">		<span class="keyword">while</span> pq:</span><br><span class="line">			ret.append(heapq.heappop(pq)[<span class="number">1</span>])</span><br><span class="line">		<span class="keyword">return</span> ret</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">topKFrequent_3</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; List[int]:</span> <span class="comment"># 3. 桶排序</span></span><br><span class="line">		freq_dict = <span class="built_in">dict</span>() <span class="comment"># 统计元素频率</span></span><br><span class="line">		<span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">			freq_dict[num] = freq_dict.get(num, <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">		bucket = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)+ <span class="number">1</span>)]</span><br><span class="line">		<span class="keyword">for</span> key, value <span class="keyword">in</span> freq_dict.items():</span><br><span class="line">			bucket[value].append(key)</span><br><span class="line">		ret = <span class="built_in">list</span>() <span class="comment">#  逆序取出前k个元素</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">reversed</span>(<span class="built_in">range</span>(<span class="built_in">len</span>(nums))):</span><br><span class="line">			<span class="keyword">if</span> bucket[i]:</span><br><span class="line">				ret.extend(bucket[i])</span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">len</span>(ret)&gt;=k:</span><br><span class="line">				<span class="keyword">break</span></span><br><span class="line">		<span class="keyword">return</span> ret[:k]</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ol>
+<li>排序</li>
+</ol>
+<ul>
+<li>时间复杂度：$O(nlogn)$</li>
+<li>空间复杂度：$O(n)$ : 最极端的情况下（每个元素都不同），用于存储元素及其频率的map需要存储n个键值对</li>
+</ul>
+<ol start="2">
+<li>堆排序</li>
+</ol>
+<ul>
+<li>时间复杂度：$O(nlogk)$ 其中n表示数组的长度。首先，遍历一遍数组统计元素的频率，这一系列操作的时间复杂度是O(n);接着，遍历用于存储元素频率的map，如果元素的频率大于最小堆中顶部的元素，则将顶部的元素删除并将该元素加入堆中，这一系列操作的时间复杂度是O(nlogk)的；最后，弹出堆中的元素所需要的时间复杂度O(klogk)。因此总的时间复杂度是O(nlogk)</li>
+<li>空间复杂度：$O(n)$</li>
+</ul>
+<ol start="2">
+<li>桶排序</li>
+</ol>
+<ul>
+<li>时间复杂度：$O(n)$ 数组的长度</li>
+<li>空间复杂度：$O(n)$</li>
+</ul>
+<p>##3. (LC75) 颜色分类 <a href="https://leetcode-cn.com/problems/sort-colors/">颜色分类</a></p>
+<h2><span id="题目描述">题目描述</span></h2><p>给定一个包含红色、白色和蓝色，一共 n 个元素的数组，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。<br>此题中，我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums &#x3D; [2,0,2,1,1,0]</span><br><span class="line">输出：[0,0,1,1,2,2]</span><br></pre></td></tr></table></figure>
+
+<h2><span id="前置知识">前置知识</span></h2><ul>
+<li>三路快排</li>
+</ul>
+<h2><span id="思路">思路</span></h2><ul>
+<li>在快排的基础上，将组数分为三个部分，及大于、等于、小于三个部分，其中大于和小于部分继续递归快排  </li>
+<li>（lc官方解题）我们使用一个指针ptr表示头部位置的范围，ptr中存储了一个整数，表示数组nums从位置0到位置ptr - 1都属于【头部】。ptr的初始值为0，表示还没数处于【头部】。 在第一次遍历中，我们从左向右遍历整个数组，如果找到了0，那么就需要将0与【头部】位置的元素位置进行交换，并将【头部】向后扩充一位，结束后头部只有0。第二次同上。但是我们想要一次遍历怎么办，我们就要俩个指针。 </li>
+<li>我们用指针p0 来交换 0， p1来交换1，初始值都是0。当从左向右遍历整个数组时:<br>  (1) 如果找到1， 那么将其与nums[p1]进行交换，并将p1向后移动一个位置。<br>  （2) 如果找到了0， 那么将其与nums[p0]交换的话，可能把1也交换出去。当p0 &lt; p1时，我们需要再将nums[i] 与nums[p1]进行交换，其中</li>
+</ul>
+<h2><span id="关键点">关键点</span></h2><ul>
+<li> 双指针</li>
+</ul>
+<h2><span id="代码">代码</span></h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortColors</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        p0 = p1 = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> nums[i] == <span class="number">1</span>:</span><br><span class="line">                nums[i] , nums[p1] = nums[p1] , nums[i]</span><br><span class="line">                p1+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums[i] == <span class="number">0</span>:</span><br><span class="line">                nums[i] , nums[p0] = nums[p0] , nums[i]</span><br><span class="line">                <span class="keyword">if</span> p0 &lt; p1:</span><br><span class="line">                    nums[i] , nums[p1] = nums[p1] , nums[i]</span><br><span class="line">                p0+=<span class="number">1</span></span><br><span class="line">                p1+=<span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+<h3><span id="大佬解题">大佬解题</span></h3><ol>
+<li><a href="https://www.cnblogs.com/xugenpeng/p/9950007.html#%E6%8F%8F%E8%BF%B0">【LeetCode题解】347_前K个高频元素（Top-K-Frequent-Elements）</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>排序</tag>
+        <tag>堆</tag>
+      </tags>
   </entry>
 </search>

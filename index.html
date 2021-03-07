@@ -271,162 +271,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://watermelondrip.github.io/2021/03/07/%E6%8E%92%E5%BA%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/watermelon.gif">
-      <meta itemprop="name" content="Max">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAXの瓜园">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/07/%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">排序 （熟到可以默写）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-03-07 09:35:00 / 修改时间：20:35:49" itemprop="dateCreated datePublished" datetime="2021-03-07T09:35:00+11:00">2021-03-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8A%9B%E6%89%A3/" itemprop="url" rel="index"><span itemprop="name">力扣</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2021/03/07/%E6%8E%92%E5%BA%8F/" class="post-meta-item leancloud_visitors" data-flag-title="排序 （熟到可以默写）" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2><span id="排序顺序">排序</span></h2><p>思路是：</p>
-<p>（1）快速选择，用于求解第k个元素的问题</p>
-<p>（2）堆:堆的中心就一个，那就是动态求极值。 堆可以用二叉树实现，叫做二叉堆。二叉堆的性质就是堆的性质不变。</p>
-<p> (3) 三向快排： 快排的核心思想是选择一个枢纽，左边的都比枢纽小，右边的都比枢纽大。 然后堆分成的两部分再进行递归快排。 但是如果有很多重复元素的时候呢，因为快排会对一个都是重复元素的数组再进行递归，其实我们已经知道了， 不用再进行递归了，因为已经是有序的了。 怎么实现呢？<br>    - 三向排序： 对于一个数组，一次扫描要有三个指针。</p>
-<p><strong>目录 (Table of Contents)</strong></p>
-<p>[TOCM]</p>
-<p>[TOC]</p>
-<p>##1. (LC215) Kth Element <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/description/">Kth Element</a></p>
-<h3><span id="题目">题目</span></h3><p>在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。<br> 示例 1：<br>输入: [3,2,1,5,6,4] 和 k = 2<br>输出: 5</p>
-<h3><span id="思路">思路</span></h3><ol>
-<li>最简单的是排序想法，直接把数组排序，然后找到k个就好了</li>
-<li>堆， 堆是一种数据结构，一个很牛的<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/solution/ge-chong-pai-xu-suan-fa-tu-xie-zong-jie-by-ke-ai-x/">题解</a>和一个英文<a target="_blank" rel="noopener" href="https://towardsdatascience.com/data-structure-heap-23d4c78a6962">解释</a> 和一个中文<a target="_blank" rel="noopener" href="https://guguoyu.blog.csdn.net/article/details/81283998?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs">解释</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/heapq.html">heapq</a> 模块： 可能在面试过程中，有的面试官不让用，但是这个heapq还是很方便的。 (1)hq.heapqpush(heap,item) ：压入堆的意思，压入的是item （2）hq.heappop(heap)：弹出且返回最小的。hq.heappushpop(heap,item):先压入iem，然后弹出堆里最小的项。</li>
-</ol>
-<h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest1</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment">#1. 排序</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        <span class="keyword">return</span> nums[-k]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest2</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment"># 2. 最大堆  用heapq模块</span></span><br><span class="line">        <span class="keyword">import</span> heapq <span class="keyword">as</span> hq</span><br><span class="line">        heap = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums:</span><br><span class="line">            hq.heappush(heap,i)</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(heap) &gt; k:</span><br><span class="line">                hq.heappop(heap)</span><br><span class="line">        <span class="keyword">return</span> heap[<span class="number">0</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest3</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment"># 3.  最大堆， 构造堆模块</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">min_heapify</span>(<span class="params">array, i</span>):</span></span><br><span class="line">            left = <span class="number">2</span> * i + <span class="number">1</span></span><br><span class="line">            right = <span class="number">2</span> * i + <span class="number">2</span></span><br><span class="line">            length = <span class="built_in">len</span>(array) - <span class="number">1</span></span><br><span class="line">            smallest = i</span><br><span class="line">            <span class="keyword">if</span> left &lt;= length <span class="keyword">and</span> array[i] &gt; array[left]:</span><br><span class="line">                smallest = left</span><br><span class="line">            <span class="keyword">if</span> right &lt;= length <span class="keyword">and</span> array[smallest] &gt; array[right]:</span><br><span class="line">                smallest = right</span><br><span class="line">            <span class="keyword">if</span> smallest != i:</span><br><span class="line">                array[i], array[smallest] = array[smallest], array[i]</span><br><span class="line">                min_heapify(array, smallest)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">build_min_heap</span>(<span class="params">array</span>):</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">reversed</span>(<span class="built_in">range</span>(<span class="built_in">len</span>(array)//<span class="number">2</span>)):</span><br><span class="line">                min_heapify(array, i)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">heapsort</span>(<span class="params">array</span>):</span></span><br><span class="line">            <span class="comment">#array = array.copy()</span></span><br><span class="line">            build_min_heap(array)</span><br><span class="line">            sorted_array = []</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(array)):</span><br><span class="line">                array[<span class="number">0</span>], array[-<span class="number">1</span>] = array[-<span class="number">1</span>], array[<span class="number">0</span>]</span><br><span class="line">                sorted_array.append(array.pop())</span><br><span class="line">                min_heapify(array, <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> sorted_array</span><br><span class="line">        result = heapsort(nums)</span><br><span class="line">        <span class="keyword">return</span> result[-k]</span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest4</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment"># 4. 快速排序 [快速排序](https://jackkuo666.github.io/Data_Structure_with_Python_book/chapter6/section4.html)</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">partition</span>(<span class="params">alist, low ,high</span>):</span></span><br><span class="line">            mid_value = alist[low]</span><br><span class="line">            <span class="keyword">while</span> low &lt; high:</span><br><span class="line"></span><br><span class="line">                <span class="keyword">while</span> low &lt; high <span class="keyword">and</span> alist[high] &gt;= mid_value:</span><br><span class="line">                    high-=<span class="number">1</span></span><br><span class="line">                alist[low] = alist[high]</span><br><span class="line">                <span class="keyword">while</span> low &lt; high <span class="keyword">and</span> alist[low] &lt;= mid_value:</span><br><span class="line">                    low+=<span class="number">1</span></span><br><span class="line">                alist[high] = alist[low]</span><br><span class="line">            alist[low] = mid_value</span><br><span class="line">            <span class="keyword">return</span> low</span><br><span class="line">        k = <span class="built_in">len</span>(nums) - k</span><br><span class="line">        low = <span class="number">0</span></span><br><span class="line">        high = <span class="built_in">len</span>(nums) -<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> low &lt;= high:</span><br><span class="line">            p = partition(nums,low ,high)</span><br><span class="line">            <span class="keyword">if</span> k &lt; p:</span><br><span class="line">                high = p - <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> k &gt; p:</span><br><span class="line">                low = p + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> nums[p]</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">         </span><br></pre></td></tr></table></figure>
-<p>##2. (LC347) 前 K 个高频元素 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/top-k-frequent-elements/">前 K 个高频元素</a></p>
-<h3><span id="题目">题目</span></h3><p>给定一个非空的整数数组，返回其中出现频率前 k 高的元素<br> 示例 1：<br>输入: nums = [1,1,1,2,2,3], k = 2<br>输出: [1,2]</p>
-<h3><span id="思路">思路</span></h3><ol>
-<li>最简单的是排序想法，直接把数组排序，但是不满足时间复杂度的要求， 这里有个一个点是sort()函数，单独有一篇文章讲。</li>
-<li>进一步，为了满足时间复杂度的要求，需要对解法一的排序过程进行改进。因为最终需要返回前k个频率最大的元素，可以想到借助堆这种数据结构。通过维护一个元素数目为k的最小堆，每次都将新的元素与对顶端的元素（也就是堆中频率最小的元素）进行比较，如果新的元素的频率比堆顶端的元素大，则弹出堆顶端的元素，将新的元素添加进堆中。最终，堆中的k个元素即为前k个高频元素。 其中用到了.items(), #The items() method returns a view object. The view object contains the key-value pairs of the dictionary, as tuples in a list.</li>
-<li>桶排序(bucket sort)，用空间复杂度换取时间复杂度的方法。为每一个数字设置一个桶，桶中是该数字出现的次数，然后对桶进行排序，实际上，上面的排序算法就说使用普通的排序方法对频率桶进行了排序，现在我们使用桶排序对频次惊醒排序。 桶排序为了进一步优化时间复杂度。 先统计数组中元素的频次。接着，将数组中的元素按着出现频次进行分组，即出现频次为i的元素存放在第i个桶，最后从桶中逆序取出前k个元素。</li>
-</ol>
-<h3><span id="代码">代码</span></h3><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">topKFrequent_1</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; List[int]:</span> <span class="comment"># 1. 排序</span></span><br><span class="line">        freq_dict = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums: <span class="comment"># 统计元素的频率</span></span><br><span class="line">            freq_dict[num] = freq_dict.get(num , <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        freq_dict_sort = <span class="built_in">sorted</span>(freq_dict.items(), key = <span class="keyword">lambda</span> x:x[<span class="number">1</span>], reverse = <span class="literal">True</span>)</span><br><span class="line">        ret = <span class="built_in">list</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">            ret.append(freq_dict_sort[i][<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">topKFrequent_2</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; List[int]:</span> <span class="comment"># 2. 堆排序</span></span><br><span class="line">		freq_dict = <span class="built_in">dict</span>() <span class="comment"># 统计元素的频率</span></span><br><span class="line">		<span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">			freq_dict[num] = freq_dict.get(num,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        <span class="comment"># 维护一个大小为k的最小堆，使得堆中的元素即为前k个高频元素</span></span><br><span class="line">		pq = <span class="built_in">list</span>()</span><br><span class="line">		<span class="keyword">for</span> key,value <span class="keyword">in</span> freq_dict.items(): </span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">len</span>(pq)&lt; k:</span><br><span class="line">				heapq.heappush(pq, (value,key))</span><br><span class="line">			<span class="keyword">elif</span> value &gt; pq[<span class="number">0</span>][<span class="number">0</span>]:</span><br><span class="line">				heapq.heapreplace(pq, (value,key))</span><br><span class="line">		ret = <span class="built_in">list</span>()</span><br><span class="line">		<span class="keyword">while</span> pq:</span><br><span class="line">			ret.append(heapq.heappop(pq)[<span class="number">1</span>])</span><br><span class="line">		<span class="keyword">return</span> ret</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">topKFrequent_3</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; List[int]:</span> <span class="comment"># 3. 桶排序</span></span><br><span class="line">		freq_dict = <span class="built_in">dict</span>() <span class="comment"># 统计元素频率</span></span><br><span class="line">		<span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">			freq_dict[num] = freq_dict.get(num, <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">		bucket = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)+ <span class="number">1</span>)]</span><br><span class="line">		<span class="keyword">for</span> key, value <span class="keyword">in</span> freq_dict.items():</span><br><span class="line">			bucket[value].append(key)</span><br><span class="line">		ret = <span class="built_in">list</span>() <span class="comment">#  逆序取出前k个元素</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">reversed</span>(<span class="built_in">range</span>(<span class="built_in">len</span>(nums))):</span><br><span class="line">			<span class="keyword">if</span> bucket[i]:</span><br><span class="line">				ret.extend(bucket[i])</span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">len</span>(ret)&gt;=k:</span><br><span class="line">				<span class="keyword">break</span></span><br><span class="line">		<span class="keyword">return</span> ret[:k]</span><br></pre></td></tr></table></figure>
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ol>
-<li>排序</li>
-</ol>
-<ul>
-<li>时间复杂度：$O(nlogn)$</li>
-<li>空间复杂度：$O(n)$ : 最极端的情况下（每个元素都不同），用于存储元素及其频率的map需要存储n个键值对</li>
-</ul>
-<ol start="2">
-<li>堆排序</li>
-</ol>
-<ul>
-<li>时间复杂度：$O(nlogk)$ 其中n表示数组的长度。首先，遍历一遍数组统计元素的频率，这一系列操作的时间复杂度是O(n);接着，遍历用于存储元素频率的map，如果元素的频率大于最小堆中顶部的元素，则将顶部的元素删除并将该元素加入堆中，这一系列操作的时间复杂度是O(nlogk)的；最后，弹出堆中的元素所需要的时间复杂度O(klogk)。因此总的时间复杂度是O(nlogk)</li>
-<li>空间复杂度：$O(n)$</li>
-</ul>
-<ol start="2">
-<li>桶排序</li>
-</ol>
-<ul>
-<li>时间复杂度：$O(n)$ 数组的长度</li>
-<li>空间复杂度：$O(n)$</li>
-</ul>
-<p>##3. (LC75) 颜色分类 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-colors/">颜色分类</a></p>
-<h2><span id="题目描述">题目描述</span></h2><p>给定一个包含红色、白色和蓝色，一共 n 个元素的数组，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。<br>此题中，我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums &#x3D; [2,0,2,1,1,0]</span><br><span class="line">输出：[0,0,1,1,2,2]</span><br></pre></td></tr></table></figure>
-
-<h2><span id="前置知识">前置知识</span></h2><ul>
-<li>三路快排</li>
-</ul>
-<h2><span id="思路">思路</span></h2><ul>
-<li>在快排的基础上，将组数分为三个部分，及大于、等于、小于三个部分，其中大于和小于部分继续递归快排  </li>
-<li>（lc官方解题）我们使用一个指针ptr表示头部位置的范围，ptr中存储了一个整数，表示数组nums从位置0到位置ptr - 1都属于【头部】。ptr的初始值为0，表示还没数处于【头部】。 在第一次遍历中，我们从左向右遍历整个数组，如果找到了0，那么就需要将0与【头部】位置的元素位置进行交换，并将【头部】向后扩充一位，结束后头部只有0。第二次同上。但是我们想要一次遍历怎么办，我们就要俩个指针。 </li>
-<li>我们用指针p0 来交换 0， p1来交换1，初始值都是0。当从左向右遍历整个数组时:<br>  (1) 如果找到1， 那么将其与nums[p1]进行交换，并将p1向后移动一个位置。<br>  （2) 如果找到了0， 那么将其与nums[p0]交换的话，可能把1也交换出去。当p0 &lt; p1时，我们需要再将nums[i] 与nums[p1]进行交换，其中</li>
-</ul>
-<h2><span id="关键点">关键点</span></h2><ul>
-<li> 双指针</li>
-</ul>
-<h2><span id="代码">代码</span></h2><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortColors</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        p0 = p1 = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> nums[i] == <span class="number">1</span>:</span><br><span class="line">                nums[i] , nums[p1] = nums[p1] , nums[i]</span><br><span class="line">                p1+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums[i] == <span class="number">0</span>:</span><br><span class="line">                nums[i] , nums[p0] = nums[p0] , nums[i]</span><br><span class="line">                <span class="keyword">if</span> p0 &lt; p1:</span><br><span class="line">                    nums[i] , nums[p1] = nums[p1] , nums[i]</span><br><span class="line">                p0+=<span class="number">1</span></span><br><span class="line">                p1+=<span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-<h3><span id="大佬解题">大佬解题</span></h3><ol>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xugenpeng/p/9950007.html#%E6%8F%8F%E8%BF%B0">【LeetCode题解】347_前K个高频元素（Top-K-Frequent-Elements）</a></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://watermelondrip.github.io/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -499,6 +343,88 @@
 <h2><span id="参考资料列表">参考资料列表</span></h2><p>[1] 维基百科-声音词条：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3">https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3</a></p>
 <p>[2] 赵力. 语音信号处理[M]. 机械工业出版社, 2016.</p>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://watermelondrip.github.io/2021/03/07/%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/watermelon.gif">
+      <meta itemprop="name" content="Max">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAXの瓜园">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/07/%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">排序 （熟到可以默写）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-03-07 09:35:00 / 修改时间：20:38:06" itemprop="dateCreated datePublished" datetime="2021-03-07T09:35:00+11:00">2021-03-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8A%9B%E6%89%A3/" itemprop="url" rel="index"><span itemprop="name">力扣</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/03/07/%E6%8E%92%E5%BA%8F/" class="post-meta-item leancloud_visitors" data-flag-title="排序 （熟到可以默写）" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="排序顺序"><a href="#排序顺序" class="headerlink" title="排序顺序"></a>排序<a target="_blank" rel="noopener" href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%8E%92%E5%BA%8F.md">顺序</a></h2><p>思路是：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/07/%E6%8E%92%E5%BA%8F/" rel="contents"> 
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
