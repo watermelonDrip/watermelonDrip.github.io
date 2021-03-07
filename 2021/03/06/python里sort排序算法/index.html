@@ -20,22 +20,21 @@
     var CONFIG = {"hostname":"watermelondrip.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpInsi"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="排序顺序思路是（1）快速选择，用于求解第k个元素的问题（2）堆:堆的中心就一个，那就是动态求极值。 堆可以用二叉树实现，叫做二叉堆。二叉堆的性质就是堆的性质不变。">
+  <meta name="description" content="排序算法python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]&#x3D;r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序 （熟到可以默写）">
-<meta property="og:url" content="http://watermelondrip.github.io/2021/03/06/%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:title" content="python 里 sort(),sorted() 的排序算法 -- Timsort简介">
+<meta property="og:url" content="http://watermelondrip.github.io/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="MAXの瓜园">
-<meta property="og:description" content="排序顺序思路是（1）快速选择，用于求解第k个元素的问题（2）堆:堆的中心就一个，那就是动态求极值。 堆可以用二叉树实现，叫做二叉堆。二叉堆的性质就是堆的性质不变。">
+<meta property="og:description" content="排序算法python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]&#x3D;r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-06T04:55:07.241Z">
-<meta property="article:modified_time" content="2021-03-06T09:18:03.428Z">
+<meta property="article:published_time" content="2021-03-06T00:03:00.000Z">
+<meta property="article:modified_time" content="2021-03-06T11:06:51.613Z">
 <meta property="article:author" content="Max">
 <meta property="article:tag" content="python">
-<meta property="article:tag" content="堆">
 <meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://watermelondrip.github.io/2021/03/06/%E6%8E%92%E5%BA%8F/">
+<link rel="canonical" href="http://watermelondrip.github.io/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
 
 
 <script id="page-configurations">
@@ -48,7 +47,7 @@
   };
 </script>
 
-  <title>排序 （熟到可以默写） | MAXの瓜园</title>
+  <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介 | MAXの瓜园</title>
   
 
 
@@ -197,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://watermelondrip.github.io/2021/03/06/%E6%8E%92%E5%BA%8F/">
+    <link itemprop="mainEntityOfPage" href="http://watermelondrip.github.io/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/watermelon.gif">
@@ -210,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          排序 （熟到可以默写）
+          python 里 sort(),sorted() 的排序算法 -- Timsort简介
         </h1>
 
         <div class="post-meta">
@@ -221,7 +220,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-03-06 15:55:07 / 修改时间：20:18:03" itemprop="dateCreated datePublished" datetime="2021-03-06T15:55:07+11:00">2021-03-06</time>
+              <time title="创建时间：2021-03-06 11:03:00 / 修改时间：22:06:51" itemprop="dateCreated datePublished" datetime="2021-03-06T11:03:00+11:00">2021-03-06</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,12 +228,12 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8A%9B%E6%89%A3/" itemprop="url" rel="index"><span itemprop="name">力扣</span></a>
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%8F%8A%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">知识及记录</span></a>
                 </span>
             </span>
 
           
-            <span id="/2021/03/06/%E6%8E%92%E5%BA%8F/" class="post-meta-item leancloud_visitors" data-flag-title="排序 （熟到可以默写）" title="阅读次数">
+            <span id="/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="python 里 sort(),sorted() 的排序算法 -- Timsort简介" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -258,20 +257,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2><span id="排序顺序">排序</span></h2><p>思路是<br>（1）快速选择，用于求解第k个元素的问题<br>（2）堆:堆的中心就一个，那就是动态求极值。 堆可以用二叉树实现，叫做二叉堆。二叉堆的性质就是堆的性质不变。</p>
-<span id="more"></span>
-
-<p><strong>目录 (Table of Contents)</strong></p>
-<p>[TOCM]</p>
-<p>[TOC]</p>
-<p>##1. (LC215) Kth Element <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/description/">Kth Element</a></p>
-<h3><span id="题目">题目</span></h3><p>在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。<br> 示例 1：<br>输入: [3,2,1,5,6,4] 和 k = 2<br>输出: 5</p>
-<h3><span id="思路">思路</span></h3><ol>
-<li>最简单的是排序想法，直接把数组排序，然后找到k个就好了</li>
-<li>堆， 堆是一种数据结构，一个很牛的<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/solution/ge-chong-pai-xu-suan-fa-tu-xie-zong-jie-by-ke-ai-x/">题解</a>和一个英文<a target="_blank" rel="noopener" href="https://towardsdatascience.com/data-structure-heap-23d4c78a6962">解释</a> 和一个中文<a target="_blank" rel="noopener" href="https://guguoyu.blog.csdn.net/article/details/81283998?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs">解释</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/heapq.html">heapq</a> 模块： 可能在面试过程中，有的面试官不让用，但是这个heapq还是很方便的。 (1)hq.heapqpush(heap,item) ：压入堆的意思，压入的是item （2）hq.heappop(heap)：弹出且返回最小的。hq.heappushpop(heap,item):先压入iem，然后弹出堆里最小的项。</li>
+        <h1><span id="排序算法">排序算法</span></h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
+<p>##sort()用法 和 sorted()用法的不同</p>
+<ol>
+<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
+<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。Because sorted is a global function, it can take any iterable and return a sorted list from that</li>
+<li><h3><span id="python3-code">Python3 Code:</span></h3></li>
 </ol>
-<h3><span id="python3-code">Python3 Code:</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findKthLargest1(self, nums: List[int], k: int) -&gt; int: #1. 排序</span><br><span class="line">        nums.sort()</span><br><span class="line">        return nums[-k]</span><br><span class="line">    def findKthLargest2(self, nums: List[int], k: int) -&gt; int: # 2. 最大堆  用heapq模块</span><br><span class="line">        import heapq as hq</span><br><span class="line">        heap &#x3D; []</span><br><span class="line">        for i in nums:</span><br><span class="line">            hq.heappush(heap,i)</span><br><span class="line">            if len(heap) &gt; k:</span><br><span class="line">                hq.heappop(heap)</span><br><span class="line">        return heap[0]</span><br><span class="line">    def findKthLargest3(self, nums: List[int], k: int) -&gt; int: # 最大堆， 构造堆模块</span><br><span class="line">        def min_heapify(array, i):</span><br><span class="line">            left &#x3D; 2 * i + 1</span><br><span class="line">            right &#x3D; 2 * i + 2</span><br><span class="line">            length &#x3D; len(array) - 1</span><br><span class="line">            smallest &#x3D; i</span><br><span class="line">            if left &lt;&#x3D; length and array[i] &gt; array[left]:</span><br><span class="line">                smallest &#x3D; left</span><br><span class="line">            if right &lt;&#x3D; length and array[smallest] &gt; array[right]:</span><br><span class="line">                smallest &#x3D; right</span><br><span class="line">            if smallest !&#x3D; i:</span><br><span class="line">                array[i], array[smallest] &#x3D; array[smallest], array[i]</span><br><span class="line">                min_heapify(array, smallest)</span><br><span class="line">        def build_min_heap(array):</span><br><span class="line">            for i in reversed(range(len(array)&#x2F;&#x2F;2)):</span><br><span class="line">                min_heapify(array, i)</span><br><span class="line">        def heapsort(array):</span><br><span class="line">            #array &#x3D; array.copy()</span><br><span class="line">            build_min_heap(array)</span><br><span class="line">            sorted_array &#x3D; []</span><br><span class="line">            for _ in range(len(array)):</span><br><span class="line">                array[0], array[-1] &#x3D; array[-1], array[0]</span><br><span class="line">                sorted_array.append(array.pop())</span><br><span class="line">                min_heapify(array, 0)</span><br><span class="line">            return sorted_array</span><br><span class="line">        result &#x3D; heapsort(nums)</span><br><span class="line">        return result[-k]</span><br><span class="line">      def findKthLargest4(self, nums: List[int], k: int) -&gt; int: # [快速排序](https:&#x2F;&#x2F;jackkuo666.github.io&#x2F;Data_Structure_with_Python_book&#x2F;chapter6&#x2F;section4.html)</span><br><span class="line">        def partition(alist, low ,high):</span><br><span class="line">            mid_value &#x3D; alist[low]</span><br><span class="line">            while low &lt; high:</span><br><span class="line"></span><br><span class="line">                while low &lt; high and alist[high] &gt;&#x3D; mid_value:</span><br><span class="line">                    high-&#x3D;1</span><br><span class="line">                alist[low] &#x3D; alist[high]</span><br><span class="line">                while low &lt; high and alist[low] &lt;&#x3D; mid_value:</span><br><span class="line">                    low+&#x3D;1</span><br><span class="line">                alist[high] &#x3D; alist[low]</span><br><span class="line">            alist[low] &#x3D; mid_value</span><br><span class="line">            return low</span><br><span class="line">        k &#x3D; len(nums) - k</span><br><span class="line">        low &#x3D; 0</span><br><span class="line">        high &#x3D; len(nums) -1</span><br><span class="line">        while low &lt;&#x3D; high:</span><br><span class="line">            p &#x3D; partition(nums,low ,high)</span><br><span class="line">            if k &lt; p:</span><br><span class="line">                high &#x3D; p - 1</span><br><span class="line">            elif k &gt; p:</span><br><span class="line">                low &#x3D; p + 1</span><br><span class="line">            else:</span><br><span class="line">                return nums[p]</span><br><span class="line">        return -1</span><br><span class="line">         </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(&#123;<span class="string">&#x27;one&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;two&#x27;</span>:<span class="number">2</span>,<span class="string">&#x27;three&#x27;</span>:<span class="number">3</span>,<span class="string">&#x27;four&#x27;</span>:<span class="number">4</span>,<span class="string">&#x27;five&#x27;</span>:<span class="number">5</span>&#125;)</span><br><span class="line">[<span class="string">&#x27;five&#x27;</span>, <span class="string">&#x27;four&#x27;</span>, <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;three&#x27;</span>, <span class="string">&#x27;two&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">&#x27;this is a string&#x27;</span>)</span><br><span class="line">[<span class="string">&#x27; &#x27;</span>, <span class="string">&#x27; &#x27;</span>, <span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;h&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;n&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;t&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>###大佬blog</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
+<li><a target="_blank" rel="noopener" href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
+</ol>
 
     </div>
 
@@ -302,7 +303,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://watermelondrip.github.io/2021/03/06/%E6%8E%92%E5%BA%8F/" title="排序 （熟到可以默写）">http://watermelondrip.github.io/2021/03/06/排序/</a>
+    <a href="http://watermelondrip.github.io/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="python 里 sort(),sorted() 的排序算法 -- Timsort简介">http://watermelondrip.github.io/2021/03/06/python里sort排序算法/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -314,7 +315,6 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/python/" rel="tag"># python</a>
-              <a href="/tags/%E5%A0%86/" rel="tag"># 堆</a>
               <a href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag"># 排序</a>
           </div>
 
@@ -324,12 +324,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/03/06/firstday_max/" rel="prev" title="Day 1 - Max">
-      <i class="fa fa-chevron-left"></i> Day 1 - Max
+    <a href="/2021/02/27/firstday/" rel="prev" title="第一天坚持坚持">
+      <i class="fa fa-chevron-left"></i> 第一天坚持坚持
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/03/06/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="next" title="双指针">
-      双指针 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/03/06/dataStructure/" rel="next" title="数据结构的分析">
+      数据结构的分析 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -389,7 +389,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">Python3 Code:</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.0.1.</span> <span class="nav-text">Python3 Code:</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -405,7 +405,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -418,7 +418,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
