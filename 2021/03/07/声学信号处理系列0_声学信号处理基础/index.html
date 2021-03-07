@@ -22,7 +22,7 @@
 
   <meta name="description" content="声学信号处理系列（一）–声学信号处理基础知识by max 2021&#x2F;03&#x2F;07 0.写在开始的话这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MAXの瓜园">
+<meta property="og:title" content="声学信号处理系列（一）--声学信号处理基础知识">
 <meta property="og:url" content="http://watermelondrip.github.io/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="MAXの瓜园">
 <meta property="og:description" content="声学信号处理系列（一）–声学信号处理基础知识by max 2021&#x2F;03&#x2F;07 0.写在开始的话这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中">
@@ -31,8 +31,9 @@
 <meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20191123%2Fd414717d0c8647dc979a0f0557cd82d2.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1617682279&t=03c62b6e9c10720fcd1a12f2abdfa02c">
 <meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.zhimg.com%2F50%2Fc7878e14449512f39a917d29645006cd_hd.jpg&refer=http%3A%2F%2Fpic1.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1617685462&t=866a75dfb48a531d7493557f1d62b2e8">
 <meta property="article:published_time" content="2021-03-06T22:35:00.000Z">
-<meta property="article:modified_time" content="2021-03-06T22:35:00.000Z">
+<meta property="article:modified_time" content="2021-03-07T09:46:24.456Z">
 <meta property="article:author" content="Max">
+<meta property="article:tag" content="声学信号处理">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3541145379,2023942298&fm=15&gp=0.jpg">
 
@@ -49,7 +50,7 @@
   };
 </script>
 
-  <title> | MAXの瓜园</title>
+  <title>声学信号处理系列（一）--声学信号处理基础知识 | MAXの瓜园</title>
   
 
 
@@ -211,7 +212,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          声学信号处理系列（一）--声学信号处理基础知识
         </h1>
 
         <div class="post-meta">
@@ -220,12 +221,22 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-03-07 09:35:00" itemprop="dateCreated datePublished" datetime="2021-03-07T09:35:00+11:00">2021-03-07</time>
+              <time title="创建时间：2021-03-07 09:35:00 / 修改时间：20:46:24" itemprop="dateCreated datePublished" datetime="2021-03-07T09:35:00+11:00">2021-03-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%8F%8A%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">知识及记录</span></a>
+                </span>
             </span>
 
           
-            <span id="/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/" class="post-meta-item leancloud_visitors" data-flag-title="" title="阅读次数">
+            <span id="/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/" class="post-meta-item leancloud_visitors" data-flag-title="声学信号处理系列（一）--声学信号处理基础知识" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -252,6 +263,8 @@
         <h1><span id="声学信号处理系列一声学信号处理基础知识">声学信号处理系列（一）–声学信号处理基础知识</span></h1><p><em>by max</em></p>
 <p><em>2021/03/07</em></p>
 <h2><span id="0写在开始的话">0.写在开始的话</span></h2><p>这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中学习到的新知识，也希望能跟别人分享自己的一些心得体会。个人水平有限，如有疏漏错误，敬请批评指正，谢谢！</p>
+<span id="more"></span>
+
 <h2><span id="1声学基础">1.声学基础</span></h2><p>声音是自然界中非常常见的一种信号之一，我们平时的生活中声音无处不在。人类可以通过声音，来对物体进行感知、辨认和定位。同样，声音也是日常我们互相交流时用于传递信息文字的“载具”。</p>
 <p>初高中物理课上大家应该都学到过，声音的本质是物体振动生成的声波，该声波通过某种介质（例如空气、水和固体）传播并能被人类或者动物的听觉器官所感知。声音的频率一般会以赫兹表示，记为Hz，指每秒钟周期性震动的次数。而分贝是用来表示声音强度的单位，记为dB[1]。</p>
 <h2><span id="2我们如何发出声音">2.我们如何发出声音</span></h2><p>正如上一小节中所介绍的，发出声音需要凭借物体的振动。那么我们人类从口腔中发出各种各样的声音，也正是依靠我们的声带的振动来实现的。具体说来，从我们肺部内排出的气体气流，在经过形态变化的声带结构时，带动声带产生振动，进而生成了声波，声波经过我们的口腔和嘴，传输到外界空气中。在整个过程里，由于每个人类个体的声带器官、口腔腔体和嘴部的生理结构都是各异的，所以也导致我们每个人说出来的话的语音语调，以及包括音色，都是不同的。需要注意的是，由于鼻腔和口腔在人体内部是连通的，也会参与到发声过程中来。</p>
@@ -305,7 +318,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://watermelondrip.github.io/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/" title="">http://watermelondrip.github.io/2021/03/07/声学信号处理系列0_声学信号处理基础/</a>
+    <a href="http://watermelondrip.github.io/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/" title="声学信号处理系列（一）--声学信号处理基础知识">http://watermelondrip.github.io/2021/03/07/声学信号处理系列0_声学信号处理基础/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -315,6 +328,9 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" rel="tag"># 声学信号处理</a>
+          </div>
 
         
 
@@ -416,7 +432,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
