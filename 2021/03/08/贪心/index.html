@@ -20,21 +20,22 @@
     var CONFIG = {"hostname":"watermelondrip.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpInsi"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="排序算法python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]&#x3D;r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为">
+  <meta name="description" content="贪心思路是：(1) 保证每次操作都是局部最优的，并且最后得到的结果是全局最优的 (2)贪心算法一般是先需要排序的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python 里 sort(),sorted() 的排序算法 -- Timsort简介">
-<meta property="og:url" content="http://watermelondrip.github.io/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="贪心">
+<meta property="og:url" content="http://watermelondrip.github.io/2021/03/08/%E8%B4%AA%E5%BF%83/index.html">
 <meta property="og:site_name" content="MAXの瓜园">
-<meta property="og:description" content="排序算法python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]&#x3D;r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为">
+<meta property="og:description" content="贪心思路是：(1) 保证每次操作都是局部最优的，并且最后得到的结果是全局最优的 (2)贪心算法一般是先需要排序的。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-06T00:03:00.000Z">
-<meta property="article:modified_time" content="2021-03-06T11:06:51.613Z">
+<meta property="article:published_time" content="2021-03-08T01:19:11.454Z">
+<meta property="article:modified_time" content="2021-03-08T08:50:47.256Z">
 <meta property="article:author" content="Max">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="排序">
+<meta property="article:tag" content="堆">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://watermelondrip.github.io/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+<link rel="canonical" href="http://watermelondrip.github.io/2021/03/08/%E8%B4%AA%E5%BF%83/">
 
 
 <script id="page-configurations">
@@ -47,7 +48,7 @@
   };
 </script>
 
-  <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介 | MAXの瓜园</title>
+  <title>贪心 | MAXの瓜园</title>
   
 
 
@@ -198,7 +199,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://watermelondrip.github.io/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://watermelondrip.github.io/2021/03/08/%E8%B4%AA%E5%BF%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/watermelon.gif">
@@ -211,7 +212,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          python 里 sort(),sorted() 的排序算法 -- Timsort简介
+          贪心
         </h1>
 
         <div class="post-meta">
@@ -222,7 +223,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-03-06 11:03:00 / 修改时间：22:06:51" itemprop="dateCreated datePublished" datetime="2021-03-06T11:03:00+11:00">2021-03-06</time>
+              <time title="创建时间：2021-03-08 12:19:11 / 修改时间：19:50:47" itemprop="dateCreated datePublished" datetime="2021-03-08T12:19:11+11:00">2021-03-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -230,12 +231,12 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%8F%8A%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">知识及记录</span></a>
+                  <a href="/categories/%E5%8A%9B%E6%89%A3/" itemprop="url" rel="index"><span itemprop="name">力扣</span></a>
                 </span>
             </span>
 
           
-            <span id="/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="python 里 sort(),sorted() 的排序算法 -- Timsort简介" title="阅读次数">
+            <span id="/2021/03/08/%E8%B4%AA%E5%BF%83/" class="post-meta-item leancloud_visitors" data-flag-title="贪心" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -259,22 +260,56 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="排序算法">排序算法</span></h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
-<p>##sort()用法 和 sorted()用法的不同</p>
-<ol>
-<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
-<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。Because sorted is a global function, it can take any iterable and return a sorted list from that</li>
-<li><h3><span id="python3-code">Python3 Code:</span></h3></li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(&#123;<span class="string">&#x27;one&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;two&#x27;</span>:<span class="number">2</span>,<span class="string">&#x27;three&#x27;</span>:<span class="number">3</span>,<span class="string">&#x27;four&#x27;</span>:<span class="number">4</span>,<span class="string">&#x27;five&#x27;</span>:<span class="number">5</span>&#125;)</span><br><span class="line">[<span class="string">&#x27;five&#x27;</span>, <span class="string">&#x27;four&#x27;</span>, <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;three&#x27;</span>, <span class="string">&#x27;two&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">&#x27;this is a string&#x27;</span>)</span><br><span class="line">[<span class="string">&#x27; &#x27;</span>, <span class="string">&#x27; &#x27;</span>, <span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;h&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;n&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;t&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a><a target="_blank" rel="noopener" href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3.md">贪心</a></h2><p>思路是：(1) 保证每次操作都是局部最优的，并且最后得到的结果是全局最优的 (2)贪心算法一般是先需要排序的。</p>
+<span id="more"></span>
+
+<p><strong>目录 (Table of Contents)</strong></p>
+<!-- toc -->
 
 
-<p>###大佬blog</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
-<li><a target="_blank" rel="noopener" href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
+<p>[TOC]</p>
+<p>##1. (LC455) 分发饼干 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/assign-cookies/">分发饼干</a></p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。</p>
+<p>对每个孩子 i，都有一个胃口值&nbsp;g[i]，这是能让孩子们满足胃口的饼干的最小尺寸；并且每块饼干 j，都有一个尺寸 s[j]&nbsp;。如果 s[j]&nbsp;&gt;= g[i]，我们可以将这个饼干 j 分配给孩子 i ，这个孩子会得到满足。你的目标是尽可能满足越多数量的孩子，并输出这个最大数值。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入: g = [1,2,3], s = [1,1]</span><br><span class="line">输出: 1</span><br><span class="line">解释: </span><br><span class="line">你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。</span><br><span class="line">虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。</span><br><span class="line">所以你应该输出1。</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>排序+贪心：我觉得这个也很好想，因为我们要求分配给最多的小孩的数量，肯定是可着吃的少的孩子先来。因为一个大胖子吃10斤的，可以给10个吃一斤的孩子啊。</li>
 </ol>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findContentChildren</span>(<span class="params">self, g: List[<span class="built_in">int</span>], s: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        g.sort()</span><br><span class="line">        s.sort()</span><br><span class="line">        n = <span class="built_in">len</span>(g) <span class="comment">#greed factor</span></span><br><span class="line">        m = <span class="built_in">len</span>(s) <span class="comment">#size</span></span><br><span class="line">        i = <span class="number">0</span> </span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> j&lt;m <span class="keyword">and</span> i&lt;n:</span><br><span class="line">            <span class="keyword">while</span> j &lt; m <span class="keyword">and</span> g[i]&gt;s[j]:</span><br><span class="line">                j+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> j &lt; m:</span><br><span class="line">                count+=<span class="number">1</span></span><br><span class="line">            j+=<span class="number">1</span></span><br><span class="line">            i+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br></pre></td></tr></tbody></table></figure>
+<p>####复杂度分析</p>
+<ul>
+<li>时间复杂度： $O( m log m + n logn)$ 其中m和n分别是数组g和s的长度。对两个数组排序的时间复杂度是 $O(mlogm+nlogn)$，遍历数组的时间复杂度是$O(m+n)$。</li>
+<li>空间复杂度：$O(log m + log n)$ 其中m和n分别是数组g和s的长度。主要是排序的额外空间开销。</li>
+</ul>
+<p>##2. (LC435) 无重叠区间 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-overlapping-intervals/">无重叠区间</a></p>
+<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个区间的集合，找到需要移除区间的最小数量，使剩余区间互不重叠。</p>
+<p>注意:</p>
+<p>可以认为区间的终点总是大于它的起点。<br>区间 [1,2] 和 [2,3] 的边界相互“接触”，但没有相互重叠</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [ [1,2], [2,3], [3,4], [1,3] ]</span><br><span class="line">输出: 1</span><br><span class="line">解释: 移除 [1,3] 后，剩下的区间没有重叠。</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>排序+贪心：这个题还是排序+贪心。为什么这么说呢，首先区间边界没有相互重叠，和第一题的分饼干相似。这种类型的题的思路是，每一步都选的很小心，生怕影响后面的人。</li>
+</ol>
+<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMinArrowShots</span>(<span class="params">self, points: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> points:<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        points = <span class="built_in">sorted</span>(points,key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br><span class="line">        print(points)</span><br><span class="line">        right = points[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">        result = <span class="number">1</span></span><br><span class="line">        n = <span class="built_in">len</span>(points)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="keyword">if</span> points[i][<span class="number">0</span>] &gt;right:</span><br><span class="line">                result+=<span class="number">1</span></span><br><span class="line">                right = points[i][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure>
+<p>####复杂度分析</p>
+<ul>
+<li>时间复杂度： $O(n logn)$ 其中n是数组的长度。 </li>
+<li>空间复杂度：$O(log n)$  </li>
+</ul>
+<p>##3. (LC406) 根据身高重建队列 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/">根据身高重建队列</a></p>
+<h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>假设有打乱顺序的一群人站成一个队列，数组 people 表示队列中一些人的属性（不一定按顺序）。每个 people[i] = [hi, ki] 表示第 i 个人的身高为 hi ，前面 正好 有 ki 个身高大于或等于 hi 的人。<br>请你重新构造并返回输入数组&nbsp;people 所表示的队列。返回的队列应该格式化为数组 queue ，其中 queue[j] = [hj, kj] 是队列中第 j 个人的属性（queue[0] 是排在队列前面的人）。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">输入：people = [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]</span><br><span class="line">输出：[[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]</span><br><span class="line">解释：</span><br><span class="line">编号为 0 的人身高为 5 ，没有身高更高或者相同的人排在他前面。</span><br><span class="line">编号为 1 的人身高为 7 ，没有身高更高或者相同的人排在他前面。</span><br><span class="line">编号为 2 的人身高为 5 ，有 2 个身高更高或者相同的人排在他前面，即编号为 0 和 1 的人。</span><br><span class="line">编号为 3 的人身高为 6 ，有 1 个身高更高或者相同的人排在他前面，即编号为 1 的人。</span><br><span class="line">编号为 4 的人身高为 4 ，有 4 个身高更高或者相同的人排在他前面，即编号为 0、1、2、3 的人。</span><br><span class="line">编号为 5 的人身高为 7 ，有 1 个身高更高或者相同的人排在他前面，即编号为 1 的人。</span><br><span class="line">因此 [[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]] 是重新构造后的队列。</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>排序+贪心： </li>
+</ol>
+<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reconstructQueue</span>(<span class="params">self, people: List[List[<span class="built_in">int</span>]]</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        </span><br><span class="line">        people = <span class="built_in">sorted</span>(people, key = <span class="keyword">lambda</span> x:(-x[<span class="number">0</span>],x[<span class="number">1</span>]))</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(people) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> people</span><br><span class="line">        </span><br><span class="line">        <span class="comment">## 对队列排序，先按h降序，再按k升序</span></span><br><span class="line">        people = <span class="built_in">sorted</span>(people, key = <span class="keyword">lambda</span> x: (-x[<span class="number">0</span>], x[<span class="number">1</span>]))</span><br><span class="line">        print(people)</span><br><span class="line">        new_people = [people[<span class="number">0</span>]]    <span class="comment"># 这个人是从前往后、从上往下看到的第一个人</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> people[<span class="number">1</span>:]:</span><br><span class="line">            new_people.insert(i[<span class="number">1</span>], i)</span><br><span class="line">        <span class="keyword">return</span> new_people</span><br></pre></td></tr></tbody></table></figure>
+<p>####复杂度分析</p>
+<ul>
+<li>时间复杂度： $O( )$   </li>
+<li>空间复杂度：$O( )$  </li>
+</ul>
 
     </div>
 
@@ -305,7 +340,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://watermelondrip.github.io/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="python 里 sort(),sorted() 的排序算法 -- Timsort简介">http://watermelondrip.github.io/2021/03/06/python里sort排序算法/</a>
+    <a href="http://watermelondrip.github.io/2021/03/08/%E8%B4%AA%E5%BF%83/" title="贪心">http://watermelondrip.github.io/2021/03/08/贪心/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -318,6 +353,7 @@
           <div class="post-tags">
               <a href="/tags/python/" rel="tag"># python</a>
               <a href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag"># 排序</a>
+              <a href="/tags/%E5%A0%86/" rel="tag"># 堆</a>
           </div>
 
         
@@ -326,13 +362,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/02/27/firstday/" rel="prev" title="第一天坚持坚持">
-      <i class="fa fa-chevron-left"></i> 第一天坚持坚持
+    <a href="/2021/03/07/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B231/" rel="prev" title="Leetcode竞赛(第231场周赛)">
+      <i class="fa fa-chevron-left"></i> Leetcode竞赛(第231场周赛)
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/03/06/dataStructure/" rel="next" title="数据结构的分析">
-      数据结构的分析 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -391,7 +424,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.0.1.</span> <span class="nav-text">Python3 Code:</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83"><span class="nav-number">1.</span> <span class="nav-text">贪心</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python3-Code"><span class="nav-number">1.3.</span> <span class="nav-text">Python3 Code:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-1"><span class="nav-number">1.4.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="nav-number">1.5.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python3-Code-1"><span class="nav-number">1.6.</span> <span class="nav-text">Python3 Code:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-2"><span class="nav-number">1.7.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-2"><span class="nav-number">1.8.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python3-Code-2"><span class="nav-number">1.9.</span> <span class="nav-text">Python3 Code:</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
