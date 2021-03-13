@@ -527,4 +527,80 @@
         <tag>堆</tag>
       </tags>
   </entry>
+  <entry>
+    <title>二分查找</title>
+    <url>/2021/03/13/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    <content><![CDATA[<h2 id="二分查找二分查找"><a href="#二分查找二分查找" class="headerlink" title="二分查找二分查找"></a>二分查找<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.md#leetcode-%E9%A2%98%E8%A7%A3---%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE">二分查找</a></h2><p>二分查找也称为折半查找，每次都能查找区间减半，这种折半特性的算法时间复杂度为O(logN)。</p>
+<span id="more"></span>
+
+<p>##1. (LC69) x 的平方根 <a href="https://leetcode-cn.com/problems/sqrtx/description/">x 的平方根</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>实现&nbsp;int sqrt(int x)&nbsp;函数。 计算并返回&nbsp;x&nbsp;的平方根，其中&nbsp;x 是非负整数。由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：4</span><br><span class="line">输出：2</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><ul>
+<li> 二分查找</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mySqrt</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = x</span><br><span class="line">        <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">            mid  = (l+r) &gt;&gt; <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> mid**<span class="number">2</span> &gt; x:</span><br><span class="line">                r = mid-<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> mid**<span class="number">2</span> &lt; x:</span><br><span class="line">                ans = mid</span><br><span class="line">                l = mid+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> mid</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+<p>##2. (LC69) 寻找比目标字母大的最小字母 <a href="https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target/description/">寻找比目标字母大的最小字母</a></p>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个排序后的字符列表 letters ，列表中只包含小写英文字母。另给出一个目标字母&nbsp;target，请你寻找在这一有序列表里比目标字母大的最小字母。在比较时，字母是依序循环出现的。<br>举个例子：<br>如果目标字母 target = ‘z’ 并且字符列表为&nbsp;letters = [‘a’, ‘b’]，则答案返回&nbsp;‘a’</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入:</span><br><span class="line">letters = ["c", "f", "j"]</span><br><span class="line">target = "a"</span><br><span class="line">输出: "c"</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="前置知识-1"><a href="#前置知识-1" class="headerlink" title="前置知识"></a>前置知识</h2><ul>
+<li> 二分查找</li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nextGreatestLetter</span>(<span class="params">self, letters: List[<span class="built_in">str</span>], target: <span class="built_in">str</span></span>) -&gt; str:</span></span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        num_letters =[]</span><br><span class="line">        <span class="keyword">for</span> ch <span class="keyword">in</span> letters:</span><br><span class="line">            num_letters.append(<span class="built_in">ord</span>(ch))</span><br><span class="line">        num_target = <span class="built_in">ord</span>(target)</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(num_letters)</span><br><span class="line">        <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">            mid = (r+l)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> mid &gt; num_target:</span><br><span class="line">                ans = mid</span><br><span class="line">                r = mid - <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> mid &lt; num_target:</span><br><span class="line">                l = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans = mid +<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> letters[ans]</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+<p>##3. (LC278) 第一个错误的版本 <a href="https://leetcode-cn.com/problems/first-bad-version/">第一个错误的版本</a></p>
+<h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><p>你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。</p>
+<p>假设你有 n 个版本 [1, 2, …, n]，你想找出导致之后所有版本出错的第一个错误的版本。</p>
+<p>你可以通过调用&nbsp;bool isBadVersion(version)&nbsp;接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">给定 n = 5，并且 version = 4 是第一个错误的版本。</span><br><span class="line"></span><br><span class="line">调用 isBadVersion(3) -&gt; false</span><br><span class="line">调用 isBadVersion(5)&nbsp;-&gt; true</span><br><span class="line">调用 isBadVersion(4)&nbsp;-&gt; true</span><br><span class="line"></span><br><span class="line">所以，4 是第一个错误的版本。</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="前置知识-2"><a href="#前置知识-2" class="headerlink" title="前置知识"></a>前置知识</h2><ul>
+<li> 二分查找</li>
+</ul>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># The isBadVersion API is already defined for you.</span></span><br><span class="line"><span class="comment"># @param version, an integer</span></span><br><span class="line"><span class="comment"># @return an integer</span></span><br><span class="line"><span class="comment"># def isBadVersion(version):</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">firstBadVersion</span>(<span class="params">self, n</span>):</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        l,r = <span class="number">1</span>,n</span><br><span class="line">        <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">            mid = (r+l)&gt;&gt;<span class="number">1</span> </span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> isBadVersion(mid):</span><br><span class="line">                l = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> l </span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
 </search>
