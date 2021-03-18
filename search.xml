@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>第一天坚持坚持</title>
+    <url>/2021/02/27/firstday/</url>
+    <content><![CDATA[<p>第一次记录一下</p>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构的分析</title>
     <url>/2021/03/06/dataStructure/</url>
     <content><![CDATA[<p>数据结构</p>
@@ -38,20 +50,8 @@
         <category>知识及记录</category>
       </categories>
       <tags>
+        <tag>学习笔记</tag>
         <tag>数据结构</tag>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一天坚持坚持</title>
-    <url>/2021/02/27/firstday/</url>
-    <content><![CDATA[<p>第一次记录一下</p>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -71,34 +71,6 @@
       </categories>
       <tags>
         <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
-    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
-<p>##sort()用法 和 sorted()用法的不同</p>
-<ol>
-<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
-<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。Because sorted is a global function, it can take any iterable and return a sorted list from that</li>
-<li><h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-
-<p>###大佬blog</p>
-<ol>
-<li><a href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
-<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
-<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -162,6 +134,152 @@
       <tags>
         <tag>python</tag>
         <tag>递归</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
+    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
+<p>##sort()用法 和 sorted()用法的不同</p>
+<ol>
+<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
+<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。Because sorted is a global function, it can take any iterable and return a sorted list from that</li>
+<li><h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+<p>###大佬blog</p>
+<ol>
+<li><a href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
+<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
+<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二分查找</title>
+    <url>/2021/03/18/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    <content><![CDATA[<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><hr>
+<p>二分查找也称为折半查找，每次都能查找区间减半，这种折半特性的算法时间复杂度为O(logN)。二分查找不要求序列有序。要求每一次二分后可以定位target在左侧还是右侧，只要能定位target在哪就可以。<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.md#leetcode-%E9%A2%98%E8%A7%A3---%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE">二分查找</a></p>
+<span id="more"></span>
+
+<h1 id="二分查找解题思路-and-解题思路（熟到默写）"><a href="#二分查找解题思路-and-解题思路（熟到默写）" class="headerlink" title="二分查找解题思路 and 解题思路（熟到默写）"></a>二分查找<a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/er-fen-cha-zhao-wei-shi-yao-zuo-you-bu-dui-cheng-z/">解题思路</a> and <a href="https://www.jianshu.com/p/88333f1f02a7">解题思路</a>（熟到默写）</h1><ul>
+<li>第一步：通过比较中值与右值来确定最小值的位置范围，进而确定边界收缩的方向。</li>
+<li>第二步：分析问题，首先是while循环里的细节问题。这里循环不变的是 <code>left&lt;right</code>, 并且要保证左闭右开区间里面始终套住最小值。中间值的计算是：<code>mid  = left + (right - left)/2</code>。 这是整数除法是向下取整的地板除，<code>mid</code>更靠近<code>left</code>，再结合<code>while</code>循环的条件<code>left&lt;right</code>，可以知道<code>left&lt;=mid</code> ,<code>  right&gt;mid</code>，即在<code>while </code>循环内，<code>mid</code>始终小于<code>right</code>。因此在<code>while</code>循环内，<code>nums[mid]</code>要么大于要么小于 <code>nums[right]</code>，不会等于。这样<code>else{right = mid;}</code>这句判断可以改为更精确的 <code>else if (nums[mid] &lt; nums[right]){right = mid;}</code></li>
+<li>第三步<code>while</code> 循环退出的条件。 如果输入数组只有一个数，左右边界位置重合，<code>left == right</code>，不会进去<code>while</code>循环，直接输出。如果输入数组只有一个数，左右边界位置重合，<code>left == right</code>，不会进入<code>while</code>循环，直接输出。如果输入数组多于一个数，循环到最后，会只剩两个数，<code>nums[left] == nums[mid]</code>，以及<code>nums[right]</code>，这里的位置<code>left == mid == right -1</code>。如果<code>nums[left] == nums[mid] &gt; nums[right]</code>，则左边大，右边小，需要执行<code>left = mid + 1</code>，使得<code>left == right</code>，左右边界位置重合，循环结束，<code>nums[left]</code>与<code>nums[right]</code>都保存了最小值。 如果<code>nums[left] == nums[mid] &lt; nums[right]</code>，则左边小，右边大，会执行<code>right = mid</code>，使得<code>left == right</code>， 左右边界位置重合，循环结束，<code>nums[left]</code>、<code>nums[right]</code>、<code>nums[mid]</code>都保存了最小值。</li>
+</ul>
+<hr>
+<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><hr>
+<h2 id="LC69-x-的平方根-x-的平方根"><a href="#LC69-x-的平方根-x-的平方根" class="headerlink" title="(LC69) x 的平方根 x 的平方根"></a>(LC69) x 的平方根 <a href="https://leetcode-cn.com/problems/sqrtx/description/">x 的平方根</a></h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>实现&nbsp;int sqrt(int x)&nbsp;函数。 计算并返回&nbsp;x&nbsp;的平方根，其中&nbsp;x 是非负整数。由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：4</span><br><span class="line">输出：2</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
+<li> 二分查找</li>
+</ul>
+<h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><ul>
+<li> 第一步：左闭右开：<code>left</code>有效，<code>right</code>无效。<code>left == mid == right -1</code></li>
+<li> 第二步： 使用<code>left&lt;right</code> 作为while循环条件<code>nums[left] == nums[right]</code></li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mySqrt</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment">#左闭右开</span></span><br><span class="line">        l,r = <span class="number">0</span>,x//<span class="number">2</span>+<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            mid  = (l+r+<span class="number">1</span>)&gt;&gt;<span class="number">1</span></span><br><span class="line">            print(mid)</span><br><span class="line">            <span class="keyword">if</span> mid**<span class="number">2</span> &gt; x:</span><br><span class="line">                r = mid-<span class="number">1</span> </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                l  = mid </span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+<h2 id="LC69-寻找比目标字母大的最小字母-寻找比目标字母大的最小字母"><a href="#LC69-寻找比目标字母大的最小字母-寻找比目标字母大的最小字母" class="headerlink" title="(LC69) 寻找比目标字母大的最小字母 寻找比目标字母大的最小字母"></a>(LC69) 寻找比目标字母大的最小字母 <a href="https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target/description/">寻找比目标字母大的最小字母</a></h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你一个排序后的字符列表 letters ，列表中只包含小写英文字母。另给出一个目标字母&nbsp;target，请你寻找在这一有序列表里比目标字母大的最小字母。在比较时，字母是依序循环出现的。<br>举个例子：<br>如果目标字母 target = ‘z’ 并且字符列表为&nbsp;letters = [‘a’, ‘b’]，则答案返回&nbsp;‘a’</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入:</span><br><span class="line">letters = ["c", "f", "j"]</span><br><span class="line">target = "a"</span><br><span class="line">输出: "c"</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="前置知识-1"><a href="#前置知识-1" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
+<li> 二分查找</li>
+</ul>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li> 第一步：左闭右开：<code>left</code>有效，<code>right</code>无效。<code>left == mid == right -1</code>，保证左闭右开区间里面始终套住最小值</li>
+<li> 第二步： 使用<code>left&lt;right</code> 作为while循环条件<code>nums[left] == nums[right]</code></li>
+<li>第三步： 这是循环前升序排列的， 左边比右边大，而且我们要找的是最小值，肯定是偏向左找。这个系统本身就是左右不对称的，本身就有方向性，即使做了旋转，这个不对称性还是存在的，算法的不对称来源于系统本身的不对称。</li>
+</ul>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nextGreatestLetter</span>(<span class="params">self, letters: List[<span class="built_in">str</span>], target: <span class="built_in">str</span></span>) -&gt; str:</span></span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        num_letters =[]</span><br><span class="line">        <span class="keyword">for</span> ch <span class="keyword">in</span> letters:</span><br><span class="line">            num_letters.append(<span class="built_in">ord</span>(ch))</span><br><span class="line">        num_target = <span class="built_in">ord</span>(target)</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(num_letters)</span><br><span class="line">        mid = (r+l)&gt;&gt;<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l &lt;  r:</span><br><span class="line">            mid = (r+l)&gt;&gt;<span class="number">1</span> </span><br><span class="line">            <span class="keyword">if</span> mid == <span class="built_in">len</span>(num_letters): <span class="keyword">return</span> letters[<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> num_letters[mid] &gt; num_target:</span><br><span class="line">                r = mid </span><br><span class="line">            <span class="keyword">elif</span> num_letters[mid] &lt;= num_target:</span><br><span class="line">                l = mid+<span class="number">1</span> </span><br><span class="line">        <span class="keyword">if</span> l == <span class="built_in">len</span>(num_letters): <span class="keyword">return</span> letters[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">return</span> letters[r]</span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+<h2 id="LC278-第一个错误的版本-第一个错误的版本"><a href="#LC278-第一个错误的版本-第一个错误的版本" class="headerlink" title="(LC278) 第一个错误的版本 第一个错误的版本"></a>(LC278) 第一个错误的版本 <a href="https://leetcode-cn.com/problems/first-bad-version/">第一个错误的版本</a></h2><h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h3><p>你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。</p>
+<p>假设你有 n 个版本 [1, 2, …, n]，你想找出导致之后所有版本出错的第一个错误的版本。</p>
+<p>你可以通过调用&nbsp;bool isBadVersion(version)&nbsp;接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">给定 n = 5，并且 version = 4 是第一个错误的版本。</span><br><span class="line"></span><br><span class="line">调用 isBadVersion(3) -&gt; false</span><br><span class="line">调用 isBadVersion(5)&nbsp;-&gt; true</span><br><span class="line">调用 isBadVersion(4)&nbsp;-&gt; true</span><br><span class="line"></span><br><span class="line">所以，4 是第一个错误的版本。</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="前置知识-2"><a href="#前置知识-2" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
+<li> 二分查找</li>
+</ul>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
+<li> 第一步：左闭右开：<code>left</code>有效，<code>right</code>无效。<code>left == mid == right -1</code>，保证左闭右开区间里面始终套住最小值</li>
+<li> 第二步： 使用<code>left&lt;right</code> 作为while循环条件<code>nums[left] == nums[right]</code> ，</li>
+<li>第三步： 如果isBadVersion(mid)返回false， 我们知道<code>mid</code>左侧的所有版本都是正确的版本。所以left = mid +1，下一次的搜索空间变为<code>[mid+1, right)</code>。如果isBadVersion(mid)返回true， 我们知道<code>mid</code>右侧的所有版本都不是第一个错误的版本。所以’right = mid+1’。，下一次的搜索空间变为<code>[left, mid+1)</code>。当某一次操作后，<code>left</code> 和 <code>right</code>的值相等，此时他们就表示了第一个错误版本的位置</li>
+</ul>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">  <span class="comment"># The isBadVersion API is already defined for you.</span></span><br><span class="line"><span class="comment"># @param version, an integer</span></span><br><span class="line"><span class="comment"># @return an integer</span></span><br><span class="line"><span class="comment"># def isBadVersion(version):</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">firstBadVersion</span>(<span class="params">self, n</span>):</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        l,r = <span class="number">1</span>, n</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:  <span class="comment">#左闭右开</span></span><br><span class="line">            mid = (r + l) &gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> isBadVersion(mid):</span><br><span class="line">                l = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r = mid</span><br><span class="line">        <span class="keyword">return</span> r</span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(logn)$。搜索空间每次减少一半，因此时间复杂度为$O(logn)$。</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+<h2 id="LC153-寻找旋转排序数组中的最小值-寻找旋转排序数组中的最小值"><a href="#LC153-寻找旋转排序数组中的最小值-寻找旋转排序数组中的最小值" class="headerlink" title="(LC153) 寻找旋转排序数组中的最小值 寻找旋转排序数组中的最小值"></a>(LC153) 寻找旋转排序数组中的最小值 <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/">寻找旋转排序数组中的最小值</a></h2><h3 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h3><p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。例如，数组 [0,1,2,4,5,6,7] 可能变为[4,5,6,7,0,1,2] 。<br>请找出其中最小的元素。 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [3,4,5,1,2]</span><br><span class="line">输出：1</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="前置知识-3"><a href="#前置知识-3" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
+<li> 二分查找</li>
+</ul>
+<h3 id="思想-1"><a href="#思想-1" class="headerlink" title="思想"></a>思想</h3><ul>
+<li> 第一步：左闭右开：<code>left</code>有效，<code>right</code>无效。<code>left == mid == right -1</code></li>
+<li> 第二步： 使用<code>left&lt;right</code> 作为while循环条件<code>nums[left] == nums[right]</code></li>
+</ul>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMin</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        l, r = <span class="number">0</span>, <span class="built_in">len</span>(nums)-<span class="number">1</span> <span class="comment">#左闭右开</span></span><br><span class="line">        <span class="keyword">while</span> l&lt;r:</span><br><span class="line">            <span class="comment">#偏向左找</span></span><br><span class="line">            mid = (r+l)&gt;&gt;<span class="number">1</span></span><br><span class="line">            print(mid,r,l)</span><br><span class="line">            <span class="keyword">if</span> nums[mid] &gt; nums[r]:</span><br><span class="line">                l = mid+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r = mid</span><br><span class="line">        <span class="keyword">return</span> nums[l]</span><br><span class="line">            </span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(log n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -305,96 +423,6 @@
       </tags>
   </entry>
   <entry>
-    <title>双指针（easy篇）</title>
-    <url>/2021/03/18/%E5%8F%8C%E6%8C%87%E9%92%88/</url>
-    <content><![CDATA[<h2 id="双指针-顺序"><a href="#双指针-顺序" class="headerlink" title="#双指针 (顺序)"></a>#双指针 (<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8F%8C%E6%8C%87%E9%92%88.md#1-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84-two-sum">顺序</a>)</h2><p>双指针用于遍历数组，两个指针指向不同的元素，从而共同的完成一个任务。<br>（1）共同完成一个和的target<br>（2）从后往前，从前往后，两边夹击，快慢指针</p>
-<p><strong>目录 (Table of Contents)</strong></p>
-<p>[TOCM]</p>
-<p>[TOC]</p>
-<p>##1. (LC167) 两数之和 II - 输入有序数组   <a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/">两数之和II</a></p>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个已按照 升序排列&nbsp; 的整数数组&nbsp;numbers ，请你从数组中找出两个数满足相加之和等于目标数&nbsp;target 。</p>
-<p>函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 1 开始计数 ，所以答案数组应当满足 1 &lt;= answer[0] &lt; answer[1] &lt;= numbers.length 。</p>
-<p>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。<br> 示例 1：</p>
-<p>输入：numbers = [2,7,11,15], target = 9<br>输出：[1,2]<br>解释：2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>双指针<br>如何想到双指针，我觉得首先是这个数组是有序的，然后就是由两个数构成，这就想到了双指针了</p>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span>(<span class="params">self, numbers: List[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; List[int]:</span></span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(numbers)-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left&lt; right:</span><br><span class="line">            total = numbers[left] + numbers[right]</span><br><span class="line">            <span class="keyword">if</span> total &gt; target:</span><br><span class="line">                right-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> total &lt; target:</span><br><span class="line">                left+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> [left+<span class="number">1</span>, right+<span class="number">1</span>]                </span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>时间复杂度：$O(n)$ 只是遍历了一次</li>
-<li>空间复杂度：$O(1)$ 只用了两个额外的变量（不考虑输出变量空间，只考虑额外的）</li>
-</ul>
-<p>##2. (LC633) 两数平方和   <a href="https://leetcode-cn.com/problems/sum-of-square-numbers/description/">两数平方和</a></p>
-<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。</p>
-<p>示例 1：</p>
-<p>输入：c = 5<br>输出：true<br>解释：1 * 1 + 2 * 2 = 5<br>范围：0 &lt;= c &lt;= 2^31 - 1</p>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>首先这个又是两个整数的，我们想如果出现两个整数共同来完成一件事，这两个整数在一个范围内，是不是都可以用双指针呢。<br>但是这里面有平方比较麻烦了，所以上面那个不是和吗，我想如果求出c的根号是不是在这附近的数就比较好找了</p>
-<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">judgeSquareSum</span>(<span class="params">self, c: <span class="built_in">int</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> c == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">sqr</span>(<span class="params">c</span>):</span></span><br><span class="line">            x0 = c/<span class="number">2</span></span><br><span class="line">            x1 = x0/<span class="number">2</span> + c/(x0*<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">while</span> <span class="built_in">abs</span>(x1-x0) &gt; <span class="number">1</span>:</span><br><span class="line">                x0 = x1</span><br><span class="line">                x1 = x0/<span class="number">2</span> + c/(x0*<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">return</span> x1</span><br><span class="line">        right,left = <span class="built_in">int</span>(sqr(c)),<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">            print(left**<span class="number">2</span> + right**<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">if</span> left**<span class="number">2</span> + right**<span class="number">2</span> &gt; c:</span><br><span class="line">                right-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> left**<span class="number">2</span> + right**<span class="number">2</span> &lt; c:</span><br><span class="line">                left+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span> </span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li><p>时间复杂度：$O(sqr(c)*n1)$ 只是遍历了一次 def sqrt(c)</p>
-</li>
-<li><p>空间复杂度：$O(1)$ 只用了两个额外的变量</p>
-<p>##3. (LC345) 反转字符串中的元音字母<a href="https://leetcode-cn.com/problems/reverse-vowels-of-a-string/" title="反转字符串中的元音字母">反转字符串中的元音字母</a>  </p>
-<h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>编写一个函数，以字符串作为输入，反转该字符串中的元音字母。<br>示例 1：<br>输入：”hello”<br>输出：”holle”</p>
-<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3></li>
-</ul>
-<ol>
-<li><p>首先使用双指针是因为，反转字符串中，是两个两个一对的换，通俗的意思是，如果是简单的反转字母是, ‘abc’ 反转之后变为 ‘cba’</p>
-</li>
-<li><p>有一个概念很重要，就是<a href="https://zhuanlan.zhihu.com/p/34395671" title="可变对象和不可变对象">可变对象和不可变对象</a><br> (1) 可变：list, dic, set （2）不可变：tuple, string, int, float, bool</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 可变对象</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">1</span>] = <span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>]</span><br><span class="line"><span class="comment"># 不可变对象</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b[<span class="number">1</span>] = <span class="number">4</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: <span class="string">'tuple'</span> <span class="built_in">object</span> does <span class="keyword">not</span> support item assignment</span><br></pre></td></tr></tbody></table></figure>
-<p>从上面的例子可以看出来，可变对象是可以直接被改变的，而不可变对象则不可以</p>
-<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseVowels</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; str:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">list</span>(s))&lt;=<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        front = <span class="number">0</span></span><br><span class="line">        end = <span class="built_in">len</span>(s)-<span class="number">1</span></span><br><span class="line">        vowels = {<span class="string">"a"</span>,<span class="string">"e"</span>,<span class="string">"i"</span>,<span class="string">"o"</span>,<span class="string">"u"</span>,<span class="string">"A"</span>,<span class="string">"E"</span>,<span class="string">"I"</span>,<span class="string">"O"</span>,<span class="string">"U"</span>} </span><br><span class="line">        s = <span class="built_in">list</span>(s)</span><br><span class="line">        <span class="keyword">while</span> front&lt; end:</span><br><span class="line">            <span class="keyword">if</span> s[front] <span class="keyword">in</span> vowels <span class="keyword">and</span> s[end] <span class="keyword">in</span> vowels:</span><br><span class="line">                s[front], s[end] = s[end] , s[front]</span><br><span class="line">                front+=<span class="number">1</span></span><br><span class="line">                end-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> s[end] <span class="keyword">not</span> <span class="keyword">in</span> vowels:</span><br><span class="line">                end-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> s[front] <span class="keyword">not</span> <span class="keyword">in</span> vowels:</span><br><span class="line">                front+=<span class="number">1</span>   </span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join(s)</span><br></pre></td></tr></tbody></table></figure></li>
-</ol>
-<ul>
-<li>时间复杂度：$ $</li>
-<li>空间复杂度：$ $  </li>
-</ul>
-<p>##4. (LC680)  验证回文字符串 Ⅱ <a href="https://leetcode-cn.com/problems/valid-palindrome-ii/" title="验证回文字符串 Ⅱ">验证回文字符串 Ⅱ</a></p>
-<h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>编写一个函数，以字符串作为输入，反转该字符串中的元音字母。<br>示例 1：<br>输入：”hello”<br>输出：”holle”</p>
-<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><ol>
-<li>Lambda 函数<br>lambda 函数是一个小型匿名函数。lambda 函数可以接受任意数量的参数，但只能有一个表达式。<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Function that returns square of any number</span></span><br><span class="line">&gt;&gt;&gt;sqr = <span class="keyword">lambda</span> x: x * x</span><br><span class="line">&gt;&gt;&gt;sqr(<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">100</span></span><br></pre></td></tr></tbody></table></figure></li>
-<li> 优美的一行代码<br><a href="https://zhuanlan.zhihu.com/p/345055254" title="25条很棒的Python一行代码，建议收藏！">25条很棒的Python一行代码，建议收藏！</a><h3 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">validPalindrome</span>(<span class="params">self, s</span>):</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        isPalindrome = <span class="keyword">lambda</span> s: s == s[::-<span class="number">1</span>]</span><br><span class="line">        strPart = <span class="keyword">lambda</span> s, x: s[:x] + s[x + <span class="number">1</span>:]</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(s) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left &lt; right:</span><br><span class="line">            <span class="keyword">if</span> s[left] != s[right]:</span><br><span class="line">                <span class="keyword">return</span> isPalindrome(strPart(s, left)) <span class="keyword">or</span> isPalindrome(strPart(s, right))</span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure></li>
-</ol>
-<ul>
-<li>时间复杂度：$ $</li>
-<li>空间复杂度：$ $  </li>
-</ul>
-<p>##5. (LC88)  合并两个有序数组合并两个有序数组  <a href="https://leetcode-cn.com/problems/merge-sorted-array/description/">合并两个有序数组</a></p>
-<h3 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h3><p>给你两个有序整数数组&nbsp;nums1 和 nums2，请你将 nums2 合并到&nbsp;nums1&nbsp;中，使 nums1 成为一个有序数组。</p>
-<p>初始化&nbsp;nums1 和 nums2 的元素数量分别为&nbsp;m 和 n 。你可以假设&nbsp;nums1 的空间大小等于&nbsp;m + n，这样它就有足够的空间保存来自 nums2 的元素。</p>
-<p>示例 1：</p>
-<p>输入：nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3<br>输出：[1,2,2,3,5,6]</p>
-<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p> 需要从尾开始遍历， 否则在num1上归并得到的值会覆盖还未进行归并比较的值</p>
-<h3 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">merge</span>(<span class="params">self, nums1, m, nums2, n</span>):</span></span><br><span class="line"></span><br><span class="line">       <span class="comment"># two get pointers for nums1 and nums2</span></span><br><span class="line">       p1 = m - <span class="number">1</span></span><br><span class="line">       p2 = n - <span class="number">1</span></span><br><span class="line">       <span class="comment"># set pointer for nums1</span></span><br><span class="line">       p = m + n - <span class="number">1</span></span><br><span class="line">       </span><br><span class="line">       <span class="comment"># while there are still elements to compare</span></span><br><span class="line">       <span class="keyword">while</span> p1 &gt;= <span class="number">0</span> <span class="keyword">and</span> p2 &gt;= <span class="number">0</span>:</span><br><span class="line">           <span class="keyword">if</span> nums1[p1] &lt; nums2[p2]:</span><br><span class="line">               nums1[p] = nums2[p2]</span><br><span class="line">               p2 -= <span class="number">1</span></span><br><span class="line">           <span class="keyword">else</span>:</span><br><span class="line">               nums1[p] =  nums1[p1]</span><br><span class="line">               p1 -= <span class="number">1</span></span><br><span class="line">           p -= <span class="number">1</span></span><br><span class="line">       </span><br><span class="line">       <span class="comment"># add missing elements from nums2</span></span><br><span class="line">       nums1[:p2 + <span class="number">1</span>] = nums2[:p2 + <span class="number">1</span>]</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li><p>时间复杂度：$O(n+m) $</p>
-</li>
-<li><p>空间复杂度：$O(1) $没有额外的变量产生  </p>
-<p>##6. (LC141)   环形链表 环形链表  <a href="https://leetcode-cn.com/problems/linked-list-cycle/description/">环形链表</a></p>
-<h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><p>给定一个链表，判断链表中是否有环。</p>
-</li>
-</ul>
-<p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。</p>
-<p>如果链表中存在环，则返回 true 。 否则，返回 false 。</p>
-<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>(1) 从力扣官网上看到的<a href="https://leetcode-cn.com/problems/linked-list-cycle/solution/huan-xing-lian-biao-by-leetcode-solution/">龟兔赛跑算法</a></p>
-<p>假想「乌龟」和「兔子」在链表上移动，「兔子」跑得快，「乌龟」跑得慢。当「乌龟」和「兔子」从链表上的同一个节点开始移动时，如果该链表中没有环，那么「兔子」将一直处于「乌龟」的前方；如果该链表中有环，那么「兔子」会先于「乌龟」进入环，并且一直在环内移动。等到「乌龟」进入环时，由于「兔子」的速度快，它一定会在某个时刻与乌龟相遇，即套了「乌龟」若干圈。</p>
-<p>我们可以根据上述思路来解决本题。具体地，我们定义两个指针，一快一满。慢指针每次只移动一步，而快指针每次移动两步。初始时，慢指针在位置 head，而快指针在位置 head.next。这样一来，如果在移动的过程中，快指针反过来追上慢指针，就说明该链表为环形链表。否则快指针将到达链表尾部，该链表不为环形链表。</p>
-<ul>
-<li><p>细节： 为什么我们要规定初始时慢指针在位置 head，快指针在位置 head.next，而不是两个指针都在位置 head（即与「乌龟」和「兔子」中的叙述相同）？</p>
-<ul>
-<li>观察下面的代码，我们使用的是 while 循环，循环条件先于循环体。由于循环条件一定是判断快慢指针是否重合，如果我们将两个指针初始都置于 head，那么 while 循环就不会执行。因此，我们可以假想一个在 head 之前的虚拟节点，慢指针从虚拟节点移动一步到达 head，快指针从虚拟节点移动两步到达 head.next，这样我们就可以使用 while 循环了。当然，我们也可以使用 do-while 循环。此时，我们就可以把快慢指针的初始值都置为 head。</li>
-</ul>
-<h3 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasCycle</span>(<span class="params">self, head: ListNode</span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.<span class="built_in">next</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        fast = head.<span class="built_in">next</span></span><br><span class="line">        slow = head</span><br><span class="line">        <span class="keyword">while</span> slow != fast:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> fast <span class="keyword">or</span> <span class="keyword">not</span> fast.<span class="built_in">next</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            slow = slow.<span class="built_in">next</span></span><br><span class="line">            fast = fast.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<p>##7. (LC141)  通过删除字母匹配到字典里最长单词  <a href="https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/">通过删除字母匹配到字典里最长单词</a></p>
-<h3 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h3><p>给定一个字符串和一个字符串字典，找到字典里面最长的字符串，该字符串可以通过删除给定字符串的某些字符来得到。如果答案不止一个，返回长度最长且字典顺序最小的字符串。如果答案不存在，则返回空字符串。</p>
-<p>示例 1:</p>
-</li>
-</ul>
-<p>输入:<br>s = “abpcplea”, d = [“ale”,”apple”,”monkey”,”plea”]<br>输出:<br>“apple”</p>
-<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>(1)  首先是字符串字典顺序是啥意? 只听说过数的运算，字符串怎么进行运算呢？字符串运算是灵活，又有点复杂的。<a href="https://zhuanlan.zhihu.com/p/91137723">python字符串数据类型</a>。其中我们讲一下字符串的关系运算，采用 ‘&lt;’, ‘&lt;=’, ‘&gt;’, ‘&gt;=’, ‘==’, ‘!=’ 关系运算符对两个字符串进行比较，其实是依次对两个字符串同位置上字符的ADCII 码进行比较。需要注意的是如果如果第一个字符能比较出大小来，不会往后比较，第一个字符相同的话，才往后进行比较<br>(2)  这个题进行双指针也是挺明显的，首先是两个字符串进行遍历的比较。第二是前面也有提到的是，字符串是可变的，所以可以进行比较的。</p>
-<h3 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findLongestWord</span>(<span class="params">self, s: <span class="built_in">str</span>, dictionary: List[<span class="built_in">str</span>]</span>) -&gt; str:</span></span><br><span class="line">        len_ans = <span class="number">0</span></span><br><span class="line">        ans = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> dst <span class="keyword">in</span> dictionary:</span><br><span class="line">            i = <span class="number">0</span> </span><br><span class="line">            j = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(s) <span class="keyword">and</span> j &lt; <span class="built_in">len</span>(dst):<span class="comment"># 先判断是不是符合条件的字符串</span></span><br><span class="line">                <span class="keyword">if</span> s[i] == dst[j]:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">                    j+=<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> j == <span class="built_in">len</span>(dst): <span class="comment">#判断是不是字典序最小的</span></span><br><span class="line">                <span class="keyword">if</span> j &gt; len_ans:</span><br><span class="line">                    len_ans,ans = <span class="built_in">len</span>(dst), dst</span><br><span class="line">                <span class="keyword">elif</span> j == len_ans <span class="keyword">and</span> dst &lt; ans:</span><br><span class="line">                    len_ans,ans = <span class="built_in">len</span>(dst), dst</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>声学信号处理系列（一）--声学信号处理基础知识</title>
     <url>/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="声学信号处理系列（一）–声学信号处理基础知识"><a href="#声学信号处理系列（一）–声学信号处理基础知识" class="headerlink" title="声学信号处理系列（一）–声学信号处理基础知识"></a>声学信号处理系列（一）–声学信号处理基础知识</h1><p><em>by max</em></p>
@@ -521,6 +549,96 @@
 ]]></content>
   </entry>
   <entry>
+    <title>双指针（easy篇）</title>
+    <url>/2021/03/18/%E5%8F%8C%E6%8C%87%E9%92%88/</url>
+    <content><![CDATA[<h2 id="双指针-顺序"><a href="#双指针-顺序" class="headerlink" title="#双指针 (顺序)"></a>#双指针 (<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8F%8C%E6%8C%87%E9%92%88.md#1-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84-two-sum">顺序</a>)</h2><p>双指针用于遍历数组，两个指针指向不同的元素，从而共同的完成一个任务。<br>（1）共同完成一个和的target<br>（2）从后往前，从前往后，两边夹击，快慢指针</p>
+<p><strong>目录 (Table of Contents)</strong></p>
+<p>[TOCM]</p>
+<p>[TOC]</p>
+<p>##1. (LC167) 两数之和 II - 输入有序数组   <a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/">两数之和II</a></p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个已按照 升序排列&nbsp; 的整数数组&nbsp;numbers ，请你从数组中找出两个数满足相加之和等于目标数&nbsp;target 。</p>
+<p>函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 1 开始计数 ，所以答案数组应当满足 1 &lt;= answer[0] &lt; answer[1] &lt;= numbers.length 。</p>
+<p>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。<br> 示例 1：</p>
+<p>输入：numbers = [2,7,11,15], target = 9<br>输出：[1,2]<br>解释：2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>双指针<br>如何想到双指针，我觉得首先是这个数组是有序的，然后就是由两个数构成，这就想到了双指针了</p>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span>(<span class="params">self, numbers: List[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; List[int]:</span></span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(numbers)-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left&lt; right:</span><br><span class="line">            total = numbers[left] + numbers[right]</span><br><span class="line">            <span class="keyword">if</span> total &gt; target:</span><br><span class="line">                right-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> total &lt; target:</span><br><span class="line">                left+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> [left+<span class="number">1</span>, right+<span class="number">1</span>]                </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>时间复杂度：$O(n)$ 只是遍历了一次</li>
+<li>空间复杂度：$O(1)$ 只用了两个额外的变量（不考虑输出变量空间，只考虑额外的）</li>
+</ul>
+<p>##2. (LC633) 两数平方和   <a href="https://leetcode-cn.com/problems/sum-of-square-numbers/description/">两数平方和</a></p>
+<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。</p>
+<p>示例 1：</p>
+<p>输入：c = 5<br>输出：true<br>解释：1 * 1 + 2 * 2 = 5<br>范围：0 &lt;= c &lt;= 2^31 - 1</p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>首先这个又是两个整数的，我们想如果出现两个整数共同来完成一件事，这两个整数在一个范围内，是不是都可以用双指针呢。<br>但是这里面有平方比较麻烦了，所以上面那个不是和吗，我想如果求出c的根号是不是在这附近的数就比较好找了</p>
+<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">judgeSquareSum</span>(<span class="params">self, c: <span class="built_in">int</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> c == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">sqr</span>(<span class="params">c</span>):</span></span><br><span class="line">            x0 = c/<span class="number">2</span></span><br><span class="line">            x1 = x0/<span class="number">2</span> + c/(x0*<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">while</span> <span class="built_in">abs</span>(x1-x0) &gt; <span class="number">1</span>:</span><br><span class="line">                x0 = x1</span><br><span class="line">                x1 = x0/<span class="number">2</span> + c/(x0*<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">return</span> x1</span><br><span class="line">        right,left = <span class="built_in">int</span>(sqr(c)),<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">            print(left**<span class="number">2</span> + right**<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">if</span> left**<span class="number">2</span> + right**<span class="number">2</span> &gt; c:</span><br><span class="line">                right-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> left**<span class="number">2</span> + right**<span class="number">2</span> &lt; c:</span><br><span class="line">                left+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>时间复杂度：$O(sqr(c)*n1)$ 只是遍历了一次 def sqrt(c)</p>
+</li>
+<li><p>空间复杂度：$O(1)$ 只用了两个额外的变量</p>
+<p>##3. (LC345) 反转字符串中的元音字母<a href="https://leetcode-cn.com/problems/reverse-vowels-of-a-string/" title="反转字符串中的元音字母">反转字符串中的元音字母</a>  </p>
+<h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>编写一个函数，以字符串作为输入，反转该字符串中的元音字母。<br>示例 1：<br>输入：”hello”<br>输出：”holle”</p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3></li>
+</ul>
+<ol>
+<li><p>首先使用双指针是因为，反转字符串中，是两个两个一对的换，通俗的意思是，如果是简单的反转字母是, ‘abc’ 反转之后变为 ‘cba’</p>
+</li>
+<li><p>有一个概念很重要，就是<a href="https://zhuanlan.zhihu.com/p/34395671" title="可变对象和不可变对象">可变对象和不可变对象</a><br> (1) 可变：list, dic, set （2）不可变：tuple, string, int, float, bool</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 可变对象</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">1</span>] = <span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>]</span><br><span class="line"><span class="comment"># 不可变对象</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b[<span class="number">1</span>] = <span class="number">4</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: <span class="string">'tuple'</span> <span class="built_in">object</span> does <span class="keyword">not</span> support item assignment</span><br></pre></td></tr></tbody></table></figure>
+<p>从上面的例子可以看出来，可变对象是可以直接被改变的，而不可变对象则不可以</p>
+<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseVowels</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; str:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">list</span>(s))&lt;=<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        front = <span class="number">0</span></span><br><span class="line">        end = <span class="built_in">len</span>(s)-<span class="number">1</span></span><br><span class="line">        vowels = {<span class="string">"a"</span>,<span class="string">"e"</span>,<span class="string">"i"</span>,<span class="string">"o"</span>,<span class="string">"u"</span>,<span class="string">"A"</span>,<span class="string">"E"</span>,<span class="string">"I"</span>,<span class="string">"O"</span>,<span class="string">"U"</span>} </span><br><span class="line">        s = <span class="built_in">list</span>(s)</span><br><span class="line">        <span class="keyword">while</span> front&lt; end:</span><br><span class="line">            <span class="keyword">if</span> s[front] <span class="keyword">in</span> vowels <span class="keyword">and</span> s[end] <span class="keyword">in</span> vowels:</span><br><span class="line">                s[front], s[end] = s[end] , s[front]</span><br><span class="line">                front+=<span class="number">1</span></span><br><span class="line">                end-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> s[end] <span class="keyword">not</span> <span class="keyword">in</span> vowels:</span><br><span class="line">                end-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> s[front] <span class="keyword">not</span> <span class="keyword">in</span> vowels:</span><br><span class="line">                front+=<span class="number">1</span>   </span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join(s)</span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+<ul>
+<li>时间复杂度：$ $</li>
+<li>空间复杂度：$ $  </li>
+</ul>
+<p>##4. (LC680)  验证回文字符串 Ⅱ <a href="https://leetcode-cn.com/problems/valid-palindrome-ii/" title="验证回文字符串 Ⅱ">验证回文字符串 Ⅱ</a></p>
+<h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>编写一个函数，以字符串作为输入，反转该字符串中的元音字母。<br>示例 1：<br>输入：”hello”<br>输出：”holle”</p>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>Lambda 函数<br>lambda 函数是一个小型匿名函数。lambda 函数可以接受任意数量的参数，但只能有一个表达式。<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Function that returns square of any number</span></span><br><span class="line">&gt;&gt;&gt;sqr = <span class="keyword">lambda</span> x: x * x</span><br><span class="line">&gt;&gt;&gt;sqr(<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">100</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li> 优美的一行代码<br><a href="https://zhuanlan.zhihu.com/p/345055254" title="25条很棒的Python一行代码，建议收藏！">25条很棒的Python一行代码，建议收藏！</a><h3 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">validPalindrome</span>(<span class="params">self, s</span>):</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        isPalindrome = <span class="keyword">lambda</span> s: s == s[::-<span class="number">1</span>]</span><br><span class="line">        strPart = <span class="keyword">lambda</span> s, x: s[:x] + s[x + <span class="number">1</span>:]</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(s) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left &lt; right:</span><br><span class="line">            <span class="keyword">if</span> s[left] != s[right]:</span><br><span class="line">                <span class="keyword">return</span> isPalindrome(strPart(s, left)) <span class="keyword">or</span> isPalindrome(strPart(s, right))</span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+<ul>
+<li>时间复杂度：$ $</li>
+<li>空间复杂度：$ $  </li>
+</ul>
+<p>##5. (LC88)  合并两个有序数组合并两个有序数组  <a href="https://leetcode-cn.com/problems/merge-sorted-array/description/">合并两个有序数组</a></p>
+<h3 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h3><p>给你两个有序整数数组&nbsp;nums1 和 nums2，请你将 nums2 合并到&nbsp;nums1&nbsp;中，使 nums1 成为一个有序数组。</p>
+<p>初始化&nbsp;nums1 和 nums2 的元素数量分别为&nbsp;m 和 n 。你可以假设&nbsp;nums1 的空间大小等于&nbsp;m + n，这样它就有足够的空间保存来自 nums2 的元素。</p>
+<p>示例 1：</p>
+<p>输入：nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3<br>输出：[1,2,2,3,5,6]</p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p> 需要从尾开始遍历， 否则在num1上归并得到的值会覆盖还未进行归并比较的值</p>
+<h3 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">merge</span>(<span class="params">self, nums1, m, nums2, n</span>):</span></span><br><span class="line"></span><br><span class="line">       <span class="comment"># two get pointers for nums1 and nums2</span></span><br><span class="line">       p1 = m - <span class="number">1</span></span><br><span class="line">       p2 = n - <span class="number">1</span></span><br><span class="line">       <span class="comment"># set pointer for nums1</span></span><br><span class="line">       p = m + n - <span class="number">1</span></span><br><span class="line">       </span><br><span class="line">       <span class="comment"># while there are still elements to compare</span></span><br><span class="line">       <span class="keyword">while</span> p1 &gt;= <span class="number">0</span> <span class="keyword">and</span> p2 &gt;= <span class="number">0</span>:</span><br><span class="line">           <span class="keyword">if</span> nums1[p1] &lt; nums2[p2]:</span><br><span class="line">               nums1[p] = nums2[p2]</span><br><span class="line">               p2 -= <span class="number">1</span></span><br><span class="line">           <span class="keyword">else</span>:</span><br><span class="line">               nums1[p] =  nums1[p1]</span><br><span class="line">               p1 -= <span class="number">1</span></span><br><span class="line">           p -= <span class="number">1</span></span><br><span class="line">       </span><br><span class="line">       <span class="comment"># add missing elements from nums2</span></span><br><span class="line">       nums1[:p2 + <span class="number">1</span>] = nums2[:p2 + <span class="number">1</span>]</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>时间复杂度：$O(n+m) $</p>
+</li>
+<li><p>空间复杂度：$O(1) $没有额外的变量产生  </p>
+<p>##6. (LC141)   环形链表 环形链表  <a href="https://leetcode-cn.com/problems/linked-list-cycle/description/">环形链表</a></p>
+<h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><p>给定一个链表，判断链表中是否有环。</p>
+</li>
+</ul>
+<p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。</p>
+<p>如果链表中存在环，则返回 true 。 否则，返回 false 。</p>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>(1) 从力扣官网上看到的<a href="https://leetcode-cn.com/problems/linked-list-cycle/solution/huan-xing-lian-biao-by-leetcode-solution/">龟兔赛跑算法</a></p>
+<p>假想「乌龟」和「兔子」在链表上移动，「兔子」跑得快，「乌龟」跑得慢。当「乌龟」和「兔子」从链表上的同一个节点开始移动时，如果该链表中没有环，那么「兔子」将一直处于「乌龟」的前方；如果该链表中有环，那么「兔子」会先于「乌龟」进入环，并且一直在环内移动。等到「乌龟」进入环时，由于「兔子」的速度快，它一定会在某个时刻与乌龟相遇，即套了「乌龟」若干圈。</p>
+<p>我们可以根据上述思路来解决本题。具体地，我们定义两个指针，一快一满。慢指针每次只移动一步，而快指针每次移动两步。初始时，慢指针在位置 head，而快指针在位置 head.next。这样一来，如果在移动的过程中，快指针反过来追上慢指针，就说明该链表为环形链表。否则快指针将到达链表尾部，该链表不为环形链表。</p>
+<ul>
+<li><p>细节： 为什么我们要规定初始时慢指针在位置 head，快指针在位置 head.next，而不是两个指针都在位置 head（即与「乌龟」和「兔子」中的叙述相同）？</p>
+<ul>
+<li>观察下面的代码，我们使用的是 while 循环，循环条件先于循环体。由于循环条件一定是判断快慢指针是否重合，如果我们将两个指针初始都置于 head，那么 while 循环就不会执行。因此，我们可以假想一个在 head 之前的虚拟节点，慢指针从虚拟节点移动一步到达 head，快指针从虚拟节点移动两步到达 head.next，这样我们就可以使用 while 循环了。当然，我们也可以使用 do-while 循环。此时，我们就可以把快慢指针的初始值都置为 head。</li>
+</ul>
+<h3 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasCycle</span>(<span class="params">self, head: ListNode</span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.<span class="built_in">next</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        fast = head.<span class="built_in">next</span></span><br><span class="line">        slow = head</span><br><span class="line">        <span class="keyword">while</span> slow != fast:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> fast <span class="keyword">or</span> <span class="keyword">not</span> fast.<span class="built_in">next</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            slow = slow.<span class="built_in">next</span></span><br><span class="line">            fast = fast.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p>##7. (LC141)  通过删除字母匹配到字典里最长单词  <a href="https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/">通过删除字母匹配到字典里最长单词</a></p>
+<h3 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h3><p>给定一个字符串和一个字符串字典，找到字典里面最长的字符串，该字符串可以通过删除给定字符串的某些字符来得到。如果答案不止一个，返回长度最长且字典顺序最小的字符串。如果答案不存在，则返回空字符串。</p>
+<p>示例 1:</p>
+</li>
+</ul>
+<p>输入:<br>s = “abpcplea”, d = [“ale”,”apple”,”monkey”,”plea”]<br>输出:<br>“apple”</p>
+<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>(1)  首先是字符串字典顺序是啥意? 只听说过数的运算，字符串怎么进行运算呢？字符串运算是灵活，又有点复杂的。<a href="https://zhuanlan.zhihu.com/p/91137723">python字符串数据类型</a>。其中我们讲一下字符串的关系运算，采用 ‘&lt;’, ‘&lt;=’, ‘&gt;’, ‘&gt;=’, ‘==’, ‘!=’ 关系运算符对两个字符串进行比较，其实是依次对两个字符串同位置上字符的ADCII 码进行比较。需要注意的是如果如果第一个字符能比较出大小来，不会往后比较，第一个字符相同的话，才往后进行比较<br>(2)  这个题进行双指针也是挺明显的，首先是两个字符串进行遍历的比较。第二是前面也有提到的是，字符串是可变的，所以可以进行比较的。</p>
+<h3 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findLongestWord</span>(<span class="params">self, s: <span class="built_in">str</span>, dictionary: List[<span class="built_in">str</span>]</span>) -&gt; str:</span></span><br><span class="line">        len_ans = <span class="number">0</span></span><br><span class="line">        ans = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> dst <span class="keyword">in</span> dictionary:</span><br><span class="line">            i = <span class="number">0</span> </span><br><span class="line">            j = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(s) <span class="keyword">and</span> j &lt; <span class="built_in">len</span>(dst):<span class="comment"># 先判断是不是符合条件的字符串</span></span><br><span class="line">                <span class="keyword">if</span> s[i] == dst[j]:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">                    j+=<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> j == <span class="built_in">len</span>(dst): <span class="comment">#判断是不是字典序最小的</span></span><br><span class="line">                <span class="keyword">if</span> j &gt; len_ans:</span><br><span class="line">                    len_ans,ans = <span class="built_in">len</span>(dst), dst</span><br><span class="line">                <span class="keyword">elif</span> j == len_ans <span class="keyword">and</span> dst &lt; ans:</span><br><span class="line">                    len_ans,ans = <span class="built_in">len</span>(dst), dst</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>搜索</title>
     <url>/2021/03/18/%E6%90%9C%E7%B4%A2/</url>
     <content><![CDATA[<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%90%9C%E7%B4%A2.md">搜索</a></h2><p>深度优先搜索和广度优先搜索广泛应用于树和图中。 （1） BFS (2) DFS (3) Backtracking</p>
@@ -544,6 +662,27 @@
 <h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
 <p>####复杂度分析  </p>
 <h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2>]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>经典到默写的</title>
+    <url>/2021/03/18/%E7%86%9F%E5%88%B0%E9%BB%98%E5%86%99/</url>
+    <content><![CDATA[<p>默写吧</p>
+<span id="more"></span>
+
+
+<h2 id="1-基于分治的快速排序"><a href="#1-基于分治的快速排序" class="headerlink" title="1. 基于分治的快速排序"></a>1. 基于分治的快速排序</h2><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ul>
+<li>每次取list 的第一个元素，把剩下的元素与第一个元素比较，此时生成两个list,less中存放的就是余下的所有比第一个元素小的list, greater 中存放的是余下的所有比第一个元素大的list。然后循环递归，当基线条件只有一个元素或0个元素时停止，并返回结果。</li>
+</ul>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python:"></a>Python:</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">def quick_sort(arr):</span><br><span class="line">	if len(arr)&lt;2:</span><br><span class="line">		return arr</span><br><span class="line">	else:</span><br><span class="line">		pivot = arr[0]</span><br><span class="line">		less = [i for i in arr[1:] if i&lt;=pivot]  </span><br><span class="line">		greater = [i for i in arr[1:] if i&gt;pivot]</span><br><span class="line">		return quick_sort(less) + pivot + quick_sort(greater)</span><br><span class="line">if __name__ == "__main__":</span><br><span class="line"> </span><br><span class="line">    arr = [5,7,9,3,6,1,4,2]</span><br><span class="line">	print(quick_sort(arr))</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTQ2OTAxNS8yMDE5MDMvMTQ2OTAxNS0yMDE5MDMyNjE4MTQ1MzY3My0xODk3MDkyNTUwLnBuZw?x-oss-process=image/format,png"></p>
+]]></content>
       <categories>
         <category>力扣</category>
       </categories>
@@ -796,144 +935,5 @@
 <li>空间复杂度：$O(1)$  </li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>经典到默写的</title>
-    <url>/2021/03/18/%E7%86%9F%E5%88%B0%E9%BB%98%E5%86%99/</url>
-    <content><![CDATA[<p>默写吧</p>
-<span id="more"></span>
-
-
-<h2 id="1-基于分治的快速排序"><a href="#1-基于分治的快速排序" class="headerlink" title="1. 基于分治的快速排序"></a>1. 基于分治的快速排序</h2><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ul>
-<li>每次取list 的第一个元素，把剩下的元素与第一个元素比较，此时生成两个list,less中存放的就是余下的所有比第一个元素小的list, greater 中存放的是余下的所有比第一个元素大的list。然后循环递归，当基线条件只有一个元素或0个元素时停止，并返回结果。</li>
-</ul>
-<h3 id="Python"><a href="#Python" class="headerlink" title="Python:"></a>Python:</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">def quick_sort(arr):</span><br><span class="line">	if len(arr)&lt;2:</span><br><span class="line">		return arr</span><br><span class="line">	else:</span><br><span class="line">		pivot = arr[0]</span><br><span class="line">		less = [i for i in arr[1:] if i&lt;=pivot]  </span><br><span class="line">		greater = [i for i in arr[1:] if i&gt;pivot]</span><br><span class="line">		return quick_sort(less) + pivot + quick_sort(greater)</span><br><span class="line">if __name__ == "__main__":</span><br><span class="line"> </span><br><span class="line">    arr = [5,7,9,3,6,1,4,2]</span><br><span class="line">	print(quick_sort(arr))</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTQ2OTAxNS8yMDE5MDMvMTQ2OTAxNS0yMDE5MDMyNjE4MTQ1MzY3My0xODk3MDkyNTUwLnBuZw?x-oss-process=image/format,png"></p>
-]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二分查找</title>
-    <url>/2021/03/18/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
-    <content><![CDATA[<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><hr>
-<p>二分查找也称为折半查找，每次都能查找区间减半，这种折半特性的算法时间复杂度为O(logN)。二分查找不要求序列有序。要求每一次二分后可以定位target在左侧还是右侧，只要能定位target在哪就可以。<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.md#leetcode-%E9%A2%98%E8%A7%A3---%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE">二分查找</a></p>
-<span id="more"></span>
-
-<h1 id="二分查找解题思路-and-解题思路（熟到默写）"><a href="#二分查找解题思路-and-解题思路（熟到默写）" class="headerlink" title="二分查找解题思路 and 解题思路（熟到默写）"></a>二分查找<a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/er-fen-cha-zhao-wei-shi-yao-zuo-you-bu-dui-cheng-z/">解题思路</a> and <a href="https://www.jianshu.com/p/88333f1f02a7">解题思路</a>（熟到默写）</h1><ul>
-<li>第一步：通过比较中值与右值来确定最小值的位置范围，进而确定边界收缩的方向。</li>
-<li>第二步：分析问题，首先是while循环里的细节问题。这里循环不变的是 <code>left&lt;right</code>, 并且要保证左闭右开区间里面始终套住最小值。中间值的计算是：<code>mid  = left + (right - left)/2</code>。 这是整数除法是向下取整的地板除，<code>mid</code>更靠近<code>left</code>，再结合<code>while</code>循环的条件<code>left&lt;right</code>，可以知道<code>left&lt;=mid</code> ,<code>  right&gt;mid</code>，即在<code>while </code>循环内，<code>mid</code>始终小于<code>right</code>。因此在<code>while</code>循环内，<code>nums[mid]</code>要么大于要么小于 <code>nums[right]</code>，不会等于。这样<code>else{right = mid;}</code>这句判断可以改为更精确的 <code>else if (nums[mid] &lt; nums[right]){right = mid;}</code></li>
-<li>第三步<code>while</code> 循环退出的条件。 如果输入数组只有一个数，左右边界位置重合，<code>left == right</code>，不会进去<code>while</code>循环，直接输出。如果输入数组只有一个数，左右边界位置重合，<code>left == right</code>，不会进入<code>while</code>循环，直接输出。如果输入数组多于一个数，循环到最后，会只剩两个数，<code>nums[left] == nums[mid]</code>，以及<code>nums[right]</code>，这里的位置<code>left == mid == right -1</code>。如果<code>nums[left] == nums[mid] &gt; nums[right]</code>，则左边大，右边小，需要执行<code>left = mid + 1</code>，使得<code>left == right</code>，左右边界位置重合，循环结束，<code>nums[left]</code>与<code>nums[right]</code>都保存了最小值。 如果<code>nums[left] == nums[mid] &lt; nums[right]</code>，则左边小，右边大，会执行<code>right = mid</code>，使得<code>left == right</code>， 左右边界位置重合，循环结束，<code>nums[left]</code>、<code>nums[right]</code>、<code>nums[mid]</code>都保存了最小值。</li>
-</ul>
-<hr>
-<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><hr>
-<h2 id="LC69-x-的平方根-x-的平方根"><a href="#LC69-x-的平方根-x-的平方根" class="headerlink" title="(LC69) x 的平方根 x 的平方根"></a>(LC69) x 的平方根 <a href="https://leetcode-cn.com/problems/sqrtx/description/">x 的平方根</a></h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>实现&nbsp;int sqrt(int x)&nbsp;函数。 计算并返回&nbsp;x&nbsp;的平方根，其中&nbsp;x 是非负整数。由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：4</span><br><span class="line">输出：2</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
-<li> 二分查找</li>
-</ul>
-<h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><ul>
-<li> 第一步：左闭右开：<code>left</code>有效，<code>right</code>无效。<code>left == mid == right -1</code></li>
-<li> 第二步： 使用<code>left&lt;right</code> 作为while循环条件<code>nums[left] == nums[right]</code></li>
-</ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mySqrt</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; int:</span> <span class="comment">#左闭右开</span></span><br><span class="line">        l,r = <span class="number">0</span>,x//<span class="number">2</span>+<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            mid  = (l+r+<span class="number">1</span>)&gt;&gt;<span class="number">1</span></span><br><span class="line">            print(mid)</span><br><span class="line">            <span class="keyword">if</span> mid**<span class="number">2</span> &gt; x:</span><br><span class="line">                r = mid-<span class="number">1</span> </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                l  = mid </span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></tbody></table></figure>
-
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-<h2 id="LC69-寻找比目标字母大的最小字母-寻找比目标字母大的最小字母"><a href="#LC69-寻找比目标字母大的最小字母-寻找比目标字母大的最小字母" class="headerlink" title="(LC69) 寻找比目标字母大的最小字母 寻找比目标字母大的最小字母"></a>(LC69) 寻找比目标字母大的最小字母 <a href="https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target/description/">寻找比目标字母大的最小字母</a></h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你一个排序后的字符列表 letters ，列表中只包含小写英文字母。另给出一个目标字母&nbsp;target，请你寻找在这一有序列表里比目标字母大的最小字母。在比较时，字母是依序循环出现的。<br>举个例子：<br>如果目标字母 target = ‘z’ 并且字符列表为&nbsp;letters = [‘a’, ‘b’]，则答案返回&nbsp;‘a’</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入:</span><br><span class="line">letters = ["c", "f", "j"]</span><br><span class="line">target = "a"</span><br><span class="line">输出: "c"</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="前置知识-1"><a href="#前置知识-1" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
-<li> 二分查找</li>
-</ul>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li> 第一步：左闭右开：<code>left</code>有效，<code>right</code>无效。<code>left == mid == right -1</code>，保证左闭右开区间里面始终套住最小值</li>
-<li> 第二步： 使用<code>left&lt;right</code> 作为while循环条件<code>nums[left] == nums[right]</code></li>
-<li>第三步： 这是循环前升序排列的， 左边比右边大，而且我们要找的是最小值，肯定是偏向左找。这个系统本身就是左右不对称的，本身就有方向性，即使做了旋转，这个不对称性还是存在的，算法的不对称来源于系统本身的不对称。</li>
-</ul>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nextGreatestLetter</span>(<span class="params">self, letters: List[<span class="built_in">str</span>], target: <span class="built_in">str</span></span>) -&gt; str:</span></span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        num_letters =[]</span><br><span class="line">        <span class="keyword">for</span> ch <span class="keyword">in</span> letters:</span><br><span class="line">            num_letters.append(<span class="built_in">ord</span>(ch))</span><br><span class="line">        num_target = <span class="built_in">ord</span>(target)</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(num_letters)</span><br><span class="line">        mid = (r+l)&gt;&gt;<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l &lt;  r:</span><br><span class="line">            mid = (r+l)&gt;&gt;<span class="number">1</span> </span><br><span class="line">            <span class="keyword">if</span> mid == <span class="built_in">len</span>(num_letters): <span class="keyword">return</span> letters[<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> num_letters[mid] &gt; num_target:</span><br><span class="line">                r = mid </span><br><span class="line">            <span class="keyword">elif</span> num_letters[mid] &lt;= num_target:</span><br><span class="line">                l = mid+<span class="number">1</span> </span><br><span class="line">        <span class="keyword">if</span> l == <span class="built_in">len</span>(num_letters): <span class="keyword">return</span> letters[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">return</span> letters[r]</span><br></pre></td></tr></tbody></table></figure>
-
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-<h2 id="LC278-第一个错误的版本-第一个错误的版本"><a href="#LC278-第一个错误的版本-第一个错误的版本" class="headerlink" title="(LC278) 第一个错误的版本 第一个错误的版本"></a>(LC278) 第一个错误的版本 <a href="https://leetcode-cn.com/problems/first-bad-version/">第一个错误的版本</a></h2><h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h3><p>你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。</p>
-<p>假设你有 n 个版本 [1, 2, …, n]，你想找出导致之后所有版本出错的第一个错误的版本。</p>
-<p>你可以通过调用&nbsp;bool isBadVersion(version)&nbsp;接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。 </p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">给定 n = 5，并且 version = 4 是第一个错误的版本。</span><br><span class="line"></span><br><span class="line">调用 isBadVersion(3) -&gt; false</span><br><span class="line">调用 isBadVersion(5)&nbsp;-&gt; true</span><br><span class="line">调用 isBadVersion(4)&nbsp;-&gt; true</span><br><span class="line"></span><br><span class="line">所以，4 是第一个错误的版本。</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="前置知识-2"><a href="#前置知识-2" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
-<li> 二分查找</li>
-</ul>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
-<li> 第一步：左闭右开：<code>left</code>有效，<code>right</code>无效。<code>left == mid == right -1</code>，保证左闭右开区间里面始终套住最小值</li>
-<li> 第二步： 使用<code>left&lt;right</code> 作为while循环条件<code>nums[left] == nums[right]</code> ，</li>
-<li>第三步： 如果isBadVersion(mid)返回false， 我们知道<code>mid</code>左侧的所有版本都是正确的版本。所以left = mid +1，下一次的搜索空间变为<code>[mid+1, right)</code>。如果isBadVersion(mid)返回true， 我们知道<code>mid</code>右侧的所有版本都不是第一个错误的版本。所以’right = mid+1’。，下一次的搜索空间变为<code>[left, mid+1)</code>。当某一次操作后，<code>left</code> 和 <code>right</code>的值相等，此时他们就表示了第一个错误版本的位置</li>
-</ul>
-<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">  <span class="comment"># The isBadVersion API is already defined for you.</span></span><br><span class="line"><span class="comment"># @param version, an integer</span></span><br><span class="line"><span class="comment"># @return an integer</span></span><br><span class="line"><span class="comment"># def isBadVersion(version):</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">firstBadVersion</span>(<span class="params">self, n</span>):</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        l,r = <span class="number">1</span>, n</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:  <span class="comment">#左闭右开</span></span><br><span class="line">            mid = (r + l) &gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> isBadVersion(mid):</span><br><span class="line">                l = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r = mid</span><br><span class="line">        <span class="keyword">return</span> r</span><br></pre></td></tr></tbody></table></figure>
-
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(logn)$。搜索空间每次减少一半，因此时间复杂度为$O(logn)$。</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-<h2 id="LC153-寻找旋转排序数组中的最小值-寻找旋转排序数组中的最小值"><a href="#LC153-寻找旋转排序数组中的最小值-寻找旋转排序数组中的最小值" class="headerlink" title="(LC153) 寻找旋转排序数组中的最小值 寻找旋转排序数组中的最小值"></a>(LC153) 寻找旋转排序数组中的最小值 <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/">寻找旋转排序数组中的最小值</a></h2><h3 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h3><p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。例如，数组 [0,1,2,4,5,6,7] 可能变为[4,5,6,7,0,1,2] 。<br>请找出其中最小的元素。 </p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [3,4,5,1,2]</span><br><span class="line">输出：1</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="前置知识-3"><a href="#前置知识-3" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
-<li> 二分查找</li>
-</ul>
-<h3 id="思想-1"><a href="#思想-1" class="headerlink" title="思想"></a>思想</h3><ul>
-<li> 第一步：左闭右开：<code>left</code>有效，<code>right</code>无效。<code>left == mid == right -1</code></li>
-<li> 第二步： 使用<code>left&lt;right</code> 作为while循环条件<code>nums[left] == nums[right]</code></li>
-</ul>
-<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMin</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        l, r = <span class="number">0</span>, <span class="built_in">len</span>(nums)-<span class="number">1</span> <span class="comment">#左闭右开</span></span><br><span class="line">        <span class="keyword">while</span> l&lt;r:</span><br><span class="line">            <span class="comment">#偏向左找</span></span><br><span class="line">            mid = (r+l)&gt;&gt;<span class="number">1</span></span><br><span class="line">            print(mid,r,l)</span><br><span class="line">            <span class="keyword">if</span> nums[mid] &gt; nums[r]:</span><br><span class="line">                l = mid+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r = mid</span><br><span class="line">        <span class="keyword">return</span> nums[l]</span><br><span class="line">            </span><br></pre></td></tr></tbody></table></figure>
-
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(log n)$</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
   </entry>
 </search>
