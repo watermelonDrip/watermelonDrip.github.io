@@ -27,15 +27,15 @@
 <meta property="og:site_name" content="MAXの瓜园">
 <meta property="og:description" content="声学信号处理系列（一）–声学信号处理基础知识by max 2021&#x2F;03&#x2F;07 0.写在开始的话这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3541145379,2023942298&fm=15&gp=0.jpg">
-<meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20191123%2Fd414717d0c8647dc979a0f0557cd82d2.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1617682279&t=03c62b6e9c10720fcd1a12f2abdfa02c">
-<meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.zhimg.com%2F50%2Fc7878e14449512f39a917d29645006cd_hd.jpg&refer=http%3A%2F%2Fpic1.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1617685462&t=866a75dfb48a531d7493557f1d62b2e8">
+<meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3541145379,2023942298&amp;fm=15&amp;gp=0.jpg">
+<meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20191123%2Fd414717d0c8647dc979a0f0557cd82d2.jpeg&amp;refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1617682279&amp;t=03c62b6e9c10720fcd1a12f2abdfa02c">
+<meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.zhimg.com%2F50%2Fc7878e14449512f39a917d29645006cd_hd.jpg&amp;refer=http%3A%2F%2Fpic1.zhimg.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1617685462&amp;t=866a75dfb48a531d7493557f1d62b2e8">
 <meta property="article:published_time" content="2021-03-06T22:35:00.000Z">
 <meta property="article:modified_time" content="2021-03-07T09:46:24.456Z">
 <meta property="article:author" content="Max">
 <meta property="article:tag" content="声学信号处理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3541145379,2023942298&fm=15&gp=0.jpg">
+<meta name="twitter:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3541145379,2023942298&amp;fm=15&amp;gp=0.jpg">
 
 <link rel="canonical" href="http://watermelondrip.github.io/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/">
 
@@ -262,33 +262,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="声学信号处理系列一声学信号处理基础知识">声学信号处理系列（一）–声学信号处理基础知识</span></h1><p><em>by max</em></p>
+        <h1 id="声学信号处理系列（一）–声学信号处理基础知识"><a href="#声学信号处理系列（一）–声学信号处理基础知识" class="headerlink" title="声学信号处理系列（一）–声学信号处理基础知识"></a>声学信号处理系列（一）–声学信号处理基础知识</h1><p><em>by max</em></p>
 <p><em>2021/03/07</em></p>
-<h2><span id="0写在开始的话">0.写在开始的话</span></h2><p>这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中学习到的新知识，也希望能跟别人分享自己的一些心得体会。个人水平有限，如有疏漏错误，敬请批评指正，谢谢！</p>
+<h2 id="0-写在开始的话"><a href="#0-写在开始的话" class="headerlink" title="0.写在开始的话"></a>0.写在开始的话</h2><p>这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中学习到的新知识，也希望能跟别人分享自己的一些心得体会。个人水平有限，如有疏漏错误，敬请批评指正，谢谢！</p>
 <span id="more"></span>
 
-<h2><span id="1声学基础">1.声学基础</span></h2><p>声音是自然界中非常常见的一种信号之一，我们平时的生活中声音无处不在。人类可以通过声音，来对物体进行感知、辨认和定位。同样，声音也是日常我们互相交流时用于传递信息文字的“载具”。</p>
+<h2 id="1-声学基础"><a href="#1-声学基础" class="headerlink" title="1.声学基础"></a>1.声学基础</h2><p>声音是自然界中非常常见的一种信号之一，我们平时的生活中声音无处不在。人类可以通过声音，来对物体进行感知、辨认和定位。同样，声音也是日常我们互相交流时用于传递信息文字的“载具”。</p>
 <p>初高中物理课上大家应该都学到过，声音的本质是物体振动生成的声波，该声波通过某种介质（例如空气、水和固体）传播并能被人类或者动物的听觉器官所感知。声音的频率一般会以赫兹表示，记为Hz，指每秒钟周期性震动的次数。而分贝是用来表示声音强度的单位，记为dB[1]。</p>
-<h2><span id="2我们如何发出声音">2.我们如何发出声音</span></h2><p>正如上一小节中所介绍的，发出声音需要凭借物体的振动。那么我们人类从口腔中发出各种各样的声音，也正是依靠我们的声带的振动来实现的。具体说来，从我们肺部内排出的气体气流，在经过形态变化的声带结构时，带动声带产生振动，进而生成了声波，声波经过我们的口腔和嘴，传输到外界空气中。在整个过程里，由于每个人类个体的声带器官、口腔腔体和嘴部的生理结构都是各异的，所以也导致我们每个人说出来的话的语音语调，以及包括音色，都是不同的。需要注意的是，由于鼻腔和口腔在人体内部是连通的，也会参与到发声过程中来。</p>
+<h2 id="2-我们如何发出声音"><a href="#2-我们如何发出声音" class="headerlink" title="2.我们如何发出声音"></a>2.我们如何发出声音</h2><p>正如上一小节中所介绍的，发出声音需要凭借物体的振动。那么我们人类从口腔中发出各种各样的声音，也正是依靠我们的声带的振动来实现的。具体说来，从我们肺部内排出的气体气流，在经过形态变化的声带结构时，带动声带产生振动，进而生成了声波，声波经过我们的口腔和嘴，传输到外界空气中。在整个过程里，由于每个人类个体的声带器官、口腔腔体和嘴部的生理结构都是各异的，所以也导致我们每个人说出来的话的语音语调，以及包括音色，都是不同的。需要注意的是，由于鼻腔和口腔在人体内部是连通的，也会参与到发声过程中来。</p>
 <p>下图是一个口腔内部的各个器官的展示，体内从肺部出来的气流，经气管-&gt;声带-&gt;咽喉-&gt;口鼻，传出体外。</p>
-<p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3541145379,2023942298&fm=15&gp=0.jpg" alt="avatar"></p>
-<h2><span id="3一些基本的专业词汇2">3.一些基本的专业词汇[2]</span></h2><ul>
+<p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3541145379,2023942298&amp;fm=15&amp;gp=0.jpg" alt="avatar"></p>
+<h2 id="3-一些基本的专业词汇-2"><a href="#3-一些基本的专业词汇-2" class="headerlink" title="3.一些基本的专业词汇[2]"></a>3.一些基本的专业词汇[2]</h2><ul>
 <li>音节（Syllable）：说话时一次发出的，具有一个响亮的中心，并被明显感觉到的语音片段。</li>
 <li>音素（Phoneme）：语音发音的最小单位。一个音节可以由一个或多个音素构成。音素可分为元音和辅音两种。</li>
-<li>元音（Vowel）：当声带振动发出的声音气流从咽喉进入口腔并从嘴部唇部出去时，这些声腔完全开放，气流可以顺利通过时所发的音，称为元音。元音构成音节的主干，无论从长度或是能量角度考虑，元音在音节中都占主要部分。决定元音音色的主要因素是舌头的形状及其在口腔中的位置，以及嘴唇的形状等。口腔中当舌头处于不同的舌位高度和舌位前后时，可以发出不同的音素。下图是一个单元音发音舌位示意图：<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20191123%2Fd414717d0c8647dc979a0f0557cd82d2.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1617682279&t=03c62b6e9c10720fcd1a12f2abdfa02c" alt="avatar"></li>
+<li>元音（Vowel）：当声带振动发出的声音气流从咽喉进入口腔并从嘴部唇部出去时，这些声腔完全开放，气流可以顺利通过时所发的音，称为元音。元音构成音节的主干，无论从长度或是能量角度考虑，元音在音节中都占主要部分。决定元音音色的主要因素是舌头的形状及其在口腔中的位置，以及嘴唇的形状等。口腔中当舌头处于不同的舌位高度和舌位前后时，可以发出不同的音素。下图是一个单元音发音舌位示意图：<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20191123%2Fd414717d0c8647dc979a0f0557cd82d2.jpeg&amp;refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1617682279&amp;t=03c62b6e9c10720fcd1a12f2abdfa02c" alt="avatar"></li>
 <li>辅音（Consonant）：当呼出的气流，由于整个声腔通路上某一部分封闭起来或受到阻碍，气流传播不通畅，而克服发音器官的这种阻碍时所发的音，称为辅音。发辅音时，声带振动的是浊音，声带不振动的是清音。辅音只出现在音节的前端或后端或前后两端，时长和能量相比元音都很小。</li>
 <li>半元音：有时，虽然声道基本畅通，但某处声道较窄，引起轻微的摩擦声，称为半元音。</li>
 </ul>
-<h2><span id="4共振峰formant与基频f0fundamental-frequency">4.共振峰（Formant）与基频F0（Fundamental frequency）</span></h2><p>共振峰和基频F0是语音信号处理中较为重要的概念，所以单独拿出来介绍一下。</p>
+<h2 id="4-共振峰（Formant）与基频F0（Fundamental-frequency）"><a href="#4-共振峰（Formant）与基频F0（Fundamental-frequency）" class="headerlink" title="4.共振峰（Formant）与基频F0（Fundamental frequency）"></a>4.共振峰（Formant）与基频F0（Fundamental frequency）</h2><p>共振峰和基频F0是语音信号处理中较为重要的概念，所以单独拿出来介绍一下。</p>
 <p>(1)共振峰：前面介绍过发声机理，其中声道可以被等效视为一根横截面非均匀的声管，在发声过程中，该声管起共鸣器的作用。当一个具有相对较大能量的元音激励进入声道时，会引起共振特性，产生一组共振频率，称为共振峰频率，可简称为共振峰。换句话说，共振峰不是特指某一个频率的振动信号，而是代指一组具有不同频率的共振信号，这组信号里，每个信号所处的频率是不同的，但是是连续存在的。</p>
 <p>一般可以用共振峰频率的位置和频带宽度这两个参数来描述一组共振峰。每个不同的元音，都对应着一组不同的共振峰参数。共振峰中的信号通常用F来表示，例如F0，F1，F2…等等。</p>
 <p>(2)基频F0：基频又称基础频率，其定义为共振峰中第一个共振信号的振动频率。共振峰中除基频F0以外，其他共振信号均为口腔共振产生，而基频F0由声带振动产生，其能量一般为共振峰中最强的。有时将音调（pitch）和基频等效看待，二者其实有一些细节上的不同，但平时讨论时可以暂时视为一体。音调反应的是音高的信息，男性和女性的平均音调范围是不同的，男性更低一些，女性更高一些。</p>
 <p>任何为基频整倍数的频率上的信号称为谐波。谐波反应的是音色的信息。</p>
-<p>通常我们可以通过观测语音信号的语谱图，来对共振峰和基频有一个直观的了解。语谱图是将语音的频谱信号以二维形式所描绘出来的图形，该图形横轴为时间，单位通常为秒s，纵轴为频率，单位通常为赫兹Hz。图形上颜色的深浅代表声学信号能量强度的高低。一个典型的反应了共振峰的语谱图如下所示：<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.zhimg.com%2F50%2Fc7878e14449512f39a917d29645006cd_hd.jpg&refer=http%3A%2F%2Fpic1.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1617685462&t=866a75dfb48a531d7493557f1d62b2e8" alt="avatar"></p>
-<h2><span id="5我们如何听到声音">5.我们如何听到声音</span></h2><p>人类听到声音的简要过程：空气中的声波传播到人耳内，耳朵内的鼓膜受到声波的声压的作用会产生位移振动，内耳的一个主要器官耳蜗，将这种位移振动的机械信息，转换为生物神经信号，传递给大脑进行处理后，我们就能够获知听到的是什么声音了。具体的介绍请移步参考资料[2]中的2.4.2节，会有更详尽的了解。</p>
+<p>通常我们可以通过观测语音信号的语谱图，来对共振峰和基频有一个直观的了解。语谱图是将语音的频谱信号以二维形式所描绘出来的图形，该图形横轴为时间，单位通常为秒s，纵轴为频率，单位通常为赫兹Hz。图形上颜色的深浅代表声学信号能量强度的高低。一个典型的反应了共振峰的语谱图如下所示：<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.zhimg.com%2F50%2Fc7878e14449512f39a917d29645006cd_hd.jpg&amp;refer=http%3A%2F%2Fpic1.zhimg.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1617685462&amp;t=866a75dfb48a531d7493557f1d62b2e8" alt="avatar"></p>
+<h2 id="5-我们如何听到声音"><a href="#5-我们如何听到声音" class="headerlink" title="5.我们如何听到声音"></a>5.我们如何听到声音</h2><p>人类听到声音的简要过程：空气中的声波传播到人耳内，耳朵内的鼓膜受到声波的声压的作用会产生位移振动，内耳的一个主要器官耳蜗，将这种位移振动的机械信息，转换为生物神经信号，传递给大脑进行处理后，我们就能够获知听到的是什么声音了。具体的介绍请移步参考资料[2]中的2.4.2节，会有更详尽的了解。</p>
 <p>人耳一般能接收并处理的声音的频率范围为20Hz<del>20kHz，强度为-5</del>130dB。在此范围外的声学信号里的音频分量，是人耳处理不到的，一般在语音信号处理领域的问题中不会考虑。但是，凡事无绝对，我们也不能说在这个范围以内的音频分量我们一定能听得到，这就涉及到一个概念叫做听觉掩蔽效应。</p>
 <p>听觉掩蔽效应指的是在一个强信号附近，弱信号将变得听不到，被掩盖掉了。生活中这种例子常见的有：购物商场的大喇叭在外放吵闹的音乐时，两个人的对话可能即使很近也听不清楚。被掩蔽掉的不可闻信号的最大声压级称为掩蔽门限或掩蔽阈值，在这个掩蔽阈值以下的声音都会被掩盖掉。</p>
-<h2><span id="参考资料列表">参考资料列表</span></h2><p>[1] 维基百科-声音词条：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3">https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3</a></p>
+<h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] 维基百科-声音词条：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3">https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3</a></p>
 <p>[2] 赵力. 语音信号处理[M]. 机械工业出版社, 2016.</p>
 
     </div>
@@ -340,8 +340,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/03/07/%E6%8E%92%E5%BA%8F/" rel="prev" title="排序 （熟到可以默写）">
-      <i class="fa fa-chevron-left"></i> 排序 （熟到可以默写）
+    <a href="/2021/03/06/firstday_max/" rel="prev" title="Day 1 - Max">
+      <i class="fa fa-chevron-left"></i> Day 1 - Max
     </a></div>
       <div class="post-nav-item">
     <a href="/2021/03/07/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B231/" rel="next" title="Leetcode竞赛(第231场周赛)">
@@ -405,7 +405,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">声学信号处理系列（一）–声学信号处理基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">0.写在开始的话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">1.声学基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">2.我们如何发出声音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">3.一些基本的专业词汇[2]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">4.共振峰（Formant）与基频F0（Fundamental frequency）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.6.</span> <span class="nav-text">5.我们如何听到声音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.7.</span> <span class="nav-text">参考资料列表</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%93%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">声学信号处理系列（一）–声学信号处理基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%86%99%E5%9C%A8%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AF%9D"><span class="nav-number">1.1.</span> <span class="nav-text">0.写在开始的话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%A3%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="nav-number">1.2.</span> <span class="nav-text">1.声学基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%88%91%E4%BB%AC%E5%A6%82%E4%BD%95%E5%8F%91%E5%87%BA%E5%A3%B0%E9%9F%B3"><span class="nav-number">1.3.</span> <span class="nav-text">2.我们如何发出声音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%B8%93%E4%B8%9A%E8%AF%8D%E6%B1%87-2"><span class="nav-number">1.4.</span> <span class="nav-text">3.一些基本的专业词汇[2]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%85%B1%E6%8C%AF%E5%B3%B0%EF%BC%88Formant%EF%BC%89%E4%B8%8E%E5%9F%BA%E9%A2%91F0%EF%BC%88Fundamental-frequency%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">4.共振峰（Formant）与基频F0（Fundamental frequency）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%88%91%E4%BB%AC%E5%A6%82%E4%BD%95%E5%90%AC%E5%88%B0%E5%A3%B0%E9%9F%B3"><span class="nav-number">1.6.</span> <span class="nav-text">5.我们如何听到声音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99%E5%88%97%E8%A1%A8"><span class="nav-number">1.7.</span> <span class="nav-text">参考资料列表</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -421,7 +421,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -434,7 +434,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

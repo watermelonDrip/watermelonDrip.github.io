@@ -23,19 +23,19 @@
   <meta name="description" content="贪心思路是：(1) 保证每次操作都是局部最优的，并且最后得到的结果是全局最优的 (2)贪心算法一般是先需要排序的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="贪心">
-<meta property="og:url" content="http://watermelondrip.github.io/2021/03/08/%E8%B4%AA%E5%BF%83/index.html">
+<meta property="og:url" content="http://watermelondrip.github.io/2021/03/18/%E8%B4%AA%E5%BF%83/index.html">
 <meta property="og:site_name" content="MAXの瓜园">
 <meta property="og:description" content="贪心思路是：(1) 保证每次操作都是局部最优的，并且最后得到的结果是全局最优的 (2)贪心算法一般是先需要排序的。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-08T01:19:11.454Z">
-<meta property="article:modified_time" content="2021-03-09T12:50:29.105Z">
+<meta property="article:published_time" content="2021-03-17T13:52:00.000Z">
+<meta property="article:modified_time" content="2021-03-17T13:52:00.000Z">
 <meta property="article:author" content="Max">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="排序">
 <meta property="article:tag" content="堆">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://watermelondrip.github.io/2021/03/08/%E8%B4%AA%E5%BF%83/">
+<link rel="canonical" href="http://watermelondrip.github.io/2021/03/18/%E8%B4%AA%E5%BF%83/">
 
 
 <script id="page-configurations">
@@ -199,7 +199,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://watermelondrip.github.io/2021/03/08/%E8%B4%AA%E5%BF%83/">
+    <link itemprop="mainEntityOfPage" href="http://watermelondrip.github.io/2021/03/18/%E8%B4%AA%E5%BF%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/watermelon.gif">
@@ -222,15 +222,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-03-08 12:19:11" itemprop="dateCreated datePublished" datetime="2021-03-08T12:19:11+11:00">2021-03-08</time>
+              <time title="创建时间：2021-03-18 00:52:00" itemprop="dateCreated datePublished" datetime="2021-03-18T00:52:00+11:00">2021-03-18</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-09 23:50:29" itemprop="dateModified" datetime="2021-03-09T23:50:29+11:00">2021-03-09</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -242,7 +235,7 @@
             </span>
 
           
-            <span id="/2021/03/08/%E8%B4%AA%E5%BF%83/" class="post-meta-item leancloud_visitors" data-flag-title="贪心" title="阅读次数">
+            <span id="/2021/03/18/%E8%B4%AA%E5%BF%83/" class="post-meta-item leancloud_visitors" data-flag-title="贪心" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -278,9 +271,17 @@
 <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。<br>对每个孩子 i，都有一个胃口值&nbsp;g[i]，这是能让孩子们满足胃口的饼干的最小尺寸；并且每块饼干 j，都有一个尺寸 s[j]&nbsp;。如果 s[j]&nbsp;&gt;= g[i]，我们可以将这个饼干 j 分配给孩子 i ，这个孩子会得到满足。你的目标是尽可能满足越多数量的孩子，并输出这个最大数值。</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入: g = [1,2,3], s = [1,1]</span><br><span class="line">输出: 1</span><br><span class="line">解释: </span><br><span class="line">你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。</span><br><span class="line">虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。</span><br><span class="line">所以你应该输出1。</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
-<li>排序+贪心：我觉得这个也很好想，因为我们要求分配给最多的小孩的数量，肯定是可着吃的少的孩子先来。因为一个大胖子吃10斤的，可以给10个吃一斤的孩子啊。</li>
-</ol>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li><p>排序+贪心：我觉得这个也很好想，因为我们要求分配给最多的小孩的数量，肯定是可着吃的少的孩子先来。因为一个大胖子吃10斤的，可以给10个吃一斤的孩子啊。</p>
+</li>
+<li><p>贪心贪在哪里：</p>
+</li>
+</ul>
+<ul>
+<li> 在示例中可以看到，在计算起点的时候，一定从g[i] 最小的开始计算， 也就是优先给需求低的分配最下尺寸的饼干，这就是贪心的地方。</li>
+<li>局部最优：每个小孩得到的饼干最少化，多一点都不给，多给浪费的呀</li>
+<li>全局最优：保障让每一个饼干刚好满足当前的小朋友，就可以使得最后满足的人数最多。</li>
+</ul>
 <h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findContentChildren</span>(<span class="params">self, g: List[<span class="built_in">int</span>], s: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        g.sort()</span><br><span class="line">        s.sort()</span><br><span class="line">        n = <span class="built_in">len</span>(g) <span class="comment">#greed factor</span></span><br><span class="line">        m = <span class="built_in">len</span>(s) <span class="comment">#size</span></span><br><span class="line">        i = <span class="number">0</span> </span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> j&lt;m <span class="keyword">and</span> i&lt;n:</span><br><span class="line">            <span class="keyword">while</span> j &lt; m <span class="keyword">and</span> g[i]&gt;s[j]:</span><br><span class="line">                j+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> j &lt; m:</span><br><span class="line">                count+=<span class="number">1</span></span><br><span class="line">            j+=<span class="number">1</span></span><br><span class="line">            i+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br></pre></td></tr></tbody></table></figure>
 <p>####复杂度分析</p>
 <ul>
@@ -312,21 +313,63 @@
 <h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reconstructQueue</span>(<span class="params">self, people: List[List[<span class="built_in">int</span>]]</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        people = <span class="built_in">sorted</span>(people, key = <span class="keyword">lambda</span> x:(-x[<span class="number">0</span>],x[<span class="number">1</span>]))</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(people) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> people</span><br><span class="line">        <span class="comment">## 对队列排序，先按h降序，再按k升序</span></span><br><span class="line">        people = <span class="built_in">sorted</span>(people, key = <span class="keyword">lambda</span> x: (-x[<span class="number">0</span>], x[<span class="number">1</span>]))</span><br><span class="line">        new_people = [people[<span class="number">0</span>]]    <span class="comment"># 这个人是从前往后、从上往下看到的第一个人</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> people[<span class="number">1</span>:]:</span><br><span class="line">            new_people.insert(i[<span class="number">1</span>], i)</span><br><span class="line">        <span class="keyword">return</span> new_people</span><br></pre></td></tr></tbody></table></figure>
 <p>####复杂度分析</p>
 <ul>
-<li>时间复杂度： $O( )$   </li>
-<li>空间复杂度：$O( )$  </li>
+<li>时间复杂度： $O(n^2)$，其中n是数组people的长度。我们需要O(n log n) 的时间进行排序，随后需要O(n^2)的时间遍历每一个人并将他们放入队列中。由于前者在渐近意义下小于后者，因此总时间复杂度为  O(n^2)</li>
+<li>空间复杂度：$O( log n )$  </li>
 </ul>
-<p>##4. (LC763) 划分字母区间 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-labels/">划分字母区间</a></p>
-<h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>字符串 S 由小写字母组成。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。返回一个表示每个字符串片段的长度的列表。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：S = "ababcbacadefegdehijhklij"</span><br><span class="line">输出：[9,7,8]</span><br><span class="line">解释：</span><br><span class="line">划分结果为 "ababcbaca", "defegde", "hijhklij"。</span><br><span class="line">每个字母最多出现在一个片段中。</span><br><span class="line">像 "ababcbacadefegde", "hijhklij" 的划分是错误的，因为划分的片段数较少。</span><br></pre></td></tr></tbody></table></figure>
-<p>###知识点</p>
-<ul>
-<li>Python中S为string，S.rindex(a)返回字母a最后一次出现的位置。<br>比如，S = “ABCAAGD”, S.rindex(“A”) = 4.</li>
+<p>##4. (LC53) 最大子序和 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/">最大子序和</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<p>示例1：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-2,1,-3,4,-1,2,1,-5,4]</span><br><span class="line">输出：6</span><br><span class="line">解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>-贪心， 贪心竟然这么难想</p>
+<h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>贪心贪在哪里（<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/solution/53-zui-da-zi-xu-he-bao-li-tan-xin-dong-t-jkeq/">详解</a>）？</li>
 </ul>
-<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">partitionLabels</span>(<span class="params">self, S</span>):</span>  <span class="comment">#大佬解题</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type S: str</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># 初始化返回结果和初始定位</span></span><br><span class="line">        rv = []</span><br><span class="line">        idx = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 两种特殊情况</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(S) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> [<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(S) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> [<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> idx &lt;= <span class="built_in">len</span>(S)-<span class="number">1</span>:   <span class="comment"># 当位置指针未到最后一位时</span></span><br><span class="line">            end_idx = S.rindex(S[idx]) <span class="comment"># 末尾指针为位置指针处字母最后一次出现的位置</span></span><br><span class="line">            unique = <span class="built_in">list</span>(<span class="built_in">set</span>(S[idx:end_idx]))  <span class="comment"># 寻找此区间内所有unique字母</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> u <span class="keyword">in</span> unique:    <span class="comment"># 遍历所有unique字符</span></span><br><span class="line">                <span class="keyword">if</span> S.rindex(u) &gt; end_idx:  <span class="comment"># 如果该字符最后一次出现超过了末尾指针</span></span><br><span class="line">                    unique += <span class="built_in">list</span>(<span class="built_in">set</span>(S[end_idx:S.rindex(u)]))  <span class="comment"># 在unique中添加新区间的unique字符</span></span><br><span class="line">                    end_idx = S.rindex(u)       <span class="comment"># 迭代末尾指针</span></span><br><span class="line"></span><br><span class="line">            rv.append(end_idx - idx + <span class="number">1</span>)        <span class="comment"># 全部unique遍历完成后，添加长度</span></span><br><span class="line">            idx = end_idx + <span class="number">1</span>                   <span class="comment"># 新的位置指针为上次末尾指针+1</span></span><br><span class="line">        <span class="keyword">return</span> rv </span><br></pre></td></tr></tbody></table></figure>
-<p>####复杂度分析</p>
 <ul>
-<li>时间复杂度： </li>
-<li>空间复杂度： </li>
+<li><p>如果在示例中可以看到 -2 1 在一起，计算起点的时候，一定是从1开始计算，因为负数只会拉低总和，这就是贪心的地方！</p>
+</li>
+<li><p>局部最优：当前 “ 连续和 ”为负数的时候立即放弃，从下一个元素重新计算 “ 连续和 ”， 因为负数加上下一个“连续和”只会越来越小。</p>
+</li>
+<li><p>全局最优：选取最大“连续和”  </p>
+</li>
+<li><p>局部最优的情况下，并记录最大的“连续和”，可以推出全局最优。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2></li>
+</ul>
+<ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) &lt;=<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">sum</span>(nums)</span><br><span class="line">        ans = -inf</span><br><span class="line">        result = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> ans&gt;<span class="number">0</span>:</span><br><span class="line">                ans += nums[i] </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans = nums[i]</span><br><span class="line">            result = <span class="built_in">max</span>(result,ans)</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+<p>##5. (LC53) 用最少数量的箭引爆气球 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/description/">用最少数量的箭引爆气球</a></p>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。</p>
+<p>一支弓箭可以沿着 x 轴从不同点完全垂直地射出。在坐标 x 处射出一支箭，若有一个气球的直径的开始和结束坐标为 xstart，xend， 且满足 &nbsp;xstart&nbsp;≤ x ≤ xend，则该气球会被引爆。可以射出的弓箭的数量没有限制。 弓箭一旦被射出之后，可以无限地前进。我们想找到使得所有气球全部被引爆，所需的弓箭的最小数量。</p>
+<p>给你一个数组 points ，其中 points [i] = [xstart,xend] ，返回引爆所有气球所必须射出的最小弓箭数。</p>
+<p>示例1：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：points = [[10,16],[2,8],[1,6],[7,12]]</span><br><span class="line">输出：2</span><br><span class="line">解释：对于该样例，x = 6 可以射爆 [2,8],[1,6] 两个气球，以及 x = 11 射爆另外两个气球</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="前置知识-1"><a href="#前置知识-1" class="headerlink" title="前置知识"></a>前置知识</h2><p>-贪心+排序</p>
+<h2 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">                   [10.........16]</span><br><span class="line">   [2..........8]</span><br><span class="line">[1.......6]</span><br><span class="line">            [7.........12]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>贪心贪在<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/solution/tu-jie-tan-tao-wei-shi-yao-yao-an-qu-jian-de-you-d/">哪里</a>？</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2></li>
+<li><p>语言支持：Python3</p>
+</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMinArrowShots</span>(<span class="params">self, points: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> points:<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        points = <span class="built_in">sorted</span>(points,key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br><span class="line">        print(points)</span><br><span class="line">        right = points[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">        result = <span class="number">1</span></span><br><span class="line">        n = <span class="built_in">len</span>(points)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="keyword">if</span> points[i][<span class="number">0</span>] &gt;right:</span><br><span class="line">                result+=<span class="number">1</span></span><br><span class="line">                right = points[i][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
 </ul>
 
     </div>
@@ -358,7 +401,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://watermelondrip.github.io/2021/03/08/%E8%B4%AA%E5%BF%83/" title="贪心">http://watermelondrip.github.io/2021/03/08/贪心/</a>
+    <a href="http://watermelondrip.github.io/2021/03/18/%E8%B4%AA%E5%BF%83/" title="贪心">http://watermelondrip.github.io/2021/03/18/贪心/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -380,12 +423,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/03/07/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B231/" rel="prev" title="Leetcode竞赛(第231场周赛)">
-      <i class="fa fa-chevron-left"></i> Leetcode竞赛(第231场周赛)
+    <a href="/2021/03/18/%E7%86%9F%E5%88%B0%E9%BB%98%E5%86%99/" rel="prev" title="经典到默写的">
+      <i class="fa fa-chevron-left"></i> 经典到默写的
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/03/13/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="next" title="二分查找">
-      二分查找 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/03/18/%E6%90%9C%E7%B4%A2/" rel="next" title="搜索">
+      搜索 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -445,7 +488,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83"><span class="nav-number">1.</span> <span class="nav-text">贪心</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python3-Code"><span class="nav-number">1.3.</span> <span class="nav-text">Python3 Code:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-1"><span class="nav-number">1.4.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="nav-number">1.5.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python3-Code-1"><span class="nav-number">1.6.</span> <span class="nav-text">Python3 Code:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-2"><span class="nav-number">1.7.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-2"><span class="nav-number">1.8.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python3-Code-2"><span class="nav-number">1.9.</span> <span class="nav-text">Python3 Code:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-3"><span class="nav-number">1.10.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-3"><span class="nav-number">1.11.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python3-Code-3"><span class="nav-number">1.12.</span> <span class="nav-text">Python3 Code:</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83"><span class="nav-number">1.</span> <span class="nav-text">贪心</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python3-Code"><span class="nav-number">1.3.</span> <span class="nav-text">Python3 Code:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-1"><span class="nav-number">1.4.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="nav-number">1.5.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python3-Code-1"><span class="nav-number">1.6.</span> <span class="nav-text">Python3 Code:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-2"><span class="nav-number">1.7.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-2"><span class="nav-number">1.8.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python3-Code-2"><span class="nav-number">1.9.</span> <span class="nav-text">Python3 Code:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="nav-number">3.</span> <span class="nav-text">前置知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-3"><span class="nav-number">4.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">6.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86-1"><span class="nav-number">7.</span> <span class="nav-text">前置知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-4"><span class="nav-number">8.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-number">9.</span> <span class="nav-text">代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -461,7 +504,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -474,7 +517,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
