@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>第一天坚持坚持</title>
+    <url>/2021/02/27/firstday/</url>
+    <content><![CDATA[<p>第一次记录一下</p>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day 1 - Max</title>
+    <url>/2021/03/06/firstday_max/</url>
+    <content><![CDATA[<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p><em>by max</em></p>
+<p><em>2021/02/28</em></p>
+<p>这是在MAX的瓜园写下的第一篇日志，没有具体的内容，仅供测试使用。</p>
+<span id="more"></span>
+
+<p><strong>建立这个博客网页的主要目的是为了记录刷题过程中的收获，包括题解、算法思路和一些相关资料等。</strong></p>
+<p><code>此网站也会收藏一些平日学习和工作中有价值的资料</code></p>
+<p>网站仍在建设中，更多功能会逐步完善，包括评论功能等，敬请期待！！！</p>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构的分析</title>
     <url>/2021/03/06/dataStructure/</url>
     <content><![CDATA[<p>数据结构</p>
@@ -38,39 +69,8 @@
         <category>知识及记录</category>
       </categories>
       <tags>
+        <tag>学习笔记</tag>
         <tag>数据结构</tag>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一天坚持坚持</title>
-    <url>/2021/02/27/firstday/</url>
-    <content><![CDATA[<p>第一次记录一下</p>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Day 1 - Max</title>
-    <url>/2021/03/06/firstday_max/</url>
-    <content><![CDATA[<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p><em>by max</em></p>
-<p><em>2021/02/28</em></p>
-<p>这是在MAX的瓜园写下的第一篇日志，没有具体的内容，仅供测试使用。</p>
-<span id="more"></span>
-
-<p><strong>建立这个博客网页的主要目的是为了记录刷题过程中的收获，包括题解、算法思路和一些相关资料等。</strong></p>
-<p><code>此网站也会收藏一些平日学习和工作中有价值的资料</code></p>
-<p>网站仍在建设中，更多功能会逐步完善，包括评论功能等，敬请期待！！！</p>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -134,34 +134,6 @@
       <tags>
         <tag>python</tag>
         <tag>递归</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
-    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
-<p>##sort()用法 和 sorted()用法的不同</p>
-<ol>
-<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
-<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。Because sorted is a global function, it can take any iterable and return a sorted list from that</li>
-<li><h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-
-<p>###大佬blog</p>
-<ol>
-<li><a href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
-<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
-<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -280,6 +252,34 @@
       </categories>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
+    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
+<p>##sort()用法 和 sorted()用法的不同</p>
+<ol>
+<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
+<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。Because sorted is a global function, it can take any iterable and return a sorted list from that</li>
+<li><h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+<p>###大佬blog</p>
+<ol>
+<li><a href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
+<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
+<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -691,127 +691,6 @@
       </tags>
   </entry>
   <entry>
-    <title>链表</title>
-    <url>/2021/03/18/%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<p>链表<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E9%93%BE%E8%A1%A8.md#7-%E9%93%BE%E8%A1%A8%E6%B1%82%E5%92%8C">刷题顺序</a></p>
-<h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h2><ul>
-<li><p>Important notice: 涉及到链表的操作，一定要在纸上把过程先画出来，再写程序！不要断链子。</p>
-<span id="more"></span>
-</li>
-<li><p>注意<a href="https://zhuanlan.zhihu.com/p/53691100">防止锻链</a>，因为一旦把节点的指针反向了，当前的指针就不再指向下一个节点了，因为也就i不能再继续往后遍历了，也就不能把这个完整的链表进行反转了，这种情况称作断链。为了解决断链的情况，我们就需要再节点指针反向之前，就把当前节点的下一个节点先记下来，等到当前节点的指针完成反转之后，遍历指针直接移动到刚刚被记住的那个节点，这样就能防止锻炼的情况了。具体操作如下：<a href="https://zhuanlan.zhihu.com/p/53691100">讲解1</a></p>
-</li>
-<li></li>
-<li><p>注意：我们经常需要定义一个哨兵节点<code>prehead</code>，这可以在最后让我们比较容易地返回合并后的链表。</p>
-</li>
-</ul>
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>双指针：</li>
-<li>栈：</li>
-</ol>
-<!-- more -->
-
-
-<h2 id="1-LC160-相交链表-相交链表"><a href="#1-LC160-相交链表-相交链表" class="headerlink" title="1. (LC160) 相交链表 相交链表"></a>1. (LC160) 相交链表 <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">相交链表</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>编写一个程序，找到两个单链表相交的起始节点。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
-<li>  图解</li>
-</ol>
-<p><img src="https://pic.leetcode-cn.com/1614527163-BKaiqs-Picture1.png"></p>
-<ol start="2">
-<li>数学思维</li>
-</ol>
-<ul>
-<li> 我们假设<code>A</code>的头节点到交汇点的距离为<code>a</code>， <code>B</code>的头节点到交汇点的距离为<code>b</code>，交会点最后的距离为<code>c</code>。</li>
-<li> <code>A</code>指针<code>cur_A</code>总共走了<code>a+b-c</code>步，<code>B</code>指针<code>cur_B</code>总共走了<code>b+a-c</code>步，所以会两个指针相同，达到终止条件。当没有交点的时候，<code>A</code>指针<code>cur_A</code>总共走了<code>a+b</code>步，<code>B</code>指针<code>cur_B</code>总共走了<code>b+a</code>步，也会两个指针相同指向null，达到终止条件。</li>
-</ul>
-<ol start="3">
-<li>思路总结</li>
-</ol>
-<ul>
-<li>链表来说，首先是先动手走一走，再一个如果碰到交点问题，要看看怎么才能得到一个等式。</li>
-</ul>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getIntersectionNode</span>(<span class="params">self, headA: ListNode, headB: ListNode</span>) -&gt; ListNode:</span>  <span class="comment">#双指针</span></span><br><span class="line">        cur_A = headA</span><br><span class="line">        cur_B = headB</span><br><span class="line">        <span class="keyword">while</span> cur_A != cur_B:</span><br><span class="line">            cur_A = cur_A.<span class="built_in">next</span> <span class="keyword">if</span> cur_A <span class="keyword">else</span> headB</span><br><span class="line">            cur_B = cur_B.<span class="built_in">next</span> <span class="keyword">if</span> cur_B <span class="keyword">else</span> headA</span><br><span class="line">        <span class="keyword">return</span> cur_A</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>时间复杂度：$O(n+m)$ n是链表A的长度，m是链表B的长度  </li>
-<li>空间复杂度：$O(1)$  </li>
-</ul>
-<h2 id="2-LC2206-反转链表-反转链表"><a href="#2-LC2206-反转链表-反转链表" class="headerlink" title="2. (LC2206) 反转链表 反转链表"></a>2. (LC2206) 反转链表 <a href="https://leetcode-cn.com/problems/reverse-linked-list/">反转链表</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>反转一个单链表。</p>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ol>
-<li><p>双指针：为了防止断链子，要保持下一个节点<code>temp</code>和前一个节点<code>pre</code></p>
-</li>
-<li><p>递归：和双指针是一样的逻辑，同样是当<code>cur</code>为空的时候循环结束，不断将<code>cur</code>指向<code>pre</code>的过程。递归的这个好绕啊，第一遍没太理解，先记下来吧。一个很好的解释，慢慢理解，<a href="https://leetcode-cn.com/problems/reverse-linked-list/solution/dong-hua-yan-shi-206-fan-zhuan-lian-biao-by-user74/">戳这里</a></p>
-</li>
-<li><p>栈：最简单的一种方式就是使用栈，因为栈是先进后出的，实现原理是把链表点一个个入栈，当全部入栈之后在一个个出栈，出栈的时候在把出栈的结点串成一个新的链表。</p>
-<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
-</ol>
-<ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseList</span>(<span class="params">self, head: ListNode</span>) -&gt; ListNode:</span> <span class="comment">#双指针</span></span><br><span class="line">        cur = head</span><br><span class="line">        pre = <span class="literal">None</span>        </span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            temp = cur.<span class="built_in">next</span></span><br><span class="line">            cur.<span class="built_in">next</span> = pre</span><br><span class="line">            pre = cur</span><br><span class="line">            cur = temp</span><br><span class="line">        <span class="keyword">return</span> pre</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">reverseList</span>(<span class="params">self, head: ListNode</span>) -&gt; ListNode:</span> <span class="comment">#递归</span></span><br><span class="line">		<span class="comment"># 递归终止条件是当前为空，或者下一个节点为空</span></span><br><span class="line">		<span class="keyword">if</span>(head==<span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span>==<span class="literal">None</span>):</span><br><span class="line">			<span class="keyword">return</span> head</span><br><span class="line">		<span class="comment"># 这里的cur就是最后一个节点</span></span><br><span class="line">		cur = self.reverseList(head.<span class="built_in">next</span>)</span><br><span class="line">		<span class="comment"># 这里请配合动画演示理解</span></span><br><span class="line">		<span class="comment"># 如果链表是 1-&gt;2-&gt;3-&gt;4-&gt;5，那么此时的cur就是5</span></span><br><span class="line">		<span class="comment"># 而head是4，head的下一个是5，下下一个是空</span></span><br><span class="line">		<span class="comment"># 所以head.next.next 就是5-&gt;4</span></span><br><span class="line">		head.<span class="built_in">next</span>.<span class="built_in">next</span> = head</span><br><span class="line">		<span class="comment"># 防止链表循环，需要将head.next设置为空</span></span><br><span class="line">		head.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line">		<span class="comment"># 每层递归函数都返回cur，也就是最后一个节点</span></span><br><span class="line">		<span class="keyword">return</span> cur </span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseList</span>(<span class="params">self, head: ListNode</span>) -&gt; ListNode:</span></span><br><span class="line">        stack = [<span class="literal">None</span>]</span><br><span class="line">        <span class="comment"># 把链表节点全部放到栈中</span></span><br><span class="line">        <span class="keyword">while</span> head:</span><br><span class="line">            stack.append(head)</span><br><span class="line">            head = head.<span class="built_in">next</span></span><br><span class="line">        head = stack.pop()</span><br><span class="line">        cur = head</span><br><span class="line">        <span class="comment"># 栈中的结点全部出栈，然后重新连成一个新的链表</span></span><br><span class="line">        <span class="keyword">while</span> stack: </span><br><span class="line">            cur.<span class="built_in">next</span> = stack.pop()</span><br><span class="line">            cur =cur.<span class="built_in">next</span></span><br><span class="line">        <span class="comment"># 最后一个结点就是反转前的头结点，一定要让他的next</span></span><br><span class="line">        <span class="comment"># 等于空，否则会构成环</span></span><br><span class="line">        <span class="keyword">return</span> head</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li><p>时间复杂度：$O( )$ n是链表的长度，  </p>
-</li>
-<li><p>空间复杂度：$O( )$  </p>
-<h2 id="3-LC21-合并两个有序链表-合并两个有序链表"><a href="#3-LC21-合并两个有序链表-合并两个有序链表" class="headerlink" title="3. (LC21) 合并两个有序链表 合并两个有序链表"></a>3. (LC21) 合并两个有序链表 <a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">合并两个有序链表</a></h2></li>
-</ul>
-<h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
-<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><ol>
-<li>  迭代</li>
-</ol>
-<ul>
-<li> 首先，我们设定一个哨兵节点<code>prehead</code>，这可以在最后让我们比较容易地返回合并后的链表。我们维护一个<code>prev</code>指针，我们需要做的是调整它的<code>next</code>指针。然后我们重复以下过程，直到<code>l1</code>或者<code>l2</code>指向<code>null</code>。在循环终止的时候，<code>l1</code>和<code>l2</code>至多有一个是非空的。</li>
-</ul>
-<ol start="2">
-<li>递归</li>
-</ol>
-<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span>(<span class="params">self, l1: ListNode, l2: ListNode</span>) -&gt; ListNode:</span></span><br><span class="line">    dummy = ListNode()</span><br><span class="line">    cur = dummy </span><br><span class="line">    <span class="keyword">while</span> l1 <span class="keyword">and</span> l2:</span><br><span class="line">        <span class="keyword">if</span> l1.val &lt; l2.val:</span><br><span class="line">            cur.<span class="built_in">next</span> = l1</span><br><span class="line">            l1 = l1.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cur.<span class="built_in">next</span> = l2</span><br><span class="line">            l2 = l2.<span class="built_in">next</span></span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line">    cur.<span class="built_in">next</span> = l1 <span class="keyword">if</span> l1 <span class="keyword">else</span> l2</span><br><span class="line">    <span class="keyword">return</span> dummy.<span class="built_in">next</span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li><p>时间复杂度：$O(n+m)$, 其中n和m个链表长度</p>
-</li>
-<li><p>空间复杂度：$O(1)$  </p>
-<h2 id="4-LC83-从有序链表中删除重复节点-从有序链表中删除重复节点"><a href="#4-LC83-从有序链表中删除重复节点-从有序链表中删除重复节点" class="headerlink" title="4. (LC83) 从有序链表中删除重复节点 从有序链表中删除重复节点"></a>4. (LC83) 从有序链表中删除重复节点 <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">从有序链表中删除重复节点</a></h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3></li>
-</ul>
-<p>编写一个程序，找到两个单链表相交的起始节点。</p>
-<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><ol>
-<li>  图解</li>
-</ol>
-<p><img src="https://pic.leetcode-cn.com/1614527163-BKaiqs-Picture1.png"></p>
-<ol start="2">
-<li>数学思维</li>
-</ol>
-<ul>
-<li> 我们假设<code>A</code>的头节点到交汇点的距离为<code>a</code>， <code>B</code>的头节点到交汇点的距离为<code>b</code>，交会点最后的距离为<code>c</code>。</li>
-<li> <code>A</code>指针<code>cur_A</code>总共走了<code>a+b-c</code>步，<code>B</code>指针<code>cur_B</code>总共走了<code>b+a-c</code>步，所以会两个指针相同，达到终止条件。当没有交点的时候，<code>A</code>指针<code>cur_A</code>总共走了<code>a+b</code>步，<code>B</code>指针<code>cur_B</code>总共走了<code>b+a</code>步，也会两个指针相同指向null，达到终止条件。</li>
-</ul>
-<ol start="3">
-<li>思路总结</li>
-</ol>
-<ul>
-<li>链表来说，首先是先动手走一走，再一个如果碰到交点问题，要看看怎么才能得到一个等式。</li>
-</ul>
-<h3 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getIntersectionNode</span>(<span class="params">self, headA: ListNode, headB: ListNode</span>) -&gt; ListNode:</span>  <span class="comment">#双指针</span></span><br><span class="line">        cur_A = headA</span><br><span class="line">        cur_B = headB</span><br><span class="line">        <span class="keyword">while</span> cur_A != cur_B:</span><br><span class="line">            cur_A = cur_A.<span class="built_in">next</span> <span class="keyword">if</span> cur_A <span class="keyword">else</span> headB</span><br><span class="line">            cur_B = cur_B.<span class="built_in">next</span> <span class="keyword">if</span> cur_B <span class="keyword">else</span> headA</span><br><span class="line">        <span class="keyword">return</span> cur_A</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>时间复杂度：$O(n+m)$ n是链表A的长度，m是链表B的长度  </li>
-<li>空间复杂度：$O(1)$  </li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>贪心</title>
     <url>/2021/03/18/%E8%B4%AA%E5%BF%83/</url>
     <content><![CDATA[<h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3.md">贪心</a></h2><p>思路是：(1) 保证每次操作都是局部最优的，并且最后得到的结果是全局最优的 (2)贪心算法一般是先需要排序的。</p>
@@ -935,5 +814,126 @@
         <tag>排序</tag>
         <tag>堆</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>链表</title>
+    <url>/2021/03/18/%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<p>链表<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E9%93%BE%E8%A1%A8.md#7-%E9%93%BE%E8%A1%A8%E6%B1%82%E5%92%8C">刷题顺序</a></p>
+<h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h2><ul>
+<li><p>Important notice: 涉及到链表的操作，一定要在纸上把过程先画出来，再写程序！不要断链子。</p>
+<span id="more"></span>
+</li>
+<li><p>注意<a href="https://zhuanlan.zhihu.com/p/53691100">防止锻链</a>，因为一旦把节点的指针反向了，当前的指针就不再指向下一个节点了，因为也就i不能再继续往后遍历了，也就不能把这个完整的链表进行反转了，这种情况称作断链。为了解决断链的情况，我们就需要再节点指针反向之前，就把当前节点的下一个节点先记下来，等到当前节点的指针完成反转之后，遍历指针直接移动到刚刚被记住的那个节点，这样就能防止锻炼的情况了。具体操作如下：<a href="https://zhuanlan.zhihu.com/p/53691100">讲解1</a></p>
+</li>
+<li></li>
+<li><p>注意：我们经常需要定义一个哨兵节点<code>prehead</code>，这可以在最后让我们比较容易地返回合并后的链表。</p>
+</li>
+</ul>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>双指针：</li>
+<li>栈：</li>
+</ol>
+<!-- more -->
+
+
+<h2 id="1-LC160-相交链表-相交链表"><a href="#1-LC160-相交链表-相交链表" class="headerlink" title="1. (LC160) 相交链表 相交链表"></a>1. (LC160) 相交链表 <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">相交链表</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>编写一个程序，找到两个单链表相交的起始节点。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>  图解</li>
+</ol>
+<p><img src="https://pic.leetcode-cn.com/1614527163-BKaiqs-Picture1.png"></p>
+<ol start="2">
+<li>数学思维</li>
+</ol>
+<ul>
+<li> 我们假设<code>A</code>的头节点到交汇点的距离为<code>a</code>， <code>B</code>的头节点到交汇点的距离为<code>b</code>，交会点最后的距离为<code>c</code>。</li>
+<li> <code>A</code>指针<code>cur_A</code>总共走了<code>a+b-c</code>步，<code>B</code>指针<code>cur_B</code>总共走了<code>b+a-c</code>步，所以会两个指针相同，达到终止条件。当没有交点的时候，<code>A</code>指针<code>cur_A</code>总共走了<code>a+b</code>步，<code>B</code>指针<code>cur_B</code>总共走了<code>b+a</code>步，也会两个指针相同指向null，达到终止条件。</li>
+</ul>
+<ol start="3">
+<li>思路总结</li>
+</ol>
+<ul>
+<li>链表来说，首先是先动手走一走，再一个如果碰到交点问题，要看看怎么才能得到一个等式。</li>
+</ul>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getIntersectionNode</span>(<span class="params">self, headA: ListNode, headB: ListNode</span>) -&gt; ListNode:</span>  <span class="comment">#双指针</span></span><br><span class="line">        cur_A = headA</span><br><span class="line">        cur_B = headB</span><br><span class="line">        <span class="keyword">while</span> cur_A != cur_B:</span><br><span class="line">            cur_A = cur_A.<span class="built_in">next</span> <span class="keyword">if</span> cur_A <span class="keyword">else</span> headB</span><br><span class="line">            cur_B = cur_B.<span class="built_in">next</span> <span class="keyword">if</span> cur_B <span class="keyword">else</span> headA</span><br><span class="line">        <span class="keyword">return</span> cur_A</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>时间复杂度：$O(n+m)$ n是链表A的长度，m是链表B的长度  </li>
+<li>空间复杂度：$O(1)$  </li>
+</ul>
+<h2 id="2-LC2206-反转链表-反转链表"><a href="#2-LC2206-反转链表-反转链表" class="headerlink" title="2. (LC2206) 反转链表 反转链表"></a>2. (LC2206) 反转链表 <a href="https://leetcode-cn.com/problems/reverse-linked-list/">反转链表</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>反转一个单链表。</p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ol>
+<li><p>双指针：为了防止断链子，要保持下一个节点<code>temp</code>和前一个节点<code>pre</code></p>
+</li>
+<li><p>递归：和双指针是一样的逻辑，同样是当<code>cur</code>为空的时候循环结束，不断将<code>cur</code>指向<code>pre</code>的过程。递归的这个好绕啊，第一遍没太理解，先记下来吧。一个很好的解释，慢慢理解，<a href="https://leetcode-cn.com/problems/reverse-linked-list/solution/dong-hua-yan-shi-206-fan-zhuan-lian-biao-by-user74/">戳这里</a></p>
+</li>
+<li><p>栈：最简单的一种方式就是使用栈，因为栈是先进后出的，实现原理是把链表点一个个入栈，当全部入栈之后在一个个出栈，出栈的时候在把出栈的结点串成一个新的链表。</p>
+<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
+</ol>
+<ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseList</span>(<span class="params">self, head: ListNode</span>) -&gt; ListNode:</span> <span class="comment">#双指针</span></span><br><span class="line">        cur = head</span><br><span class="line">        pre = <span class="literal">None</span>        </span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            temp = cur.<span class="built_in">next</span></span><br><span class="line">            cur.<span class="built_in">next</span> = pre</span><br><span class="line">            pre = cur</span><br><span class="line">            cur = temp</span><br><span class="line">        <span class="keyword">return</span> pre</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">reverseList</span>(<span class="params">self, head: ListNode</span>) -&gt; ListNode:</span> <span class="comment">#递归</span></span><br><span class="line">		<span class="comment"># 递归终止条件是当前为空，或者下一个节点为空</span></span><br><span class="line">		<span class="keyword">if</span>(head==<span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span>==<span class="literal">None</span>):</span><br><span class="line">			<span class="keyword">return</span> head</span><br><span class="line">		<span class="comment"># 这里的cur就是最后一个节点</span></span><br><span class="line">		cur = self.reverseList(head.<span class="built_in">next</span>)</span><br><span class="line">		<span class="comment"># 这里请配合动画演示理解</span></span><br><span class="line">		<span class="comment"># 如果链表是 1-&gt;2-&gt;3-&gt;4-&gt;5，那么此时的cur就是5</span></span><br><span class="line">		<span class="comment"># 而head是4，head的下一个是5，下下一个是空</span></span><br><span class="line">		<span class="comment"># 所以head.next.next 就是5-&gt;4</span></span><br><span class="line">		head.<span class="built_in">next</span>.<span class="built_in">next</span> = head</span><br><span class="line">		<span class="comment"># 防止链表循环，需要将head.next设置为空</span></span><br><span class="line">		head.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line">		<span class="comment"># 每层递归函数都返回cur，也就是最后一个节点</span></span><br><span class="line">		<span class="keyword">return</span> cur </span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseList</span>(<span class="params">self, head: ListNode</span>) -&gt; ListNode:</span></span><br><span class="line">        stack = [<span class="literal">None</span>]</span><br><span class="line">        <span class="comment"># 把链表节点全部放到栈中</span></span><br><span class="line">        <span class="keyword">while</span> head:</span><br><span class="line">            stack.append(head)</span><br><span class="line">            head = head.<span class="built_in">next</span></span><br><span class="line">        head = stack.pop()</span><br><span class="line">        cur = head</span><br><span class="line">        <span class="comment"># 栈中的结点全部出栈，然后重新连成一个新的链表</span></span><br><span class="line">        <span class="keyword">while</span> stack: </span><br><span class="line">            cur.<span class="built_in">next</span> = stack.pop()</span><br><span class="line">            cur =cur.<span class="built_in">next</span></span><br><span class="line">        <span class="comment"># 最后一个结点就是反转前的头结点，一定要让他的next</span></span><br><span class="line">        <span class="comment"># 等于空，否则会构成环</span></span><br><span class="line">        <span class="keyword">return</span> head</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>时间复杂度：$O( )$ n是链表的长度，  </p>
+</li>
+<li><p>空间复杂度：$O( )$  </p>
+<h2 id="3-LC21-合并两个有序链表-合并两个有序链表"><a href="#3-LC21-合并两个有序链表-合并两个有序链表" class="headerlink" title="3. (LC21) 合并两个有序链表 合并两个有序链表"></a>3. (LC21) 合并两个有序链表 <a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">合并两个有序链表</a></h2></li>
+</ul>
+<h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>  迭代</li>
+</ol>
+<ul>
+<li> 首先，我们设定一个哨兵节点<code>prehead</code>，这可以在最后让我们比较容易地返回合并后的链表。我们维护一个<code>prev</code>指针，我们需要做的是调整它的<code>next</code>指针。然后我们重复以下过程，直到<code>l1</code>或者<code>l2</code>指向<code>null</code>。在循环终止的时候，<code>l1</code>和<code>l2</code>至多有一个是非空的。</li>
+</ul>
+<ol start="2">
+<li>递归</li>
+</ol>
+<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span>(<span class="params">self, l1: ListNode, l2: ListNode</span>) -&gt; ListNode:</span></span><br><span class="line">    dummy = ListNode()</span><br><span class="line">    cur = dummy </span><br><span class="line">    <span class="keyword">while</span> l1 <span class="keyword">and</span> l2:</span><br><span class="line">        <span class="keyword">if</span> l1.val &lt; l2.val:</span><br><span class="line">            cur.<span class="built_in">next</span> = l1</span><br><span class="line">            l1 = l1.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cur.<span class="built_in">next</span> = l2</span><br><span class="line">            l2 = l2.<span class="built_in">next</span></span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line">    cur.<span class="built_in">next</span> = l1 <span class="keyword">if</span> l1 <span class="keyword">else</span> l2</span><br><span class="line">    <span class="keyword">return</span> dummy.<span class="built_in">next</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>时间复杂度：$O(n+m)$, 其中n和m个链表长度</p>
+</li>
+<li><p>空间复杂度：$O(1)$  </p>
+<h2 id="4-LC83-从有序链表中删除重复节点-从有序链表中删除重复节点"><a href="#4-LC83-从有序链表中删除重复节点-从有序链表中删除重复节点" class="headerlink" title="4. (LC83) 从有序链表中删除重复节点 从有序链表中删除重复节点"></a>4. (LC83) 从有序链表中删除重复节点 <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">从有序链表中删除重复节点</a></h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3></li>
+</ul>
+<p>编写一个程序，找到两个单链表相交的起始节点。</p>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>  图解</li>
+</ol>
+<p><img src="https://pic.leetcode-cn.com/1614527163-BKaiqs-Picture1.png"></p>
+<ol start="2">
+<li>数学思维</li>
+</ol>
+<ul>
+<li> 我们假设<code>A</code>的头节点到交汇点的距离为<code>a</code>， <code>B</code>的头节点到交汇点的距离为<code>b</code>，交会点最后的距离为<code>c</code>。</li>
+<li> <code>A</code>指针<code>cur_A</code>总共走了<code>a+b-c</code>步，<code>B</code>指针<code>cur_B</code>总共走了<code>b+a-c</code>步，所以会两个指针相同，达到终止条件。当没有交点的时候，<code>A</code>指针<code>cur_A</code>总共走了<code>a+b</code>步，<code>B</code>指针<code>cur_B</code>总共走了<code>b+a</code>步，也会两个指针相同指向null，达到终止条件。</li>
+</ul>
+<ol start="3">
+<li>思路总结</li>
+</ol>
+<ul>
+<li>链表来说，首先是先动手走一走，再一个如果碰到交点问题，要看看怎么才能得到一个等式。</li>
+</ul>
+<h3 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getIntersectionNode</span>(<span class="params">self, headA: ListNode, headB: ListNode</span>) -&gt; ListNode:</span>  <span class="comment">#双指针</span></span><br><span class="line">        cur_A = headA</span><br><span class="line">        cur_B = headB</span><br><span class="line">        <span class="keyword">while</span> cur_A != cur_B:</span><br><span class="line">            cur_A = cur_A.<span class="built_in">next</span> <span class="keyword">if</span> cur_A <span class="keyword">else</span> headB</span><br><span class="line">            cur_B = cur_B.<span class="built_in">next</span> <span class="keyword">if</span> cur_B <span class="keyword">else</span> headA</span><br><span class="line">        <span class="keyword">return</span> cur_A</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>时间复杂度：$O(n+m)$ n是链表A的长度，m是链表B的长度  </li>
+<li>空间复杂度：$O(1)$  </li>
+</ul>
+]]></content>
   </entry>
 </search>
