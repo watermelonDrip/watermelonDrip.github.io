@@ -1204,7 +1204,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #db591b;
+  background: #378cff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1524,7 +1524,7 @@ pre .javascript .function {
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  right: $b2t-position-left;
+  left: 30px;
   opacity: 1;
   padding: 0 6px;
   position: fixed;
@@ -1546,22 +1546,6 @@ pre .javascript .function {
     left: 20px;
     opacity: 0.8;
   }
-}
-.back-to-top {
-  right: 60px;
-  width: 70px;
-  height: 900px;
-  top: -900px;
-  bottom: unset;
-  transition: all 0.5s ease-in-out;
-  background: url("/images/scroll.png");
-}
-.back-to-top > i {
-  display: none;
-}
-.back-to-top.back-to-top-on {
-  bottom: unset;
-  top: calc(100vh - 900px - 200px);
 }
 .post-body {
   font-family: 'Noto Serif SC#Lato', "PingFang SC", "Microsoft YaHei", sans-serif;

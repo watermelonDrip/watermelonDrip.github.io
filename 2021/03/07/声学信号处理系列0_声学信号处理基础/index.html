@@ -28,10 +28,10 @@
 <meta property="og:description" content="声学信号处理系列（一）–声学信号处理基础知识by max 2021&#x2F;03&#x2F;07 0.写在开始的话这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3541145379,2023942298&amp;fm=15&amp;gp=0.jpg">
-<meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20191123%2Fd414717d0c8647dc979a0f0557cd82d2.jpeg&amp;refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1617682279&amp;t=03c62b6e9c10720fcd1a12f2abdfa02c">
-<meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.zhimg.com%2F50%2Fc7878e14449512f39a917d29645006cd_hd.jpg&amp;refer=http%3A%2F%2Fpic1.zhimg.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1617685462&amp;t=866a75dfb48a531d7493557f1d62b2e8">
+<meta property="og:image" content="http://watermelondrip.github.io/images/vowels.gif">
+<meta property="og:image" content="http://watermelondrip.github.io/images/spectrogram_formants.png">
 <meta property="article:published_time" content="2021-03-06T22:35:00.000Z">
-<meta property="article:modified_time" content="2021-03-07T09:46:24.456Z">
+<meta property="article:modified_time" content="2021-03-18T07:08:44.695Z">
 <meta property="article:author" content="Max">
 <meta property="article:tag" content="声学信号处理">
 <meta name="twitter:card" content="summary">
@@ -223,10 +223,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-07 09:35:00 / 修改时间：20:46:24" itemprop="dateCreated datePublished" datetime="2021-03-07T09:35:00+11:00">2021-03-07</time>
+              <time title="创建时间：2021-03-07 09:35:00" itemprop="dateCreated datePublished" datetime="2021-03-07T09:35:00+11:00">2021-03-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 18:08:44" itemprop="dateModified" datetime="2021-03-18T18:08:44+11:00">2021-03-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -275,7 +281,11 @@
 <h2 id="3-一些基本的专业词汇-2"><a href="#3-一些基本的专业词汇-2" class="headerlink" title="3.一些基本的专业词汇[2]"></a>3.一些基本的专业词汇[2]</h2><ul>
 <li>音节（Syllable）：说话时一次发出的，具有一个响亮的中心，并被明显感觉到的语音片段。</li>
 <li>音素（Phoneme）：语音发音的最小单位。一个音节可以由一个或多个音素构成。音素可分为元音和辅音两种。</li>
-<li>元音（Vowel）：当声带振动发出的声音气流从咽喉进入口腔并从嘴部唇部出去时，这些声腔完全开放，气流可以顺利通过时所发的音，称为元音。元音构成音节的主干，无论从长度或是能量角度考虑，元音在音节中都占主要部分。决定元音音色的主要因素是舌头的形状及其在口腔中的位置，以及嘴唇的形状等。口腔中当舌头处于不同的舌位高度和舌位前后时，可以发出不同的音素。下图是一个单元音发音舌位示意图：<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20191123%2Fd414717d0c8647dc979a0f0557cd82d2.jpeg&amp;refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1617682279&amp;t=03c62b6e9c10720fcd1a12f2abdfa02c" alt="avatar"></li>
+<li>元音（Vowel）：当声带振动发出的声音气流从咽喉进入口腔并从嘴部唇部出去时，这些声腔完全开放，气流可以顺利通过时所发的音，称为元音。元音构成音节的主干，无论从长度或是能量角度考虑，元音在音节中都占主要部分。决定元音音色的主要因素是舌头的形状及其在口腔中的位置，以及嘴唇的形状等。口腔中当舌头处于不同的舌位高度和舌位前后时，可以发出不同的音素。下图是一个单元音发音舌位示意图：</li>
+</ul>
+<img src="/images/vowels.gif" width="50%" height="50%" align="center/">
+
+<ul>
 <li>辅音（Consonant）：当呼出的气流，由于整个声腔通路上某一部分封闭起来或受到阻碍，气流传播不通畅，而克服发音器官的这种阻碍时所发的音，称为辅音。发辅音时，声带振动的是浊音，声带不振动的是清音。辅音只出现在音节的前端或后端或前后两端，时长和能量相比元音都很小。</li>
 <li>半元音：有时，虽然声道基本畅通，但某处声道较窄，引起轻微的摩擦声，称为半元音。</li>
 </ul>
@@ -284,7 +294,9 @@
 <p>一般可以用共振峰频率的位置和频带宽度这两个参数来描述一组共振峰。每个不同的元音，都对应着一组不同的共振峰参数。共振峰中的信号通常用F来表示，例如F0，F1，F2…等等。</p>
 <p>(2)基频F0：基频又称基础频率，其定义为共振峰中第一个共振信号的振动频率。共振峰中除基频F0以外，其他共振信号均为口腔共振产生，而基频F0由声带振动产生，其能量一般为共振峰中最强的。有时将音调（pitch）和基频等效看待，二者其实有一些细节上的不同，但平时讨论时可以暂时视为一体。音调反应的是音高的信息，男性和女性的平均音调范围是不同的，男性更低一些，女性更高一些。</p>
 <p>任何为基频整倍数的频率上的信号称为谐波。谐波反应的是音色的信息。</p>
-<p>通常我们可以通过观测语音信号的语谱图，来对共振峰和基频有一个直观的了解。语谱图是将语音的频谱信号以二维形式所描绘出来的图形，该图形横轴为时间，单位通常为秒s，纵轴为频率，单位通常为赫兹Hz。图形上颜色的深浅代表声学信号能量强度的高低。一个典型的反应了共振峰的语谱图如下所示：<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.zhimg.com%2F50%2Fc7878e14449512f39a917d29645006cd_hd.jpg&amp;refer=http%3A%2F%2Fpic1.zhimg.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1617685462&amp;t=866a75dfb48a531d7493557f1d62b2e8" alt="avatar"></p>
+<p>通常我们可以通过观测语音信号的语谱图，来对共振峰和基频有一个直观的了解。语谱图是将语音的频谱信号以二维形式所描绘出来的图形，该图形横轴为时间，单位通常为秒s，纵轴为频率，单位通常为赫兹Hz。图形上颜色的深浅代表声学信号能量强度的高低。一个典型的反应了共振峰的语谱图如下所示：</p>
+<img src="/images/spectrogram_formants.png" width="50%" height="50%" align="center/">
+
 <h2 id="5-我们如何听到声音"><a href="#5-我们如何听到声音" class="headerlink" title="5.我们如何听到声音"></a>5.我们如何听到声音</h2><p>人类听到声音的简要过程：空气中的声波传播到人耳内，耳朵内的鼓膜受到声波的声压的作用会产生位移振动，内耳的一个主要器官耳蜗，将这种位移振动的机械信息，转换为生物神经信号，传递给大脑进行处理后，我们就能够获知听到的是什么声音了。具体的介绍请移步参考资料[2]中的2.4.2节，会有更详尽的了解。</p>
 <p>人耳一般能接收并处理的声音的频率范围为20Hz<del>20kHz，强度为-5</del>130dB。在此范围外的声学信号里的音频分量，是人耳处理不到的，一般在语音信号处理领域的问题中不会考虑。但是，凡事无绝对，我们也不能说在这个范围以内的音频分量我们一定能听得到，这就涉及到一个概念叫做听觉掩蔽效应。</p>
 <p>听觉掩蔽效应指的是在一个强信号附近，弱信号将变得听不到，被掩盖掉了。生活中这种例子常见的有：购物商场的大喇叭在外放吵闹的音乐时，两个人的对话可能即使很近也听不清楚。被掩蔽掉的不可闻信号的最大声压级称为掩蔽门限或掩蔽阈值，在这个掩蔽阈值以下的声音都会被掩盖掉。</p>

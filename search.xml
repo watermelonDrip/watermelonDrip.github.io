@@ -513,6 +513,51 @@
 ]]></content>
   </entry>
   <entry>
+    <title>声学信号处理系列（一）--声学信号处理基础知识</title>
+    <url>/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="声学信号处理系列（一）–声学信号处理基础知识"><a href="#声学信号处理系列（一）–声学信号处理基础知识" class="headerlink" title="声学信号处理系列（一）–声学信号处理基础知识"></a>声学信号处理系列（一）–声学信号处理基础知识</h1><p><em>by max</em></p>
+<p><em>2021/03/07</em></p>
+<h2 id="0-写在开始的话"><a href="#0-写在开始的话" class="headerlink" title="0.写在开始的话"></a>0.写在开始的话</h2><p>这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中学习到的新知识，也希望能跟别人分享自己的一些心得体会。个人水平有限，如有疏漏错误，敬请批评指正，谢谢！</p>
+<span id="more"></span>
+
+<h2 id="1-声学基础"><a href="#1-声学基础" class="headerlink" title="1.声学基础"></a>1.声学基础</h2><p>声音是自然界中非常常见的一种信号之一，我们平时的生活中声音无处不在。人类可以通过声音，来对物体进行感知、辨认和定位。同样，声音也是日常我们互相交流时用于传递信息文字的“载具”。</p>
+<p>初高中物理课上大家应该都学到过，声音的本质是物体振动生成的声波，该声波通过某种介质（例如空气、水和固体）传播并能被人类或者动物的听觉器官所感知。声音的频率一般会以赫兹表示，记为Hz，指每秒钟周期性震动的次数。而分贝是用来表示声音强度的单位，记为dB[1]。</p>
+<h2 id="2-我们如何发出声音"><a href="#2-我们如何发出声音" class="headerlink" title="2.我们如何发出声音"></a>2.我们如何发出声音</h2><p>正如上一小节中所介绍的，发出声音需要凭借物体的振动。那么我们人类从口腔中发出各种各样的声音，也正是依靠我们的声带的振动来实现的。具体说来，从我们肺部内排出的气体气流，在经过形态变化的声带结构时，带动声带产生振动，进而生成了声波，声波经过我们的口腔和嘴，传输到外界空气中。在整个过程里，由于每个人类个体的声带器官、口腔腔体和嘴部的生理结构都是各异的，所以也导致我们每个人说出来的话的语音语调，以及包括音色，都是不同的。需要注意的是，由于鼻腔和口腔在人体内部是连通的，也会参与到发声过程中来。</p>
+<p>下图是一个口腔内部的各个器官的展示，体内从肺部出来的气流，经气管-&gt;声带-&gt;咽喉-&gt;口鼻，传出体外。</p>
+<p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3541145379,2023942298&amp;fm=15&amp;gp=0.jpg" alt="avatar"></p>
+<h2 id="3-一些基本的专业词汇-2"><a href="#3-一些基本的专业词汇-2" class="headerlink" title="3.一些基本的专业词汇[2]"></a>3.一些基本的专业词汇[2]</h2><ul>
+<li>音节（Syllable）：说话时一次发出的，具有一个响亮的中心，并被明显感觉到的语音片段。</li>
+<li>音素（Phoneme）：语音发音的最小单位。一个音节可以由一个或多个音素构成。音素可分为元音和辅音两种。</li>
+<li>元音（Vowel）：当声带振动发出的声音气流从咽喉进入口腔并从嘴部唇部出去时，这些声腔完全开放，气流可以顺利通过时所发的音，称为元音。元音构成音节的主干，无论从长度或是能量角度考虑，元音在音节中都占主要部分。决定元音音色的主要因素是舌头的形状及其在口腔中的位置，以及嘴唇的形状等。口腔中当舌头处于不同的舌位高度和舌位前后时，可以发出不同的音素。下图是一个单元音发音舌位示意图：</li>
+</ul>
+<img src="/images/vowels.gif" width="50%" height="50%" align="center/">
+
+<ul>
+<li>辅音（Consonant）：当呼出的气流，由于整个声腔通路上某一部分封闭起来或受到阻碍，气流传播不通畅，而克服发音器官的这种阻碍时所发的音，称为辅音。发辅音时，声带振动的是浊音，声带不振动的是清音。辅音只出现在音节的前端或后端或前后两端，时长和能量相比元音都很小。</li>
+<li>半元音：有时，虽然声道基本畅通，但某处声道较窄，引起轻微的摩擦声，称为半元音。</li>
+</ul>
+<h2 id="4-共振峰（Formant）与基频F0（Fundamental-frequency）"><a href="#4-共振峰（Formant）与基频F0（Fundamental-frequency）" class="headerlink" title="4.共振峰（Formant）与基频F0（Fundamental frequency）"></a>4.共振峰（Formant）与基频F0（Fundamental frequency）</h2><p>共振峰和基频F0是语音信号处理中较为重要的概念，所以单独拿出来介绍一下。</p>
+<p>(1)共振峰：前面介绍过发声机理，其中声道可以被等效视为一根横截面非均匀的声管，在发声过程中，该声管起共鸣器的作用。当一个具有相对较大能量的元音激励进入声道时，会引起共振特性，产生一组共振频率，称为共振峰频率，可简称为共振峰。换句话说，共振峰不是特指某一个频率的振动信号，而是代指一组具有不同频率的共振信号，这组信号里，每个信号所处的频率是不同的，但是是连续存在的。</p>
+<p>一般可以用共振峰频率的位置和频带宽度这两个参数来描述一组共振峰。每个不同的元音，都对应着一组不同的共振峰参数。共振峰中的信号通常用F来表示，例如F0，F1，F2…等等。</p>
+<p>(2)基频F0：基频又称基础频率，其定义为共振峰中第一个共振信号的振动频率。共振峰中除基频F0以外，其他共振信号均为口腔共振产生，而基频F0由声带振动产生，其能量一般为共振峰中最强的。有时将音调（pitch）和基频等效看待，二者其实有一些细节上的不同，但平时讨论时可以暂时视为一体。音调反应的是音高的信息，男性和女性的平均音调范围是不同的，男性更低一些，女性更高一些。</p>
+<p>任何为基频整倍数的频率上的信号称为谐波。谐波反应的是音色的信息。</p>
+<p>通常我们可以通过观测语音信号的语谱图，来对共振峰和基频有一个直观的了解。语谱图是将语音的频谱信号以二维形式所描绘出来的图形，该图形横轴为时间，单位通常为秒s，纵轴为频率，单位通常为赫兹Hz。图形上颜色的深浅代表声学信号能量强度的高低。一个典型的反应了共振峰的语谱图如下所示：</p>
+<img src="/images/spectrogram_formants.png" width="50%" height="50%" align="center/">
+
+<h2 id="5-我们如何听到声音"><a href="#5-我们如何听到声音" class="headerlink" title="5.我们如何听到声音"></a>5.我们如何听到声音</h2><p>人类听到声音的简要过程：空气中的声波传播到人耳内，耳朵内的鼓膜受到声波的声压的作用会产生位移振动，内耳的一个主要器官耳蜗，将这种位移振动的机械信息，转换为生物神经信号，传递给大脑进行处理后，我们就能够获知听到的是什么声音了。具体的介绍请移步参考资料[2]中的2.4.2节，会有更详尽的了解。</p>
+<p>人耳一般能接收并处理的声音的频率范围为20Hz<del>20kHz，强度为-5</del>130dB。在此范围外的声学信号里的音频分量，是人耳处理不到的，一般在语音信号处理领域的问题中不会考虑。但是，凡事无绝对，我们也不能说在这个范围以内的音频分量我们一定能听得到，这就涉及到一个概念叫做听觉掩蔽效应。</p>
+<p>听觉掩蔽效应指的是在一个强信号附近，弱信号将变得听不到，被掩盖掉了。生活中这种例子常见的有：购物商场的大喇叭在外放吵闹的音乐时，两个人的对话可能即使很近也听不清楚。被掩蔽掉的不可闻信号的最大声压级称为掩蔽门限或掩蔽阈值，在这个掩蔽阈值以下的声音都会被掩盖掉。</p>
+<h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] 维基百科-声音词条：<a href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3">https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3</a></p>
+<p>[2] 赵力. 语音信号处理[M]. 机械工业出版社, 2016.</p>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>声学信号处理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>排序 （熟到可以默写）</title>
     <url>/2021/03/18/%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<h2 id="排序顺序"><a href="#排序顺序" class="headerlink" title="排序顺序"></a>排序<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%8E%92%E5%BA%8F.md">顺序</a></h2><p>思路是：</p>
@@ -600,73 +645,106 @@
 ]]></content>
   </entry>
   <entry>
-    <title>搜索</title>
+    <title>搜索（BFS, DFS, Backtracking）</title>
     <url>/2021/03/18/%E6%90%9C%E7%B4%A2/</url>
-    <content><![CDATA[<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%90%9C%E7%B4%A2.md">搜索</a></h2><p>深度优先搜索和广度优先搜索广泛应用于树和图中。 （1） BFS (2) DFS (3) Backtracking</p>
+    <content><![CDATA[<h1 id="搜索（BFS-DFS-Backtracking）"><a href="#搜索（BFS-DFS-Backtracking）" class="headerlink" title="搜索（BFS, DFS, Backtracking）"></a>搜索（BFS, DFS, Backtracking）</h1><hr>
+<p>广度优先算法（Breadth-First-Search），简称BFS。深度优先算法（Deep-First-Search），简称DFS。BFS:利用队列先进先出的特性，可以优先遍历横向节点。DFS:利用栈先进后出的特性，可以优先遍历纵向节点。<br><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%90%9C%E7%B4%A2.md">搜索</a></p>
+<hr>
+<p>深度优先搜索和广度优先搜索广泛应用于树和图中。 （1） BFS  (2) DFS (3) Backtracking</p>
 <span id="more"></span>
 
-<p><strong>目录 (Table of Contents)</strong></p>
-<!-- toc -->
+<h1 id="BFS-广度优先搜索）"><a href="#BFS-广度优先搜索）" class="headerlink" title="BFS (广度优先搜索）"></a>BFS (广度优先搜索）</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h2><p>广度优先算法（BFS）：是一种图形搜索演算法。简单的说，BFS是从根节点开始，沿着树的宽度遍历树的节点，如果发现目标，则演算终止。</p>
+<h2 id="算法分析："><a href="#算法分析：" class="headerlink" title="算法分析："></a>算法分析：</h2><p>BFS是一种盲目搜寻法，目的是系统的展开并检查图中的所有节点，以找寻结果。换句话说，它并不考虑结果的可能位置，彻底地搜索整张图，直到找到结果为主。</p>
+<h2 id="时间复杂度："><a href="#时间复杂度：" class="headerlink" title="时间复杂度："></a>时间复杂度：</h2><p>邻接表的时候是$O(|V|+|E|)$。其中，$|V|$是节点的数目，$|E|$是图中边的数目。</p>
+<h2 id="适应条件："><a href="#适应条件：" class="headerlink" title="适应条件："></a>适应条件：</h2><p>对于所有边长度相同的情况，比如地图的模型，BFS第一次遇到目标点，此时就一定是从根节点到目标节点的最短路径（因为每次所有的点都是向外扩张一步，你先遇到，那你就一定最短的了）。<strong>BFS先找到的一定是最短的</strong>。但是如果是加权边的话就会有问题，BFS传回的是经过<strong>边数最少</strong>的解，但是因为加权了，这个解到根节点的<strong>距离</strong>就不一定是最短的了。比如1000+1000是两段，1+1+1是三段，但是由于BFS返回的是是<strong>经过边数最少的的解</strong>，这里就会返回总长度是2000的那个解，但是显然不是距离最短的路径。此时我们就应该采用<strong>Dijkstra最短路算法</strong>解决加权路径的最短路了（这就有点超纲了呀）。</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ol>
+<li>寻找非加权图(或者所有边权重是一样)中任两点的最短路径。</li>
+<li>寻找其中一个连通分支中的所有节点（扩散性）。</li>
+<li>BFS染色法判断是否为二分图</li>
+</ol>
+<h2 id="大佬解释BFS"><a href="#大佬解释BFS" class="headerlink" title="大佬解释BFS"></a>大佬解释BFS</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/40151973#:~:text=%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E7%AE%97%E6%B3%95%EF%BC%88Breadth%2DFirst,%E6%89%80%E6%9C%89%E8%8A%82%E7%82%B9%EF%BC%8C%E4%BB%A5%E6%89%BE%E5%AF%BB%E7%BB%93%E6%9E%9C%E3%80%82">BFS算法介绍</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/50187643">算法- 从栈 &amp; 队列 到 BFS &amp; DFS</a></li>
+<li><a href="https://www.jianshu.com/p/d2125448270b">用Python实现树的BFS与DFS</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/141898546">LeetCode | 一文帮你搞定BFS、DFS算法（python版）</a></li>
+</ol>
+<hr>
+<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><hr>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h3 id="LC1091-计算在网格中从原点到特定点的最短路径长度-计算在网格中从原点到特定点的最短路径长度"><a href="#LC1091-计算在网格中从原点到特定点的最短路径长度-计算在网格中从原点到特定点的最短路径长度" class="headerlink" title="(LC1091)计算在网格中从原点到特定点的最短路径长度   计算在网格中从原点到特定点的最短路径长度 "></a>(LC1091)计算在网格中从原点到特定点的最短路径长度   <a href="https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/">计算在网格中从原点到特定点的最短路径长度 </a></h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p> 给你一个 n x n 的二进制矩阵 grid 中，返回矩阵中最短 畅通路径 的长度。如果不存在这样的路径，返回 -1 。二进制矩阵中的 畅通路径 是一条从 左上角 单元格（即，(0, 0)）到 右下角 单元格（即，(n - 1, n - 1)）的路径，该路径同时满足下述要求：路径途经的所有单元格都的值都是 0 。路径中所有相邻的单元格应当在 8 个方向之一 上连通（即，相邻两单元之间彼此不同且共享一条边或者一个角）。畅通路径的长度 是该路径途经的单元格总数。 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：grid = [[0,1],[1,0]]</span><br><span class="line">输出：2</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h4><ul>
+<li>Deque(class collections.deque([iterable[,maxlen]])) [使用戳一戳](collections中 deque的使用)<ul>
+<li>Deque是双边队列（double-ended queue），具有队列和栈的性质，在 list 的基础上增加了移动、旋转和增删等。</li>
+<li>Deque队列是由栈或者queue队列生成的（发音是”deck”,”double-ended queue”的简称）。</li>
+<li>Deque是一个双端队列, 如果要经常从两端append 的数据, 选择这个数据结构就比较好了, 如果要实现随机访问,不建议用这个,请用列表。Deque 优势就是可以从两边append ,appendleft 数据。这一点list 是没有的<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">queue = deque([<span class="string">"Eric"</span>, <span class="string">"John"</span>, <span class="string">"Michael"</span>])</span><br><span class="line">queue.append(<span class="string">"Terry"</span>)           <span class="comment"># Terry 入队</span></span><br><span class="line">queue.append(<span class="string">"Graham"</span>)          <span class="comment"># Graham 入队</span></span><br><span class="line">queue.popleft()                 <span class="comment"># 队首元素出队</span></span><br><span class="line"><span class="comment">#输出: 'Eric'</span></span><br><span class="line">queue.popleft()                 <span class="comment"># 队首元素出队</span></span><br><span class="line"><span class="comment">#输出: 'John'</span></span><br><span class="line">print(queue)                           <span class="comment"># 队列中剩下的元素</span></span><br><span class="line"><span class="comment">#输出: deque(['Michael', 'Terry', 'Graham'])</span></span><br></pre></td></tr></tbody></table></figure>
 
 
-<p>[TOC]</p>
-<h1 id="BFS-广度优先搜索）"><a href="#BFS-广度优先搜索）" class="headerlink" title="BFS (广度优先搜索）"></a>BFS (广度优先搜索）</h1><h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +,&nbsp;-&nbsp;以及&nbsp;*&nbsp;。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>分治： 自顶向下地拆分子问题</li>
-<li>分解：每一步都针对一个运算符分割表达式。</li>
-<li>解决：递归停止条件，无运算符只有数字</li>
-<li>合并</li>
-<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。</li>
+</li>
 </ul>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
-<p>####复杂度分析  </p>
-<h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2>]]></content>
+</li>
+</ul>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ol>
+<li>第一次刷这个BFS,毫无头绪，怎么办？首先是看到大佬的一个模板，先偷过来</li>
+</ol>
+<ul>
+<li> 第一步：先构造图<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initial_graph</span>(<span class="params">n, edges</span>):</span></span><br><span class="line">    dict_graph = {}  <span class="comment">#用字典表示</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        dict_graph[i] = []</span><br><span class="line">    num_e = <span class="built_in">len</span>(edges)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(num_e):</span><br><span class="line">        u = edges[i][<span class="number">0</span>] <span class="comment">#用矩阵表示</span></span><br><span class="line">        v = edges[i][<span class="number">1</span>]</span><br><span class="line">        dict_graph[u].append(v)</span><br><span class="line">        dict_graph[v].append(u)</span><br><span class="line">    <span class="keyword">return</span> dict_graph</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<ul>
+<li><p>第二步：使用队列<br>  BFS适用于层级搜索，队列先进先出，量身定做。python中队列有两种导入方法：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 1.使用queue  #队列</span></span><br><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> Queue</span><br><span class="line">q = Queue() <span class="comment"># 定义，为什么是这样涉及python的设计，不是很懂</span></span><br><span class="line">q.put(node) <span class="comment"># 放入</span></span><br><span class="line">q.get() <span class="comment"># 出队</span></span><br><span class="line"><span class="comment"># 2.使用deque</span></span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">q = collections.deque() <span class="comment"># 双向队列</span></span><br><span class="line">q.append() <span class="comment"># 入队</span></span><br><span class="line">q.popleft() <span class="comment"># 出队</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>第三步：节点入队</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用Queue()定义</span></span><br><span class="line">q.put(start_node)</span><br><span class="line"><span class="comment"># 为防止无向图中回溯，使用set阻断</span></span><br><span class="line">hash_set = <span class="built_in">set</span>()</span><br><span class="line">hash_set.add(start_node)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>第四步：BFS主体</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">step = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> q.empty():</span><br><span class="line">	size = <span class="built_in">len</span>(q)</span><br><span class="line">	step += <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> iter_num <span class="keyword">in</span> <span class="built_in">range</span>(size):</span><br><span class="line">		node = q.get() <span class="comment"># current node</span></span><br><span class="line">		<span class="comment"># get the neighbor</span></span><br><span class="line">		<span class="keyword">for</span> neighbor <span class="keyword">in</span> dict_graph[node]:</span><br><span class="line">			<span class="keyword">if</span> neighbor == end_node: <span class="comment"># find it!!!!</span></span><br><span class="line">				<span class="keyword">return</span> step</span><br><span class="line">			<span class="keyword">if</span> neighbor <span class="keyword">in</span> hash_set:</span><br><span class="line">				<span class="keyword">continue</span> <span class="comment"># avoid backtracking</span></span><br><span class="line">			hast_set.add(node)</span><br><span class="line">			q.put(neighbor)</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span> <span class="comment"># can't find</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>具体操作</li>
+</ol>
+<ul>
+<li>本题本身就是矩阵，就不需要重新弄建initial。从头遍历，每次遇到0的时候，将周围8个方向可走的点push进队列，这样就可以将下一步能走的点找到。</li>
+<li>用一个大小为3的数组来保存当前点的坐标，和走到当前点所需要的代价</li>
+<li>由于要找的是花费路径最短的，所以第一个符合循环结束条件的数组，其第三个值就是我们要找的最小代价</li>
+</ul>
+<h4 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">shortestPathBinaryMatrix</span>(<span class="params">self, grid: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        n = <span class="built_in">len</span>(grid)</span><br><span class="line">        <span class="keyword">if</span> grid[<span class="number">0</span>][<span class="number">0</span>] == <span class="number">1</span> <span class="keyword">or</span> grid[n - <span class="number">1</span>][n - <span class="number">1</span>] == <span class="number">1</span>:  <span class="comment"># 若起始点或终点堵塞，则不可能有这样的路径</span></span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        res = <span class="number">1</span>  <span class="comment"># 注意题目的描述，是返回从 1 到 k 的路径，第一个节点被定为下标 1，</span></span><br><span class="line">        path = deque()</span><br><span class="line">        path.append([<span class="number">0</span>, <span class="number">0</span>])  <span class="comment"># 先压入起点</span></span><br><span class="line">        <span class="keyword">while</span> path:  <span class="comment"># BFS模板</span></span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(path)):  <span class="comment"># 对BFS的某一层的中所有点向8个方向进行扩展</span></span><br><span class="line">                x, y = path.popleft()</span><br><span class="line">                <span class="keyword">for</span> new_x, new_y <span class="keyword">in</span> [[x - <span class="number">1</span>, y - <span class="number">1</span>], [x - <span class="number">1</span>, y], [x - <span class="number">1</span>, y + <span class="number">1</span>], [x, y - <span class="number">1</span>],</span><br><span class="line">                                     [x, y + <span class="number">1</span>], [x + <span class="number">1</span>, y - <span class="number">1</span>], [x + <span class="number">1</span>, y], [x + <span class="number">1</span>, y + <span class="number">1</span>]]:</span><br><span class="line">                    <span class="comment"># 下面几种continue可以合并一行，这里为看的清楚就分开写了</span></span><br><span class="line">                    <span class="keyword">if</span> new_x == n - <span class="number">1</span> <span class="keyword">and</span> new_y == n - <span class="number">1</span>:  <span class="comment"># 如果扩展的点到达了终点</span></span><br><span class="line">                        <span class="keyword">return</span> res + <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> <span class="number">0</span> &lt;= new_x &lt; n <span class="keyword">or</span> <span class="keyword">not</span> <span class="number">0</span> &lt;= new_y &lt; n:  <span class="comment"># 扩展的点超出边界，则跳过</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">if</span> grid[new_x][new_y] == <span class="number">1</span>:  <span class="comment"># 若扩展的点为阻塞，则跳过</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">if</span> grid[new_x][new_y] == -<span class="number">1</span>:  <span class="comment"># 若扩展的点已经访问过，则跳过</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">if</span> grid[new_x][new_y] == <span class="number">0</span>:  <span class="comment"># 若为通畅点</span></span><br><span class="line">                        grid[new_x][new_y] = -<span class="number">1</span>  <span class="comment"># 当前层次下已经访问该点</span></span><br><span class="line">                        path.append([new_x, new_y])  <span class="comment"># 将扩展的点加入path，到下一层的时候继续扩展</span></span><br><span class="line">            res += <span class="number">1</span>  <span class="comment"># 对某一层的元素都求判定过后，距离加1(同一个层次中的所有点的距离距离起点都是相等的）</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC297-完全平方数-完全平方数"><a href="#LC297-完全平方数-完全平方数" class="headerlink" title="(LC297)完全平方数   完全平方数 "></a>(LC297)完全平方数   <a href="https://leetcode-cn.com/problems/perfect-squares/description/">完全平方数 </a></h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>给定正整数&nbsp;n，找到若干个完全平方数（比如&nbsp;1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。给你一个整数 n ，返回和为 n 的完全平方数的 最少数量 。完全平方数 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：n = 12</span><br><span class="line">输出：3 </span><br><span class="line">解释：12 = 4 + 4 + 4</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><ol>
+<li>可以将每个整数看成图中的一个节点，如果两个整数之差为一个平方数，那么这两个整数所在的节点就有一条边。要求解最小的平方数数量，就是求解从节点 n 到节点 0 的最短路径。</li>
+<li><a href="https://leetcode-cn.com/problems/perfect-squares/solution/dong-tai-gui-hua-bfs-zhu-xing-jie-shi-python3-by-2/">广度优先遍历</a></li>
+<li><h4 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4></li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numSquares</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        queue = deque([n])  <span class="comment">#必须带[]，否则不是iterable </span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        step = <span class="number">0</span></span><br><span class="line">        visited = <span class="built_in">set</span>()</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            step +=<span class="number">1</span></span><br><span class="line">            l = <span class="built_in">len</span>(queue)</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(l):</span><br><span class="line">                temp = queue.pop()  <span class="comment"># 不能用 queue.popleft() 因为后面用的是appendleft。前后只能有一个left</span></span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">int</span>(temp**<span class="number">0.5</span>)+<span class="number">1</span>):</span><br><span class="line">                    x = temp - i**<span class="number">2</span></span><br><span class="line">                    <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">                        <span class="keyword">return</span> step</span><br><span class="line">                    <span class="keyword">if</span> x <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">                        visited.add(x)</span><br><span class="line">                        queue.appendleft(x)</span><br><span class="line">        <span class="keyword">return</span> step</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-1"><a href="#大佬题解-1" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-2"><a href="#大佬题解-2" class="headerlink" title="大佬题解"></a>大佬题解</h4><hr>
+<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><hr>
+<h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-3"><a href="#复杂度分析-3" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-3"><a href="#大佬题解-3" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-4"><a href="#复杂度分析-4" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-5"><a href="#复杂度分析-5" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-5"><a href="#大佬题解-5" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-6"><a href="#复杂度分析-6" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-6"><a href="#大佬题解-6" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-5"><a href="#LC-5" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-7"><a href="#复杂度分析-7" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-7"><a href="#大佬题解-7" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
       <categories>
         <category>力扣</category>
       </categories>
       <tags>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>声学信号处理系列（一）--声学信号处理基础知识</title>
-    <url>/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="声学信号处理系列（一）–声学信号处理基础知识"><a href="#声学信号处理系列（一）–声学信号处理基础知识" class="headerlink" title="声学信号处理系列（一）–声学信号处理基础知识"></a>声学信号处理系列（一）–声学信号处理基础知识</h1><p><em>by max</em></p>
-<p><em>2021/03/07</em></p>
-<h2 id="0-写在开始的话"><a href="#0-写在开始的话" class="headerlink" title="0.写在开始的话"></a>0.写在开始的话</h2><p>这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中学习到的新知识，也希望能跟别人分享自己的一些心得体会。个人水平有限，如有疏漏错误，敬请批评指正，谢谢！</p>
-<span id="more"></span>
-
-<h2 id="1-声学基础"><a href="#1-声学基础" class="headerlink" title="1.声学基础"></a>1.声学基础</h2><p>声音是自然界中非常常见的一种信号之一，我们平时的生活中声音无处不在。人类可以通过声音，来对物体进行感知、辨认和定位。同样，声音也是日常我们互相交流时用于传递信息文字的“载具”。</p>
-<p>初高中物理课上大家应该都学到过，声音的本质是物体振动生成的声波，该声波通过某种介质（例如空气、水和固体）传播并能被人类或者动物的听觉器官所感知。声音的频率一般会以赫兹表示，记为Hz，指每秒钟周期性震动的次数。而分贝是用来表示声音强度的单位，记为dB[1]。</p>
-<h2 id="2-我们如何发出声音"><a href="#2-我们如何发出声音" class="headerlink" title="2.我们如何发出声音"></a>2.我们如何发出声音</h2><p>正如上一小节中所介绍的，发出声音需要凭借物体的振动。那么我们人类从口腔中发出各种各样的声音，也正是依靠我们的声带的振动来实现的。具体说来，从我们肺部内排出的气体气流，在经过形态变化的声带结构时，带动声带产生振动，进而生成了声波，声波经过我们的口腔和嘴，传输到外界空气中。在整个过程里，由于每个人类个体的声带器官、口腔腔体和嘴部的生理结构都是各异的，所以也导致我们每个人说出来的话的语音语调，以及包括音色，都是不同的。需要注意的是，由于鼻腔和口腔在人体内部是连通的，也会参与到发声过程中来。</p>
-<p>下图是一个口腔内部的各个器官的展示，体内从肺部出来的气流，经气管-&gt;声带-&gt;咽喉-&gt;口鼻，传出体外。</p>
-<p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3541145379,2023942298&amp;fm=15&amp;gp=0.jpg" alt="avatar"></p>
-<h2 id="3-一些基本的专业词汇-2"><a href="#3-一些基本的专业词汇-2" class="headerlink" title="3.一些基本的专业词汇[2]"></a>3.一些基本的专业词汇[2]</h2><ul>
-<li>音节（Syllable）：说话时一次发出的，具有一个响亮的中心，并被明显感觉到的语音片段。</li>
-<li>音素（Phoneme）：语音发音的最小单位。一个音节可以由一个或多个音素构成。音素可分为元音和辅音两种。</li>
-<li>元音（Vowel）：当声带振动发出的声音气流从咽喉进入口腔并从嘴部唇部出去时，这些声腔完全开放，气流可以顺利通过时所发的音，称为元音。元音构成音节的主干，无论从长度或是能量角度考虑，元音在音节中都占主要部分。决定元音音色的主要因素是舌头的形状及其在口腔中的位置，以及嘴唇的形状等。口腔中当舌头处于不同的舌位高度和舌位前后时，可以发出不同的音素。下图是一个单元音发音舌位示意图：<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20191123%2Fd414717d0c8647dc979a0f0557cd82d2.jpeg&amp;refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1617682279&amp;t=03c62b6e9c10720fcd1a12f2abdfa02c" alt="avatar"></li>
-<li>辅音（Consonant）：当呼出的气流，由于整个声腔通路上某一部分封闭起来或受到阻碍，气流传播不通畅，而克服发音器官的这种阻碍时所发的音，称为辅音。发辅音时，声带振动的是浊音，声带不振动的是清音。辅音只出现在音节的前端或后端或前后两端，时长和能量相比元音都很小。</li>
-<li>半元音：有时，虽然声道基本畅通，但某处声道较窄，引起轻微的摩擦声，称为半元音。</li>
-</ul>
-<h2 id="4-共振峰（Formant）与基频F0（Fundamental-frequency）"><a href="#4-共振峰（Formant）与基频F0（Fundamental-frequency）" class="headerlink" title="4.共振峰（Formant）与基频F0（Fundamental frequency）"></a>4.共振峰（Formant）与基频F0（Fundamental frequency）</h2><p>共振峰和基频F0是语音信号处理中较为重要的概念，所以单独拿出来介绍一下。</p>
-<p>(1)共振峰：前面介绍过发声机理，其中声道可以被等效视为一根横截面非均匀的声管，在发声过程中，该声管起共鸣器的作用。当一个具有相对较大能量的元音激励进入声道时，会引起共振特性，产生一组共振频率，称为共振峰频率，可简称为共振峰。换句话说，共振峰不是特指某一个频率的振动信号，而是代指一组具有不同频率的共振信号，这组信号里，每个信号所处的频率是不同的，但是是连续存在的。</p>
-<p>一般可以用共振峰频率的位置和频带宽度这两个参数来描述一组共振峰。每个不同的元音，都对应着一组不同的共振峰参数。共振峰中的信号通常用F来表示，例如F0，F1，F2…等等。</p>
-<p>(2)基频F0：基频又称基础频率，其定义为共振峰中第一个共振信号的振动频率。共振峰中除基频F0以外，其他共振信号均为口腔共振产生，而基频F0由声带振动产生，其能量一般为共振峰中最强的。有时将音调（pitch）和基频等效看待，二者其实有一些细节上的不同，但平时讨论时可以暂时视为一体。音调反应的是音高的信息，男性和女性的平均音调范围是不同的，男性更低一些，女性更高一些。</p>
-<p>任何为基频整倍数的频率上的信号称为谐波。谐波反应的是音色的信息。</p>
-<p>通常我们可以通过观测语音信号的语谱图，来对共振峰和基频有一个直观的了解。语谱图是将语音的频谱信号以二维形式所描绘出来的图形，该图形横轴为时间，单位通常为秒s，纵轴为频率，单位通常为赫兹Hz。图形上颜色的深浅代表声学信号能量强度的高低。一个典型的反应了共振峰的语谱图如下所示：<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.zhimg.com%2F50%2Fc7878e14449512f39a917d29645006cd_hd.jpg&amp;refer=http%3A%2F%2Fpic1.zhimg.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1617685462&amp;t=866a75dfb48a531d7493557f1d62b2e8" alt="avatar"></p>
-<h2 id="5-我们如何听到声音"><a href="#5-我们如何听到声音" class="headerlink" title="5.我们如何听到声音"></a>5.我们如何听到声音</h2><p>人类听到声音的简要过程：空气中的声波传播到人耳内，耳朵内的鼓膜受到声波的声压的作用会产生位移振动，内耳的一个主要器官耳蜗，将这种位移振动的机械信息，转换为生物神经信号，传递给大脑进行处理后，我们就能够获知听到的是什么声音了。具体的介绍请移步参考资料[2]中的2.4.2节，会有更详尽的了解。</p>
-<p>人耳一般能接收并处理的声音的频率范围为20Hz<del>20kHz，强度为-5</del>130dB。在此范围外的声学信号里的音频分量，是人耳处理不到的，一般在语音信号处理领域的问题中不会考虑。但是，凡事无绝对，我们也不能说在这个范围以内的音频分量我们一定能听得到，这就涉及到一个概念叫做听觉掩蔽效应。</p>
-<p>听觉掩蔽效应指的是在一个强信号附近，弱信号将变得听不到，被掩盖掉了。生活中这种例子常见的有：购物商场的大喇叭在外放吵闹的音乐时，两个人的对话可能即使很近也听不清楚。被掩蔽掉的不可闻信号的最大声压级称为掩蔽门限或掩蔽阈值，在这个掩蔽阈值以下的声音都会被掩盖掉。</p>
-<h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] 维基百科-声音词条：<a href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3">https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3</a></p>
-<p>[2] 赵力. 语音信号处理[M]. 机械工业出版社, 2016.</p>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>声学信号处理</tag>
       </tags>
   </entry>
   <entry>
@@ -838,11 +916,11 @@
 
 <h2 id="1-LC160-相交链表-相交链表"><a href="#1-LC160-相交链表-相交链表" class="headerlink" title="1. (LC160) 相交链表 相交链表"></a>1. (LC160) 相交链表 <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">相交链表</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>编写一个程序，找到两个单链表相交的起始节点。</p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
-<li>  图解</li>
-</ol>
-<p><img src="https://pic.leetcode-cn.com/1614527163-BKaiqs-Picture1.png"></p>
-<ol start="2">
-<li>数学思维</li>
+<li><p>  图解</p>
+<img src="/images/链表lc160.png" width="50%" height="50%" align="center/">
+</li>
+<li><p>数学思维</p>
+</li>
 </ol>
 <ul>
 <li> 我们假设<code>A</code>的头节点到交汇点的距离为<code>a</code>， <code>B</code>的头节点到交汇点的距离为<code>b</code>，交会点最后的距离为<code>c</code>。</li>
