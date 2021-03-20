@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>第一天坚持坚持</title>
-    <url>/2021/02/27/firstday/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>第一次记录一下</p>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Day 1 - Max</title>
-    <url>/2021/03/06/firstday_max/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p><em>by max</em></p>
-<p><em>2021/02/28</em></p>
-<p>这是在MAX的瓜园写下的第一篇日志，没有具体的内容，仅供测试使用。</p>
-<span id="more"></span>
-
-<p><strong>建立这个博客网页的主要目的是为了记录刷题过程中的收获，包括题解、算法思路和一些相关资料等。</strong></p>
-<p><code>此网站也会收藏一些平日学习和工作中有价值的资料</code></p>
-<p>网站仍在建设中，更多功能会逐步完善，包括评论功能等，敬请期待！！！</p>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构的分析</title>
     <url>/2021/03/06/dataStructure/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据结构</p>
@@ -69,8 +38,39 @@
         <category>知识及记录</category>
       </categories>
       <tags>
-        <tag>学习笔记</tag>
         <tag>数据结构</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一天坚持坚持</title>
+    <url>/2021/02/27/firstday/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>第一次记录一下</p>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day 1 - Max</title>
+    <url>/2021/03/06/firstday_max/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p><em>by max</em></p>
+<p><em>2021/02/28</em></p>
+<p>这是在MAX的瓜园写下的第一篇日志，没有具体的内容，仅供测试使用。</p>
+<span id="more"></span>
+
+<p><strong>建立这个博客网页的主要目的是为了记录刷题过程中的收获，包括题解、算法思路和一些相关资料等。</strong></p>
+<p><code>此网站也会收藏一些平日学习和工作中有价值的资料</code></p>
+<p>网站仍在建设中，更多功能会逐步完善，包括评论功能等，敬请期待！！！</p>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -137,57 +137,31 @@
       </tags>
   </entry>
   <entry>
-    <title>分治</title>
-    <url>/2021/03/18/%E5%88%86%E6%B2%BB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治</a></h2><h3 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h3><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—分 （2) 将最后子问题可以简单的直接求解—“治” （3) 将所有子问题的解合并起来就说原问题的解—“合”</p>
-<span id="more"></span>
+    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
+    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
+<p>##sort()用法 和 sorted()用法的不同</p>
+<ol>
+<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
+<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。Because sorted is a global function, it can take any iterable and return a sorted list from that</li>
+<li><h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
-<p><strong>目录 (Table of Contents)</strong></p>
-<!-- toc -->
 
-
-<p>[TOC]</p>
-<h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
-<p>第一条特征是绝大多数问题都可以满足的，因为问题的计算计算复杂度一般是随着问题规模的增加而增加； 第二个特征是应用分治法的前提它也是大多数问题可以解决的，此特征反映了递归思想的应用； 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具有第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。 第四条特征涉及到分治法的效率，如果各子问题是不独立的分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。</p>
-<h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +,&nbsp;-&nbsp;以及&nbsp;*&nbsp;。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>分治： 自顶向下地拆分子问题</li>
-<li>分解：每一步都针对一个运算符分割表达式。</li>
-<li>解决：递归停止条件，无运算符只有数字</li>
-<li>合并</li>
-<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。</li>
-</ul>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
-<p>####复杂度分析  </p>
-<h2 id="2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II"><a href="#2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II" class="headerlink" title="2. (LC95) 不同的二叉搜索树 II 不同的二叉搜索树 II"></a>2. (LC95) 不同的二叉搜索树 II <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">不同的二叉搜索树 II</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：3</span><br><span class="line">输出：</span><br><span class="line">[</span><br><span class="line">&nbsp; [1,null,3,2],</span><br><span class="line">&nbsp; [3,2,null,1],</span><br><span class="line">&nbsp; [3,1,null,null,2],</span><br><span class="line">&nbsp; [2,1,3],</span><br><span class="line">&nbsp; [1,null,2,null,3]</span><br><span class="line">]</span><br><span class="line">解释：</span><br><span class="line">以上的输出对应以下 5 种不同结构的二叉搜索树：</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       /     /      / \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    /     /       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>分治： 自顶向下地拆分子问题</li>
-<li>分解：每一步都针对一个运算符分割表达式。</li>
-<li>解决：递归停止条件，无运算符只有数字</li>
-<li>合并</li>
-<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。通过利用查找二叉树的性质。左子树的所有值小于根节点，右子树的所有值都大于根节点。<ul>
-<li>我们需要把1作为根节点，[]空作为左子树，[2,…,n] 的所有可能作为右子树</li>
-<li>n 作为根节点，[1,..,n]的所有可能作为左子树，[]作为右子树</li>
-<li>至于上面提到的 [2,…,n]的所有可能以及其他可能，可以利用上面的方法，把每个数字作为根节点，然后把所有可能的左子树和右子树组合起来即可。</li>
-<li>如果只有一个数字，那么所有可能就说一种情况，把该数字作为一棵树。而如果是[]，那么返回null。</li>
-</ul>
-</li>
-</ul>
-<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; List[TreeNode]:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_gen</span>(<span class="params">nums</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="literal">None</span>]</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [TreeNode(nums[<span class="number">0</span>])]</span><br><span class="line">            </span><br><span class="line">            ans = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">for</span> left <span class="keyword">in</span> _gen(nums[:i]):</span><br><span class="line">                    <span class="keyword">for</span> right <span class="keyword">in</span> _gen(nums[i+<span class="number">1</span>:]):</span><br><span class="line">                        ans.append(TreeNode(nums[i], left = left, right = right))</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        <span class="keyword">return</span> _gen(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>)))</span><br></pre></td></tr></tbody></table></figure>
-<p>####复杂度分析  </p>
-<h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2><ol>
-<li><a href="https://zhuanlan.zhihu.com/p/44213575">“python算法实现-分治法”</a></li>
+<p>###大佬blog</p>
+<ol>
+<li><a href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
+<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
+<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
 </ol>
 ]]></content>
       <categories>
-        <category>力扣</category>
+        <category>知识及记录</category>
       </categories>
       <tags>
         <tag>python</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -309,31 +283,57 @@
       </tags>
   </entry>
   <entry>
-    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
-    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
-<p>##sort()用法 和 sorted()用法的不同</p>
-<ol>
-<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
-<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。Because sorted is a global function, it can take any iterable and return a sorted list from that</li>
-<li><h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+    <title>分治</title>
+    <url>/2021/03/18/%E5%88%86%E6%B2%BB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治</a></h2><h3 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h3><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—分 （2) 将最后子问题可以简单的直接求解—“治” （3) 将所有子问题的解合并起来就说原问题的解—“合”</p>
+<span id="more"></span>
+
+<p><strong>目录 (Table of Contents)</strong></p>
+<!-- toc -->
 
 
-<p>###大佬blog</p>
-<ol>
-<li><a href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
-<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
-<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
+<p>[TOC]</p>
+<h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
+<p>第一条特征是绝大多数问题都可以满足的，因为问题的计算计算复杂度一般是随着问题规模的增加而增加； 第二个特征是应用分治法的前提它也是大多数问题可以解决的，此特征反映了递归思想的应用； 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具有第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。 第四条特征涉及到分治法的效率，如果各子问题是不独立的分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。</p>
+<h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +,&nbsp;-&nbsp;以及&nbsp;*&nbsp;。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>分治： 自顶向下地拆分子问题</li>
+<li>分解：每一步都针对一个运算符分割表达式。</li>
+<li>解决：递归停止条件，无运算符只有数字</li>
+<li>合并</li>
+<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。</li>
+</ul>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<p>####复杂度分析  </p>
+<h2 id="2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II"><a href="#2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II" class="headerlink" title="2. (LC95) 不同的二叉搜索树 II 不同的二叉搜索树 II"></a>2. (LC95) 不同的二叉搜索树 II <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">不同的二叉搜索树 II</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：3</span><br><span class="line">输出：</span><br><span class="line">[</span><br><span class="line">&nbsp; [1,null,3,2],</span><br><span class="line">&nbsp; [3,2,null,1],</span><br><span class="line">&nbsp; [3,1,null,null,2],</span><br><span class="line">&nbsp; [2,1,3],</span><br><span class="line">&nbsp; [1,null,2,null,3]</span><br><span class="line">]</span><br><span class="line">解释：</span><br><span class="line">以上的输出对应以下 5 种不同结构的二叉搜索树：</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       /     /      / \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    /     /       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>分治： 自顶向下地拆分子问题</li>
+<li>分解：每一步都针对一个运算符分割表达式。</li>
+<li>解决：递归停止条件，无运算符只有数字</li>
+<li>合并</li>
+<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。通过利用查找二叉树的性质。左子树的所有值小于根节点，右子树的所有值都大于根节点。<ul>
+<li>我们需要把1作为根节点，[]空作为左子树，[2,…,n] 的所有可能作为右子树</li>
+<li>n 作为根节点，[1,..,n]的所有可能作为左子树，[]作为右子树</li>
+<li>至于上面提到的 [2,…,n]的所有可能以及其他可能，可以利用上面的方法，把每个数字作为根节点，然后把所有可能的左子树和右子树组合起来即可。</li>
+<li>如果只有一个数字，那么所有可能就说一种情况，把该数字作为一棵树。而如果是[]，那么返回null。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; List[TreeNode]:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_gen</span>(<span class="params">nums</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="literal">None</span>]</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [TreeNode(nums[<span class="number">0</span>])]</span><br><span class="line">            </span><br><span class="line">            ans = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">for</span> left <span class="keyword">in</span> _gen(nums[:i]):</span><br><span class="line">                    <span class="keyword">for</span> right <span class="keyword">in</span> _gen(nums[i+<span class="number">1</span>:]):</span><br><span class="line">                        ans.append(TreeNode(nums[i], left = left, right = right))</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        <span class="keyword">return</span> _gen(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>)))</span><br></pre></td></tr></tbody></table></figure>
+<p>####复杂度分析  </p>
+<h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/44213575">“python算法实现-分治法”</a></li>
 </ol>
 ]]></content>
       <categories>
-        <category>知识及记录</category>
+        <category>力扣</category>
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -513,26 +513,21 @@
 ]]></content>
   </entry>
   <entry>
-    <title>声学信号处理系列（一）--声学信号处理基础知识</title>
-    <url>/2021/03/07/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="声学信号处理系列（一）–声学信号处理基础知识"><a href="#声学信号处理系列（一）–声学信号处理基础知识" class="headerlink" title="声学信号处理系列（一）–声学信号处理基础知识"></a>声学信号处理系列（一）–声学信号处理基础知识</h1><p><em>by max</em></p>
+    <title>声学信号处理系列（一）声学信号处理基础知识</title>
+    <url>/2021/03/20/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="声学信号处理系列（一）声学信号处理基础知识"><a href="#声学信号处理系列（一）声学信号处理基础知识" class="headerlink" title="声学信号处理系列（一）声学信号处理基础知识"></a>声学信号处理系列（一）声学信号处理基础知识</h1><p><em>by max</em></p>
 <p><em>2021/03/07</em></p>
 <h2 id="0-写在开始的话"><a href="#0-写在开始的话" class="headerlink" title="0.写在开始的话"></a>0.写在开始的话</h2><p>这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中学习到的新知识，也希望能跟别人分享自己的一些心得体会。个人水平有限，如有疏漏错误，敬请批评指正，谢谢！</p>
-<span id="more"></span>
-
 <h2 id="1-声学基础"><a href="#1-声学基础" class="headerlink" title="1.声学基础"></a>1.声学基础</h2><p>声音是自然界中非常常见的一种信号之一，我们平时的生活中声音无处不在。人类可以通过声音，来对物体进行感知、辨认和定位。同样，声音也是日常我们互相交流时用于传递信息文字的“载具”。</p>
 <p>初高中物理课上大家应该都学到过，声音的本质是物体振动生成的声波，该声波通过某种介质（例如空气、水和固体）传播并能被人类或者动物的听觉器官所感知。声音的频率一般会以赫兹表示，记为Hz，指每秒钟周期性震动的次数。而分贝是用来表示声音强度的单位，记为dB[1]。</p>
 <h2 id="2-我们如何发出声音"><a href="#2-我们如何发出声音" class="headerlink" title="2.我们如何发出声音"></a>2.我们如何发出声音</h2><p>正如上一小节中所介绍的，发出声音需要凭借物体的振动。那么我们人类从口腔中发出各种各样的声音，也正是依靠我们的声带的振动来实现的。具体说来，从我们肺部内排出的气体气流，在经过形态变化的声带结构时，带动声带产生振动，进而生成了声波，声波经过我们的口腔和嘴，传输到外界空气中。在整个过程里，由于每个人类个体的声带器官、口腔腔体和嘴部的生理结构都是各异的，所以也导致我们每个人说出来的话的语音语调，以及包括音色，都是不同的。需要注意的是，由于鼻腔和口腔在人体内部是连通的，也会参与到发声过程中来。</p>
 <p>下图是一个口腔内部的各个器官的展示，体内从肺部出来的气流，经气管-&gt;声带-&gt;咽喉-&gt;口鼻，传出体外。</p>
-<p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3541145379,2023942298&amp;fm=15&amp;gp=0.jpg" alt="avatar"></p>
+<img src="https://i.loli.net/2021/03/20/thUDC8LeM3imOoA.png" style="zoom:70%">
+
 <h2 id="3-一些基本的专业词汇-2"><a href="#3-一些基本的专业词汇-2" class="headerlink" title="3.一些基本的专业词汇[2]"></a>3.一些基本的专业词汇[2]</h2><ul>
 <li>音节（Syllable）：说话时一次发出的，具有一个响亮的中心，并被明显感觉到的语音片段。</li>
 <li>音素（Phoneme）：语音发音的最小单位。一个音节可以由一个或多个音素构成。音素可分为元音和辅音两种。</li>
-<li>元音（Vowel）：当声带振动发出的声音气流从咽喉进入口腔并从嘴部唇部出去时，这些声腔完全开放，气流可以顺利通过时所发的音，称为元音。元音构成音节的主干，无论从长度或是能量角度考虑，元音在音节中都占主要部分。决定元音音色的主要因素是舌头的形状及其在口腔中的位置，以及嘴唇的形状等。口腔中当舌头处于不同的舌位高度和舌位前后时，可以发出不同的音素。下图是一个单元音发音舌位示意图：</li>
-</ul>
-<img src="/配图/vowels.gif" width="50%" height="50%" align="center/">
-
-<ul>
+<li>元音（Vowel）：当声带振动发出的声音气流从咽喉进入口腔并从嘴部唇部出去时，这些声腔完全开放，气流可以顺利通过时所发的音，称为元音。元音构成音节的主干，无论从长度或是能量角度考虑，元音在音节中都占主要部分。决定元音音色的主要因素是舌头的形状及其在口腔中的位置，以及嘴唇的形状等。口腔中当舌头处于不同的舌位高度和舌位前后时，可以发出不同的音素。下图是一个单元音发音舌位示意图：<img src="https://i.loli.net/2021/03/20/4aPrTg651YZvBfV.gif" style="zoom:70%"></li>
 <li>辅音（Consonant）：当呼出的气流，由于整个声腔通路上某一部分封闭起来或受到阻碍，气流传播不通畅，而克服发音器官的这种阻碍时所发的音，称为辅音。发辅音时，声带振动的是浊音，声带不振动的是清音。辅音只出现在音节的前端或后端或前后两端，时长和能量相比元音都很小。</li>
 <li>半元音：有时，虽然声道基本畅通，但某处声道较窄，引起轻微的摩擦声，称为半元音。</li>
 </ul>
@@ -541,18 +536,44 @@
 <p>一般可以用共振峰频率的位置和频带宽度这两个参数来描述一组共振峰。每个不同的元音，都对应着一组不同的共振峰参数。共振峰中的信号通常用F来表示，例如F0，F1，F2…等等。</p>
 <p>(2)基频F0：基频又称基础频率，其定义为共振峰中第一个共振信号的振动频率。共振峰中除基频F0以外，其他共振信号均为口腔共振产生，而基频F0由声带振动产生，其能量一般为共振峰中最强的。有时将音调（pitch）和基频等效看待，二者其实有一些细节上的不同，但平时讨论时可以暂时视为一体。音调反应的是音高的信息，男性和女性的平均音调范围是不同的，男性更低一些，女性更高一些。</p>
 <p>任何为基频整倍数的频率上的信号称为谐波。谐波反应的是音色的信息。</p>
-<p>通常我们可以通过观测语音信号的语谱图，来对共振峰和基频有一个直观的了解。语谱图是将语音的频谱信号以二维形式所描绘出来的图形，该图形横轴为时间，单位通常为秒s，纵轴为频率，单位通常为赫兹Hz。图形上颜色的深浅代表声学信号能量强度的高低。一个典型的反应了共振峰的语谱图如下所示：</p>
-<img src="/images/spectrogram_formants.png" width="50%" height="50%" align="center/">
-
+<p>通常我们可以通过观测语音信号的语谱图，来对共振峰和基频有一个直观的了解。语谱图是将语音的频谱信号以二维形式所描绘出来的图形，该图形横轴为时间，单位通常为秒s，纵轴为频率，单位通常为赫兹Hz。图形上颜色的深浅代表声学信号能量强度的高低。一个典型的反应了共振峰的语谱图如下所示：<br><img src="https://i.loli.net/2021/03/20/5OrJYEweRg8p1Iq.png" style="zoom:40%"></p>
 <h2 id="5-我们如何听到声音"><a href="#5-我们如何听到声音" class="headerlink" title="5.我们如何听到声音"></a>5.我们如何听到声音</h2><p>人类听到声音的简要过程：空气中的声波传播到人耳内，耳朵内的鼓膜受到声波的声压的作用会产生位移振动，内耳的一个主要器官耳蜗，将这种位移振动的机械信息，转换为生物神经信号，传递给大脑进行处理后，我们就能够获知听到的是什么声音了。具体的介绍请移步参考资料[2]中的2.4.2节，会有更详尽的了解。</p>
-<p>人耳一般能接收并处理的声音的频率范围为20Hz<del>20kHz，强度为-5</del>130dB。在此范围外的声学信号里的音频分量，是人耳处理不到的，一般在语音信号处理领域的问题中不会考虑。但是，凡事无绝对，我们也不能说在这个范围以内的音频分量我们一定能听得到，这就涉及到一个概念叫做听觉掩蔽效应。</p>
+<p>人耳一般能接收并处理的声音的频率范围为20Hz到20kHz，强度为-5至130dB。在此范围外的声学信号里的音频分量，是人耳处理不到的，一般在语音信号处理领域的问题中不会考虑。但是，凡事无绝对，我们也不能说在这个范围以内的音频分量我们一定能听得到，这就涉及到一个概念叫做听觉掩蔽效应。</p>
 <p>听觉掩蔽效应指的是在一个强信号附近，弱信号将变得听不到，被掩盖掉了。生活中这种例子常见的有：购物商场的大喇叭在外放吵闹的音乐时，两个人的对话可能即使很近也听不清楚。被掩蔽掉的不可闻信号的最大声压级称为掩蔽门限或掩蔽阈值，在这个掩蔽阈值以下的声音都会被掩盖掉。</p>
 <h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] 维基百科-声音词条：<a href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3">https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3</a></p>
 <p>[2] 赵力. 语音信号处理[M]. 机械工业出版社, 2016.</p>
 ]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
+      <tags>
+        <tag>声学信号处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>声学信号处理系列（二）说话人识别</title>
+    <url>/2021/03/13/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%971_%E8%AF%B4%E8%AF%9D%E4%BA%BA%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="声学信号处理系列（二）说话人识别"><a href="#声学信号处理系列（二）说话人识别" class="headerlink" title="声学信号处理系列（二）说话人识别"></a>声学信号处理系列（二）说话人识别</h1><p><em>by max</em></p>
+<p><em>2021/03/13</em></p>
+<p>“闻其声，知其人”</p>
+<p>说话人识别(speaker recognition)是语音信号处理中一个非常贴近实际生活应用的研究领域，其主要目的是通过对语音信号进行处理来对讲话者的身份进行识别、确认和分类。除了通过一个人的长相，我们也可以通过其声音，来在众多讲话人中将某一特定说话人认出来。这背后的主要原理，是利用语音中承载的与每个人类个体身份有关的声学信息来实现的。在系列第一篇文章里我们介绍了声学信号的一些基本特征，例如共振峰等，就可以作为识别说话人的依据。更多的具体原理我们在后面会介绍，首先来看说话人识别的两个基本任务。</p>
+<h2 id="1-说话人识别的两个基本任务"><a href="#1-说话人识别的两个基本任务" class="headerlink" title="1.说话人识别的两个基本任务"></a>1.说话人识别的两个基本任务</h2><p>说话人识别可以分为说话人辨认(speaker identification)和说话人确认(speaker verification)两个基本任务[1]。在说话人辨认中，给定一条语音，我们需要在已注册的说话人中找到这句话是谁说的。而在说话人确认中，我们需要对说话人所声明的身份进行核验，确认其身份是否真实。一个比较形象的示意图如下所示：</p>
+<img src="https://i.loli.net/2021/03/20/zVXIacumEiJLqlb.png" style="zoom:80%">
+
+<h2 id="2-说话人辨认"><a href="#2-说话人辨认" class="headerlink" title="2.说话人辨认"></a>2.说话人辨认</h2><p>一般在说话人辨认任务中，我们对来自一条未知说话人的语音进行处理和分析，将其与已注册的各个已知说话人的模型进行比对。当我们找到一个最佳匹配的说话人模型时，就认为该未知语音是来自该最佳匹配模型背后的说话人。换句话说，我们可以把说话人辨认看做是一个1对N的分类任务，我们需要将1条未知的测试样例，正确归类入N个已知类别其中的一个类别里。</p>
+<p>那么不难想到，假如说话人辨认系统接收到的语音，与所有已注册说话人的模型全部不匹配该怎么办？这种情况我们称之为“开集说话人辨认问题”，即未知语音可能来自于说话人注册集集外的某个说话人，该说话人的身份并没有提前保存于系统模型匹配库中。此时系统是无法对该语音进行正确分类的，一般会将其归类于“其他”或者是“未授权用户”这种类别里。与之相对的就是“闭集说话人辨认问题”，未知语音已知肯定来自于某个已注册的说话人。一般来说，闭集系统比较适用于人数较少的应用场景，例如政府机关或私人安保场景等等。而开集系统则广泛部署于各类生活场景中[2]。</p>
+<h2 id="3-说话人确认"><a href="#3-说话人确认" class="headerlink" title="3.说话人确认"></a>3.说话人确认</h2><p>在说话人确认任务中，我们需要通过一条语音去确定一个说话人的身份是其所声明的真实身份。实现原理是，我们将该条语音去与其声明的说话人模型进行对比，符合该身份则判定接受，否则判定拒绝。这里我们与说话人辨认对比的话，可以看到说话人确认其实本质是一个1对1的分类任务。</p>
+<p>在与声明的说话人模型进行比对时，由于判决分数一般在一个连续数值范围内，所以我们需要设立一个固定的阈值来帮助判定。当判决分数高于该阈值时，判定为接受，反之，当判决分数低于该阈值时，判定为拒绝。这个阈值的选取，对于说话人确认系统的准确性十分重要。阈值定的过高，则可有助于减小误检率，即“将本该拒绝的误判为接受”(漏检false acceptance)这种情况的发生次数减少。但也会导致“将本该接受的误判为拒绝”(误检false rejection)这种情况发生的风险变大。那么反之，假如阈值设置得过低，则“将本该拒绝的误判为接受”这种情况的几率会上升。</p>
+<h2 id="4-两个任务的区别和联系"><a href="#4-两个任务的区别和联系" class="headerlink" title="4.两个任务的区别和联系"></a>4.两个任务的区别和联系</h2><p>Speaker identification 和 speaker verification 的主要区别在于二者需要进行判决的类别数目的不同。具体说来，在说话人辨认里，我们需要在N个可能的结果中选择一个，N这里等于说话人的人数；而在说话人确认里，我们只需要在“接收”和“拒绝”两个可能的结果中选择一个，而不用考虑系统所面对的说话人的人数。因此，当N越大时，说话人辨认系统的性能会随之下降，而说话人确认系统的性能是不受N的影响的。极端情况时，当某个说话人群体的集体声学特性比较特殊时，说话人确认系统的准确性也会受影响。举个例子，一个主要为英语国家人群服务的说话人确认系统，可能当面对汉语国家人群时，系统的准确性会有所下降。</p>
+<h2 id="5-系统评价指标"><a href="#5-系统评价指标" class="headerlink" title="5.系统评价指标"></a>5.系统评价指标</h2><p>说话人辨认系统的评价指标与通常的分类任务的评价指标是类似的，这里我们暂时只介绍说话人确认系统的评价指标。有对说话人辨认评价指标感兴趣的读者可以参考此博客[3]以便了解更多。</p>
+<p>通常，我们使用DET曲线去衡量一个说话人确认系统的有效性。DET曲线全称为 Detection Error Trade-off曲线。该曲线可以通过计算FRR(false rejection rate，也可称为false negative rate)和FAR(false acceptance rate，也可称为false positive rate)这两种事件的概率来描绘出来。在一个二维图纸上，我们令纵轴代表FRR，横轴代表FAR，即可画出类似下图的DET曲线图。</p>
+<img src="https://i.loli.net/2021/03/20/2zIguxCaSl9DcNX.png" style="zoom:150%">
+
+<p>图中红色曲线为DET曲线，其与蓝色对角线的交叉点，定义为EER(equal error rate)点，在该点上FRR=FAR。一般EER的值越低，代表一个系统的性能越好。通常我们将横纵轴的数值以对数尺度进行转换，以便能更全面更直观地观察到系统在一个大范围上的表现。</p>
+<h2 id="6-文本有关-vs-文本无关"><a href="#6-文本有关-vs-文本无关" class="headerlink" title="6.文本有关 vs 文本无关"></a>6.文本有关 vs 文本无关</h2><p>一个说话人识别系统，可以基于文本相关去设计，也可以基于文本无关。顾名思义，文本相关指的是说话人需要讲出固定的一句话，来让系统进行验证。而文本无关的系统里，说话人可以说出任意一句话，来令识别系统进行分析处理。文本无关相比文本有关的系统，使用场景更灵活方便，但安全性方面会有一定的下降。系统的设计难度上，文本有关的系统相对较简单一些，我们可以沿着时间轴按顺序检验每个文本单元的声学特征，将其与说话人已注册的声纹进行匹配，根据该句话从头到尾的累积准确率，最终以达到识别的目的。由于这种文本有关的设计与每个音素音节在时间上强相关，所以基于该方法设计的系统通常可以取得比文本无关的系统更高的识别率。</p>
+<p>相比下来，文本无关的系统常应用于法庭取证或者安保监控等场景，此类场景无法要求说话人提供指定文本段的语音样本，所以基于文本无关的系统的重要性也正在逐渐进入公众视野。而且，基于文本无关的识别系统，更符合人类自然的识别能力，我们不需要身边的亲人朋友说出指定的话语就可以轻松地识别出他们的身份，同理，当我们听到一句来自陌生人的语音时，我们也能很快地识别出我们不认识该说话人。而且这种识别系统也更人性化，当识别前端接收到的语音有卡顿或者遗漏时，不需要说话人不停地重复识别口令，减少了识别耗费的时间成本，使用场景也更广泛和人性化。</p>
+<p>除了文本有关和文本无关这两大类系统以外，还有一个文本提示型系统(text-prompted)。该系统的提出主要是为了更进一步的提升识别系统的鲁棒性。文本无关和文本相关的系统可能会面临一个实际性的安全问题，就是会有“黑客”可能想冒充某个特定说话人的身份，去入侵说话人识别系统。具体手段通常会使用录音回放设备，提前取得已注册说话人的语音口令，然后回放给说话人识别系统进而取得授权。因此，文本提示型系统里，系统会随机生成一串数字或一句文本，待识别人只需要跟着给出的提示念出语音即可。</p>
+<h2 id="7-结语"><a href="#7-结语" class="headerlink" title="7.结语"></a>7.结语</h2><p>说话人识别系统是语音识别领域的一个主要方向，基于该系统设计的各种安防系统和应用APP已经在日常生活中比较常见了。虽然有文本提示型识别系统来提升识别系统的鲁棒性和安全性，但说话人识别系统近年来正面临着越来越严峻的安全问题。</p>
+<p>在博客系列的下一篇文章中，我们会介绍与说话人识别相关的另一个新领域 – “说话人识别反欺骗系统”。</p>
+<h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] “Speaker recognition”词条 – <a href="http://www.scholarpedia.org/article/Speaker_recognition#Speaker_Identification_and_Verification">http://www.scholarpedia.org/article/Speaker_recognition#Speaker_Identification_and_Verification</a><br>[2] Togneri, R., &amp; Pullella, D. (2011). An overview of speaker identification: Accuracy and robustness issues. IEEE circuits and systems magazine, 11(2), 23-61.<br>[3] “The 5 Classification Evaluation metrics every Data Scientist must know” – <a href="https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226">https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226</a></p>
+]]></content>
       <tags>
         <tag>声学信号处理</tag>
       </tags>
@@ -918,7 +939,8 @@
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
 <li>  图解</li>
 </ol>
-<p><img src="https://pic.leetcode-cn.com/1614527163-BKaiqs-Picture1.png"></p>
+<img src="https://pic.leetcode-cn.com/1614527163-BKaiqs-Picture1.png" style="zoom:50%">
+
 <ol start="2">
 <li>数学思维</li>
 </ol>
