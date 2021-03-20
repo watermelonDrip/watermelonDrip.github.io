@@ -916,7 +916,7 @@
   </entry>
   <entry>
     <title>链表</title>
-    <url>/2021/03/11/%E9%93%BE%E8%A1%A8/</url>
+    <url>/2021/03/20/%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>链表<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E9%93%BE%E8%A1%A8.md#7-%E9%93%BE%E8%A1%A8%E6%B1%82%E5%92%8C">刷题顺序</a></p>
 <h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h2><ul>
 <li><p>Important notice: 涉及到链表的操作，一定要在纸上把过程先画出来，再写程序！不要断链子。</p>
@@ -939,8 +939,7 @@
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
 <li>  图解</li>
 </ol>
-<img src="https://pic.leetcode-cn.com/1614527163-BKaiqs-Picture1.png" style="zoom:50%">
-
+<p><img src="https://pic.leetcode-cn.com/1614527163-BKaiqs-Picture1.png"></p>
 <ol start="2">
 <li>数学思维</li>
 </ol>
