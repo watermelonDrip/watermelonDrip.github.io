@@ -32,6 +32,48 @@
       </tags>
   </entry>
   <entry>
+    <title>数据结构的分析</title>
+    <url>/2021/03/06/dataStructure/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据结构</p>
+<span id="more"></span>
+
+<ol>
+<li>内存的物理表现的一系列连续的内存单元，每个内存单元大小是固定的。数据结构只有两个对应基础的数据结构，数组和链表，其他的数据结构都是由他们产生的。</li>
+<li> 数组用来表示连续的内存空间，链表通常用来表示不连续的内存空间。</li>
+<li>不连续内存空间的意思是，链表有数据域和指针域。</li>
+</ol>
+<hr>
+<h2 id="算法的性能"><a href="#算法的性能" class="headerlink" title="算法的性能"></a>算法的性能</h2><ol>
+<li>一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。</li>
+</ol>
+<hr>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
+<li>操作简单和支持随机访问</li>
+<li>数组是一段连续的地址空间</li>
+<li>数组使用连续的内存空间，来存储一系列同一数据类型的值。</li>
+</ol>
+<hr>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><ol>
+<li>栈是一种受限的数据结构，LIFO</li>
+<li>常用操作：进栈push, 出栈pop，取栈顶top，isEmply</li>
+<li>是一种逻辑结构</li>
+<li>给数组和链表增加一个限制就是队列</li>
+</ol>
+<hr>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><ol>
+<li>也是一种逻辑结构</li>
+<li>给数组和链表增加一个限制就是队列</li>
+</ol>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>leetcode lc 395（至少有k个重复字符的最长子串）</title>
     <url>/2021/03/06/lc395/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>至少有k个重复字符的最长子串</p>
@@ -95,31 +137,57 @@
       </tags>
   </entry>
   <entry>
-    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
-    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
-<p>##sort()用法 和 sorted()用法的不同</p>
-<ol>
-<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
-<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。Because sorted is a global function, it can take any iterable and return a sorted list from that</li>
-<li><h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+    <title>分治</title>
+    <url>/2021/03/18/%E5%88%86%E6%B2%BB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治</a></h2><h3 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h3><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—分 （2) 将最后子问题可以简单的直接求解—“治” （3) 将所有子问题的解合并起来就说原问题的解—“合”</p>
+<span id="more"></span>
+
+<p><strong>目录 (Table of Contents)</strong></p>
+<!-- toc -->
 
 
-<p>###大佬blog</p>
-<ol>
-<li><a href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
-<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
-<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
+<p>[TOC]</p>
+<h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
+<p>第一条特征是绝大多数问题都可以满足的，因为问题的计算计算复杂度一般是随着问题规模的增加而增加； 第二个特征是应用分治法的前提它也是大多数问题可以解决的，此特征反映了递归思想的应用； 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具有第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。 第四条特征涉及到分治法的效率，如果各子问题是不独立的分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。</p>
+<h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +,&nbsp;-&nbsp;以及&nbsp;*&nbsp;。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>分治： 自顶向下地拆分子问题</li>
+<li>分解：每一步都针对一个运算符分割表达式。</li>
+<li>解决：递归停止条件，无运算符只有数字</li>
+<li>合并</li>
+<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。</li>
+</ul>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<p>####复杂度分析  </p>
+<h2 id="2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II"><a href="#2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II" class="headerlink" title="2. (LC95) 不同的二叉搜索树 II 不同的二叉搜索树 II"></a>2. (LC95) 不同的二叉搜索树 II <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">不同的二叉搜索树 II</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：3</span><br><span class="line">输出：</span><br><span class="line">[</span><br><span class="line">&nbsp; [1,null,3,2],</span><br><span class="line">&nbsp; [3,2,null,1],</span><br><span class="line">&nbsp; [3,1,null,null,2],</span><br><span class="line">&nbsp; [2,1,3],</span><br><span class="line">&nbsp; [1,null,2,null,3]</span><br><span class="line">]</span><br><span class="line">解释：</span><br><span class="line">以上的输出对应以下 5 种不同结构的二叉搜索树：</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       /     /      / \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    /     /       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>分治： 自顶向下地拆分子问题</li>
+<li>分解：每一步都针对一个运算符分割表达式。</li>
+<li>解决：递归停止条件，无运算符只有数字</li>
+<li>合并</li>
+<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。通过利用查找二叉树的性质。左子树的所有值小于根节点，右子树的所有值都大于根节点。<ul>
+<li>我们需要把1作为根节点，[]空作为左子树，[2,…,n] 的所有可能作为右子树</li>
+<li>n 作为根节点，[1,..,n]的所有可能作为左子树，[]作为右子树</li>
+<li>至于上面提到的 [2,…,n]的所有可能以及其他可能，可以利用上面的方法，把每个数字作为根节点，然后把所有可能的左子树和右子树组合起来即可。</li>
+<li>如果只有一个数字，那么所有可能就说一种情况，把该数字作为一棵树。而如果是[]，那么返回null。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; List[TreeNode]:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_gen</span>(<span class="params">nums</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="literal">None</span>]</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [TreeNode(nums[<span class="number">0</span>])]</span><br><span class="line">            </span><br><span class="line">            ans = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">for</span> left <span class="keyword">in</span> _gen(nums[:i]):</span><br><span class="line">                    <span class="keyword">for</span> right <span class="keyword">in</span> _gen(nums[i+<span class="number">1</span>:]):</span><br><span class="line">                        ans.append(TreeNode(nums[i], left = left, right = right))</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        <span class="keyword">return</span> _gen(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>)))</span><br></pre></td></tr></tbody></table></figure>
+<p>####复杂度分析  </p>
+<h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/44213575">“python算法实现-分治法”</a></li>
 </ol>
 ]]></content>
       <categories>
-        <category>知识及记录</category>
+        <category>力扣</category>
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -241,57 +309,31 @@
       </tags>
   </entry>
   <entry>
-    <title>分治</title>
-    <url>/2021/03/18/%E5%88%86%E6%B2%BB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治</a></h2><h3 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h3><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—分 （2) 将最后子问题可以简单的直接求解—“治” （3) 将所有子问题的解合并起来就说原问题的解—“合”</p>
-<span id="more"></span>
+    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
+    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
+<p>##sort()用法 和 sorted()用法的不同</p>
+<ol>
+<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
+<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。Because sorted is a global function, it can take any iterable and return a sorted list from that</li>
+<li><h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
-<p><strong>目录 (Table of Contents)</strong></p>
-<!-- toc -->
 
-
-<p>[TOC]</p>
-<h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
-<p>第一条特征是绝大多数问题都可以满足的，因为问题的计算计算复杂度一般是随着问题规模的增加而增加； 第二个特征是应用分治法的前提它也是大多数问题可以解决的，此特征反映了递归思想的应用； 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具有第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。 第四条特征涉及到分治法的效率，如果各子问题是不独立的分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。</p>
-<h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +,&nbsp;-&nbsp;以及&nbsp;*&nbsp;。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>分治： 自顶向下地拆分子问题</li>
-<li>分解：每一步都针对一个运算符分割表达式。</li>
-<li>解决：递归停止条件，无运算符只有数字</li>
-<li>合并</li>
-<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。</li>
-</ul>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
-<p>####复杂度分析  </p>
-<h2 id="2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II"><a href="#2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II" class="headerlink" title="2. (LC95) 不同的二叉搜索树 II 不同的二叉搜索树 II"></a>2. (LC95) 不同的二叉搜索树 II <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">不同的二叉搜索树 II</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：3</span><br><span class="line">输出：</span><br><span class="line">[</span><br><span class="line">&nbsp; [1,null,3,2],</span><br><span class="line">&nbsp; [3,2,null,1],</span><br><span class="line">&nbsp; [3,1,null,null,2],</span><br><span class="line">&nbsp; [2,1,3],</span><br><span class="line">&nbsp; [1,null,2,null,3]</span><br><span class="line">]</span><br><span class="line">解释：</span><br><span class="line">以上的输出对应以下 5 种不同结构的二叉搜索树：</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       /     /      / \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    /     /       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>分治： 自顶向下地拆分子问题</li>
-<li>分解：每一步都针对一个运算符分割表达式。</li>
-<li>解决：递归停止条件，无运算符只有数字</li>
-<li>合并</li>
-<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。通过利用查找二叉树的性质。左子树的所有值小于根节点，右子树的所有值都大于根节点。<ul>
-<li>我们需要把1作为根节点，[]空作为左子树，[2,…,n] 的所有可能作为右子树</li>
-<li>n 作为根节点，[1,..,n]的所有可能作为左子树，[]作为右子树</li>
-<li>至于上面提到的 [2,…,n]的所有可能以及其他可能，可以利用上面的方法，把每个数字作为根节点，然后把所有可能的左子树和右子树组合起来即可。</li>
-<li>如果只有一个数字，那么所有可能就说一种情况，把该数字作为一棵树。而如果是[]，那么返回null。</li>
-</ul>
-</li>
-</ul>
-<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; List[TreeNode]:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_gen</span>(<span class="params">nums</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="literal">None</span>]</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [TreeNode(nums[<span class="number">0</span>])]</span><br><span class="line">            </span><br><span class="line">            ans = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">for</span> left <span class="keyword">in</span> _gen(nums[:i]):</span><br><span class="line">                    <span class="keyword">for</span> right <span class="keyword">in</span> _gen(nums[i+<span class="number">1</span>:]):</span><br><span class="line">                        ans.append(TreeNode(nums[i], left = left, right = right))</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        <span class="keyword">return</span> _gen(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>)))</span><br></pre></td></tr></tbody></table></figure>
-<p>####复杂度分析  </p>
-<h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2><ol>
-<li><a href="https://zhuanlan.zhihu.com/p/44213575">“python算法实现-分治法”</a></li>
+<p>###大佬blog</p>
+<ol>
+<li><a href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
+<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
+<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
 </ol>
 ]]></content>
       <categories>
-        <category>力扣</category>
+        <category>知识及记录</category>
       </categories>
       <tags>
         <tag>python</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -603,6 +645,109 @@
 ]]></content>
   </entry>
   <entry>
+    <title>搜索（BFS, DFS, Backtracking）</title>
+    <url>/2021/03/18/%E6%90%9C%E7%B4%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="搜索（BFS-DFS-Backtracking）"><a href="#搜索（BFS-DFS-Backtracking）" class="headerlink" title="搜索（BFS, DFS, Backtracking）"></a>搜索（BFS, DFS, Backtracking）</h1><hr>
+<p>广度优先算法（Breadth-First-Search），简称BFS。深度优先算法（Deep-First-Search），简称DFS。BFS:利用队列先进先出的特性，可以优先遍历横向节点。DFS:利用栈先进后出的特性，可以优先遍历纵向节点。<br><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%90%9C%E7%B4%A2.md">搜索</a></p>
+<hr>
+<p>深度优先搜索和广度优先搜索广泛应用于树和图中。 （1） BFS  (2) DFS (3) Backtracking</p>
+<span id="more"></span>
+
+<h1 id="BFS-广度优先搜索）"><a href="#BFS-广度优先搜索）" class="headerlink" title="BFS (广度优先搜索）"></a>BFS (广度优先搜索）</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h2><p>广度优先算法（BFS）：是一种图形搜索演算法。简单的说，BFS是从根节点开始，沿着树的宽度遍历树的节点，如果发现目标，则演算终止。</p>
+<h2 id="算法分析："><a href="#算法分析：" class="headerlink" title="算法分析："></a>算法分析：</h2><p>BFS是一种盲目搜寻法，目的是系统的展开并检查图中的所有节点，以找寻结果。换句话说，它并不考虑结果的可能位置，彻底地搜索整张图，直到找到结果为主。</p>
+<h2 id="时间复杂度："><a href="#时间复杂度：" class="headerlink" title="时间复杂度："></a>时间复杂度：</h2><p>邻接表的时候是$O(|V|+|E|)$。其中，$|V|$是节点的数目，$|E|$是图中边的数目。</p>
+<h2 id="适应条件："><a href="#适应条件：" class="headerlink" title="适应条件："></a>适应条件：</h2><p>对于所有边长度相同的情况，比如地图的模型，BFS第一次遇到目标点，此时就一定是从根节点到目标节点的最短路径（因为每次所有的点都是向外扩张一步，你先遇到，那你就一定最短的了）。<strong>BFS先找到的一定是最短的</strong>。但是如果是加权边的话就会有问题，BFS传回的是经过<strong>边数最少</strong>的解，但是因为加权了，这个解到根节点的<strong>距离</strong>就不一定是最短的了。比如1000+1000是两段，1+1+1是三段，但是由于BFS返回的是是<strong>经过边数最少的的解</strong>，这里就会返回总长度是2000的那个解，但是显然不是距离最短的路径。此时我们就应该采用<strong>Dijkstra最短路算法</strong>解决加权路径的最短路了（这就有点超纲了呀）。</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ol>
+<li>寻找非加权图(或者所有边权重是一样)中任两点的最短路径。</li>
+<li>寻找其中一个连通分支中的所有节点（扩散性）。</li>
+<li>BFS染色法判断是否为二分图</li>
+</ol>
+<h2 id="大佬解释BFS"><a href="#大佬解释BFS" class="headerlink" title="大佬解释BFS"></a>大佬解释BFS</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/40151973#:~:text=%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E7%AE%97%E6%B3%95%EF%BC%88Breadth%2DFirst,%E6%89%80%E6%9C%89%E8%8A%82%E7%82%B9%EF%BC%8C%E4%BB%A5%E6%89%BE%E5%AF%BB%E7%BB%93%E6%9E%9C%E3%80%82">BFS算法介绍</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/50187643">算法- 从栈 &amp; 队列 到 BFS &amp; DFS</a></li>
+<li><a href="https://www.jianshu.com/p/d2125448270b">用Python实现树的BFS与DFS</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/141898546">LeetCode | 一文帮你搞定BFS、DFS算法（python版）</a></li>
+</ol>
+<hr>
+<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><hr>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h3 id="LC1091-计算在网格中从原点到特定点的最短路径长度-计算在网格中从原点到特定点的最短路径长度"><a href="#LC1091-计算在网格中从原点到特定点的最短路径长度-计算在网格中从原点到特定点的最短路径长度" class="headerlink" title="(LC1091)计算在网格中从原点到特定点的最短路径长度   计算在网格中从原点到特定点的最短路径长度 "></a>(LC1091)计算在网格中从原点到特定点的最短路径长度   <a href="https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/">计算在网格中从原点到特定点的最短路径长度 </a></h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p> 给你一个 n x n 的二进制矩阵 grid 中，返回矩阵中最短 畅通路径 的长度。如果不存在这样的路径，返回 -1 。二进制矩阵中的 畅通路径 是一条从 左上角 单元格（即，(0, 0)）到 右下角 单元格（即，(n - 1, n - 1)）的路径，该路径同时满足下述要求：路径途经的所有单元格都的值都是 0 。路径中所有相邻的单元格应当在 8 个方向之一 上连通（即，相邻两单元之间彼此不同且共享一条边或者一个角）。畅通路径的长度 是该路径途经的单元格总数。 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：grid = [[0,1],[1,0]]</span><br><span class="line">输出：2</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h4><ul>
+<li>Deque(class collections.deque([iterable[,maxlen]])) [使用戳一戳](collections中 deque的使用)<ul>
+<li>Deque是双边队列（double-ended queue），具有队列和栈的性质，在 list 的基础上增加了移动、旋转和增删等。</li>
+<li>Deque队列是由栈或者queue队列生成的（发音是”deck”,”double-ended queue”的简称）。</li>
+<li>Deque是一个双端队列, 如果要经常从两端append 的数据, 选择这个数据结构就比较好了, 如果要实现随机访问,不建议用这个,请用列表。Deque 优势就是可以从两边append ,appendleft 数据。这一点list 是没有的<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">queue = deque([<span class="string">"Eric"</span>, <span class="string">"John"</span>, <span class="string">"Michael"</span>])</span><br><span class="line">queue.append(<span class="string">"Terry"</span>)           <span class="comment"># Terry 入队</span></span><br><span class="line">queue.append(<span class="string">"Graham"</span>)          <span class="comment"># Graham 入队</span></span><br><span class="line">queue.popleft()                 <span class="comment"># 队首元素出队</span></span><br><span class="line"><span class="comment">#输出: 'Eric'</span></span><br><span class="line">queue.popleft()                 <span class="comment"># 队首元素出队</span></span><br><span class="line"><span class="comment">#输出: 'John'</span></span><br><span class="line">print(queue)                           <span class="comment"># 队列中剩下的元素</span></span><br><span class="line"><span class="comment">#输出: deque(['Michael', 'Terry', 'Graham'])</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ol>
+<li>第一次刷这个BFS,毫无头绪，怎么办？首先是看到大佬的一个模板，先偷过来</li>
+</ol>
+<ul>
+<li> 第一步：先构造图<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initial_graph</span>(<span class="params">n, edges</span>):</span></span><br><span class="line">    dict_graph = {}  <span class="comment">#用字典表示</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        dict_graph[i] = []</span><br><span class="line">    num_e = <span class="built_in">len</span>(edges)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(num_e):</span><br><span class="line">        u = edges[i][<span class="number">0</span>] <span class="comment">#用矩阵表示</span></span><br><span class="line">        v = edges[i][<span class="number">1</span>]</span><br><span class="line">        dict_graph[u].append(v)</span><br><span class="line">        dict_graph[v].append(u)</span><br><span class="line">    <span class="keyword">return</span> dict_graph</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<ul>
+<li><p>第二步：使用队列<br>  BFS适用于层级搜索，队列先进先出，量身定做。python中队列有两种导入方法：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 1.使用queue  #队列</span></span><br><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> Queue</span><br><span class="line">q = Queue() <span class="comment"># 定义，为什么是这样涉及python的设计，不是很懂</span></span><br><span class="line">q.put(node) <span class="comment"># 放入</span></span><br><span class="line">q.get() <span class="comment"># 出队</span></span><br><span class="line"><span class="comment"># 2.使用deque</span></span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">q = collections.deque() <span class="comment"># 双向队列</span></span><br><span class="line">q.append() <span class="comment"># 入队</span></span><br><span class="line">q.popleft() <span class="comment"># 出队</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>第三步：节点入队</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用Queue()定义</span></span><br><span class="line">q.put(start_node)</span><br><span class="line"><span class="comment"># 为防止无向图中回溯，使用set阻断</span></span><br><span class="line">hash_set = <span class="built_in">set</span>()</span><br><span class="line">hash_set.add(start_node)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>第四步：BFS主体</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">step = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> q.empty():</span><br><span class="line">	size = <span class="built_in">len</span>(q)</span><br><span class="line">	step += <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> iter_num <span class="keyword">in</span> <span class="built_in">range</span>(size):</span><br><span class="line">		node = q.get() <span class="comment"># current node</span></span><br><span class="line">		<span class="comment"># get the neighbor</span></span><br><span class="line">		<span class="keyword">for</span> neighbor <span class="keyword">in</span> dict_graph[node]:</span><br><span class="line">			<span class="keyword">if</span> neighbor == end_node: <span class="comment"># find it!!!!</span></span><br><span class="line">				<span class="keyword">return</span> step</span><br><span class="line">			<span class="keyword">if</span> neighbor <span class="keyword">in</span> hash_set:</span><br><span class="line">				<span class="keyword">continue</span> <span class="comment"># avoid backtracking</span></span><br><span class="line">			hast_set.add(node)</span><br><span class="line">			q.put(neighbor)</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span> <span class="comment"># can't find</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>具体操作</li>
+</ol>
+<ul>
+<li>本题本身就是矩阵，就不需要重新弄建initial。从头遍历，每次遇到0的时候，将周围8个方向可走的点push进队列，这样就可以将下一步能走的点找到。</li>
+<li>用一个大小为3的数组来保存当前点的坐标，和走到当前点所需要的代价</li>
+<li>由于要找的是花费路径最短的，所以第一个符合循环结束条件的数组，其第三个值就是我们要找的最小代价</li>
+</ul>
+<h4 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">shortestPathBinaryMatrix</span>(<span class="params">self, grid: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        n = <span class="built_in">len</span>(grid)</span><br><span class="line">        <span class="keyword">if</span> grid[<span class="number">0</span>][<span class="number">0</span>] == <span class="number">1</span> <span class="keyword">or</span> grid[n - <span class="number">1</span>][n - <span class="number">1</span>] == <span class="number">1</span>:  <span class="comment"># 若起始点或终点堵塞，则不可能有这样的路径</span></span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        res = <span class="number">1</span>  <span class="comment"># 注意题目的描述，是返回从 1 到 k 的路径，第一个节点被定为下标 1，</span></span><br><span class="line">        path = deque()</span><br><span class="line">        path.append([<span class="number">0</span>, <span class="number">0</span>])  <span class="comment"># 先压入起点</span></span><br><span class="line">        <span class="keyword">while</span> path:  <span class="comment"># BFS模板</span></span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(path)):  <span class="comment"># 对BFS的某一层的中所有点向8个方向进行扩展</span></span><br><span class="line">                x, y = path.popleft()</span><br><span class="line">                <span class="keyword">for</span> new_x, new_y <span class="keyword">in</span> [[x - <span class="number">1</span>, y - <span class="number">1</span>], [x - <span class="number">1</span>, y], [x - <span class="number">1</span>, y + <span class="number">1</span>], [x, y - <span class="number">1</span>],</span><br><span class="line">                                     [x, y + <span class="number">1</span>], [x + <span class="number">1</span>, y - <span class="number">1</span>], [x + <span class="number">1</span>, y], [x + <span class="number">1</span>, y + <span class="number">1</span>]]:</span><br><span class="line">                    <span class="comment"># 下面几种continue可以合并一行，这里为看的清楚就分开写了</span></span><br><span class="line">                    <span class="keyword">if</span> new_x == n - <span class="number">1</span> <span class="keyword">and</span> new_y == n - <span class="number">1</span>:  <span class="comment"># 如果扩展的点到达了终点</span></span><br><span class="line">                        <span class="keyword">return</span> res + <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> <span class="number">0</span> &lt;= new_x &lt; n <span class="keyword">or</span> <span class="keyword">not</span> <span class="number">0</span> &lt;= new_y &lt; n:  <span class="comment"># 扩展的点超出边界，则跳过</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">if</span> grid[new_x][new_y] == <span class="number">1</span>:  <span class="comment"># 若扩展的点为阻塞，则跳过</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">if</span> grid[new_x][new_y] == -<span class="number">1</span>:  <span class="comment"># 若扩展的点已经访问过，则跳过</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">if</span> grid[new_x][new_y] == <span class="number">0</span>:  <span class="comment"># 若为通畅点</span></span><br><span class="line">                        grid[new_x][new_y] = -<span class="number">1</span>  <span class="comment"># 当前层次下已经访问该点</span></span><br><span class="line">                        path.append([new_x, new_y])  <span class="comment"># 将扩展的点加入path，到下一层的时候继续扩展</span></span><br><span class="line">            res += <span class="number">1</span>  <span class="comment"># 对某一层的元素都求判定过后，距离加1(同一个层次中的所有点的距离距离起点都是相等的）</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC297-完全平方数-完全平方数"><a href="#LC297-完全平方数-完全平方数" class="headerlink" title="(LC297)完全平方数   完全平方数 "></a>(LC297)完全平方数   <a href="https://leetcode-cn.com/problems/perfect-squares/description/">完全平方数 </a></h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>给定正整数&nbsp;n，找到若干个完全平方数（比如&nbsp;1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。给你一个整数 n ，返回和为 n 的完全平方数的 最少数量 。完全平方数 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：n = 12</span><br><span class="line">输出：3 </span><br><span class="line">解释：12 = 4 + 4 + 4</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><ol>
+<li>可以将每个整数看成图中的一个节点，如果两个整数之差为一个平方数，那么这两个整数所在的节点就有一条边。要求解最小的平方数数量，就是求解从节点 n 到节点 0 的最短路径。</li>
+<li><a href="https://leetcode-cn.com/problems/perfect-squares/solution/dong-tai-gui-hua-bfs-zhu-xing-jie-shi-python3-by-2/">广度优先遍历</a></li>
+<li><h4 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4></li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numSquares</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        queue = deque([n])  <span class="comment">#必须带[]，否则不是iterable </span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        step = <span class="number">0</span></span><br><span class="line">        visited = <span class="built_in">set</span>()</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            step +=<span class="number">1</span></span><br><span class="line">            l = <span class="built_in">len</span>(queue)</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(l):</span><br><span class="line">                temp = queue.pop()  <span class="comment"># 不能用 queue.popleft() 因为后面用的是appendleft。前后只能有一个left</span></span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">int</span>(temp**<span class="number">0.5</span>)+<span class="number">1</span>):</span><br><span class="line">                    x = temp - i**<span class="number">2</span></span><br><span class="line">                    <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">                        <span class="keyword">return</span> step</span><br><span class="line">                    <span class="keyword">if</span> x <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">                        visited.add(x)</span><br><span class="line">                        queue.appendleft(x)</span><br><span class="line">        <span class="keyword">return</span> step</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-1"><a href="#大佬题解-1" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-2"><a href="#大佬题解-2" class="headerlink" title="大佬题解"></a>大佬题解</h4><hr>
+<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><hr>
+<h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-3"><a href="#复杂度分析-3" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-3"><a href="#大佬题解-3" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-4"><a href="#复杂度分析-4" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-5"><a href="#复杂度分析-5" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-5"><a href="#大佬题解-5" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-6"><a href="#复杂度分析-6" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-6"><a href="#大佬题解-6" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-5"><a href="#LC-5" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-7"><a href="#复杂度分析-7" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-7"><a href="#大佬题解-7" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>经典到默写的</title>
     <url>/2021/03/18/%E7%86%9F%E5%88%B0%E9%BB%98%E5%86%99/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>默写吧</p>
@@ -749,48 +894,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数据结构的分析</title>
-    <url>/2021/03/06/dataStructure/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据结构</p>
-<span id="more"></span>
-
-<ol>
-<li>内存的物理表现的一系列连续的内存单元，每个内存单元大小是固定的。数据结构只有两个对应基础的数据结构，数组和链表，其他的数据结构都是由他们产生的。</li>
-<li> 数组用来表示连续的内存空间，链表通常用来表示不连续的内存空间。</li>
-<li>不连续内存空间的意思是，链表有数据域和指针域。</li>
-</ol>
-<hr>
-<h2 id="算法的性能"><a href="#算法的性能" class="headerlink" title="算法的性能"></a>算法的性能</h2><ol>
-<li>一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。</li>
-</ol>
-<hr>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
-<li>操作简单和支持随机访问</li>
-<li>数组是一段连续的地址空间</li>
-<li>数组使用连续的内存空间，来存储一系列同一数据类型的值。</li>
-</ol>
-<hr>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><ol>
-<li>栈是一种受限的数据结构，LIFO</li>
-<li>常用操作：进栈push, 出栈pop，取栈顶top，isEmply</li>
-<li>是一种逻辑结构</li>
-<li>给数组和链表增加一个限制就是队列</li>
-</ol>
-<hr>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><ol>
-<li>也是一种逻辑结构</li>
-<li>给数组和链表增加一个限制就是队列</li>
-</ol>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>链表</title>
     <url>/2021/03/20/%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>链表<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E9%93%BE%E8%A1%A8.md#7-%E9%93%BE%E8%A1%A8%E6%B1%82%E5%92%8C">刷题顺序</a></p>
@@ -912,109 +1015,6 @@
 ]]></content>
       <tags>
         <tag>力扣</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>搜索（BFS, DFS, Backtracking）</title>
-    <url>/2021/03/18/%E6%90%9C%E7%B4%A2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="搜索（BFS-DFS-Backtracking）"><a href="#搜索（BFS-DFS-Backtracking）" class="headerlink" title="搜索（BFS, DFS, Backtracking）"></a>搜索（BFS, DFS, Backtracking）</h1><hr>
-<p>广度优先算法（Breadth-First-Search），简称BFS。深度优先算法（Deep-First-Search），简称DFS。BFS:利用队列先进先出的特性，可以优先遍历横向节点。DFS:利用栈先进后出的特性，可以优先遍历纵向节点。<br><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%90%9C%E7%B4%A2.md">搜索</a></p>
-<hr>
-<p>深度优先搜索和广度优先搜索广泛应用于树和图中。 （1） BFS  (2) DFS (3) Backtracking</p>
-<span id="more"></span>
-
-<h1 id="BFS-广度优先搜索）"><a href="#BFS-广度优先搜索）" class="headerlink" title="BFS (广度优先搜索）"></a>BFS (广度优先搜索）</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h2><p>广度优先算法（BFS）：是一种图形搜索演算法。简单的说，BFS是从根节点开始，沿着树的宽度遍历树的节点，如果发现目标，则演算终止。</p>
-<h2 id="算法分析："><a href="#算法分析：" class="headerlink" title="算法分析："></a>算法分析：</h2><p>BFS是一种盲目搜寻法，目的是系统的展开并检查图中的所有节点，以找寻结果。换句话说，它并不考虑结果的可能位置，彻底地搜索整张图，直到找到结果为主。</p>
-<h2 id="时间复杂度："><a href="#时间复杂度：" class="headerlink" title="时间复杂度："></a>时间复杂度：</h2><p>邻接表的时候是$O(|V|+|E|)$。其中，$|V|$是节点的数目，$|E|$是图中边的数目。</p>
-<h2 id="适应条件："><a href="#适应条件：" class="headerlink" title="适应条件："></a>适应条件：</h2><p>对于所有边长度相同的情况，比如地图的模型，BFS第一次遇到目标点，此时就一定是从根节点到目标节点的最短路径（因为每次所有的点都是向外扩张一步，你先遇到，那你就一定最短的了）。<strong>BFS先找到的一定是最短的</strong>。但是如果是加权边的话就会有问题，BFS传回的是经过<strong>边数最少</strong>的解，但是因为加权了，这个解到根节点的<strong>距离</strong>就不一定是最短的了。比如1000+1000是两段，1+1+1是三段，但是由于BFS返回的是是<strong>经过边数最少的的解</strong>，这里就会返回总长度是2000的那个解，但是显然不是距离最短的路径。此时我们就应该采用<strong>Dijkstra最短路算法</strong>解决加权路径的最短路了（这就有点超纲了呀）。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ol>
-<li>寻找非加权图(或者所有边权重是一样)中任两点的最短路径。</li>
-<li>寻找其中一个连通分支中的所有节点（扩散性）。</li>
-<li>BFS染色法判断是否为二分图</li>
-</ol>
-<h2 id="大佬解释BFS"><a href="#大佬解释BFS" class="headerlink" title="大佬解释BFS"></a>大佬解释BFS</h2><ol>
-<li><a href="https://zhuanlan.zhihu.com/p/40151973#:~:text=%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E7%AE%97%E6%B3%95%EF%BC%88Breadth%2DFirst,%E6%89%80%E6%9C%89%E8%8A%82%E7%82%B9%EF%BC%8C%E4%BB%A5%E6%89%BE%E5%AF%BB%E7%BB%93%E6%9E%9C%E3%80%82">BFS算法介绍</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/50187643">算法- 从栈 &amp; 队列 到 BFS &amp; DFS</a></li>
-<li><a href="https://www.jianshu.com/p/d2125448270b">用Python实现树的BFS与DFS</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/141898546">LeetCode | 一文帮你搞定BFS、DFS算法（python版）</a></li>
-</ol>
-<hr>
-<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><hr>
-<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h3 id="LC1091-计算在网格中从原点到特定点的最短路径长度-计算在网格中从原点到特定点的最短路径长度"><a href="#LC1091-计算在网格中从原点到特定点的最短路径长度-计算在网格中从原点到特定点的最短路径长度" class="headerlink" title="(LC1091)计算在网格中从原点到特定点的最短路径长度   计算在网格中从原点到特定点的最短路径长度 "></a>(LC1091)计算在网格中从原点到特定点的最短路径长度   <a href="https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/">计算在网格中从原点到特定点的最短路径长度 </a></h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p> 给你一个 n x n 的二进制矩阵 grid 中，返回矩阵中最短 畅通路径 的长度。如果不存在这样的路径，返回 -1 。二进制矩阵中的 畅通路径 是一条从 左上角 单元格（即，(0, 0)）到 右下角 单元格（即，(n - 1, n - 1)）的路径，该路径同时满足下述要求：路径途经的所有单元格都的值都是 0 。路径中所有相邻的单元格应当在 8 个方向之一 上连通（即，相邻两单元之间彼此不同且共享一条边或者一个角）。畅通路径的长度 是该路径途经的单元格总数。 </p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：grid = [[0,1],[1,0]]</span><br><span class="line">输出：2</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h4><ul>
-<li>Deque(class collections.deque([iterable[,maxlen]])) [使用戳一戳](collections中 deque的使用)<ul>
-<li>Deque是双边队列（double-ended queue），具有队列和栈的性质，在 list 的基础上增加了移动、旋转和增删等。</li>
-<li>Deque队列是由栈或者queue队列生成的（发音是”deck”,”double-ended queue”的简称）。</li>
-<li>Deque是一个双端队列, 如果要经常从两端append 的数据, 选择这个数据结构就比较好了, 如果要实现随机访问,不建议用这个,请用列表。Deque 优势就是可以从两边append ,appendleft 数据。这一点list 是没有的<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">queue = deque([<span class="string">"Eric"</span>, <span class="string">"John"</span>, <span class="string">"Michael"</span>])</span><br><span class="line">queue.append(<span class="string">"Terry"</span>)           <span class="comment"># Terry 入队</span></span><br><span class="line">queue.append(<span class="string">"Graham"</span>)          <span class="comment"># Graham 入队</span></span><br><span class="line">queue.popleft()                 <span class="comment"># 队首元素出队</span></span><br><span class="line"><span class="comment">#输出: 'Eric'</span></span><br><span class="line">queue.popleft()                 <span class="comment"># 队首元素出队</span></span><br><span class="line"><span class="comment">#输出: 'John'</span></span><br><span class="line">print(queue)                           <span class="comment"># 队列中剩下的元素</span></span><br><span class="line"><span class="comment">#输出: deque(['Michael', 'Terry', 'Graham'])</span></span><br></pre></td></tr></tbody></table></figure>
-
-
-
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ol>
-<li>第一次刷这个BFS,毫无头绪，怎么办？首先是看到大佬的一个模板，先偷过来</li>
-</ol>
-<ul>
-<li> 第一步：先构造图<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initial_graph</span>(<span class="params">n, edges</span>):</span></span><br><span class="line">    dict_graph = {}  <span class="comment">#用字典表示</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        dict_graph[i] = []</span><br><span class="line">    num_e = <span class="built_in">len</span>(edges)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(num_e):</span><br><span class="line">        u = edges[i][<span class="number">0</span>] <span class="comment">#用矩阵表示</span></span><br><span class="line">        v = edges[i][<span class="number">1</span>]</span><br><span class="line">        dict_graph[u].append(v)</span><br><span class="line">        dict_graph[v].append(u)</span><br><span class="line">    <span class="keyword">return</span> dict_graph</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
-<ul>
-<li><p>第二步：使用队列<br>  BFS适用于层级搜索，队列先进先出，量身定做。python中队列有两种导入方法：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 1.使用queue  #队列</span></span><br><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> Queue</span><br><span class="line">q = Queue() <span class="comment"># 定义，为什么是这样涉及python的设计，不是很懂</span></span><br><span class="line">q.put(node) <span class="comment"># 放入</span></span><br><span class="line">q.get() <span class="comment"># 出队</span></span><br><span class="line"><span class="comment"># 2.使用deque</span></span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">q = collections.deque() <span class="comment"># 双向队列</span></span><br><span class="line">q.append() <span class="comment"># 入队</span></span><br><span class="line">q.popleft() <span class="comment"># 出队</span></span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>第三步：节点入队</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用Queue()定义</span></span><br><span class="line">q.put(start_node)</span><br><span class="line"><span class="comment"># 为防止无向图中回溯，使用set阻断</span></span><br><span class="line">hash_set = <span class="built_in">set</span>()</span><br><span class="line">hash_set.add(start_node)</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>第四步：BFS主体</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">step = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> q.empty():</span><br><span class="line">	size = <span class="built_in">len</span>(q)</span><br><span class="line">	step += <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> iter_num <span class="keyword">in</span> <span class="built_in">range</span>(size):</span><br><span class="line">		node = q.get() <span class="comment"># current node</span></span><br><span class="line">		<span class="comment"># get the neighbor</span></span><br><span class="line">		<span class="keyword">for</span> neighbor <span class="keyword">in</span> dict_graph[node]:</span><br><span class="line">			<span class="keyword">if</span> neighbor == end_node: <span class="comment"># find it!!!!</span></span><br><span class="line">				<span class="keyword">return</span> step</span><br><span class="line">			<span class="keyword">if</span> neighbor <span class="keyword">in</span> hash_set:</span><br><span class="line">				<span class="keyword">continue</span> <span class="comment"># avoid backtracking</span></span><br><span class="line">			hast_set.add(node)</span><br><span class="line">			q.put(neighbor)</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span> <span class="comment"># can't find</span></span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ul>
-<ol start="2">
-<li>具体操作</li>
-</ol>
-<ul>
-<li>本题本身就是矩阵，就不需要重新弄建initial。从头遍历，每次遇到0的时候，将周围8个方向可走的点push进队列，这样就可以将下一步能走的点找到。</li>
-<li>用一个大小为3的数组来保存当前点的坐标，和走到当前点所需要的代价</li>
-<li>由于要找的是花费路径最短的，所以第一个符合循环结束条件的数组，其第三个值就是我们要找的最小代价</li>
-</ul>
-<h4 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">shortestPathBinaryMatrix</span>(<span class="params">self, grid: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        n = <span class="built_in">len</span>(grid)</span><br><span class="line">        <span class="keyword">if</span> grid[<span class="number">0</span>][<span class="number">0</span>] == <span class="number">1</span> <span class="keyword">or</span> grid[n - <span class="number">1</span>][n - <span class="number">1</span>] == <span class="number">1</span>:  <span class="comment"># 若起始点或终点堵塞，则不可能有这样的路径</span></span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        res = <span class="number">1</span>  <span class="comment"># 注意题目的描述，是返回从 1 到 k 的路径，第一个节点被定为下标 1，</span></span><br><span class="line">        path = deque()</span><br><span class="line">        path.append([<span class="number">0</span>, <span class="number">0</span>])  <span class="comment"># 先压入起点</span></span><br><span class="line">        <span class="keyword">while</span> path:  <span class="comment"># BFS模板</span></span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(path)):  <span class="comment"># 对BFS的某一层的中所有点向8个方向进行扩展</span></span><br><span class="line">                x, y = path.popleft()</span><br><span class="line">                <span class="keyword">for</span> new_x, new_y <span class="keyword">in</span> [[x - <span class="number">1</span>, y - <span class="number">1</span>], [x - <span class="number">1</span>, y], [x - <span class="number">1</span>, y + <span class="number">1</span>], [x, y - <span class="number">1</span>],</span><br><span class="line">                                     [x, y + <span class="number">1</span>], [x + <span class="number">1</span>, y - <span class="number">1</span>], [x + <span class="number">1</span>, y], [x + <span class="number">1</span>, y + <span class="number">1</span>]]:</span><br><span class="line">                    <span class="comment"># 下面几种continue可以合并一行，这里为看的清楚就分开写了</span></span><br><span class="line">                    <span class="keyword">if</span> new_x == n - <span class="number">1</span> <span class="keyword">and</span> new_y == n - <span class="number">1</span>:  <span class="comment"># 如果扩展的点到达了终点</span></span><br><span class="line">                        <span class="keyword">return</span> res + <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> <span class="number">0</span> &lt;= new_x &lt; n <span class="keyword">or</span> <span class="keyword">not</span> <span class="number">0</span> &lt;= new_y &lt; n:  <span class="comment"># 扩展的点超出边界，则跳过</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">if</span> grid[new_x][new_y] == <span class="number">1</span>:  <span class="comment"># 若扩展的点为阻塞，则跳过</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">if</span> grid[new_x][new_y] == -<span class="number">1</span>:  <span class="comment"># 若扩展的点已经访问过，则跳过</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">if</span> grid[new_x][new_y] == <span class="number">0</span>:  <span class="comment"># 若为通畅点</span></span><br><span class="line">                        grid[new_x][new_y] = -<span class="number">1</span>  <span class="comment"># 当前层次下已经访问该点</span></span><br><span class="line">                        path.append([new_x, new_y])  <span class="comment"># 将扩展的点加入path，到下一层的时候继续扩展</span></span><br><span class="line">            res += <span class="number">1</span>  <span class="comment"># 对某一层的元素都求判定过后，距离加1(同一个层次中的所有点的距离距离起点都是相等的）</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC297-完全平方数-完全平方数"><a href="#LC297-完全平方数-完全平方数" class="headerlink" title="(LC297)完全平方数   完全平方数 "></a>(LC297)完全平方数   <a href="https://leetcode-cn.com/problems/perfect-squares/description/">完全平方数 </a></h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>给定正整数&nbsp;n，找到若干个完全平方数（比如&nbsp;1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。给你一个整数 n ，返回和为 n 的完全平方数的 最少数量 。完全平方数 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：n = 12</span><br><span class="line">输出：3 </span><br><span class="line">解释：12 = 4 + 4 + 4</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><ol>
-<li>可以将每个整数看成图中的一个节点，如果两个整数之差为一个平方数，那么这两个整数所在的节点就有一条边。要求解最小的平方数数量，就是求解从节点 n 到节点 0 的最短路径。</li>
-<li><a href="https://leetcode-cn.com/problems/perfect-squares/solution/dong-tai-gui-hua-bfs-zhu-xing-jie-shi-python3-by-2/">广度优先遍历</a></li>
-<li><h4 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4></li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numSquares</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        queue = deque([n])  <span class="comment">#必须带[]，否则不是iterable </span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        step = <span class="number">0</span></span><br><span class="line">        visited = <span class="built_in">set</span>()</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            step +=<span class="number">1</span></span><br><span class="line">            l = <span class="built_in">len</span>(queue)</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(l):</span><br><span class="line">                temp = queue.pop()  <span class="comment"># 不能用 queue.popleft() 因为后面用的是appendleft。前后只能有一个left</span></span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">int</span>(temp**<span class="number">0.5</span>)+<span class="number">1</span>):</span><br><span class="line">                    x = temp - i**<span class="number">2</span></span><br><span class="line">                    <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">                        <span class="keyword">return</span> step</span><br><span class="line">                    <span class="keyword">if</span> x <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">                        visited.add(x)</span><br><span class="line">                        queue.appendleft(x)</span><br><span class="line">        <span class="keyword">return</span> step</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-1"><a href="#大佬题解-1" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-2"><a href="#大佬题解-2" class="headerlink" title="大佬题解"></a>大佬题解</h4><hr>
-<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><hr>
-<h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-3"><a href="#复杂度分析-3" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-3"><a href="#大佬题解-3" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-4"><a href="#复杂度分析-4" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-5"><a href="#复杂度分析-5" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-5"><a href="#大佬题解-5" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-6"><a href="#复杂度分析-6" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-6"><a href="#大佬题解-6" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-5"><a href="#LC-5" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-7"><a href="#复杂度分析-7" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-7"><a href="#大佬题解-7" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
       </tags>
   </entry>
 </search>
