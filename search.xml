@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>第一天坚持坚持</title>
-    <url>/2021/02/27/firstday/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>第一次记录一下</p>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构的分析</title>
     <url>/2021/03/06/dataStructure/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据结构</p>
@@ -50,8 +38,20 @@
         <category>知识及记录</category>
       </categories>
       <tags>
-        <tag>学习笔记</tag>
         <tag>数据结构</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一天坚持坚持</title>
+    <url>/2021/02/27/firstday/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>第一次记录一下</p>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -423,6 +423,190 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode竞赛(第231场周赛)</title>
+    <url>/2021/03/07/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B234/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p> 就做出来第一题和第二题<br> <span id="more"></span></p>
+<h1 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h1><p>(5697.检查二进制字符串字段)[<a href="https://leetcode-cn.com/problems/check-if-binary-string-has-at-most-one-segment-of-ones/]">https://leetcode-cn.com/problems/check-if-binary-string-has-at-most-one-segment-of-ones/]</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个二进制字符串 s ，该字符串不含前导零 。</p>
+<p>如果 s 最多包含 一个由连续的 ‘1’ 组成的字段 ，返回 true​​​ 。否则，返回 false 。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：s = "1001"</span><br><span class="line">输出：false</span><br><span class="line">解释：字符串中的 1 没有形成一个连续字段。</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>出现01字符串就输出错误</li>
+<li>如果一直为0，则可以</li>
+</ol>
+<h2 id="反省"><a href="#反省" class="headerlink" title="反省"></a>反省</h2><ol>
+<li><p>这次这个题真不难，但是看题的时候没看明白题。 本题的意思是只要有一个1就算是连续字段，比如“10011”, 输出也是false。 因为第一个数字1就已经算是一个由1组成的字符串了，后面的11是第二个连续1的字段了。</p>
+</li>
+<li><p>map()函数完全可以不用啊，但是既然用了，还不熟知识点那块还是记录一下吧。</p>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2></li>
+<li><p>map函数的原型是map(function,iterable,…)，它的返回结果是一个列表。 参数function传的是一个函数名，可以是python内置的，也可以是自定义的。参数iterable传的是一个可以迭代的对象，例如列表，元组，字符串。  这个函数的意思是将function应用于iterable的每一个元素，结果以列表的形式返回。 注意到后面，iterable后面有省略号，意思是可以传很多个iterable，如果有额外的iterable参数，并行的从这些参数中取出元素，并调用function。如果一个iterable 参数比另外的iterable参数要短，将以None扩展参数元素</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a=(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">b=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">c=<span class="string">"zhangkang"</span></span><br><span class="line"></span><br><span class="line">la=<span class="built_in">map</span>(<span class="built_in">str</span>,a)</span><br><span class="line">lb=<span class="built_in">map</span>(<span class="built_in">str</span>,b)</span><br><span class="line">lc=<span class="built_in">map</span>(<span class="built_in">str</span>,c)</span><br><span class="line"></span><br><span class="line">print(la)</span><br><span class="line">print(lb)</span><br><span class="line">print(lc)</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>]</span><br><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>]</span><br><span class="line">[<span class="string">'z'</span>, <span class="string">'h'</span>, <span class="string">'a'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>, <span class="string">'k'</span>, <span class="string">'a'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>] </span><br></pre></td></tr></tbody></table></figure>
+<p>str()是Python的内置函数，这个例子是把列表/元组/字符串的每个元素变成了str 类型，然后以列表的形式返回。当然我们也可以传入自定义的函数</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mul</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x*x</span><br><span class="line">n=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">res=<span class="built_in">map</span>(mul,n)</span><br><span class="line">输出：[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>] </span><br></pre></td></tr></tbody></table></figure>
+<p>把列表n中的每个元素运行一次mul函数后得到的结果作为最终结果列表的元素。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">x,y,z</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x+y+z</span><br><span class="line">list1=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">list2=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">list3=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">res=<span class="built_in">map</span>(add,list1,list2,list3)</span><br><span class="line">print(res)</span><br><span class="line">输出：[<span class="number">3</span>, <span class="number">6</span>, <span class="number">9</span>] </span><br></pre></td></tr></tbody></table></figure>
+
+
+<p>并行的从三个列表中各自取出元素然后运行add函数，有人可能会问，如果三个列表长度不一样怎么办，前面已经说了，对于短的那个iterable参数会用None填补。对于上面的例子，如果list3=[1,2]的话，那么这个程序会报错，因为虽然在运行add函数的时候列表list3的最后一个元素会用None填补，但是None和int类型的数是不能相加的。也就是说，除非参数function支持None的运算，否则根本没意义。现在我们看下另一个例子你就明白了</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">x,y,z</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x,y,z</span><br><span class="line">list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">list2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">list3 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">res = <span class="built_in">map</span>(add, list1, list2, list3)</span><br><span class="line">print(res)</span><br><span class="line">输出：</span><br><span class="line">[(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>), (<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>), (<span class="literal">None</span>, <span class="number">4</span>, <span class="number">4</span>), (<span class="literal">None</span>, <span class="literal">None</span>, <span class="number">5</span>)]</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">checkOnesSegment</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; bool:</span>  <span class="comment">#大佬解题</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> s.count(<span class="string">'01'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">checkOnesSegment</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; bool:</span>  <span class="comment"># 本菜</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(s) ==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        n = <span class="built_in">len</span>(s)</span><br><span class="line">        s= <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,s))   <span class="comment">#不用map这行      </span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> r &lt; n:</span><br><span class="line">            <span class="keyword">if</span> s[r] == s[<span class="number">0</span>] <span class="keyword">and</span> r == <span class="number">1</span>:  <span class="comment"># s[r] == '1'</span></span><br><span class="line">                <span class="keyword">while</span> r&lt;n <span class="keyword">and</span> s[r] == s[<span class="number">0</span>]:</span><br><span class="line">                    r+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> s[r]!= s[<span class="number">0</span>]:</span><br><span class="line">                r+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+<h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2. 题目"></a>2. 题目</h1><p>(5698.构成特定和需要添加的最少元素)[<a href="https://leetcode-cn.com/problems/minimum-elements-to-add-to-form-a-given-sum/]">https://leetcode-cn.com/problems/minimum-elements-to-add-to-form-a-given-sum/]</a></p>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个整数数组 nums ，和两个整数 limit 与 goal 。数组 nums 有一条重要属性：abs(nums[i]) &lt;= limit 。<br>返回使数组元素总和等于 goal 所需要向数组中添加的 最少元素数量 ，添加元素 不应改变 数组中 abs(nums[i]) &lt;= limit 这一属性。<br>注意，如果 x &gt;= 0 ，那么 abs(x) 等于 x ；否则，等于 -x </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [1,-1,1], limit = 3, goal = -4</span><br><span class="line">输出：2</span><br><span class="line">解释：可以将 -2 和 -3 添加到数组中，数组的元素总和变为 1 - 1 + 1 - 2 - 3 = -4 。</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h2><ol>
+<li><p>除法：</p>
+<ul>
+<li>传统除法：如果是整数除法则执行地板除，如果是浮点除法则执行精确除法<br><code>&gt;&gt;&gt;1/2   &gt;&gt;&gt;0   &gt;&gt;&gt;1.0/2.0 &gt;&gt;&gt;0.5</code></li>
+<li>地板除法：//除法不管操作数为何种数值类型，总是会舍去小数部分，返回数字序列中比真正的商小的最接近的数字<br>`&gt;&gt;&gt;1//2  &gt;&gt;&gt;0   &gt;&gt;&gt;-1//2  &gt;&gt;&gt;-‘</li>
+</ul>
+</li>
+<li><p>ceil,floor,round</p>
+<ul>
+<li>ceil() 将小数部分一律向整数部分进位，函数返回数字的上入整数 ‘ceil(-45.17): -45’</li>
+<li>floor() 一律舍去，仅保留整数</li>
+<li>round() 四舍五入</li>
+</ul>
+</li>
+</ol>
+<h2 id="关键点"><a href="#关键点" class="headerlink" title="关键点"></a>关键点</h2><ul>
+<li>小学数学，反正这类的题要先手写几个例子 </li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minElements</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], limit: <span class="built_in">int</span>, goal: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">return</span> ceil(<span class="built_in">abs</span>(goal - <span class="built_in">sum</span>(nums)) / limit)</span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>堆heapq模块</title>
+    <url>/2021/03/21/%E5%A0%86heapq%E6%A8%A1%E5%9D%97/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="堆heapq模块"><a href="#堆heapq模块" class="headerlink" title="堆heapq模块"></a>堆heapq模块</h1><hr>
+<hr>
+<p>这个模块提供了堆队列算法的实现，也成为优先队列算法。<br>堆是一个二叉树，它的每个父节点的值都只会小于或等于所有孩子节点（的值）。它使用了数组来实现：从零开始计数，对于所有的<code>k</code>，都有<code>heap[k] &lt;= heap[2*k+1]</code>和<code>heap[k] &lt;= heap[2*k+2]</code>。为了便于笔记，不存在的元素被认为是无限大。堆最有趣的特性在于最小的元素总是在根结点：heap[0]。</p>
+<span id="more"></span>
+
+
+<p>这个API与教材的对算法实现有所不同，具体区别有两方面：（a）我们使用了从零开始的索引。这使得节点和其孩子节点索引之间的关系不太直观但更加适合，因为Python使用从零开始的索引。（b) 我们的pop方法返回最小的项而不是最大的项（这在教材中称为“最小堆”；而“最大堆”在教材中更为常见，因为它更适用于原地排序）。<br>基于这两个方面，把堆看作原生的Python List也没有什么奇怪的：<code>heap[0]</code>表示最小的元素，同时<code>heap.sort()</code>维护了堆的不变性。<br>要创造一个堆，可以使用list来初始化为<code>[]</code>，或者你也可以通过一个函数<code>heapify()</code>，来把一个list转换成堆。</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="heapq-headpush-heap-item"><a href="#heapq-headpush-heap-item" class="headerlink" title="heapq.headpush(heap,item)"></a>heapq.headpush(heap,item)</h2><p>将<code>item</code>的值加入<code>heap</code>中，保持堆的不变性。</p>
+<h2 id="heapq-headpop-heap"><a href="#heapq-headpop-heap" class="headerlink" title="heapq.headpop(heap)"></a>heapq.headpop(heap)</h2><p>弹出并返回<code>heap</code>的最小的元素，保持堆的不变性。如果堆为空，抛出<code>IndexError</code>。使用<code>heap[0]</code>，可以只访问最小的元素而不弹出它。</p>
+<h2 id="heapq-headpop-heap-item"><a href="#heapq-headpop-heap-item" class="headerlink" title="heapq.headpop(heap,item)"></a>heapq.headpop(heap,item)</h2><p>将<code>item</code>放入堆中，然后弹出并返回<code>heap</code>的最小元素。该组合操作比先调用<code>heappush()</code>再调用<code>heappop()</code>运行起来更有效率。</p>
+<h2 id="heapq-heapify-x"><a href="#heapq-heapify-x" class="headerlink" title="heapq.heapify(x)"></a>heapq.heapify(x)</h2><p>将list <code>x</code>转换成堆，原地，线性时间内。</p>
+<h2 id="heapq-heapreplace-heap-item"><a href="#heapq-heapreplace-heap-item" class="headerlink" title="heapq.heapreplace(heap,item)"></a>heapq.heapreplace(heap,item)</h2><p>弹出并返回<code>heap</code>中最小的一项，同时推入新的<code>item</code>。堆的大小不变。如果堆为空则引发<code>IndexError</code>。这个单步骤操作比<code>heappop()</code>加<code>heappush()</code>更高效，并且在使用固定大小的堆时更为适宜。 <code>pop</code>/<code>push</code> 组合总是会从堆中返回一个元素并将其替换为 <code>item</code>。<br>返回的值可能会比添加的 item 更大。 如果不希望如此，可考虑改用 <code>heappushpop()</code>。 它的 <code>push/pop</code> 组合会返回两个值中较小的一个，将较大的值留在堆中。</p>
+<h1 id="创建堆"><a href="#创建堆" class="headerlink" title="创建堆"></a>创建堆</h1><ul>
+<li>heapq有两种方式创建堆，一种是使用一个空列表，然后使用<code>heapq.heappush()</code>函数把值加入堆中，另外一种就是使用<code>heap.heapify(list)</code>转换列表成为堆结构。</li>
+</ul>
+<h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.heappush(heap,item)</span></span><br><span class="line"><span class="string">    - push the value item onto the heap, maintaining the heap invariant</span></span><br><span class="line"><span class="string">heapq.heappop(heap)</span></span><br><span class="line"><span class="string">    - pop and return the smallest item from the heap, maintaining the heap invariant</span></span><br><span class="line"><span class="string">    If the heap is empty, IndexError is raised. To access the smallest item without popping it, use heap[0]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heap = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    heapq.heappush(heap,num) <span class="comment">#加入堆</span></span><br><span class="line"></span><br><span class="line">print(heap[<span class="number">0</span>])  <span class="comment"># 如果只是想获取最小值而不是弹出，使用heap[0]</span></span><br><span class="line">print([heapq.heappop(heap) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])  <span class="comment"># 堆排序结果</span></span><br><span class="line"><span class="comment"># out: [1, 2, 3, 5, 23, 54, 132]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">print([heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])  <span class="comment"># 堆排序结果</span></span><br><span class="line"><span class="comment"># out: [1, 2, 3, 5, 23, 54, 132]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><code>heapq</code> 模块还有一个<code>heapq.merge(*iterables)</code> 方法，用于合并多个排序后的序列成一个排序后的序列， 返回排序后的值的迭代器。类似于<code>sorted(itertools.chain(*iterables))</code>，但返回的是可迭代的。</li>
+</ul>
+<h2 id="基本示例-1"><a href="#基本示例-1" class="headerlink" title="基本示例"></a>基本示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.merge(*iterables)</span></span><br><span class="line"><span class="string">    - Merge multiple sorted inputs into a single sorted output (for example, merge timestamped entries from multiple log files). Returns an iterator over the sorted values.</span></span><br><span class="line"><span class="string">    - Similar to sorted(itertools.chain(*iterables)) but returns an iterable, does not pull the data into memory all at once, and assumes that each of the input streams is already sorted (smallest to largest).</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">num1 = [<span class="number">32</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">34</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">num2 = [<span class="number">23</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">656</span>, <span class="number">324</span>, <span class="number">23</span>, <span class="number">54</span>]</span><br><span class="line">num1 = <span class="built_in">sorted</span>(num1)</span><br><span class="line">num2 = <span class="built_in">sorted</span>(num2)</span><br><span class="line"></span><br><span class="line">res = heapq.merge(num1, num2)</span><br><span class="line">print(<span class="built_in">list</span>(res))</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="访问堆内容"><a href="#访问堆内容" class="headerlink" title="访问堆内容"></a>访问堆内容</h1><ul>
+<li>堆创建好后，可以通过<code>heapq.heappop()</code> 函数弹出堆中最小值。</li>
+</ul>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">43</span>, <span class="number">45</span>, <span class="number">23</span>, <span class="number">12</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line"></span><br><span class="line">print(heapq.heappop(nums))</span><br><span class="line"><span class="comment"># out: 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果需要所有堆排序后的元素</span></span><br><span class="line">result = [heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))]</span><br><span class="line">print(result)</span><br><span class="line"><span class="comment"># out: [12, 23, 43, 45]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>如果需要删除堆中最小元素并加入一个元素，可以使用<code>heapq.heaprepalce()</code> 函数</li>
+</ul>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">heapq.heapreplace(nums, <span class="number">23</span>)</span><br><span class="line">print([heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])</span><br><span class="line"><span class="comment"># out: [2, 3, 4, 5, 23]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="获取堆最大或最小值"><a href="#获取堆最大或最小值" class="headerlink" title="获取堆最大或最小值"></a>获取堆最大或最小值</h1><ul>
+<li>如果需要获取堆中最大或最小的范围值，则可以使用<code>heapq.nlargest()</code> 或<code>heapq.nsmallest()</code> 函数</li>
+</ul>
+<h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.nlargest(n, iterable[, key])¶</span></span><br><span class="line"><span class="string">    - Return a list with the n largest elements from the dataset defined by iterable. </span></span><br><span class="line"><span class="string">    - key if provided, specifies a function of one argument that is used to extract a comparison key from each element in the iterable: key=str.lower</span></span><br><span class="line"><span class="string">    - Equivalent to: sorted(iterable, key=key, reverse=True)[:n]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>]</span><br><span class="line">print(heapq.nlargest(<span class="number">3</span>, nums))</span><br><span class="line">print(heapq.nsmallest(<span class="number">3</span>, nums))</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">输出：</span></span><br><span class="line"><span class="string">[5, 4, 3]</span></span><br><span class="line"><span class="string">[1, 2, 3]</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>这两个函数还接受一个key参数，用于dict或其他数据结构类型使用</li>
+</ul>
+<h2 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import heapq</span><br><span class="line">from pprint import pprint #美化打印 </span><br><span class="line">portfolio = [</span><br><span class="line">    {'name': 'IBM', 'shares': 100, 'price': 91.1},</span><br><span class="line">    {'name': 'AAPL', 'shares': 50, 'price': 543.22},</span><br><span class="line">    {'name': 'FB', 'shares': 200, 'price': 21.09},</span><br><span class="line">    {'name': 'HPQ', 'shares': 35, 'price': 31.75},</span><br><span class="line">    {'name': 'YHOO', 'shares': 45, 'price': 16.35},</span><br><span class="line">    {'name': 'ACME', 'shares': 75, 'price': 115.65}</span><br><span class="line">]</span><br><span class="line">cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])</span><br><span class="line">expensive = heapq.nlargest(3, portfolio, key=lambda s: s['price'])</span><br><span class="line">pprint(cheap)</span><br><span class="line">pprint(expensive)</span><br><span class="line"></span><br><span class="line">"""</span><br><span class="line">输出：</span><br><span class="line">[{'name': 'YHOO', 'price': 16.35, 'shares': 45},</span><br><span class="line"> {'name': 'FB', 'price': 21.09, 'shares': 200},</span><br><span class="line"> {'name': 'HPQ', 'price': 31.75, 'shares': 35}]</span><br><span class="line">[{'name': 'AAPL', 'price': 543.22, 'shares': 50},</span><br><span class="line"> {'name': 'ACME', 'price': 115.65, 'shares': 75},</span><br><span class="line"> {'name': 'IBM', 'price': 91.1, 'shares': 100}]</span><br><span class="line">"""</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="heapq-应用"><a href="#heapq-应用" class="headerlink" title="heapq 应用"></a>heapq 应用</h1><ul>
+<li>实现heap堆排序算法, 该算法和sorted(iterable) 类似，但是它是不稳定的。</li>
+</ul>
+<h2 id="示例-4"><a href="#示例-4" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">heapsort</span>(<span class="params">iterable</span>):</span></span><br><span class="line"><span class="meta">... </span>    h = []</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> value <span class="keyword">in</span> iterable:</span><br><span class="line"><span class="meta">... </span>        heappush(h, value)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> [heappop(h) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(h))]</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heapsort([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">0</span>])</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>堆的值可以是元组类型，可以实现对带权值的元素进行排序。</li>
+</ul>
+<h2 id="示例-5"><a href="#示例-5" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>h = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">5</span>, <span class="string">'write code'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">7</span>, <span class="string">'release product'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">1</span>, <span class="string">'write spec'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">3</span>, <span class="string">'create tests'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappop(h)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'write spec'</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>声学信号处理系列（一）声学信号处理基础知识</title>
+    <url>/2021/03/20/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="声学信号处理系列（一）声学信号处理基础知识"><a href="#声学信号处理系列（一）声学信号处理基础知识" class="headerlink" title="声学信号处理系列（一）声学信号处理基础知识"></a>声学信号处理系列（一）声学信号处理基础知识</h1><p><em>by max</em></p>
+<p><em>2021/03/07</em></p>
+<h2 id="0-写在开始的话"><a href="#0-写在开始的话" class="headerlink" title="0.写在开始的话"></a>0.写在开始的话</h2><p>这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中学习到的新知识，也希望能跟别人分享自己的一些心得体会。个人水平有限，如有疏漏错误，敬请批评指正，谢谢！</p>
+<h2 id="1-声学基础"><a href="#1-声学基础" class="headerlink" title="1.声学基础"></a>1.声学基础</h2><p>声音是自然界中非常常见的一种信号之一，我们平时的生活中声音无处不在。人类可以通过声音，来对物体进行感知、辨认和定位。同样，声音也是日常我们互相交流时用于传递信息文字的“载具”。</p>
+<p>初高中物理课上大家应该都学到过，声音的本质是物体振动生成的声波，该声波通过某种介质（例如空气、水和固体）传播并能被人类或者动物的听觉器官所感知。声音的频率一般会以赫兹表示，记为Hz，指每秒钟周期性震动的次数。而分贝是用来表示声音强度的单位，记为dB[1]。</p>
+<h2 id="2-我们如何发出声音"><a href="#2-我们如何发出声音" class="headerlink" title="2.我们如何发出声音"></a>2.我们如何发出声音</h2><p>正如上一小节中所介绍的，发出声音需要凭借物体的振动。那么我们人类从口腔中发出各种各样的声音，也正是依靠我们的声带的振动来实现的。具体说来，从我们肺部内排出的气体气流，在经过形态变化的声带结构时，带动声带产生振动，进而生成了声波，声波经过我们的口腔和嘴，传输到外界空气中。在整个过程里，由于每个人类个体的声带器官、口腔腔体和嘴部的生理结构都是各异的，所以也导致我们每个人说出来的话的语音语调，以及包括音色，都是不同的。需要注意的是，由于鼻腔和口腔在人体内部是连通的，也会参与到发声过程中来。</p>
+<p>下图是一个口腔内部的各个器官的展示，体内从肺部出来的气流，经气管-&gt;声带-&gt;咽喉-&gt;口鼻，传出体外。</p>
+<img src="https://i.loli.net/2021/03/20/thUDC8LeM3imOoA.png" style="zoom:70%">
+
+<h2 id="3-一些基本的专业词汇-2"><a href="#3-一些基本的专业词汇-2" class="headerlink" title="3.一些基本的专业词汇[2]"></a>3.一些基本的专业词汇[2]</h2><ul>
+<li>音节（Syllable）：说话时一次发出的，具有一个响亮的中心，并被明显感觉到的语音片段。</li>
+<li>音素（Phoneme）：语音发音的最小单位。一个音节可以由一个或多个音素构成。音素可分为元音和辅音两种。</li>
+<li>元音（Vowel）：当声带振动发出的声音气流从咽喉进入口腔并从嘴部唇部出去时，这些声腔完全开放，气流可以顺利通过时所发的音，称为元音。元音构成音节的主干，无论从长度或是能量角度考虑，元音在音节中都占主要部分。决定元音音色的主要因素是舌头的形状及其在口腔中的位置，以及嘴唇的形状等。口腔中当舌头处于不同的舌位高度和舌位前后时，可以发出不同的音素。下图是一个单元音发音舌位示意图：<img src="https://i.loli.net/2021/03/20/4aPrTg651YZvBfV.gif" style="zoom:70%"></li>
+<li>辅音（Consonant）：当呼出的气流，由于整个声腔通路上某一部分封闭起来或受到阻碍，气流传播不通畅，而克服发音器官的这种阻碍时所发的音，称为辅音。发辅音时，声带振动的是浊音，声带不振动的是清音。辅音只出现在音节的前端或后端或前后两端，时长和能量相比元音都很小。</li>
+<li>半元音：有时，虽然声道基本畅通，但某处声道较窄，引起轻微的摩擦声，称为半元音。</li>
+</ul>
+<h2 id="4-共振峰（Formant）与基频F0（Fundamental-frequency）"><a href="#4-共振峰（Formant）与基频F0（Fundamental-frequency）" class="headerlink" title="4.共振峰（Formant）与基频F0（Fundamental frequency）"></a>4.共振峰（Formant）与基频F0（Fundamental frequency）</h2><p>共振峰和基频F0是语音信号处理中较为重要的概念，所以单独拿出来介绍一下。</p>
+<p>(1)共振峰：前面介绍过发声机理，其中声道可以被等效视为一根横截面非均匀的声管，在发声过程中，该声管起共鸣器的作用。当一个具有相对较大能量的元音激励进入声道时，会引起共振特性，产生一组共振频率，称为共振峰频率，可简称为共振峰。换句话说，共振峰不是特指某一个频率的振动信号，而是代指一组具有不同频率的共振信号，这组信号里，每个信号所处的频率是不同的，但是是连续存在的。</p>
+<p>一般可以用共振峰频率的位置和频带宽度这两个参数来描述一组共振峰。每个不同的元音，都对应着一组不同的共振峰参数。共振峰中的信号通常用F来表示，例如F0，F1，F2…等等。</p>
+<p>(2)基频F0：基频又称基础频率，其定义为共振峰中第一个共振信号的振动频率。共振峰中除基频F0以外，其他共振信号均为口腔共振产生，而基频F0由声带振动产生，其能量一般为共振峰中最强的。有时将音调（pitch）和基频等效看待，二者其实有一些细节上的不同，但平时讨论时可以暂时视为一体。音调反应的是音高的信息，男性和女性的平均音调范围是不同的，男性更低一些，女性更高一些。</p>
+<p>任何为基频整倍数的频率上的信号称为谐波。谐波反应的是音色的信息。</p>
+<p>通常我们可以通过观测语音信号的语谱图，来对共振峰和基频有一个直观的了解。语谱图是将语音的频谱信号以二维形式所描绘出来的图形，该图形横轴为时间，单位通常为秒s，纵轴为频率，单位通常为赫兹Hz。图形上颜色的深浅代表声学信号能量强度的高低。一个典型的反应了共振峰的语谱图如下所示：<br><img src="https://i.loli.net/2021/03/20/5OrJYEweRg8p1Iq.png" style="zoom:40%"></p>
+<h2 id="5-我们如何听到声音"><a href="#5-我们如何听到声音" class="headerlink" title="5.我们如何听到声音"></a>5.我们如何听到声音</h2><p>人类听到声音的简要过程：空气中的声波传播到人耳内，耳朵内的鼓膜受到声波的声压的作用会产生位移振动，内耳的一个主要器官耳蜗，将这种位移振动的机械信息，转换为生物神经信号，传递给大脑进行处理后，我们就能够获知听到的是什么声音了。具体的介绍请移步参考资料[2]中的2.4.2节，会有更详尽的了解。</p>
+<p>人耳一般能接收并处理的声音的频率范围为20Hz到20kHz，强度为-5至130dB。在此范围外的声学信号里的音频分量，是人耳处理不到的，一般在语音信号处理领域的问题中不会考虑。但是，凡事无绝对，我们也不能说在这个范围以内的音频分量我们一定能听得到，这就涉及到一个概念叫做听觉掩蔽效应。</p>
+<p>听觉掩蔽效应指的是在一个强信号附近，弱信号将变得听不到，被掩盖掉了。生活中这种例子常见的有：购物商场的大喇叭在外放吵闹的音乐时，两个人的对话可能即使很近也听不清楚。被掩蔽掉的不可闻信号的最大声压级称为掩蔽门限或掩蔽阈值，在这个掩蔽阈值以下的声音都会被掩盖掉。</p>
+<h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] 维基百科-声音词条：<a href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3">https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3</a></p>
+<p>[2] 赵力. 语音信号处理[M]. 机械工业出版社, 2016.</p>
+]]></content>
+      <tags>
+        <tag>声学信号处理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>双指针（easy篇）</title>
     <url>/2021/03/18/%E5%8F%8C%E6%8C%87%E9%92%88/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="双指针-顺序"><a href="#双指针-顺序" class="headerlink" title="#双指针 (顺序)"></a>#双指针 (<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8F%8C%E6%8C%87%E9%92%88.md#1-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84-two-sum">顺序</a>)</h2><p>双指针用于遍历数组，两个指针指向不同的元素，从而共同的完成一个任务。<br>（1）共同完成一个和的target<br>（2）从后往前，从前往后，两边夹击，快慢指针</p>
@@ -511,41 +695,6 @@
 <h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>(1)  首先是字符串字典顺序是啥意? 只听说过数的运算，字符串怎么进行运算呢？字符串运算是灵活，又有点复杂的。<a href="https://zhuanlan.zhihu.com/p/91137723">python字符串数据类型</a>。其中我们讲一下字符串的关系运算，采用 ‘&lt;’, ‘&lt;=’, ‘&gt;’, ‘&gt;=’, ‘==’, ‘!=’ 关系运算符对两个字符串进行比较，其实是依次对两个字符串同位置上字符的ADCII 码进行比较。需要注意的是如果如果第一个字符能比较出大小来，不会往后比较，第一个字符相同的话，才往后进行比较<br>(2)  这个题进行双指针也是挺明显的，首先是两个字符串进行遍历的比较。第二是前面也有提到的是，字符串是可变的，所以可以进行比较的。</p>
 <h3 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findLongestWord</span>(<span class="params">self, s: <span class="built_in">str</span>, dictionary: List[<span class="built_in">str</span>]</span>) -&gt; str:</span></span><br><span class="line">        len_ans = <span class="number">0</span></span><br><span class="line">        ans = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> dst <span class="keyword">in</span> dictionary:</span><br><span class="line">            i = <span class="number">0</span> </span><br><span class="line">            j = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(s) <span class="keyword">and</span> j &lt; <span class="built_in">len</span>(dst):<span class="comment"># 先判断是不是符合条件的字符串</span></span><br><span class="line">                <span class="keyword">if</span> s[i] == dst[j]:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">                    j+=<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> j == <span class="built_in">len</span>(dst): <span class="comment">#判断是不是字典序最小的</span></span><br><span class="line">                <span class="keyword">if</span> j &gt; len_ans:</span><br><span class="line">                    len_ans,ans = <span class="built_in">len</span>(dst), dst</span><br><span class="line">                <span class="keyword">elif</span> j == len_ans <span class="keyword">and</span> dst &lt; ans:</span><br><span class="line">                    len_ans,ans = <span class="built_in">len</span>(dst), dst</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>声学信号处理系列（一）声学信号处理基础知识</title>
-    <url>/2021/03/20/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%970_%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="声学信号处理系列（一）声学信号处理基础知识"><a href="#声学信号处理系列（一）声学信号处理基础知识" class="headerlink" title="声学信号处理系列（一）声学信号处理基础知识"></a>声学信号处理系列（一）声学信号处理基础知识</h1><p><em>by max</em></p>
-<p><em>2021/03/07</em></p>
-<h2 id="0-写在开始的话"><a href="#0-写在开始的话" class="headerlink" title="0.写在开始的话"></a>0.写在开始的话</h2><p>这个博客系列里，会介绍一些声学信号处理领域相关的基础性知识，以及工业界学术界主流的一些算法应用方向。主要会关注与本人工作相关的一些细分领域，例如：语音增强、声纹识别、麦克风阵列、声学场景识别以及声纹识别反欺骗等诸多方向。随着系列博客文章的积累，会逐渐关注并提供更多应用领域的介绍。本系列旨在记录平时工作中学习到的新知识，也希望能跟别人分享自己的一些心得体会。个人水平有限，如有疏漏错误，敬请批评指正，谢谢！</p>
-<h2 id="1-声学基础"><a href="#1-声学基础" class="headerlink" title="1.声学基础"></a>1.声学基础</h2><p>声音是自然界中非常常见的一种信号之一，我们平时的生活中声音无处不在。人类可以通过声音，来对物体进行感知、辨认和定位。同样，声音也是日常我们互相交流时用于传递信息文字的“载具”。</p>
-<p>初高中物理课上大家应该都学到过，声音的本质是物体振动生成的声波，该声波通过某种介质（例如空气、水和固体）传播并能被人类或者动物的听觉器官所感知。声音的频率一般会以赫兹表示，记为Hz，指每秒钟周期性震动的次数。而分贝是用来表示声音强度的单位，记为dB[1]。</p>
-<h2 id="2-我们如何发出声音"><a href="#2-我们如何发出声音" class="headerlink" title="2.我们如何发出声音"></a>2.我们如何发出声音</h2><p>正如上一小节中所介绍的，发出声音需要凭借物体的振动。那么我们人类从口腔中发出各种各样的声音，也正是依靠我们的声带的振动来实现的。具体说来，从我们肺部内排出的气体气流，在经过形态变化的声带结构时，带动声带产生振动，进而生成了声波，声波经过我们的口腔和嘴，传输到外界空气中。在整个过程里，由于每个人类个体的声带器官、口腔腔体和嘴部的生理结构都是各异的，所以也导致我们每个人说出来的话的语音语调，以及包括音色，都是不同的。需要注意的是，由于鼻腔和口腔在人体内部是连通的，也会参与到发声过程中来。</p>
-<p>下图是一个口腔内部的各个器官的展示，体内从肺部出来的气流，经气管-&gt;声带-&gt;咽喉-&gt;口鼻，传出体外。</p>
-<img src="https://i.loli.net/2021/03/20/thUDC8LeM3imOoA.png" style="zoom:70%">
-
-<h2 id="3-一些基本的专业词汇-2"><a href="#3-一些基本的专业词汇-2" class="headerlink" title="3.一些基本的专业词汇[2]"></a>3.一些基本的专业词汇[2]</h2><ul>
-<li>音节（Syllable）：说话时一次发出的，具有一个响亮的中心，并被明显感觉到的语音片段。</li>
-<li>音素（Phoneme）：语音发音的最小单位。一个音节可以由一个或多个音素构成。音素可分为元音和辅音两种。</li>
-<li>元音（Vowel）：当声带振动发出的声音气流从咽喉进入口腔并从嘴部唇部出去时，这些声腔完全开放，气流可以顺利通过时所发的音，称为元音。元音构成音节的主干，无论从长度或是能量角度考虑，元音在音节中都占主要部分。决定元音音色的主要因素是舌头的形状及其在口腔中的位置，以及嘴唇的形状等。口腔中当舌头处于不同的舌位高度和舌位前后时，可以发出不同的音素。下图是一个单元音发音舌位示意图：<img src="https://i.loli.net/2021/03/20/4aPrTg651YZvBfV.gif" style="zoom:70%"></li>
-<li>辅音（Consonant）：当呼出的气流，由于整个声腔通路上某一部分封闭起来或受到阻碍，气流传播不通畅，而克服发音器官的这种阻碍时所发的音，称为辅音。发辅音时，声带振动的是浊音，声带不振动的是清音。辅音只出现在音节的前端或后端或前后两端，时长和能量相比元音都很小。</li>
-<li>半元音：有时，虽然声道基本畅通，但某处声道较窄，引起轻微的摩擦声，称为半元音。</li>
-</ul>
-<h2 id="4-共振峰（Formant）与基频F0（Fundamental-frequency）"><a href="#4-共振峰（Formant）与基频F0（Fundamental-frequency）" class="headerlink" title="4.共振峰（Formant）与基频F0（Fundamental frequency）"></a>4.共振峰（Formant）与基频F0（Fundamental frequency）</h2><p>共振峰和基频F0是语音信号处理中较为重要的概念，所以单独拿出来介绍一下。</p>
-<p>(1)共振峰：前面介绍过发声机理，其中声道可以被等效视为一根横截面非均匀的声管，在发声过程中，该声管起共鸣器的作用。当一个具有相对较大能量的元音激励进入声道时，会引起共振特性，产生一组共振频率，称为共振峰频率，可简称为共振峰。换句话说，共振峰不是特指某一个频率的振动信号，而是代指一组具有不同频率的共振信号，这组信号里，每个信号所处的频率是不同的，但是是连续存在的。</p>
-<p>一般可以用共振峰频率的位置和频带宽度这两个参数来描述一组共振峰。每个不同的元音，都对应着一组不同的共振峰参数。共振峰中的信号通常用F来表示，例如F0，F1，F2…等等。</p>
-<p>(2)基频F0：基频又称基础频率，其定义为共振峰中第一个共振信号的振动频率。共振峰中除基频F0以外，其他共振信号均为口腔共振产生，而基频F0由声带振动产生，其能量一般为共振峰中最强的。有时将音调（pitch）和基频等效看待，二者其实有一些细节上的不同，但平时讨论时可以暂时视为一体。音调反应的是音高的信息，男性和女性的平均音调范围是不同的，男性更低一些，女性更高一些。</p>
-<p>任何为基频整倍数的频率上的信号称为谐波。谐波反应的是音色的信息。</p>
-<p>通常我们可以通过观测语音信号的语谱图，来对共振峰和基频有一个直观的了解。语谱图是将语音的频谱信号以二维形式所描绘出来的图形，该图形横轴为时间，单位通常为秒s，纵轴为频率，单位通常为赫兹Hz。图形上颜色的深浅代表声学信号能量强度的高低。一个典型的反应了共振峰的语谱图如下所示：<br><img src="https://i.loli.net/2021/03/20/5OrJYEweRg8p1Iq.png" style="zoom:40%"></p>
-<h2 id="5-我们如何听到声音"><a href="#5-我们如何听到声音" class="headerlink" title="5.我们如何听到声音"></a>5.我们如何听到声音</h2><p>人类听到声音的简要过程：空气中的声波传播到人耳内，耳朵内的鼓膜受到声波的声压的作用会产生位移振动，内耳的一个主要器官耳蜗，将这种位移振动的机械信息，转换为生物神经信号，传递给大脑进行处理后，我们就能够获知听到的是什么声音了。具体的介绍请移步参考资料[2]中的2.4.2节，会有更详尽的了解。</p>
-<p>人耳一般能接收并处理的声音的频率范围为20Hz到20kHz，强度为-5至130dB。在此范围外的声学信号里的音频分量，是人耳处理不到的，一般在语音信号处理领域的问题中不会考虑。但是，凡事无绝对，我们也不能说在这个范围以内的音频分量我们一定能听得到，这就涉及到一个概念叫做听觉掩蔽效应。</p>
-<p>听觉掩蔽效应指的是在一个强信号附近，弱信号将变得听不到，被掩盖掉了。生活中这种例子常见的有：购物商场的大喇叭在外放吵闹的音乐时，两个人的对话可能即使很近也听不清楚。被掩蔽掉的不可闻信号的最大声压级称为掩蔽门限或掩蔽阈值，在这个掩蔽阈值以下的声音都会被掩盖掉。</p>
-<h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] 维基百科-声音词条：<a href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3">https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3</a></p>
-<p>[2] 赵力. 语音信号处理[M]. 机械工业出版社, 2016.</p>
-]]></content>
-      <tags>
-        <tag>声学信号处理</tag>
-      </tags>
   </entry>
   <entry>
     <title>声学信号处理系列（二）说话人识别</title>
@@ -1059,175 +1208,6 @@
 
 <h4 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="复杂度分析-7"><a href="#复杂度分析-7" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-7"><a href="#大佬题解-7" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode竞赛(第231场周赛)</title>
-    <url>/2021/03/07/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B234/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p> 就做出来第一题和第二题<br> <span id="more"></span></p>
-<h1 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h1><p>(5697.检查二进制字符串字段)[<a href="https://leetcode-cn.com/problems/check-if-binary-string-has-at-most-one-segment-of-ones/]">https://leetcode-cn.com/problems/check-if-binary-string-has-at-most-one-segment-of-ones/]</a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个二进制字符串 s ，该字符串不含前导零 。</p>
-<p>如果 s 最多包含 一个由连续的 ‘1’ 组成的字段 ，返回 true​​​ 。否则，返回 false 。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：s = "1001"</span><br><span class="line">输出：false</span><br><span class="line">解释：字符串中的 1 没有形成一个连续字段。</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
-<li>出现01字符串就输出错误</li>
-<li>如果一直为0，则可以</li>
-</ol>
-<h2 id="反省"><a href="#反省" class="headerlink" title="反省"></a>反省</h2><ol>
-<li><p>这次这个题真不难，但是看题的时候没看明白题。 本题的意思是只要有一个1就算是连续字段，比如“10011”, 输出也是false。 因为第一个数字1就已经算是一个由1组成的字符串了，后面的11是第二个连续1的字段了。</p>
-</li>
-<li><p>map()函数完全可以不用啊，但是既然用了，还不熟知识点那块还是记录一下吧。</p>
-<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2></li>
-<li><p>map函数的原型是map(function,iterable,…)，它的返回结果是一个列表。 参数function传的是一个函数名，可以是python内置的，也可以是自定义的。参数iterable传的是一个可以迭代的对象，例如列表，元组，字符串。  这个函数的意思是将function应用于iterable的每一个元素，结果以列表的形式返回。 注意到后面，iterable后面有省略号，意思是可以传很多个iterable，如果有额外的iterable参数，并行的从这些参数中取出元素，并调用function。如果一个iterable 参数比另外的iterable参数要短，将以None扩展参数元素</p>
-</li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a=(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">b=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">c=<span class="string">"zhangkang"</span></span><br><span class="line"></span><br><span class="line">la=<span class="built_in">map</span>(<span class="built_in">str</span>,a)</span><br><span class="line">lb=<span class="built_in">map</span>(<span class="built_in">str</span>,b)</span><br><span class="line">lc=<span class="built_in">map</span>(<span class="built_in">str</span>,c)</span><br><span class="line"></span><br><span class="line">print(la)</span><br><span class="line">print(lb)</span><br><span class="line">print(lc)</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>]</span><br><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>]</span><br><span class="line">[<span class="string">'z'</span>, <span class="string">'h'</span>, <span class="string">'a'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>, <span class="string">'k'</span>, <span class="string">'a'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>] </span><br></pre></td></tr></tbody></table></figure>
-<p>str()是Python的内置函数，这个例子是把列表/元组/字符串的每个元素变成了str 类型，然后以列表的形式返回。当然我们也可以传入自定义的函数</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mul</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x*x</span><br><span class="line">n=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">res=<span class="built_in">map</span>(mul,n)</span><br><span class="line">输出：[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>] </span><br></pre></td></tr></tbody></table></figure>
-<p>把列表n中的每个元素运行一次mul函数后得到的结果作为最终结果列表的元素。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">x,y,z</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x+y+z</span><br><span class="line">list1=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">list2=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">list3=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">res=<span class="built_in">map</span>(add,list1,list2,list3)</span><br><span class="line">print(res)</span><br><span class="line">输出：[<span class="number">3</span>, <span class="number">6</span>, <span class="number">9</span>] </span><br></pre></td></tr></tbody></table></figure>
-
-
-<p>并行的从三个列表中各自取出元素然后运行add函数，有人可能会问，如果三个列表长度不一样怎么办，前面已经说了，对于短的那个iterable参数会用None填补。对于上面的例子，如果list3=[1,2]的话，那么这个程序会报错，因为虽然在运行add函数的时候列表list3的最后一个元素会用None填补，但是None和int类型的数是不能相加的。也就是说，除非参数function支持None的运算，否则根本没意义。现在我们看下另一个例子你就明白了</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">x,y,z</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x,y,z</span><br><span class="line">list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">list2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">list3 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">res = <span class="built_in">map</span>(add, list1, list2, list3)</span><br><span class="line">print(res)</span><br><span class="line">输出：</span><br><span class="line">[(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>), (<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>), (<span class="literal">None</span>, <span class="number">4</span>, <span class="number">4</span>), (<span class="literal">None</span>, <span class="literal">None</span>, <span class="number">5</span>)]</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">checkOnesSegment</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; bool:</span>  <span class="comment">#大佬解题</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> s.count(<span class="string">'01'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">checkOnesSegment</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; bool:</span>  <span class="comment"># 本菜</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(s) ==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        n = <span class="built_in">len</span>(s)</span><br><span class="line">        s= <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,s))   <span class="comment">#不用map这行      </span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> r &lt; n:</span><br><span class="line">            <span class="keyword">if</span> s[r] == s[<span class="number">0</span>] <span class="keyword">and</span> r == <span class="number">1</span>:  <span class="comment"># s[r] == '1'</span></span><br><span class="line">                <span class="keyword">while</span> r&lt;n <span class="keyword">and</span> s[r] == s[<span class="number">0</span>]:</span><br><span class="line">                    r+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> s[r]!= s[<span class="number">0</span>]:</span><br><span class="line">                r+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure>
-
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-<h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2. 题目"></a>2. 题目</h1><p>(5698.构成特定和需要添加的最少元素)[<a href="https://leetcode-cn.com/problems/minimum-elements-to-add-to-form-a-given-sum/]">https://leetcode-cn.com/problems/minimum-elements-to-add-to-form-a-given-sum/]</a></p>
-<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个整数数组 nums ，和两个整数 limit 与 goal 。数组 nums 有一条重要属性：abs(nums[i]) &lt;= limit 。<br>返回使数组元素总和等于 goal 所需要向数组中添加的 最少元素数量 ，添加元素 不应改变 数组中 abs(nums[i]) &lt;= limit 这一属性。<br>注意，如果 x &gt;= 0 ，那么 abs(x) 等于 x ；否则，等于 -x </p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [1,-1,1], limit = 3, goal = -4</span><br><span class="line">输出：2</span><br><span class="line">解释：可以将 -2 和 -3 添加到数组中，数组的元素总和变为 1 - 1 + 1 - 2 - 3 = -4 。</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h2><ol>
-<li><p>除法：</p>
-<ul>
-<li>传统除法：如果是整数除法则执行地板除，如果是浮点除法则执行精确除法<br><code>&gt;&gt;&gt;1/2   &gt;&gt;&gt;0   &gt;&gt;&gt;1.0/2.0 &gt;&gt;&gt;0.5</code></li>
-<li>地板除法：//除法不管操作数为何种数值类型，总是会舍去小数部分，返回数字序列中比真正的商小的最接近的数字<br>`&gt;&gt;&gt;1//2  &gt;&gt;&gt;0   &gt;&gt;&gt;-1//2  &gt;&gt;&gt;-‘</li>
-</ul>
-</li>
-<li><p>ceil,floor,round</p>
-<ul>
-<li>ceil() 将小数部分一律向整数部分进位，函数返回数字的上入整数 ‘ceil(-45.17): -45’</li>
-<li>floor() 一律舍去，仅保留整数</li>
-<li>round() 四舍五入</li>
-</ul>
-</li>
-</ol>
-<h2 id="关键点"><a href="#关键点" class="headerlink" title="关键点"></a>关键点</h2><ul>
-<li>小学数学，反正这类的题要先手写几个例子 </li>
-</ul>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minElements</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], limit: <span class="built_in">int</span>, goal: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">return</span> ceil(<span class="built_in">abs</span>(goal - <span class="built_in">sum</span>(nums)) / limit)</span><br></pre></td></tr></tbody></table></figure>
-
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>竞赛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode竞赛(第233场周赛)</title>
-    <url>/2021/03/21/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B233/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>排名：  2547 / 5009<br> 就做出来第一题和第二题<br> <span id="more"></span></p>
-<h1 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h1><p>(5709. 最大升序子数组和)[<a href="https://leetcode-cn.com/contest/weekly-contest-233/problems/maximum-ascending-subarray-sum/]">https://leetcode-cn.com/contest/weekly-contest-233/problems/maximum-ascending-subarray-sum/]</a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你长度相等的两个字符串 s1 和 s2 。一次 字符串交换 操作的步骤如下：选出某个字符串中的两个下标（不必不同），并交换这两个下标所对应的字符。<br>如果对 其中一个字符串 执行 最多一次字符串交换 就可以使两个字符串相等，返回 true ；否则，返回 false 。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：s1 = "bank", s2 = "kanb"</span><br><span class="line">输出：true</span><br><span class="line">解释：例如，交换 s2 中的第一个和最后一个字符可以得到 "bank"</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
-<li>按题编写，比如搜索s1，碰到第一个不一样 <code>"b"</code>的时候替换成s2的第一位<code>"k"</code>,然后碰到s1中第二个的不一样的<code>"k"</code>，替换成<code>"b"</code>,检查是否和s2一致</li>
-<li>大佬想法： 先检测两个字符串是否组成的字符都相同，相同的话，遍历每位看有几个不同，大于2个的话，就输出false</li>
-</ol>
-<h2 id="反省"><a href="#反省" class="headerlink" title="反省"></a>反省</h2><ol>
-<li><p>时间耽误在没考虑到如果<code>s1</code>和<code>s2</code>只有一个不同的值的时候，<code>return False</code>。或者说是没有首先判断两个字符串组成字符是否相同，若不相同的话直接输出false</p>
-<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2></li>
-<li><p>set(iterable)</p>
-<p> set() returns:an empty set if no parameters are passed and a set constructed from the given iterable parameter.</p>
-</li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># empty set</span></span><br><span class="line">print(<span class="built_in">set</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment"># from string</span></span><br><span class="line">print(<span class="built_in">set</span>(<span class="string">'Python'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># from tuple</span></span><br><span class="line">print(<span class="built_in">set</span>((<span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'o'</span>, <span class="string">'u'</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># from list</span></span><br><span class="line">print(<span class="built_in">set</span>([<span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'o'</span>, <span class="string">'u'</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># from range</span></span><br><span class="line">print(<span class="built_in">set</span>(<span class="built_in">range</span>(<span class="number">5</span>)))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<pre><code>output:
-</code></pre>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">set()</span><br><span class="line">{'P', 'o', 't', 'n', 'y', 'h'}</span><br><span class="line">{'a', 'o', 'e', 'u', 'i'}</span><br><span class="line">{'a', 'o', 'e', 'u', 'i'}</span><br><span class="line">{0, 1, 2, 3, 4}</span><br></pre></td></tr></tbody></table></figure>
-
-
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">areAlmostEqual</span>(<span class="params">self, s1: <span class="built_in">str</span>, s2: <span class="built_in">str</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">set</span>(s1)!=<span class="built_in">set</span>(s2):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        mark = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s1)):</span><br><span class="line">            <span class="keyword">if</span> s1[i] != s2[i]:</span><br><span class="line">                mark+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> mark&gt;<span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">def areAlmostEqual(self, s1: str, s2: str) -&gt; bool: # 本菜</span><br><span class="line">    if not s1 or not s2:</span><br><span class="line">        return False</span><br><span class="line">    </span><br><span class="line">    if s1 == s2: </span><br><span class="line">        return True</span><br><span class="line">    if len(s1) == 1:</span><br><span class="line">        if s1 == s2: </span><br><span class="line">            return True</span><br><span class="line">        else:</span><br><span class="line">            return False</span><br><span class="line">    s1 = list(map(str,s1))</span><br><span class="line">    s2 = list(map(str,s2))</span><br><span class="line">    s1_cur,s2_cur = 0,0 </span><br><span class="line">    count  = 0</span><br><span class="line">    cur = []</span><br><span class="line">    while s1_cur&lt; len(s1) and s2_cur &lt; len(s2): </span><br><span class="line">        if s1[s1_cur] ==  s2[s2_cur]:</span><br><span class="line">            s1_cur+=1</span><br><span class="line">            s2_cur+=1</span><br><span class="line">        else:</span><br><span class="line">            if count == 0:</span><br><span class="line">                count+=1</span><br><span class="line">                cur = s1[s1_cur] </span><br><span class="line">                s1[s1_cur] = s2[s2_cur]</span><br><span class="line">                s1_cur+=1</span><br><span class="line">                s2_cur+=1</span><br><span class="line">                if s1_cur == len(s1):</span><br><span class="line">                    return False</span><br><span class="line">            else:</span><br><span class="line">                s1[s1_cur] = cur</span><br><span class="line">                if s1 == s2:</span><br><span class="line">                    return True</span><br><span class="line">                else:</span><br><span class="line">                    return False</span><br><span class="line">    return False      </span><br></pre></td></tr></tbody></table></figure>
-
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(n)$ 遍历一遍</li>
-<li>空间复杂度：$O(1)$  </li>
-</ul>
-<h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2. 题目"></a>2. 题目</h1><p>(1791. 找出星型图的中心节点)[<a href="https://leetcode-cn.com/problems/find-center-of-star-graph/]">https://leetcode-cn.com/problems/find-center-of-star-graph/]</a></p>
-<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>有一个无向的 星型 图，由 n 个编号从 1 到 n 的节点组成。星型图有一个 中心 节点，并且恰有 n - 1 条边将中心节点与其他每个节点连接起来。<br>给你一个二维整数数组 edges ，其中&nbsp;edges[i] = [ui, vi] 表示在节点 ui 和 vi 之间存在一条边。请你找出并返回&nbsp;edges 所表示星型图的中心节点。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：edges = [[1,2],[2,3],[4,2]]</span><br><span class="line">输出：2</span><br><span class="line">解释：如上图所示，节点 2 与其他每个节点都相连，所以节点 2 是中心节点。</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><ol>
-<li>偷鸡思路：只看前两条边重合的点就行</li>
-<li>正规思路：计算每个节点的度，度为<code>n</code>的是中心点</li>
-</ol>
-<h2 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h2><p>Collections Module <a href="https://stackabuse.com/introduction-to-pythons-collections-module/">introduction</a> and   <a href="https://www.liaoxuefeng.com/wiki/897692888725344/973805065315456">廖雪峰</a>。</p>
-<h3 id="1-collection"><a href="#1-collection" class="headerlink" title="1. collection"></a>1. collection</h3><ul>
-<li>collection是Python内建的一个集合模块，提供许多有用的集合类 <code>from collections import **</code></li>
-<li><code>Counter()</code>  一个简单的计数器，例如统计字符出现的个数： </li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line">c = Counter()</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> <span class="string">"programming"</span>:</span><br><span class="line">c[ch] = c[ch] + <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">print(c)</span><br><span class="line">Counter({'g': 2, 'm': 2, 'r': 2, 'a': 1, 'i': 1, 'o': 1, 'n': 1, 'p': 1})</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>‘Counter()’实际上也是<code>dict</code>的一个子类，上面的结果可以看出，字符<code>"g"</code>,<code>"m"</code>,’”r”‘各出现了两次，其他字符各出现了一次</li>
-</ul>
-<h3 id="2-defaultdict"><a href="#2-defaultdict" class="headerlink" title="2. defaultdict"></a>2. defaultdict</h3><ul>
-<li><p>使用<code>dict</code>时，如果引用的key不存在，就会抛出<code>KeyError</code>。如果希望key不存在时，返回一个默认值，就可以用<code>defaultdict</code>:</p>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2></li>
-<li><p>语言支持：Python3</p>
-</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findCenter</span>(<span class="params">self, edges: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span> <span class="comment">#偷鸡</span></span><br><span class="line">        <span class="keyword">return</span> edges[<span class="number">0</span>][<span class="number">0</span>] <span class="keyword">if</span> edges[<span class="number">0</span>][<span class="number">0</span>] <span class="keyword">in</span> edges[<span class="number">1</span>] <span class="keyword">else</span> edges[<span class="number">0</span>][<span class="number">1</span>] </span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findCenter</span>(<span class="params">self, edges: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span> <span class="comment">#正统 </span></span><br><span class="line">        indegrees = collections.defaultdict(<span class="built_in">int</span>)</span><br><span class="line">        <span class="keyword">for</span> u,v <span class="keyword">in</span> edges:</span><br><span class="line">            indegrees[u] += <span class="number">1</span></span><br><span class="line">            indegrees[v] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> node <span class="keyword">in</span> indegrees:</span><br><span class="line">            <span class="keyword">if</span> indegrees[node] == <span class="built_in">len</span>(edges): <span class="keyword">return</span> node</span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-]]></content>
       <categories>
         <category>力扣</category>
       </categories>
