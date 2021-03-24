@@ -1103,9 +1103,16 @@
 <li> 选择列表：当前可以做的选择</li>
 <li> 结束条件：到达决策树底层，无法再做选择<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">result = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtrack</span>(<span class="params">路径，选择列表</span>):</span></span><br><span class="line">    <span class="keyword">if</span> 满足结束条件：</span><br><span class="line">        result.add(路径)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">for</span> 选择 <span class="keyword">in</span> 选择列表:</span><br><span class="line">        做选择</span><br><span class="line">        backtrack(路径，选择列表)</span><br><span class="line">        撤销选择</span><br></pre></td></tr></tbody></table></figure>
 
+
 </li>
 </ul>
-<h2 id="大佬解释BFS-2"><a href="#大佬解释BFS-2" class="headerlink" title="大佬解释BFS"></a>大佬解释BFS</h2><hr>
+<h2 id="大佬解释BFS-2"><a href="#大佬解释BFS-2" class="headerlink" title="大佬解释BFS"></a>大佬解释BFS</h2><ol>
+<li><p>个人认为，充分剪枝的回溯算法和三层嵌套的暴力循环，复杂度是一样的，而不存在什么“暴力循环是O(1)，回溯不是O(1)”的情况。字符串拷贝（构造）在许多语言下应当都类似于数组拷贝，是一个O(|s|)的操作，暴力循环也无法避免数组拷贝，所以在输出集合生产这件事下，回溯 = 暴力循环。至于递归和循环究竟有多少层，画画递归调用栈就看出来了，二者是一模一样的（当然递归需要剪枝）。</p>
+<p> 究其原因，本题说白了是一个每个顶点度最大为3，且半径最大为4的无向图，从中心出发完成遍历。这种图的循环当然好写了，因为规模小呀。而且本题因为状态的出现和游标推移是完全一致的，所以并不需要构造图，循环显得非常易写。</p>
+<p> 脱离性能层面，也且不论代码可读性层面，回溯仍是必须要掌握的算法。虽然回溯算法由于“指数爆炸”通常不适用于大规模的计算，但它仍然是算法领域里一个重要组成，甚至很多时候是最优解。并且，许多时候它逐渐缩小问题规模的思考方式，在特定的问题下，稍加改动就能通向很多其他算法分支——动态规划、记忆化搜索等。</p>
+</li>
+</ol>
+<hr>
 <h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><hr>
 <h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h3 id="LC1091-计算在网格中从原点到特定点的最短路径长度-计算在网格中从原点到特定点的最短路径长度"><a href="#LC1091-计算在网格中从原点到特定点的最短路径长度-计算在网格中从原点到特定点的最短路径长度" class="headerlink" title="(LC1091)计算在网格中从原点到特定点的最短路径长度   计算在网格中从原点到特定点的最短路径长度 "></a>(LC1091)计算在网格中从原点到特定点的最短路径长度   <a href="https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/">计算在网格中从原点到特定点的最短路径长度 </a></h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p> 给你一个 n x n 的二进制矩阵 grid 中，返回矩阵中最短 畅通路径 的长度。如果不存在这样的路径，返回 -1 。二进制矩阵中的 畅通路径 是一条从 左上角 单元格（即，(0, 0)）到 右下角 单元格（即，(n - 1, n - 1)）的路径，该路径同时满足下述要求：路径途经的所有单元格都的值都是 0 。路径中所有相邻的单元格应当在 8 个方向之一 上连通（即，相邻两单元之间彼此不同且共享一条边或者一个角）。畅通路径的长度 是该路径途经的单元格总数。 </p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：grid = [[0,1],[1,0]]</span><br><span class="line">输出：2</span><br></pre></td></tr></tbody></table></figure>
