@@ -6,7 +6,7 @@
   <link href="http://watermelondrip.github.io/atom.xml" rel="self"/>
   
   <link href="http://watermelondrip.github.io/"/>
-  <updated>2021-03-23T13:11:05.705Z</updated>
+  <updated>2021-03-24T03:11:39.455Z</updated>
   <id>http://watermelondrip.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小知识点们儿（self参数,</title>
+    <link href="http://watermelondrip.github.io/2021/03/24/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%AC%E5%84%BF/"/>
+    <id>http://watermelondrip.github.io/2021/03/24/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%AC%E5%84%BF/</id>
+    <published>2021-03-24T03:06:09.553Z</published>
+    <updated>2021-03-24T03:11:39.455Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="力扣" scheme="http://watermelondrip.github.io/categories/%E5%8A%9B%E6%89%A3/"/>
+    
+    
+    <category term="python" scheme="http://watermelondrip.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>搜索（BFS, DFS, Backtracking）</title>
