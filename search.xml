@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>第一天坚持坚持</title>
+    <url>/2021/02/27/firstday/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>第一次记录一下</p>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构的分析</title>
     <url>/2021/03/06/dataStructure/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据结构</p>
@@ -38,20 +50,8 @@
         <category>知识及记录</category>
       </categories>
       <tags>
+        <tag>学习笔记</tag>
         <tag>数据结构</tag>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一天坚持坚持</title>
-    <url>/2021/02/27/firstday/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>第一次记录一下</p>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -71,89 +71,6 @@
       </categories>
       <tags>
         <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
-    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
-<p>##sort()用法 和 sorted()用法的不同</p>
-<ol>
-<li><p>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</p>
-</li>
-<li><p>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。</p>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-
-<p>###大佬blog</p>
-<ol>
-<li><a href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
-<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
-<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>分治</title>
-    <url>/2021/03/18/%E5%88%86%E6%B2%BB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治</a></h2><h3 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h3><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—分 （2) 将最后子问题可以简单的直接求解—“治” （3) 将所有子问题的解合并起来就说原问题的解—“合”</p>
-<span id="more"></span>
-
-<p><strong>目录 (Table of Contents)</strong></p>
-<!-- toc -->
-
-
-<p>[TOC]</p>
-<h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
-<p>第一条特征是绝大多数问题都可以满足的，因为问题的计算计算复杂度一般是随着问题规模的增加而增加； 第二个特征是应用分治法的前提它也是大多数问题可以解决的，此特征反映了递归思想的应用； 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具有第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。 第四条特征涉及到分治法的效率，如果各子问题是不独立的分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。</p>
-<h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +,&nbsp;-&nbsp;以及&nbsp;*&nbsp;。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>分治： 自顶向下地拆分子问题</li>
-<li>分解：每一步都针对一个运算符分割表达式。</li>
-<li>解决：递归停止条件，无运算符只有数字</li>
-<li>合并</li>
-<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。</li>
-</ul>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
-<p>####复杂度分析  </p>
-<h2 id="2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II"><a href="#2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II" class="headerlink" title="2. (LC95) 不同的二叉搜索树 II 不同的二叉搜索树 II"></a>2. (LC95) 不同的二叉搜索树 II <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">不同的二叉搜索树 II</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：3</span><br><span class="line">输出：</span><br><span class="line">[</span><br><span class="line">&nbsp; [1,null,3,2],</span><br><span class="line">&nbsp; [3,2,null,1],</span><br><span class="line">&nbsp; [3,1,null,null,2],</span><br><span class="line">&nbsp; [2,1,3],</span><br><span class="line">&nbsp; [1,null,2,null,3]</span><br><span class="line">]</span><br><span class="line">解释：</span><br><span class="line">以上的输出对应以下 5 种不同结构的二叉搜索树：</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       /     /      / \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    /     /       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>分治： 自顶向下地拆分子问题</li>
-<li>分解：每一步都针对一个运算符分割表达式。</li>
-<li>解决：递归停止条件，无运算符只有数字</li>
-<li>合并</li>
-<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。通过利用查找二叉树的性质。左子树的所有值小于根节点，右子树的所有值都大于根节点。<ul>
-<li>我们需要把1作为根节点，[]空作为左子树，[2,…,n] 的所有可能作为右子树</li>
-<li>n 作为根节点，[1,..,n]的所有可能作为左子树，[]作为右子树</li>
-<li>至于上面提到的 [2,…,n]的所有可能以及其他可能，可以利用上面的方法，把每个数字作为根节点，然后把所有可能的左子树和右子树组合起来即可。</li>
-<li>如果只有一个数字，那么所有可能就说一种情况，把该数字作为一棵树。而如果是[]，那么返回null。</li>
-</ul>
-</li>
-</ul>
-<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; List[TreeNode]:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_gen</span>(<span class="params">nums</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="literal">None</span>]</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [TreeNode(nums[<span class="number">0</span>])]</span><br><span class="line">            </span><br><span class="line">            ans = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">for</span> left <span class="keyword">in</span> _gen(nums[:i]):</span><br><span class="line">                    <span class="keyword">for</span> right <span class="keyword">in</span> _gen(nums[i+<span class="number">1</span>:]):</span><br><span class="line">                        ans.append(TreeNode(nums[i], left = left, right = right))</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        <span class="keyword">return</span> _gen(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>)))</span><br></pre></td></tr></tbody></table></figure>
-<p>####复杂度分析  </p>
-<h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2><ol>
-<li><a href="https://zhuanlan.zhihu.com/p/44213575">“python算法实现-分治法”</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -275,6 +192,60 @@
       </tags>
   </entry>
   <entry>
+    <title>分治</title>
+    <url>/2021/03/18/%E5%88%86%E6%B2%BB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治</a></h2><h3 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h3><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—分 （2) 将最后子问题可以简单的直接求解—“治” （3) 将所有子问题的解合并起来就说原问题的解—“合”</p>
+<span id="more"></span>
+
+<p><strong>目录 (Table of Contents)</strong></p>
+<!-- toc -->
+
+
+<p>[TOC]</p>
+<h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
+<p>第一条特征是绝大多数问题都可以满足的，因为问题的计算计算复杂度一般是随着问题规模的增加而增加； 第二个特征是应用分治法的前提它也是大多数问题可以解决的，此特征反映了递归思想的应用； 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具有第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。 第四条特征涉及到分治法的效率，如果各子问题是不独立的分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。</p>
+<h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +,&nbsp;-&nbsp;以及&nbsp;*&nbsp;。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>分治： 自顶向下地拆分子问题</li>
+<li>分解：每一步都针对一个运算符分割表达式。</li>
+<li>解决：递归停止条件，无运算符只有数字</li>
+<li>合并</li>
+<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。</li>
+</ul>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<p>####复杂度分析  </p>
+<h2 id="2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II"><a href="#2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II" class="headerlink" title="2. (LC95) 不同的二叉搜索树 II 不同的二叉搜索树 II"></a>2. (LC95) 不同的二叉搜索树 II <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">不同的二叉搜索树 II</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：3</span><br><span class="line">输出：</span><br><span class="line">[</span><br><span class="line">&nbsp; [1,null,3,2],</span><br><span class="line">&nbsp; [3,2,null,1],</span><br><span class="line">&nbsp; [3,1,null,null,2],</span><br><span class="line">&nbsp; [2,1,3],</span><br><span class="line">&nbsp; [1,null,2,null,3]</span><br><span class="line">]</span><br><span class="line">解释：</span><br><span class="line">以上的输出对应以下 5 种不同结构的二叉搜索树：</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       /     /      / \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    /     /       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>分治： 自顶向下地拆分子问题</li>
+<li>分解：每一步都针对一个运算符分割表达式。</li>
+<li>解决：递归停止条件，无运算符只有数字</li>
+<li>合并</li>
+<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。通过利用查找二叉树的性质。左子树的所有值小于根节点，右子树的所有值都大于根节点。<ul>
+<li>我们需要把1作为根节点，[]空作为左子树，[2,…,n] 的所有可能作为右子树</li>
+<li>n 作为根节点，[1,..,n]的所有可能作为左子树，[]作为右子树</li>
+<li>至于上面提到的 [2,…,n]的所有可能以及其他可能，可以利用上面的方法，把每个数字作为根节点，然后把所有可能的左子树和右子树组合起来即可。</li>
+<li>如果只有一个数字，那么所有可能就说一种情况，把该数字作为一棵树。而如果是[]，那么返回null。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; List[TreeNode]:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_gen</span>(<span class="params">nums</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="literal">None</span>]</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [TreeNode(nums[<span class="number">0</span>])]</span><br><span class="line">            </span><br><span class="line">            ans = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">for</span> left <span class="keyword">in</span> _gen(nums[:i]):</span><br><span class="line">                    <span class="keyword">for</span> right <span class="keyword">in</span> _gen(nums[i+<span class="number">1</span>:]):</span><br><span class="line">                        ans.append(TreeNode(nums[i], left = left, right = right))</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        <span class="keyword">return</span> _gen(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>)))</span><br></pre></td></tr></tbody></table></figure>
+<p>####复杂度分析  </p>
+<h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/44213575">“python算法实现-分治法”</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode竞赛(第231场周赛)</title>
     <url>/2021/03/07/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B231/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p> 就做出来第一题和第二题<br> <span id="more"></span></p>
@@ -358,6 +329,35 @@
       <tags>
         <tag>python</tag>
         <tag>竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
+    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
+<p>##sort()用法 和 sorted()用法的不同</p>
+<ol>
+<li><p>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</p>
+</li>
+<li><p>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。</p>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3></li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+<p>###大佬blog</p>
+<ol>
+<li><a href="http://https//blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法–Timsort简介”</a></li>
+<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
+<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
