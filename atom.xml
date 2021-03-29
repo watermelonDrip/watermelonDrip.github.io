@@ -277,27 +277,6 @@
   </entry>
   
   <entry>
-    <title>经典到默写的</title>
-    <link href="http://watermelondrip.github.io/2021/03/18/%E7%86%9F%E5%88%B0%E9%BB%98%E5%86%99/"/>
-    <id>http://watermelondrip.github.io/2021/03/18/%E7%86%9F%E5%88%B0%E9%BB%98%E5%86%99/</id>
-    <published>2021-03-17T13:52:00.000Z</published>
-    <updated>2021-03-23T12:43:25.128Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>默写吧</p><span id="more"></span><h2 id="1-基于分治的快速排序"><a href="#1-基于分治的快速排序" class="headerlink" title="1. 基于分治的快速排序"></a>1. 基于分治的快速排序</h2><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ul><li>每次取list 的第一个元素，把剩下的元素与第一个元素比较，此时生成两个list,less中存放的就是余下的所有比第一个元素小的list, greater 中存放的是余下的所有比第一个元素大的list。然后循环递归，当基线条件只有一个元素或0个元素时停止，并返回结果。</li></ul><h3 id="Python"><a href="#Python" class="headerlink" title="Python:"></a>Python:</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def quick_sort(arr):</span><br><span class="line">if len(arr)&lt;2:</span><br><span class="line">return arr</span><br><span class="line">else:</span><br><span class="line">pivot = arr[0]</span><br><span class="line">less = [i for i in arr[1:] if i&lt;=pivot]  </span><br><span class="line">greater = [i for i in arr[1:] if i&gt;pivot]</span><br><span class="line">return quick_sort(less) + pivot + quick_sort(greater)</span><br><span class="line">if __name__ == "__main__":</span><br><span class="line"> </span><br><span class="line">    arr = [5,7,9,3,6,1,4,2]</span><br><span class="line">print(quick_sort(arr))</span><br></pre></td></tr></tbody></table></figure><p><img src= "/img/watermelon.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTQ2OTAxNS8yMDE5MDMvMTQ2OTAxNS0yMDE5MDMyNjE4MTQ1MzY3My0xODk3MDkyNTUwLnBuZw?x-oss-process=image/format,png"></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;默写吧&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="力扣" scheme="http://watermelondrip.github.io/categories/%E5%8A%9B%E6%89%A3/"/>
-    
-    
-    <category term="python" scheme="http://watermelondrip.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>贪心</title>
     <link href="http://watermelondrip.github.io/2021/03/18/%E8%B4%AA%E5%BF%83/"/>
     <id>http://watermelondrip.github.io/2021/03/18/%E8%B4%AA%E5%BF%83/</id>
@@ -319,6 +298,27 @@
     <category term="排序" scheme="http://watermelondrip.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
     
     <category term="堆" scheme="http://watermelondrip.github.io/tags/%E5%A0%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典到默写的</title>
+    <link href="http://watermelondrip.github.io/2021/03/18/%E7%86%9F%E5%88%B0%E9%BB%98%E5%86%99/"/>
+    <id>http://watermelondrip.github.io/2021/03/18/%E7%86%9F%E5%88%B0%E9%BB%98%E5%86%99/</id>
+    <published>2021-03-17T13:52:00.000Z</published>
+    <updated>2021-03-23T12:43:25.128Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>默写吧</p><span id="more"></span><h2 id="1-基于分治的快速排序"><a href="#1-基于分治的快速排序" class="headerlink" title="1. 基于分治的快速排序"></a>1. 基于分治的快速排序</h2><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ul><li>每次取list 的第一个元素，把剩下的元素与第一个元素比较，此时生成两个list,less中存放的就是余下的所有比第一个元素小的list, greater 中存放的是余下的所有比第一个元素大的list。然后循环递归，当基线条件只有一个元素或0个元素时停止，并返回结果。</li></ul><h3 id="Python"><a href="#Python" class="headerlink" title="Python:"></a>Python:</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def quick_sort(arr):</span><br><span class="line">if len(arr)&lt;2:</span><br><span class="line">return arr</span><br><span class="line">else:</span><br><span class="line">pivot = arr[0]</span><br><span class="line">less = [i for i in arr[1:] if i&lt;=pivot]  </span><br><span class="line">greater = [i for i in arr[1:] if i&gt;pivot]</span><br><span class="line">return quick_sort(less) + pivot + quick_sort(greater)</span><br><span class="line">if __name__ == "__main__":</span><br><span class="line"> </span><br><span class="line">    arr = [5,7,9,3,6,1,4,2]</span><br><span class="line">print(quick_sort(arr))</span><br></pre></td></tr></tbody></table></figure><p><img src= "/img/watermelon.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTQ2OTAxNS8yMDE5MDMvMTQ2OTAxNS0yMDE5MDMyNjE4MTQ1MzY3My0xODk3MDkyNTUwLnBuZw?x-oss-process=image/format,png"></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;默写吧&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="力扣" scheme="http://watermelondrip.github.io/categories/%E5%8A%9B%E6%89%A3/"/>
+    
+    
+    <category term="python" scheme="http://watermelondrip.github.io/tags/python/"/>
     
   </entry>
   

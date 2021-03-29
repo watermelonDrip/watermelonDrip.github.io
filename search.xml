@@ -103,6 +103,60 @@
       </tags>
   </entry>
   <entry>
+    <title>分治</title>
+    <url>/2021/03/18/%E5%88%86%E6%B2%BB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治</a></h2><h3 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h3><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—分 （2) 将最后子问题可以简单的直接求解—“治” （3) 将所有子问题的解合并起来就说原问题的解—“合”</p>
+<span id="more"></span>
+
+<p><strong>目录 (Table of Contents)</strong></p>
+<!-- toc -->
+
+
+<p>[TOC]</p>
+<h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
+<p>第一条特征是绝大多数问题都可以满足的，因为问题的计算计算复杂度一般是随着问题规模的增加而增加； 第二个特征是应用分治法的前提它也是大多数问题可以解决的，此特征反映了递归思想的应用； 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具有第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。 第四条特征涉及到分治法的效率，如果各子问题是不独立的分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。</p>
+<h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +,&nbsp;-&nbsp;以及&nbsp;*&nbsp;。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>分治： 自顶向下地拆分子问题</li>
+<li>分解：每一步都针对一个运算符分割表达式。</li>
+<li>解决：递归停止条件，无运算符只有数字</li>
+<li>合并</li>
+<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。</li>
+</ul>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<p>####复杂度分析  </p>
+<h2 id="2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II"><a href="#2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II" class="headerlink" title="2. (LC95) 不同的二叉搜索树 II 不同的二叉搜索树 II"></a>2. (LC95) 不同的二叉搜索树 II <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">不同的二叉搜索树 II</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：3</span><br><span class="line">输出：</span><br><span class="line">[</span><br><span class="line">&nbsp; [1,null,3,2],</span><br><span class="line">&nbsp; [3,2,null,1],</span><br><span class="line">&nbsp; [3,1,null,null,2],</span><br><span class="line">&nbsp; [2,1,3],</span><br><span class="line">&nbsp; [1,null,2,null,3]</span><br><span class="line">]</span><br><span class="line">解释：</span><br><span class="line">以上的输出对应以下 5 种不同结构的二叉搜索树：</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       /     /      / \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    /     /       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>分治： 自顶向下地拆分子问题</li>
+<li>分解：每一步都针对一个运算符分割表达式。</li>
+<li>解决：递归停止条件，无运算符只有数字</li>
+<li>合并</li>
+<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。通过利用查找二叉树的性质。左子树的所有值小于根节点，右子树的所有值都大于根节点。<ul>
+<li>我们需要把1作为根节点，[]空作为左子树，[2,…,n] 的所有可能作为右子树</li>
+<li>n 作为根节点，[1,..,n]的所有可能作为左子树，[]作为右子树</li>
+<li>至于上面提到的 [2,…,n]的所有可能以及其他可能，可以利用上面的方法，把每个数字作为根节点，然后把所有可能的左子树和右子树组合起来即可。</li>
+<li>如果只有一个数字，那么所有可能就说一种情况，把该数字作为一棵树。而如果是[]，那么返回null。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; List[TreeNode]:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_gen</span>(<span class="params">nums</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="literal">None</span>]</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [TreeNode(nums[<span class="number">0</span>])]</span><br><span class="line">            </span><br><span class="line">            ans = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">for</span> left <span class="keyword">in</span> _gen(nums[:i]):</span><br><span class="line">                    <span class="keyword">for</span> right <span class="keyword">in</span> _gen(nums[i+<span class="number">1</span>:]):</span><br><span class="line">                        ans.append(TreeNode(nums[i], left = left, right = right))</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        <span class="keyword">return</span> _gen(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>)))</span><br></pre></td></tr></tbody></table></figure>
+<p>####复杂度分析  </p>
+<h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/44213575">“python算法实现-分治法”</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二分查找</title>
     <url>/2021/03/18/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><hr>
@@ -212,60 +266,6 @@
 <li>时间复杂度：$O(log n)$</li>
 <li>空间复杂度：$O(1)$</li>
 </ul>
-]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>分治</title>
-    <url>/2021/03/18/%E5%88%86%E6%B2%BB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治</a></h2><h3 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h3><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—分 （2) 将最后子问题可以简单的直接求解—“治” （3) 将所有子问题的解合并起来就说原问题的解—“合”</p>
-<span id="more"></span>
-
-<p><strong>目录 (Table of Contents)</strong></p>
-<!-- toc -->
-
-
-<p>[TOC]</p>
-<h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
-<p>第一条特征是绝大多数问题都可以满足的，因为问题的计算计算复杂度一般是随着问题规模的增加而增加； 第二个特征是应用分治法的前提它也是大多数问题可以解决的，此特征反映了递归思想的应用； 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具有第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。 第四条特征涉及到分治法的效率，如果各子问题是不独立的分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。</p>
-<h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +,&nbsp;-&nbsp;以及&nbsp;*&nbsp;。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>分治： 自顶向下地拆分子问题</li>
-<li>分解：每一步都针对一个运算符分割表达式。</li>
-<li>解决：递归停止条件，无运算符只有数字</li>
-<li>合并</li>
-<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。</li>
-</ul>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
-<p>####复杂度分析  </p>
-<h2 id="2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II"><a href="#2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II" class="headerlink" title="2. (LC95) 不同的二叉搜索树 II 不同的二叉搜索树 II"></a>2. (LC95) 不同的二叉搜索树 II <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">不同的二叉搜索树 II</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：3</span><br><span class="line">输出：</span><br><span class="line">[</span><br><span class="line">&nbsp; [1,null,3,2],</span><br><span class="line">&nbsp; [3,2,null,1],</span><br><span class="line">&nbsp; [3,1,null,null,2],</span><br><span class="line">&nbsp; [2,1,3],</span><br><span class="line">&nbsp; [1,null,2,null,3]</span><br><span class="line">]</span><br><span class="line">解释：</span><br><span class="line">以上的输出对应以下 5 种不同结构的二叉搜索树：</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       /     /      / \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    /     /       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>分治： 自顶向下地拆分子问题</li>
-<li>分解：每一步都针对一个运算符分割表达式。</li>
-<li>解决：递归停止条件，无运算符只有数字</li>
-<li>合并</li>
-<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。通过利用查找二叉树的性质。左子树的所有值小于根节点，右子树的所有值都大于根节点。<ul>
-<li>我们需要把1作为根节点，[]空作为左子树，[2,…,n] 的所有可能作为右子树</li>
-<li>n 作为根节点，[1,..,n]的所有可能作为左子树，[]作为右子树</li>
-<li>至于上面提到的 [2,…,n]的所有可能以及其他可能，可以利用上面的方法，把每个数字作为根节点，然后把所有可能的左子树和右子树组合起来即可。</li>
-<li>如果只有一个数字，那么所有可能就说一种情况，把该数字作为一棵树。而如果是[]，那么返回null。</li>
-</ul>
-</li>
-</ul>
-<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; List[TreeNode]:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_gen</span>(<span class="params">nums</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="literal">None</span>]</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [TreeNode(nums[<span class="number">0</span>])]</span><br><span class="line">            </span><br><span class="line">            ans = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">for</span> left <span class="keyword">in</span> _gen(nums[:i]):</span><br><span class="line">                    <span class="keyword">for</span> right <span class="keyword">in</span> _gen(nums[i+<span class="number">1</span>:]):</span><br><span class="line">                        ans.append(TreeNode(nums[i], left = left, right = right))</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        <span class="keyword">return</span> _gen(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>)))</span><br></pre></td></tr></tbody></table></figure>
-<p>####复杂度分析  </p>
-<h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2><ol>
-<li><a href="https://zhuanlan.zhihu.com/p/44213575">“python算法实现-分治法”</a></li>
-</ol>
 ]]></content>
       <categories>
         <category>力扣</category>
@@ -569,6 +569,69 @@
       </tags>
   </entry>
   <entry>
+    <title>堆heapq模块</title>
+    <url>/2021/03/21/%E5%A0%86heapq%E6%A8%A1%E5%9D%97/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="堆heapq模块"><a href="#堆heapq模块" class="headerlink" title="堆heapq模块"></a>堆heapq模块</h1><hr>
+<hr>
+<p>这个模块提供了堆队列算法的实现，也成为优先队列算法。<br>堆是一个二叉树，它的每个父节点的值都只会小于或等于所有孩子节点（的值）。它使用了数组来实现：从零开始计数，对于所有的<code>k</code>，都有<code>heap[k] &lt;= heap[2*k+1]</code>和<code>heap[k] &lt;= heap[2*k+2]</code>。为了便于笔记，不存在的元素被认为是无限大。堆最有趣的特性在于最小的元素总是在根结点：heap[0]。</p>
+<span id="more"></span>
+
+
+<p>这个API与教材的对算法实现有所不同，具体区别有两方面：（a）我们使用了从零开始的索引。这使得节点和其孩子节点索引之间的关系不太直观但更加适合，因为Python使用从零开始的索引。（b) 我们的pop方法返回最小的项而不是最大的项（这在教材中称为“最小堆”；而“最大堆”在教材中更为常见，因为它更适用于原地排序）。<br>基于这两个方面，把堆看作原生的Python List也没有什么奇怪的：<code>heap[0]</code>表示最小的元素，同时<code>heap.sort()</code>维护了堆的不变性。<br>要创造一个堆，可以使用list来初始化为<code>[]</code>，或者你也可以通过一个函数<code>heapify()</code>，来把一个list转换成堆。</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="heapq-headpush-heap-item"><a href="#heapq-headpush-heap-item" class="headerlink" title="heapq.headpush(heap,item)"></a>heapq.headpush(heap,item)</h2><p>将<code>item</code>的值加入<code>heap</code>中，保持堆的不变性。</p>
+<h2 id="heapq-headpop-heap"><a href="#heapq-headpop-heap" class="headerlink" title="heapq.headpop(heap)"></a>heapq.headpop(heap)</h2><p>弹出并返回<code>heap</code>的最小的元素，保持堆的不变性。如果堆为空，抛出<code>IndexError</code>。使用<code>heap[0]</code>，可以只访问最小的元素而不弹出它。</p>
+<h2 id="heapq-headpop-heap-item"><a href="#heapq-headpop-heap-item" class="headerlink" title="heapq.headpop(heap,item)"></a>heapq.headpop(heap,item)</h2><p>将<code>item</code>放入堆中，然后弹出并返回<code>heap</code>的最小元素。该组合操作比先调用<code>heappush()</code>再调用<code>heappop()</code>运行起来更有效率。</p>
+<h2 id="heapq-heapify-x"><a href="#heapq-heapify-x" class="headerlink" title="heapq.heapify(x)"></a>heapq.heapify(x)</h2><p>将list <code>x</code>转换成堆，原地，线性时间内。</p>
+<h2 id="heapq-heapreplace-heap-item"><a href="#heapq-heapreplace-heap-item" class="headerlink" title="heapq.heapreplace(heap,item)"></a>heapq.heapreplace(heap,item)</h2><p>弹出并返回<code>heap</code>中最小的一项，同时推入新的<code>item</code>。堆的大小不变。如果堆为空则引发<code>IndexError</code>。这个单步骤操作比<code>heappop()</code>加<code>heappush()</code>更高效，并且在使用固定大小的堆时更为适宜。 <code>pop</code>/<code>push</code> 组合总是会从堆中返回一个元素并将其替换为 <code>item</code>。<br>返回的值可能会比添加的 item 更大。 如果不希望如此，可考虑改用 <code>heappushpop()</code>。 它的 <code>push/pop</code> 组合会返回两个值中较小的一个，将较大的值留在堆中。</p>
+<h1 id="创建堆"><a href="#创建堆" class="headerlink" title="创建堆"></a>创建堆</h1><ul>
+<li>heapq有两种方式创建堆，一种是使用一个空列表，然后使用<code>heapq.heappush()</code>函数把值加入堆中，另外一种就是使用<code>heap.heapify(list)</code>转换列表成为堆结构。</li>
+</ul>
+<h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.heappush(heap,item)</span></span><br><span class="line"><span class="string">    - push the value item onto the heap, maintaining the heap invariant</span></span><br><span class="line"><span class="string">heapq.heappop(heap)</span></span><br><span class="line"><span class="string">    - pop and return the smallest item from the heap, maintaining the heap invariant</span></span><br><span class="line"><span class="string">    If the heap is empty, IndexError is raised. To access the smallest item without popping it, use heap[0]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heap = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    heapq.heappush(heap,num) <span class="comment">#加入堆</span></span><br><span class="line"></span><br><span class="line">print(heap[<span class="number">0</span>])  <span class="comment"># 如果只是想获取最小值而不是弹出，使用heap[0]</span></span><br><span class="line">print([heapq.heappop(heap) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])  <span class="comment"># 堆排序结果</span></span><br><span class="line"><span class="comment"># out: [1, 2, 3, 5, 23, 54, 132]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">print([heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])  <span class="comment"># 堆排序结果</span></span><br><span class="line"><span class="comment"># out: [1, 2, 3, 5, 23, 54, 132]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><code>heapq</code> 模块还有一个<code>heapq.merge(*iterables)</code> 方法，用于合并多个排序后的序列成一个排序后的序列， 返回排序后的值的迭代器。类似于<code>sorted(itertools.chain(*iterables))</code>，但返回的是可迭代的。</li>
+</ul>
+<h2 id="基本示例-1"><a href="#基本示例-1" class="headerlink" title="基本示例"></a>基本示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.merge(*iterables)</span></span><br><span class="line"><span class="string">    - Merge multiple sorted inputs into a single sorted output (for example, merge timestamped entries from multiple log files). Returns an iterator over the sorted values.</span></span><br><span class="line"><span class="string">    - Similar to sorted(itertools.chain(*iterables)) but returns an iterable, does not pull the data into memory all at once, and assumes that each of the input streams is already sorted (smallest to largest).</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">num1 = [<span class="number">32</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">34</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">num2 = [<span class="number">23</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">656</span>, <span class="number">324</span>, <span class="number">23</span>, <span class="number">54</span>]</span><br><span class="line">num1 = <span class="built_in">sorted</span>(num1)</span><br><span class="line">num2 = <span class="built_in">sorted</span>(num2)</span><br><span class="line"></span><br><span class="line">res = heapq.merge(num1, num2)</span><br><span class="line">print(<span class="built_in">list</span>(res))</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="访问堆内容"><a href="#访问堆内容" class="headerlink" title="访问堆内容"></a>访问堆内容</h1><ul>
+<li>堆创建好后，可以通过<code>heapq.heappop()</code> 函数弹出堆中最小值。</li>
+</ul>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">43</span>, <span class="number">45</span>, <span class="number">23</span>, <span class="number">12</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line"></span><br><span class="line">print(heapq.heappop(nums))</span><br><span class="line"><span class="comment"># out: 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果需要所有堆排序后的元素</span></span><br><span class="line">result = [heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))]</span><br><span class="line">print(result)</span><br><span class="line"><span class="comment"># out: [12, 23, 43, 45]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>如果需要删除堆中最小元素并加入一个元素，可以使用<code>heapq.heaprepalce()</code> 函数</li>
+</ul>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">heapq.heapreplace(nums, <span class="number">23</span>)</span><br><span class="line">print([heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])</span><br><span class="line"><span class="comment"># out: [2, 3, 4, 5, 23]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="获取堆最大或最小值"><a href="#获取堆最大或最小值" class="headerlink" title="获取堆最大或最小值"></a>获取堆最大或最小值</h1><ul>
+<li>如果需要获取堆中最大或最小的范围值，则可以使用<code>heapq.nlargest()</code> 或<code>heapq.nsmallest()</code> 函数</li>
+</ul>
+<h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.nlargest(n, iterable[, key])¶</span></span><br><span class="line"><span class="string">    - Return a list with the n largest elements from the dataset defined by iterable. </span></span><br><span class="line"><span class="string">    - key if provided, specifies a function of one argument that is used to extract a comparison key from each element in the iterable: key=str.lower</span></span><br><span class="line"><span class="string">    - Equivalent to: sorted(iterable, key=key, reverse=True)[:n]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>]</span><br><span class="line">print(heapq.nlargest(<span class="number">3</span>, nums))</span><br><span class="line">print(heapq.nsmallest(<span class="number">3</span>, nums))</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">输出：</span></span><br><span class="line"><span class="string">[5, 4, 3]</span></span><br><span class="line"><span class="string">[1, 2, 3]</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>这两个函数还接受一个key参数，用于dict或其他数据结构类型使用</li>
+</ul>
+<h2 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import heapq</span><br><span class="line">from pprint import pprint #美化打印 </span><br><span class="line">portfolio = [</span><br><span class="line">    {'name': 'IBM', 'shares': 100, 'price': 91.1},</span><br><span class="line">    {'name': 'AAPL', 'shares': 50, 'price': 543.22},</span><br><span class="line">    {'name': 'FB', 'shares': 200, 'price': 21.09},</span><br><span class="line">    {'name': 'HPQ', 'shares': 35, 'price': 31.75},</span><br><span class="line">    {'name': 'YHOO', 'shares': 45, 'price': 16.35},</span><br><span class="line">    {'name': 'ACME', 'shares': 75, 'price': 115.65}</span><br><span class="line">]</span><br><span class="line">cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])</span><br><span class="line">expensive = heapq.nlargest(3, portfolio, key=lambda s: s['price'])</span><br><span class="line">pprint(cheap)</span><br><span class="line">pprint(expensive)</span><br><span class="line"></span><br><span class="line">"""</span><br><span class="line">输出：</span><br><span class="line">[{'name': 'YHOO', 'price': 16.35, 'shares': 45},</span><br><span class="line"> {'name': 'FB', 'price': 21.09, 'shares': 200},</span><br><span class="line"> {'name': 'HPQ', 'price': 31.75, 'shares': 35}]</span><br><span class="line">[{'name': 'AAPL', 'price': 543.22, 'shares': 50},</span><br><span class="line"> {'name': 'ACME', 'price': 115.65, 'shares': 75},</span><br><span class="line"> {'name': 'IBM', 'price': 91.1, 'shares': 100}]</span><br><span class="line">"""</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="heapq-应用"><a href="#heapq-应用" class="headerlink" title="heapq 应用"></a>heapq 应用</h1><ul>
+<li>实现heap堆排序算法, 该算法和sorted(iterable) 类似，但是它是不稳定的。</li>
+</ul>
+<h2 id="示例-4"><a href="#示例-4" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">heapsort</span>(<span class="params">iterable</span>):</span></span><br><span class="line"><span class="meta">... </span>    h = []</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> value <span class="keyword">in</span> iterable:</span><br><span class="line"><span class="meta">... </span>        heappush(h, value)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> [heappop(h) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(h))]</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heapsort([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">0</span>])</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>堆的值可以是元组类型，可以实现对带权值的元素进行排序。</li>
+</ul>
+<h2 id="示例-5"><a href="#示例-5" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>h = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">5</span>, <span class="string">'write code'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">7</span>, <span class="string">'release product'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">1</span>, <span class="string">'write spec'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">3</span>, <span class="string">'create tests'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappop(h)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'write spec'</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>双指针（easy篇）</title>
     <url>/2021/03/18/%E5%8F%8C%E6%8C%87%E9%92%88/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="双指针-顺序"><a href="#双指针-顺序" class="headerlink" title="#双指针 (顺序)"></a>#双指针 (<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8F%8C%E6%8C%87%E9%92%88.md#1-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84-two-sum">顺序</a>)</h2><p>双指针用于遍历数组，两个指针指向不同的元素，从而共同的完成一个任务。<br>（1）共同完成一个和的target<br>（2）从后往前，从前往后，两边夹击，快慢指针</p>
@@ -657,69 +720,6 @@
 <h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>(1)  首先是字符串字典顺序是啥意? 只听说过数的运算，字符串怎么进行运算呢？字符串运算是灵活，又有点复杂的。<a href="https://zhuanlan.zhihu.com/p/91137723">python字符串数据类型</a>。其中我们讲一下字符串的关系运算，采用 ‘&lt;’, ‘&lt;=’, ‘&gt;’, ‘&gt;=’, ‘==’, ‘!=’ 关系运算符对两个字符串进行比较，其实是依次对两个字符串同位置上字符的ADCII 码进行比较。需要注意的是如果如果第一个字符能比较出大小来，不会往后比较，第一个字符相同的话，才往后进行比较<br>(2)  这个题进行双指针也是挺明显的，首先是两个字符串进行遍历的比较。第二是前面也有提到的是，字符串是可变的，所以可以进行比较的。</p>
 <h3 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findLongestWord</span>(<span class="params">self, s: <span class="built_in">str</span>, dictionary: List[<span class="built_in">str</span>]</span>) -&gt; str:</span></span><br><span class="line">        len_ans = <span class="number">0</span></span><br><span class="line">        ans = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> dst <span class="keyword">in</span> dictionary:</span><br><span class="line">            i = <span class="number">0</span> </span><br><span class="line">            j = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(s) <span class="keyword">and</span> j &lt; <span class="built_in">len</span>(dst):<span class="comment"># 先判断是不是符合条件的字符串</span></span><br><span class="line">                <span class="keyword">if</span> s[i] == dst[j]:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">                    j+=<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> j == <span class="built_in">len</span>(dst): <span class="comment">#判断是不是字典序最小的</span></span><br><span class="line">                <span class="keyword">if</span> j &gt; len_ans:</span><br><span class="line">                    len_ans,ans = <span class="built_in">len</span>(dst), dst</span><br><span class="line">                <span class="keyword">elif</span> j == len_ans <span class="keyword">and</span> dst &lt; ans:</span><br><span class="line">                    len_ans,ans = <span class="built_in">len</span>(dst), dst</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>堆heapq模块</title>
-    <url>/2021/03/21/%E5%A0%86heapq%E6%A8%A1%E5%9D%97/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="堆heapq模块"><a href="#堆heapq模块" class="headerlink" title="堆heapq模块"></a>堆heapq模块</h1><hr>
-<hr>
-<p>这个模块提供了堆队列算法的实现，也成为优先队列算法。<br>堆是一个二叉树，它的每个父节点的值都只会小于或等于所有孩子节点（的值）。它使用了数组来实现：从零开始计数，对于所有的<code>k</code>，都有<code>heap[k] &lt;= heap[2*k+1]</code>和<code>heap[k] &lt;= heap[2*k+2]</code>。为了便于笔记，不存在的元素被认为是无限大。堆最有趣的特性在于最小的元素总是在根结点：heap[0]。</p>
-<span id="more"></span>
-
-
-<p>这个API与教材的对算法实现有所不同，具体区别有两方面：（a）我们使用了从零开始的索引。这使得节点和其孩子节点索引之间的关系不太直观但更加适合，因为Python使用从零开始的索引。（b) 我们的pop方法返回最小的项而不是最大的项（这在教材中称为“最小堆”；而“最大堆”在教材中更为常见，因为它更适用于原地排序）。<br>基于这两个方面，把堆看作原生的Python List也没有什么奇怪的：<code>heap[0]</code>表示最小的元素，同时<code>heap.sort()</code>维护了堆的不变性。<br>要创造一个堆，可以使用list来初始化为<code>[]</code>，或者你也可以通过一个函数<code>heapify()</code>，来把一个list转换成堆。</p>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="heapq-headpush-heap-item"><a href="#heapq-headpush-heap-item" class="headerlink" title="heapq.headpush(heap,item)"></a>heapq.headpush(heap,item)</h2><p>将<code>item</code>的值加入<code>heap</code>中，保持堆的不变性。</p>
-<h2 id="heapq-headpop-heap"><a href="#heapq-headpop-heap" class="headerlink" title="heapq.headpop(heap)"></a>heapq.headpop(heap)</h2><p>弹出并返回<code>heap</code>的最小的元素，保持堆的不变性。如果堆为空，抛出<code>IndexError</code>。使用<code>heap[0]</code>，可以只访问最小的元素而不弹出它。</p>
-<h2 id="heapq-headpop-heap-item"><a href="#heapq-headpop-heap-item" class="headerlink" title="heapq.headpop(heap,item)"></a>heapq.headpop(heap,item)</h2><p>将<code>item</code>放入堆中，然后弹出并返回<code>heap</code>的最小元素。该组合操作比先调用<code>heappush()</code>再调用<code>heappop()</code>运行起来更有效率。</p>
-<h2 id="heapq-heapify-x"><a href="#heapq-heapify-x" class="headerlink" title="heapq.heapify(x)"></a>heapq.heapify(x)</h2><p>将list <code>x</code>转换成堆，原地，线性时间内。</p>
-<h2 id="heapq-heapreplace-heap-item"><a href="#heapq-heapreplace-heap-item" class="headerlink" title="heapq.heapreplace(heap,item)"></a>heapq.heapreplace(heap,item)</h2><p>弹出并返回<code>heap</code>中最小的一项，同时推入新的<code>item</code>。堆的大小不变。如果堆为空则引发<code>IndexError</code>。这个单步骤操作比<code>heappop()</code>加<code>heappush()</code>更高效，并且在使用固定大小的堆时更为适宜。 <code>pop</code>/<code>push</code> 组合总是会从堆中返回一个元素并将其替换为 <code>item</code>。<br>返回的值可能会比添加的 item 更大。 如果不希望如此，可考虑改用 <code>heappushpop()</code>。 它的 <code>push/pop</code> 组合会返回两个值中较小的一个，将较大的值留在堆中。</p>
-<h1 id="创建堆"><a href="#创建堆" class="headerlink" title="创建堆"></a>创建堆</h1><ul>
-<li>heapq有两种方式创建堆，一种是使用一个空列表，然后使用<code>heapq.heappush()</code>函数把值加入堆中，另外一种就是使用<code>heap.heapify(list)</code>转换列表成为堆结构。</li>
-</ul>
-<h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.heappush(heap,item)</span></span><br><span class="line"><span class="string">    - push the value item onto the heap, maintaining the heap invariant</span></span><br><span class="line"><span class="string">heapq.heappop(heap)</span></span><br><span class="line"><span class="string">    - pop and return the smallest item from the heap, maintaining the heap invariant</span></span><br><span class="line"><span class="string">    If the heap is empty, IndexError is raised. To access the smallest item without popping it, use heap[0]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heap = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    heapq.heappush(heap,num) <span class="comment">#加入堆</span></span><br><span class="line"></span><br><span class="line">print(heap[<span class="number">0</span>])  <span class="comment"># 如果只是想获取最小值而不是弹出，使用heap[0]</span></span><br><span class="line">print([heapq.heappop(heap) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])  <span class="comment"># 堆排序结果</span></span><br><span class="line"><span class="comment"># out: [1, 2, 3, 5, 23, 54, 132]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">print([heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])  <span class="comment"># 堆排序结果</span></span><br><span class="line"><span class="comment"># out: [1, 2, 3, 5, 23, 54, 132]</span></span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li><code>heapq</code> 模块还有一个<code>heapq.merge(*iterables)</code> 方法，用于合并多个排序后的序列成一个排序后的序列， 返回排序后的值的迭代器。类似于<code>sorted(itertools.chain(*iterables))</code>，但返回的是可迭代的。</li>
-</ul>
-<h2 id="基本示例-1"><a href="#基本示例-1" class="headerlink" title="基本示例"></a>基本示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.merge(*iterables)</span></span><br><span class="line"><span class="string">    - Merge multiple sorted inputs into a single sorted output (for example, merge timestamped entries from multiple log files). Returns an iterator over the sorted values.</span></span><br><span class="line"><span class="string">    - Similar to sorted(itertools.chain(*iterables)) but returns an iterable, does not pull the data into memory all at once, and assumes that each of the input streams is already sorted (smallest to largest).</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">num1 = [<span class="number">32</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">34</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">num2 = [<span class="number">23</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">656</span>, <span class="number">324</span>, <span class="number">23</span>, <span class="number">54</span>]</span><br><span class="line">num1 = <span class="built_in">sorted</span>(num1)</span><br><span class="line">num2 = <span class="built_in">sorted</span>(num2)</span><br><span class="line"></span><br><span class="line">res = heapq.merge(num1, num2)</span><br><span class="line">print(<span class="built_in">list</span>(res))</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="访问堆内容"><a href="#访问堆内容" class="headerlink" title="访问堆内容"></a>访问堆内容</h1><ul>
-<li>堆创建好后，可以通过<code>heapq.heappop()</code> 函数弹出堆中最小值。</li>
-</ul>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">43</span>, <span class="number">45</span>, <span class="number">23</span>, <span class="number">12</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line"></span><br><span class="line">print(heapq.heappop(nums))</span><br><span class="line"><span class="comment"># out: 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果需要所有堆排序后的元素</span></span><br><span class="line">result = [heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))]</span><br><span class="line">print(result)</span><br><span class="line"><span class="comment"># out: [12, 23, 43, 45]</span></span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>如果需要删除堆中最小元素并加入一个元素，可以使用<code>heapq.heaprepalce()</code> 函数</li>
-</ul>
-<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">heapq.heapreplace(nums, <span class="number">23</span>)</span><br><span class="line">print([heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])</span><br><span class="line"><span class="comment"># out: [2, 3, 4, 5, 23]</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="获取堆最大或最小值"><a href="#获取堆最大或最小值" class="headerlink" title="获取堆最大或最小值"></a>获取堆最大或最小值</h1><ul>
-<li>如果需要获取堆中最大或最小的范围值，则可以使用<code>heapq.nlargest()</code> 或<code>heapq.nsmallest()</code> 函数</li>
-</ul>
-<h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.nlargest(n, iterable[, key])¶</span></span><br><span class="line"><span class="string">    - Return a list with the n largest elements from the dataset defined by iterable. </span></span><br><span class="line"><span class="string">    - key if provided, specifies a function of one argument that is used to extract a comparison key from each element in the iterable: key=str.lower</span></span><br><span class="line"><span class="string">    - Equivalent to: sorted(iterable, key=key, reverse=True)[:n]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>]</span><br><span class="line">print(heapq.nlargest(<span class="number">3</span>, nums))</span><br><span class="line">print(heapq.nsmallest(<span class="number">3</span>, nums))</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">输出：</span></span><br><span class="line"><span class="string">[5, 4, 3]</span></span><br><span class="line"><span class="string">[1, 2, 3]</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>这两个函数还接受一个key参数，用于dict或其他数据结构类型使用</li>
-</ul>
-<h2 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import heapq</span><br><span class="line">from pprint import pprint #美化打印 </span><br><span class="line">portfolio = [</span><br><span class="line">    {'name': 'IBM', 'shares': 100, 'price': 91.1},</span><br><span class="line">    {'name': 'AAPL', 'shares': 50, 'price': 543.22},</span><br><span class="line">    {'name': 'FB', 'shares': 200, 'price': 21.09},</span><br><span class="line">    {'name': 'HPQ', 'shares': 35, 'price': 31.75},</span><br><span class="line">    {'name': 'YHOO', 'shares': 45, 'price': 16.35},</span><br><span class="line">    {'name': 'ACME', 'shares': 75, 'price': 115.65}</span><br><span class="line">]</span><br><span class="line">cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])</span><br><span class="line">expensive = heapq.nlargest(3, portfolio, key=lambda s: s['price'])</span><br><span class="line">pprint(cheap)</span><br><span class="line">pprint(expensive)</span><br><span class="line"></span><br><span class="line">"""</span><br><span class="line">输出：</span><br><span class="line">[{'name': 'YHOO', 'price': 16.35, 'shares': 45},</span><br><span class="line"> {'name': 'FB', 'price': 21.09, 'shares': 200},</span><br><span class="line"> {'name': 'HPQ', 'price': 31.75, 'shares': 35}]</span><br><span class="line">[{'name': 'AAPL', 'price': 543.22, 'shares': 50},</span><br><span class="line"> {'name': 'ACME', 'price': 115.65, 'shares': 75},</span><br><span class="line"> {'name': 'IBM', 'price': 91.1, 'shares': 100}]</span><br><span class="line">"""</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="heapq-应用"><a href="#heapq-应用" class="headerlink" title="heapq 应用"></a>heapq 应用</h1><ul>
-<li>实现heap堆排序算法, 该算法和sorted(iterable) 类似，但是它是不稳定的。</li>
-</ul>
-<h2 id="示例-4"><a href="#示例-4" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">heapsort</span>(<span class="params">iterable</span>):</span></span><br><span class="line"><span class="meta">... </span>    h = []</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> value <span class="keyword">in</span> iterable:</span><br><span class="line"><span class="meta">... </span>        heappush(h, value)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> [heappop(h) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(h))]</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heapsort([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">0</span>])</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>堆的值可以是元组类型，可以实现对带权值的元素进行排序。</li>
-</ul>
-<h2 id="示例-5"><a href="#示例-5" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>h = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">5</span>, <span class="string">'write code'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">7</span>, <span class="string">'release product'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">1</span>, <span class="string">'write spec'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">3</span>, <span class="string">'create tests'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappop(h)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'write spec'</span>)</span><br></pre></td></tr></tbody></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
   </entry>
   <entry>
     <title>声学信号处理系列（一）声学信号处理基础知识</title>
@@ -916,27 +916,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>经典到默写的</title>
-    <url>/2021/03/18/%E7%86%9F%E5%88%B0%E9%BB%98%E5%86%99/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>默写吧</p>
-<span id="more"></span>
-
-
-<h2 id="1-基于分治的快速排序"><a href="#1-基于分治的快速排序" class="headerlink" title="1. 基于分治的快速排序"></a>1. 基于分治的快速排序</h2><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ul>
-<li>每次取list 的第一个元素，把剩下的元素与第一个元素比较，此时生成两个list,less中存放的就是余下的所有比第一个元素小的list, greater 中存放的是余下的所有比第一个元素大的list。然后循环递归，当基线条件只有一个元素或0个元素时停止，并返回结果。</li>
-</ul>
-<h3 id="Python"><a href="#Python" class="headerlink" title="Python:"></a>Python:</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">def quick_sort(arr):</span><br><span class="line">	if len(arr)&lt;2:</span><br><span class="line">		return arr</span><br><span class="line">	else:</span><br><span class="line">		pivot = arr[0]</span><br><span class="line">		less = [i for i in arr[1:] if i&lt;=pivot]  </span><br><span class="line">		greater = [i for i in arr[1:] if i&gt;pivot]</span><br><span class="line">		return quick_sort(less) + pivot + quick_sort(greater)</span><br><span class="line">if __name__ == "__main__":</span><br><span class="line"> </span><br><span class="line">    arr = [5,7,9,3,6,1,4,2]</span><br><span class="line">	print(quick_sort(arr))</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img src= "/img/watermelon.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTQ2OTAxNS8yMDE5MDMvMTQ2OTAxNS0yMDE5MDMyNjE4MTQ1MzY3My0xODk3MDkyNTUwLnBuZw?x-oss-process=image/format,png"></p>
-]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>贪心</title>
     <url>/2021/03/18/%E8%B4%AA%E5%BF%83/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3.md">贪心</a></h2><p>思路是：(1) 保证每次操作都是局部最优的，并且最后得到的结果是全局最优的 (2)贪心算法一般是先需要排序的。</p>
@@ -1054,6 +1033,27 @@
         <tag>python</tag>
         <tag>排序</tag>
         <tag>堆</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>经典到默写的</title>
+    <url>/2021/03/18/%E7%86%9F%E5%88%B0%E9%BB%98%E5%86%99/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>默写吧</p>
+<span id="more"></span>
+
+
+<h2 id="1-基于分治的快速排序"><a href="#1-基于分治的快速排序" class="headerlink" title="1. 基于分治的快速排序"></a>1. 基于分治的快速排序</h2><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ul>
+<li>每次取list 的第一个元素，把剩下的元素与第一个元素比较，此时生成两个list,less中存放的就是余下的所有比第一个元素小的list, greater 中存放的是余下的所有比第一个元素大的list。然后循环递归，当基线条件只有一个元素或0个元素时停止，并返回结果。</li>
+</ul>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python:"></a>Python:</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">def quick_sort(arr):</span><br><span class="line">	if len(arr)&lt;2:</span><br><span class="line">		return arr</span><br><span class="line">	else:</span><br><span class="line">		pivot = arr[0]</span><br><span class="line">		less = [i for i in arr[1:] if i&lt;=pivot]  </span><br><span class="line">		greater = [i for i in arr[1:] if i&gt;pivot]</span><br><span class="line">		return quick_sort(less) + pivot + quick_sort(greater)</span><br><span class="line">if __name__ == "__main__":</span><br><span class="line"> </span><br><span class="line">    arr = [5,7,9,3,6,1,4,2]</span><br><span class="line">	print(quick_sort(arr))</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src= "/img/watermelon.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTQ2OTAxNS8yMDE5MDMvMTQ2OTAxNS0yMDE5MDMyNjE4MTQ1MzY3My0xODk3MDkyNTUwLnBuZw?x-oss-process=image/format,png"></p>
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
