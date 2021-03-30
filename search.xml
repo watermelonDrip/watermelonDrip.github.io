@@ -530,8 +530,12 @@
   <entry>
     <title>动态规划</title>
     <url>/2021/03/30/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="动态规划Dynamic-Programming"><a href="#动态规划Dynamic-Programming" class="headerlink" title="动态规划Dynamic Programming"></a>动态规划Dynamic Programming</h1><p>动态规划是运筹学的一个分支，是求解决策过程(decision process)最优化的数学方法。<br>把多阶段过程转化为一系列单阶段问题，利用各阶段之间的关系，逐个求解，解决这类过程的优化问题。<br>动态规划是自底向上，一般都脱离了递归，而是由循环迭代完成计算。</p>
-<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.md">动态规划</a><br><span id="more"></span><br>计算机归根结底只会做一件事：穷举。<br>所有的算法都是在让计算机【如何聪明地穷举】而已，动态规划也是如此。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="动态规划Dynamic-Programming"><a href="#动态规划Dynamic-Programming" class="headerlink" title="动态规划Dynamic Programming"></a>动态规划Dynamic Programming</h1><hr>
+<p>动态规划是运筹学的一个分支，是求解决策过程(decision process)最优化的数学方法。<br>把多阶段过程转化为一系列单阶段问题，利用各阶段之间的关系，逐个求解，解决这类过程的优化问题。<br>动态规划是自底向上，一般都脱离了递归，而是由循环迭代完成计算。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.md">动态规划</a></p>
+<span id="more"></span>
+<p>计算机归根结底只会做一件事：穷举。<br>所有的算法都是在让计算机【如何聪明地穷举】而已，动态规划也是如此。</p>
+<hr>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h2><p>算法题有两大核心简化复杂问题的思路：减而治之和分而治之，比如第二题把环形分为单排就是分而治之，即把一个问题分成多个规模更小的子问题。</p>
 <h3 id="递归与动态"><a href="#递归与动态" class="headerlink" title="递归与动态"></a>递归与动态</h3><p>递归和动态规划都是将原问题拆成多个子问题然后求解，他们之间最本质的区别是，动态规划保存了子问题的解，避免重复计算。<script type="math/tex">\sigma</script></p>
 <h3 id="分治与动态"><a href="#分治与动态" class="headerlink" title="分治与动态"></a>分治与动态</h3><p>基本思想与分治法类似，也是将待求解的问题分解为若干个子问题（阶段），按顺序求解子阶段，前一子问题的解，为后一子问题的求解提供了有用的信息。在求解任一子问题时，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解。依次解决各子问题，最后一个子问题就是初始问题的解。<br>动态规划中的子问题往往不是相互独立的（即子问题重叠）。在求解的过程中，许多子问题的解被反复地使用。为了避免重复计算，动态规划算法采用了填表来保存子问题解的方法。</p>
@@ -1139,8 +1143,8 @@
     <url>/2021/03/29/%E6%90%9C%E7%B4%A2%20/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="搜索（BFS-DFS-Backtracking）"><a href="#搜索（BFS-DFS-Backtracking）" class="headerlink" title="搜索（BFS, DFS, Backtracking）"></a>搜索（BFS, DFS, Backtracking）</h1><hr>
 <p>广度优先算法（Breadth-First-Search），简称BFS。深度优先算法（Deep-First-Search），简称DFS。BFS:利用队列先进先出的特性，可以优先遍历横向节点。DFS:利用栈先进后出的特性，可以优先遍历纵向节点。</p>
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%90%9C%E7%B4%A2.md">搜索</a></h2><p>深度优先搜索和广度优先搜索广泛应用于树和图中。 （1） BFS  (2) DFS  (3) Backtracking<br><span id="more"></span></p>
-<h1 id="BFS-广度优先搜索）"><a href="#BFS-广度优先搜索）" class="headerlink" title="BFS (广度优先搜索）"></a>BFS (广度优先搜索）</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h2><p>广度优先算法（BFS）：是一种<a href="https://www.xiaoheidiannao.com/13213.html">图形搜索演算法</a>。简单的说，BFS是从根节点开始，沿着树的宽度遍历树的节点，如果发现目标，则演算终止。</p>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%90%9C%E7%B4%A2.md">搜索</a></h2><p>深度优先搜索和广度优先搜索广泛应用于树和图中。 （1） BFS  (2) DFS  (3) Backtracking</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><span id="more"></span></h2><h1 id="BFS-广度优先搜索）"><a href="#BFS-广度优先搜索）" class="headerlink" title="BFS (广度优先搜索）"></a>BFS (广度优先搜索）</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h2><p>广度优先算法（BFS）：是一种<a href="https://www.xiaoheidiannao.com/13213.html">图形搜索演算法</a>。简单的说，BFS是从根节点开始，沿着树的宽度遍历树的节点，如果发现目标，则演算终止。</p>
 <h2 id="算法分析："><a href="#算法分析：" class="headerlink" title="算法分析："></a>算法分析：</h2><p>BFS是一种盲目搜寻法，目的是系统的展开并检查图中的所有节点，以找寻结果。换句话说，它并不考虑结果的可能位置，彻底地搜索整张图，直到找到结果为主。</p>
 <h2 id="时间复杂度："><a href="#时间复杂度：" class="headerlink" title="时间复杂度："></a>时间复杂度：</h2><p>邻接表的时候是$O(|V|+|E|)$。其中，$|V|$是节点的数目，$|E|$是图中边的数目。</p>
 <h2 id="适应条件："><a href="#适应条件：" class="headerlink" title="适应条件："></a>适应条件：</h2><p>对于所有边长度相同的情况，比如地图的模型，BFS第一次遇到目标点，此时就一定是从根节点到目标节点的最短路径（因为每次所有的点都是向外扩张一步，你先遇到，那你就一定最短的了）。<strong>BFS先找到的一定是最短的</strong>。但是如果是加权边的话就会有问题，BFS传回的是经过<strong>边数最少</strong>的解，但是因为加权了，这个解到根节点的<strong>距离</strong>就不一定是最短的了。比如1000+1000是两段，1+1+1是三段，但是由于BFS返回的是是<strong>经过边数最少的的解</strong>，这里就会返回总长度是2000的那个解，但是显然不是距离最短的路径。此时我们就应该采用<strong>Dijkstra最短路算法</strong>解决加权路径的最短路了（这就有点超纲了呀）。</p>
