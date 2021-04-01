@@ -529,13 +529,9 @@
   </entry>
   <entry>
     <title>动态规划</title>
-    <url>/2021/03/30/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="动态规划Dynamic-Programming"><a href="#动态规划Dynamic-Programming" class="headerlink" title="动态规划Dynamic Programming"></a>动态规划Dynamic Programming</h1><hr>
-<p>动态规划是运筹学的一个分支，是求解决策过程(decision process)最优化的数学方法。<br>把多阶段过程转化为一系列单阶段问题，利用各阶段之间的关系，逐个求解，解决这类过程的优化问题。<br>动态规划是自底向上，一般都脱离了递归，而是由循环迭代完成计算。</p>
-<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.md">动态规划</a></p>
-<span id="more"></span>
-<p>计算机归根结底只会做一件事：穷举。<br>所有的算法都是在让计算机【如何聪明地穷举】而已，动态规划也是如此。</p>
-<hr>
+    <url>/2021/04/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="动态规划Dynamic-Programming"><a href="#动态规划Dynamic-Programming" class="headerlink" title="动态规划Dynamic Programming"></a>动态规划Dynamic Programming</h1><p>动态规划是运筹学的一个分支，是求解决策过程(decision process)最优化的数学方法。<br>把多阶段过程转化为一系列单阶段问题，利用各阶段之间的关系，逐个求解，解决这类过程的优化问题。<br>动态规划是自底向上，一般都脱离了递归，而是由循环迭代完成计算。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.md">动态规划</a><br><span id="more"></span><br>计算机归根结底只会做一件事：穷举。<br>所有的算法都是在让计算机【如何聪明地穷举】而已，动态规划也是如此。</p>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h2><p>算法题有两大核心简化复杂问题的思路：减而治之和分而治之，比如第二题把环形分为单排就是分而治之，即把一个问题分成多个规模更小的子问题。</p>
 <h3 id="递归与动态"><a href="#递归与动态" class="headerlink" title="递归与动态"></a>递归与动态</h3><p>递归和动态规划都是将原问题拆成多个子问题然后求解，他们之间最本质的区别是，动态规划保存了子问题的解，避免重复计算。<script type="math/tex">\sigma</script></p>
 <h3 id="分治与动态"><a href="#分治与动态" class="headerlink" title="分治与动态"></a>分治与动态</h3><p>基本思想与分治法类似，也是将待求解的问题分解为若干个子问题（阶段），按顺序求解子阶段，前一子问题的解，为后一子问题的求解提供了有用的信息。在求解任一子问题时，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解。依次解决各子问题，最后一个子问题就是初始问题的解。<br>动态规划中的子问题往往不是相互独立的（即子问题重叠）。在求解的过程中，许多子问题的解被反复地使用。为了避免重复计算，动态规划算法采用了填表来保存子问题解的方法。</p>
@@ -668,7 +664,213 @@
 </ul>
 </li>
 </ul>
-<h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
+<h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="Integer-Break-分割整数"><a href="#Integer-Break-分割整数" class="headerlink" title="Integer Break(分割整数)"></a>Integer Break(分割整数)</h2><h3 id="LC343-Integer-Break-Medim-Integer-Break"><a href="#LC343-Integer-Break-Medim-Integer-Break" class="headerlink" title="(LC343) Integer Break (Medim)   Integer Break"></a>(LC343) Integer Break (Medim)   <a href="https://leetcode-cn.com/problems/integer-break/description/">Integer Break</a></h3><h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><p>Given an integer n, break it into the sum of k positive integers, where k &gt;= 2, and maximize the product of those integers.</p>
+<p>Return the maximum product you can get.<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Input: n = 2</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: 2 = 1 + 1, 1 × 1 = 1.</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>数学方法（凑3）<a href="https://leetcode-cn.com/problems/integer-break/solution/343-zheng-shu-chai-fen-tan-xin-by-jyd/">看了很多遍的一个解释</a></li>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">integerBreak</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> n ==<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">        u,v = <span class="built_in">divmod</span>(n,<span class="number">3</span>)  <span class="comment"># equal to u, v = n // 3, n % 3</span></span><br><span class="line">        <span class="keyword">if</span> v == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">pow</span>(<span class="number">3</span>,u-<span class="number">1</span>)*<span class="number">4</span></span><br><span class="line">        <span class="keyword">if</span> v == <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">pow</span>(<span class="number">3</span>,u)*<span class="number">2</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">pow</span>(<span class="number">3</span>,u)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script> </li>
+<li>空间复杂度：<script type="math/tex">O(1)</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">integerBreak</span>(<span class="params">self, n</span>):</span></span><br><span class="line">        dp = [<span class="number">1</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i):</span><br><span class="line">                dp[i] = <span class="built_in">max</span>(dp[i], j*dp[i-j], j*(i-j))</span><br><span class="line">        <span class="keyword">return</span> dp[n]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">1</span>]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-2"><a href="#大佬-2" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC279-完全平方数-完全平方数"><a href="#LC279-完全平方数-完全平方数" class="headerlink" title="(LC279) 完全平方数   完全平方数"></a>(LC279) 完全平方数  <a href="https://leetcode-cn.com/problems/perfect-squares/"> 完全平方数</a></h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><p>给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。</p>
+<p>给你一个整数 n ，返回和为 n 的完全平方数的 最少数量 。</p>
+<p>完全平方数 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：n = 12</span><br><span class="line">输出：3 </span><br><span class="line">解释：12 = 4 + 4 + 4</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-1"><a href="#动态规划-1" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numSquares</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; int:</span> </span><br><span class="line">        square_num = [i*i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">int</span>(n**(<span class="number">0.5</span>))+<span class="number">1</span>)]</span><br><span class="line">        dp = [<span class="built_in">float</span>(<span class="string">'inf'</span>)] * (n+<span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> square_num:</span><br><span class="line">                <span class="keyword">if</span> i&lt; j:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                dp[i] = <span class="built_in">min</span>(dp[i-j] +<span class="number">1</span>,dp[i])</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, inf, inf, inf, inf, inf, inf, inf, inf, inf, inf, inf]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, inf, inf, inf, inf, inf, inf, inf, inf, inf, inf]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, inf, inf, inf, inf, inf, inf, inf, inf, inf]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, inf, inf, inf, inf, inf, inf, inf, inf]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, inf, inf, inf, inf, inf, inf, inf]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, inf, inf, inf, inf, inf, inf]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, inf, inf, inf, inf, inf]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, inf, inf, inf, inf]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, inf, inf, inf]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, inf, inf]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, inf]</span><br><span class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-3"><a href="#大佬-3" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC91-解码方法-解码方法"><a href="#LC91-解码方法-解码方法" class="headerlink" title="(LC91) 解码方法  解码方法"></a>(LC91) 解码方法  <a href="https://leetcode-cn.com/problems/decode-ways/description/">解码方法</a></h3><h4 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h4><p>一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：</p>
+<p>‘A’ -&gt; 1<br>‘B’ -&gt; 2<br>…<br>‘Z’ -&gt; 26<br>要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，”111” 可以将 “1” 中的每个 “1” 映射为 “A” ，从而得到 “AAA” ，或者可以将 “11” 和 “1”（分别为 “K” 和 “A” ）映射为 “KA” 。注意，”06” 不能映射为 “F” ，因为 “6” 和 “06” 不同。</p>
+<p>给你一个只含数字的 非空 字符串 num ，请计算并返回 解码 方法的 总数 。</p>
+<p>题目数据保证答案肯定是一个 32 位 的整数。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：s = "12"</span><br><span class="line">输出：2</span><br><span class="line">解释：它可以解码为 "AB"（1 2）或者 "L"（12）。</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><p>class Solution:<br>    def numDecodings(self, s: str) -&gt; int:<br>        if s[0] == ‘0’:<br>            return 0<br>        dp = [1]*(1+ len(s))<br>        dp[0] = 1<br>        dp[1] = 1<br>        for i in range(1,len(s)):</p>
+<pre><code>        if s[i] == '0':
+            if s[i-1] == '1' or s[i-1] == '2':
+                dp[i] = dp[i-2]
+            else:
+                return 0
+        else:
+            if s[i-1] != '0' and 1&lt;= int(s[i-1:i+1])&lt;= 26:
+                dp[i] = dp[i-2] +dp[i-1] 
+            else:
+                dp[i] = dp[i-1] 
+    return dp[len(s)-1]
+</code></pre><ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script> 1层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O(n)</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-4"><a href="#大佬-4" class="headerlink" title="大佬"></a>大佬</h5><h1 id="最长递增子序列"><a href="#最长递增子序列" class="headerlink" title="最长递增子序列"></a>最长递增子序列</h1><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-8"><a href="#Python3-Code-8" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-2"><a href="#动态规划-2" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-5"><a href="#大佬-5" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-9"><a href="#Python3-Code-9" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-3"><a href="#动态规划-3" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-LC"><a href="#大佬-LC" class="headerlink" title="大佬 ###   (LC )    "></a>大佬 ###   (LC )   <a href=""> </a></h5><h4 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-10"><a href="#Python3-Code-10" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-4"><a href="#动态规划-4" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-6"><a href="#大佬-6" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-11"><a href="#Python3-Code-11" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-5"><a href="#动态规划-5" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-7"><a href="#大佬-7" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-12"><a href="#题目-12" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-12"><a href="#Python3-Code-12" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-6"><a href="#动态规划-6" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-8"><a href="#大佬-8" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-13"><a href="#题目-13" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-13"><a href="#思路-13" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-13"><a href="#Python3-Code-13" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-7"><a href="#动态规划-7" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-9"><a href="#大佬-9" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-5"><a href="#LC-5" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-14"><a href="#题目-14" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-14"><a href="#思路-14" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-14"><a href="#Python3-Code-14" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-8"><a href="#动态规划-8" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-10"><a href="#大佬-10" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-6"><a href="#LC-6" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-15"><a href="#题目-15" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-15"><a href="#思路-15" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-15"><a href="#Python3-Code-15" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-9"><a href="#动态规划-9" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-11"><a href="#大佬-11" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-7"><a href="#LC-7" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-16"><a href="#题目-16" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-16"><a href="#思路-16" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-16"><a href="#Python3-Code-16" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-10"><a href="#动态规划-10" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-12"><a href="#大佬-12" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-8"><a href="#LC-8" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-17"><a href="#题目-17" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-17"><a href="#思路-17" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-17"><a href="#Python3-Code-17" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-11"><a href="#动态规划-11" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-13"><a href="#大佬-13" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-9"><a href="#LC-9" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-18"><a href="#题目-18" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-18"><a href="#思路-18" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-18"><a href="#Python3-Code-18" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-12"><a href="#动态规划-12" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-14"><a href="#大佬-14" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-10"><a href="#LC-10" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-19"><a href="#题目-19" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-19"><a href="#思路-19" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-19"><a href="#Python3-Code-19" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-13"><a href="#动态规划-13" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-15"><a href="#大佬-15" class="headerlink" title="大佬"></a>大佬</h5>]]></content>
       <categories>
         <category>力扣</category>
       </categories>
