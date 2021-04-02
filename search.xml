@@ -66,29 +66,6 @@
       </tags>
   </entry>
   <entry>
-    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
-    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
-<h2 id="sort-用法-和-sorted-用法的不同"><a href="#sort-用法-和-sorted-用法的不同" class="headerlink" title="sort()用法 和 sorted()用法的不同"></a>sort()用法 和 sorted()用法的不同</h2><ol>
-<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
-<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。</li>
-</ol>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="大佬blog"><a href="#大佬blog" class="headerlink" title="大佬blog"></a>大佬blog</h3><ol>
-<li><a href="http://https://blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法—Timsort简介”</a></li>
-<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
-<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二分查找</title>
     <url>/2021/03/18/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><hr>
@@ -189,6 +166,29 @@
       </categories>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python 里 sort(),sorted() 的排序算法 -- Timsort简介</title>
+    <url>/2021/03/06/python%E9%87%8Csort%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>python里sort排序是一种名为Timsort的排序方法，其时间复杂度为$O(nlogn)$, 而且这是一种快速的稳定排序方法。<br>一个算法的稳定主要是：在假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]仍在r[j]之前，则这种排序算法是稳定的；否则成为不稳定的。通俗的说， 就是两个相同的值，在排序位置不发生交换，就说稳定的，否则就说不稳定的。在一些条件下，稳定和不稳定也是相对的。</p>
+<h2 id="sort-用法-和-sorted-用法的不同"><a href="#sort-用法-和-sorted-用法的不同" class="headerlink" title="sort()用法 和 sorted()用法的不同"></a>sort()用法 和 sorted()用法的不同</h2><ol>
+<li>sort()只能用在列表list上，比如list.sort()。 sorted()is a global function。</li>
+<li>list.sort is insitu，也就是说不增加一个拷贝，也就是说在原list上进行sort。  sorted增加一个新的copy，与原先的list 无关。</li>
+</ol>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>((<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>({<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>,<span class="string">'four'</span>:<span class="number">4</span>,<span class="string">'five'</span>:<span class="number">5</span>})</span><br><span class="line">[<span class="string">'five'</span>, <span class="string">'four'</span>, <span class="string">'one'</span>, <span class="string">'three'</span>, <span class="string">'two'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>])</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(<span class="string">'this is a string'</span>)</span><br><span class="line">[<span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'a'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'t'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="大佬blog"><a href="#大佬blog" class="headerlink" title="大佬blog"></a>大佬blog</h3><ol>
+<li><a href="http://https://blog.csdn.net/u010883226/article/details/84403263"> “Python里sort（）的排序算法—Timsort简介”</a></li>
+<li><a href="https://discuss.codecademy.com/t/what-is-the-difference-between-sort-and-sorted/349679/7">What is the difference between sort() and sorted()?</a></li>
+<li><a href="https://www.jianshu.com/p/6b7806c4f54a">Python中的iterable该怎么理解</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -315,6 +315,82 @@
       <tags>
         <tag>python</tag>
         <tag>竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode竞赛(第232场周赛)</title>
+    <url>/2021/03/14/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B232/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>排名：  3392 / 4801<br> <span id="more"></span></p>
+<h1 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h1><p>(1790. 仅执行一次字符串交换能否使两个字符串相等)[<a href="https://leetcode-cn.com/problems/check-if-one-string-swap-can-make-strings-equal/">https://leetcode-cn.com/problems/check-if-one-string-swap-can-make-strings-equal/</a>]</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你长度相等的两个字符串 s1 和 s2 。一次 字符串交换 操作的步骤如下：选出某个字符串中的两个下标（不必不同），并交换这两个下标所对应的字符。<br>如果对 其中一个字符串 执行 最多一次字符串交换 就可以使两个字符串相等，返回 true ；否则，返回 false 。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：s1 = "bank", s2 = "kanb"</span><br><span class="line">输出：true</span><br><span class="line">解释：例如，交换 s2 中的第一个和最后一个字符可以得到 "bank"</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>按题编写，比如搜索s1，碰到第一个不一样 <code>"b"</code>的时候替换成s2的第一位<code>"k"</code>,然后碰到s1中第二个的不一样的<code>"k"</code>，替换成<code>"b"</code>,检查是否和s2一致</li>
+<li>大佬想法： 先检测两个字符串是否组成的字符都相同，相同的话，遍历每位看有几个不同，大于2个的话，就输出false</li>
+</ol>
+<h2 id="反省"><a href="#反省" class="headerlink" title="反省"></a>反省</h2><ol>
+<li>时间耽误在没考虑到如果<code>s1</code>和<code>s2</code>只有一个不同的值的时候，<code>return False</code>。或者说是没有首先判断两个字符串组成字符是否相同，若不相同的话直接输出false</li>
+</ol>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ol>
+<li><p>set(iterable)</p>
+<p> set() returns:an empty set if no parameters are passed and a set constructed from the given iterable parameter.</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># empty set</span></span><br><span class="line">print(<span class="built_in">set</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment"># from string</span></span><br><span class="line">print(<span class="built_in">set</span>(<span class="string">'Python'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># from tuple</span></span><br><span class="line">print(<span class="built_in">set</span>((<span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'o'</span>, <span class="string">'u'</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># from list</span></span><br><span class="line">print(<span class="built_in">set</span>([<span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'o'</span>, <span class="string">'u'</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># from range</span></span><br><span class="line">print(<span class="built_in">set</span>(<span class="built_in">range</span>(<span class="number">5</span>)))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<pre><code>output:
+</code></pre><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">set()</span><br><span class="line">{'P', 'o', 't', 'n', 'y', 'h'}</span><br><span class="line">{'a', 'o', 'e', 'u', 'i'}</span><br><span class="line">{'a', 'o', 'e', 'u', 'i'}</span><br><span class="line">{0, 1, 2, 3, 4}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">areAlmostEqual</span>(<span class="params">self, s1: <span class="built_in">str</span>, s2: <span class="built_in">str</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">set</span>(s1)!=<span class="built_in">set</span>(s2):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        mark = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s1)):</span><br><span class="line">            <span class="keyword">if</span> s1[i] != s2[i]:</span><br><span class="line">                mark+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> mark&gt;<span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">def areAlmostEqual(self, s1: str, s2: str) -&gt; bool: # 本菜</span><br><span class="line">    if not s1 or not s2:</span><br><span class="line">        return False</span><br><span class="line">    </span><br><span class="line">    if s1 == s2: </span><br><span class="line">        return True</span><br><span class="line">    if len(s1) == 1:</span><br><span class="line">        if s1 == s2: </span><br><span class="line">            return True</span><br><span class="line">        else:</span><br><span class="line">            return False</span><br><span class="line">    s1 = list(map(str,s1))</span><br><span class="line">    s2 = list(map(str,s2))</span><br><span class="line">    s1_cur,s2_cur = 0,0 </span><br><span class="line">    count  = 0</span><br><span class="line">    cur = []</span><br><span class="line">    while s1_cur&lt; len(s1) and s2_cur &lt; len(s2): </span><br><span class="line">        if s1[s1_cur] ==  s2[s2_cur]:</span><br><span class="line">            s1_cur+=1</span><br><span class="line">            s2_cur+=1</span><br><span class="line">        else:</span><br><span class="line">            if count == 0:</span><br><span class="line">                count+=1</span><br><span class="line">                cur = s1[s1_cur] </span><br><span class="line">                s1[s1_cur] = s2[s2_cur]</span><br><span class="line">                s1_cur+=1</span><br><span class="line">                s2_cur+=1</span><br><span class="line">                if s1_cur == len(s1):</span><br><span class="line">                    return False</span><br><span class="line">            else:</span><br><span class="line">                s1[s1_cur] = cur</span><br><span class="line">                if s1 == s2:</span><br><span class="line">                    return True</span><br><span class="line">                else:</span><br><span class="line">                    return False</span><br><span class="line">    return False      </span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$ 遍历一遍</li>
+<li>空间复杂度：$O(1)$  </li>
+</ul>
+<h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2. 题目"></a>2. 题目</h1><p>(1791. 找出星型图的中心节点)[<a href="https://leetcode-cn.com/problems/find-center-of-star-graph/">https://leetcode-cn.com/problems/find-center-of-star-graph/</a>]</p>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>有一个无向的 星型 图，由 n 个编号从 1 到 n 的节点组成。星型图有一个 中心 节点，并且恰有 n - 1 条边将中心节点与其他每个节点连接起来。<br>给你一个二维整数数组 edges ，其中 edges[i] = [ui, vi] 表示在节点 ui 和 vi 之间存在一条边。请你找出并返回 edges 所表示星型图的中心节点。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：edges = [[1,2],[2,3],[4,2]]</span><br><span class="line">输出：2</span><br><span class="line">解释：如上图所示，节点 2 与其他每个节点都相连，所以节点 2 是中心节点。</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>偷鸡思路：只看前两条边重合的点就行</li>
+<li>正规思路：计算每个节点的度，度为<code>n</code>的是中心点</li>
+</ol>
+<h2 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h2><p>Collections Module <a href="https://stackabuse.com/introduction-to-pythons-collections-module/">introduction</a> and   <a href="https://www.liaoxuefeng.com/wiki/897692888725344/973805065315456">廖雪峰</a>。</p>
+<h3 id="1-collection"><a href="#1-collection" class="headerlink" title="1. collection"></a>1. collection</h3><ul>
+<li>collection是Python内建的一个集合模块，提供许多有用的集合类 <code>from collections import **</code></li>
+<li><code>Counter()</code>  一个简单的计数器，例如统计字符出现的个数： </li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line">c = Counter()</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> <span class="string">"programming"</span>:</span><br><span class="line">c[ch] = c[ch] + <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">print(c)</span><br><span class="line">Counter({'g': 2, 'm': 2, 'r': 2, 'a': 1, 'i': 1, 'o': 1, 'n': 1, 'p': 1})</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>‘Counter()’实际上也是<code>dict</code>的一个子类，上面的结果可以看出，字符<code>"g"</code>,<code>"m"</code>,’”r”‘各出现了两次，其他字符各出现了一次</li>
+</ul>
+<h3 id="2-defaultdict"><a href="#2-defaultdict" class="headerlink" title="2. defaultdict"></a>2. defaultdict</h3><ul>
+<li>使用<code>dict</code>时，如果引用的key不存在，就会抛出<code>KeyError</code>。如果希望key不存在时，返回一个默认值，就可以用<code>defaultdict</code>:</li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findCenter</span>(<span class="params">self, edges: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span> <span class="comment">#偷鸡</span></span><br><span class="line">        <span class="keyword">return</span> edges[<span class="number">0</span>][<span class="number">0</span>] <span class="keyword">if</span> edges[<span class="number">0</span>][<span class="number">0</span>] <span class="keyword">in</span> edges[<span class="number">1</span>] <span class="keyword">else</span> edges[<span class="number">0</span>][<span class="number">1</span>] </span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findCenter</span>(<span class="params">self, edges: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span> <span class="comment">#正统 </span></span><br><span class="line">        indegrees = collections.defaultdict(<span class="built_in">int</span>)</span><br><span class="line">        <span class="keyword">for</span> u,v <span class="keyword">in</span> edges:</span><br><span class="line">            indegrees[u] += <span class="number">1</span></span><br><span class="line">            indegrees[v] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> node <span class="keyword">in</span> indegrees:</span><br><span class="line">            <span class="keyword">if</span> indegrees[node] == <span class="built_in">len</span>(edges): <span class="keyword">return</span> node</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+]]></content>
+      <categories>
+        <category>力扣</category>
+        <category>力扣周赛</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -1638,82 +1714,6 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 <h4 id="复杂度分析-22"><a href="#复杂度分析-22" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-22"><a href="#大佬题解-22" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
       <categories>
         <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode竞赛(第232场周赛)</title>
-    <url>/2021/03/14/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B232/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>排名：  3392 / 4801<br> <span id="more"></span></p>
-<h1 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h1><p>(1790. 仅执行一次字符串交换能否使两个字符串相等)[<a href="https://leetcode-cn.com/problems/check-if-one-string-swap-can-make-strings-equal/">https://leetcode-cn.com/problems/check-if-one-string-swap-can-make-strings-equal/</a>]</p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你长度相等的两个字符串 s1 和 s2 。一次 字符串交换 操作的步骤如下：选出某个字符串中的两个下标（不必不同），并交换这两个下标所对应的字符。<br>如果对 其中一个字符串 执行 最多一次字符串交换 就可以使两个字符串相等，返回 true ；否则，返回 false 。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：s1 = "bank", s2 = "kanb"</span><br><span class="line">输出：true</span><br><span class="line">解释：例如，交换 s2 中的第一个和最后一个字符可以得到 "bank"</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
-<li>按题编写，比如搜索s1，碰到第一个不一样 <code>"b"</code>的时候替换成s2的第一位<code>"k"</code>,然后碰到s1中第二个的不一样的<code>"k"</code>，替换成<code>"b"</code>,检查是否和s2一致</li>
-<li>大佬想法： 先检测两个字符串是否组成的字符都相同，相同的话，遍历每位看有几个不同，大于2个的话，就输出false</li>
-</ol>
-<h2 id="反省"><a href="#反省" class="headerlink" title="反省"></a>反省</h2><ol>
-<li>时间耽误在没考虑到如果<code>s1</code>和<code>s2</code>只有一个不同的值的时候，<code>return False</code>。或者说是没有首先判断两个字符串组成字符是否相同，若不相同的话直接输出false</li>
-</ol>
-<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ol>
-<li><p>set(iterable)</p>
-<p> set() returns:an empty set if no parameters are passed and a set constructed from the given iterable parameter.</p>
-</li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># empty set</span></span><br><span class="line">print(<span class="built_in">set</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment"># from string</span></span><br><span class="line">print(<span class="built_in">set</span>(<span class="string">'Python'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># from tuple</span></span><br><span class="line">print(<span class="built_in">set</span>((<span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'o'</span>, <span class="string">'u'</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># from list</span></span><br><span class="line">print(<span class="built_in">set</span>([<span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'o'</span>, <span class="string">'u'</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># from range</span></span><br><span class="line">print(<span class="built_in">set</span>(<span class="built_in">range</span>(<span class="number">5</span>)))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<pre><code>output:
-</code></pre><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">set()</span><br><span class="line">{'P', 'o', 't', 'n', 'y', 'h'}</span><br><span class="line">{'a', 'o', 'e', 'u', 'i'}</span><br><span class="line">{'a', 'o', 'e', 'u', 'i'}</span><br><span class="line">{0, 1, 2, 3, 4}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">areAlmostEqual</span>(<span class="params">self, s1: <span class="built_in">str</span>, s2: <span class="built_in">str</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">set</span>(s1)!=<span class="built_in">set</span>(s2):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        mark = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s1)):</span><br><span class="line">            <span class="keyword">if</span> s1[i] != s2[i]:</span><br><span class="line">                mark+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> mark&gt;<span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">def areAlmostEqual(self, s1: str, s2: str) -&gt; bool: # 本菜</span><br><span class="line">    if not s1 or not s2:</span><br><span class="line">        return False</span><br><span class="line">    </span><br><span class="line">    if s1 == s2: </span><br><span class="line">        return True</span><br><span class="line">    if len(s1) == 1:</span><br><span class="line">        if s1 == s2: </span><br><span class="line">            return True</span><br><span class="line">        else:</span><br><span class="line">            return False</span><br><span class="line">    s1 = list(map(str,s1))</span><br><span class="line">    s2 = list(map(str,s2))</span><br><span class="line">    s1_cur,s2_cur = 0,0 </span><br><span class="line">    count  = 0</span><br><span class="line">    cur = []</span><br><span class="line">    while s1_cur&lt; len(s1) and s2_cur &lt; len(s2): </span><br><span class="line">        if s1[s1_cur] ==  s2[s2_cur]:</span><br><span class="line">            s1_cur+=1</span><br><span class="line">            s2_cur+=1</span><br><span class="line">        else:</span><br><span class="line">            if count == 0:</span><br><span class="line">                count+=1</span><br><span class="line">                cur = s1[s1_cur] </span><br><span class="line">                s1[s1_cur] = s2[s2_cur]</span><br><span class="line">                s1_cur+=1</span><br><span class="line">                s2_cur+=1</span><br><span class="line">                if s1_cur == len(s1):</span><br><span class="line">                    return False</span><br><span class="line">            else:</span><br><span class="line">                s1[s1_cur] = cur</span><br><span class="line">                if s1 == s2:</span><br><span class="line">                    return True</span><br><span class="line">                else:</span><br><span class="line">                    return False</span><br><span class="line">    return False      </span><br></pre></td></tr></tbody></table></figure>
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(n)$ 遍历一遍</li>
-<li>空间复杂度：$O(1)$  </li>
-</ul>
-<h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2. 题目"></a>2. 题目</h1><p>(1791. 找出星型图的中心节点)[<a href="https://leetcode-cn.com/problems/find-center-of-star-graph/">https://leetcode-cn.com/problems/find-center-of-star-graph/</a>]</p>
-<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>有一个无向的 星型 图，由 n 个编号从 1 到 n 的节点组成。星型图有一个 中心 节点，并且恰有 n - 1 条边将中心节点与其他每个节点连接起来。<br>给你一个二维整数数组 edges ，其中 edges[i] = [ui, vi] 表示在节点 ui 和 vi 之间存在一条边。请你找出并返回 edges 所表示星型图的中心节点。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：edges = [[1,2],[2,3],[4,2]]</span><br><span class="line">输出：2</span><br><span class="line">解释：如上图所示，节点 2 与其他每个节点都相连，所以节点 2 是中心节点。</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><ol>
-<li>偷鸡思路：只看前两条边重合的点就行</li>
-<li>正规思路：计算每个节点的度，度为<code>n</code>的是中心点</li>
-</ol>
-<h2 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h2><p>Collections Module <a href="https://stackabuse.com/introduction-to-pythons-collections-module/">introduction</a> and   <a href="https://www.liaoxuefeng.com/wiki/897692888725344/973805065315456">廖雪峰</a>。</p>
-<h3 id="1-collection"><a href="#1-collection" class="headerlink" title="1. collection"></a>1. collection</h3><ul>
-<li>collection是Python内建的一个集合模块，提供许多有用的集合类 <code>from collections import **</code></li>
-<li><code>Counter()</code>  一个简单的计数器，例如统计字符出现的个数： </li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line">c = Counter()</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> <span class="string">"programming"</span>:</span><br><span class="line">c[ch] = c[ch] + <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">print(c)</span><br><span class="line">Counter({'g': 2, 'm': 2, 'r': 2, 'a': 1, 'i': 1, 'o': 1, 'n': 1, 'p': 1})</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>‘Counter()’实际上也是<code>dict</code>的一个子类，上面的结果可以看出，字符<code>"g"</code>,<code>"m"</code>,’”r”‘各出现了两次，其他字符各出现了一次</li>
-</ul>
-<h3 id="2-defaultdict"><a href="#2-defaultdict" class="headerlink" title="2. defaultdict"></a>2. defaultdict</h3><ul>
-<li>使用<code>dict</code>时，如果引用的key不存在，就会抛出<code>KeyError</code>。如果希望key不存在时，返回一个默认值，就可以用<code>defaultdict</code>:</li>
-</ul>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findCenter</span>(<span class="params">self, edges: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span> <span class="comment">#偷鸡</span></span><br><span class="line">        <span class="keyword">return</span> edges[<span class="number">0</span>][<span class="number">0</span>] <span class="keyword">if</span> edges[<span class="number">0</span>][<span class="number">0</span>] <span class="keyword">in</span> edges[<span class="number">1</span>] <span class="keyword">else</span> edges[<span class="number">0</span>][<span class="number">1</span>] </span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findCenter</span>(<span class="params">self, edges: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span> <span class="comment">#正统 </span></span><br><span class="line">        indegrees = collections.defaultdict(<span class="built_in">int</span>)</span><br><span class="line">        <span class="keyword">for</span> u,v <span class="keyword">in</span> edges:</span><br><span class="line">            indegrees[u] += <span class="number">1</span></span><br><span class="line">            indegrees[v] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> node <span class="keyword">in</span> indegrees:</span><br><span class="line">            <span class="keyword">if</span> indegrees[node] == <span class="built_in">len</span>(edges): <span class="keyword">return</span> node</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-]]></content>
-      <categories>
-        <category>力扣</category>
-        <category>力扣周赛</category>
       </categories>
       <tags>
         <tag>python</tag>
