@@ -1920,7 +1920,7 @@ dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
 <li>时间复杂度： $O(n^2)$，其中n是数组people的长度。我们需要O(n log n) 的时间进行排序，随后需要O(n^2)的时间遍历每一个人并将他们放入队列中。由于前者在渐近意义下小于后者，因此总时间复杂度为  O(n^2)</li>
 <li>空间复杂度：$O( log n )$  </li>
 </ul>
-<h2 id="4-LC53-最大子序和-最大子序和"><a href="#4-LC53-最大子序和-最大子序和" class="headerlink" title="4. (LC53) 最大子序和 最大子序和"></a>4. (LC53) 最大子序和 <a href="https://leetcode-cn.com/problems/maximum-subarray/">最大子序和</a></h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<h2 id="anguished-LC53-最大子序和-最大子序和"><a href="#anguished-LC53-最大子序和-最大子序和" class="headerlink" title=":anguished: (LC53) 最大子序和 最大子序和"></a><span class="github-emoji"><span>😧</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f627.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> (LC53) 最大子序和 <a href="https://leetcode-cn.com/problems/maximum-subarray/">最大子序和</a></h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
 <p>示例1：<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [-2,1,-3,4,-1,2,1,-5,4]</span><br><span class="line">输出：6</span><br><span class="line">解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>-贪心， 贪心竟然这么难想</p>
 <h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><ul>
@@ -1943,7 +1943,7 @@ dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
 <li>时间复杂度：$O(n)$</li>
 <li>空间复杂度：$O(1)$</li>
 </ul>
-<h2 id="5-LC53-用最少数量的箭引爆气球-用最少数量的箭引爆气球"><a href="#5-LC53-用最少数量的箭引爆气球-用最少数量的箭引爆气球" class="headerlink" title="5. (LC53) 用最少数量的箭引爆气球 用最少数量的箭引爆气球"></a>5. (LC53) 用最少数量的箭引爆气球 <a href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/description/">用最少数量的箭引爆气球</a></h2><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。</p>
+<h2 id="anguished-LC53-用最少数量的箭引爆气球-用最少数量的箭引爆气球"><a href="#anguished-LC53-用最少数量的箭引爆气球-用最少数量的箭引爆气球" class="headerlink" title=":anguished: (LC53) 用最少数量的箭引爆气球 用最少数量的箭引爆气球"></a><span class="github-emoji"><span>😧</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f627.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> (LC53) 用最少数量的箭引爆气球 <a href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/description/">用最少数量的箭引爆气球</a></h2><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。</p>
 <p>一支弓箭可以沿着 x 轴从不同点完全垂直地射出。在坐标 x 处射出一支箭，若有一个气球的直径的开始和结束坐标为 xstart，xend， 且满足  xstart ≤ x ≤ xend，则该气球会被引爆。可以射出的弓箭的数量没有限制。 弓箭一旦被射出之后，可以无限地前进。我们想找到使得所有气球全部被引爆，所需的弓箭的最小数量。</p>
 <p>给你一个数组 points ，其中 points [i] = [xstart,xend] ，返回引爆所有气球所必须射出的最小弓箭数。</p>
 <p>示例1：</p>
@@ -1961,8 +1961,8 @@ dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
 <p><strong>复杂度分析</strong></p>
 <p>令 n 为数组长度。</p>
 <ul>
-<li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(1)$</li>
+<li>时间复杂度：$O(  )$ </li>
+<li>空间复杂度：$O( )$</li>
 </ul>
 ]]></content>
       <categories>
