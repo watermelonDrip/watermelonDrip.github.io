@@ -191,52 +191,6 @@
       </tags>
   </entry>
   <entry>
-    <title>分治</title>
-    <url>/2021/03/18/%E5%88%86%E6%B2%BB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治</a></h2><h3 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h3><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—-分 （2) 将最后子问题可以简单的直接求解—-“治” （3) 将所有子问题的解合并起来就说原问题的解—-“合”<br><span id="more"></span></p>
-<p><strong>目录 (Table of Contents)</strong></p>
-<!-- toc -->
-<p>[TOC]</p>
-<h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
-<p>第一条特征是绝大多数问题都可以满足的，因为问题的计算计算复杂度一般是随着问题规模的增加而增加； 第二个特征是应用分治法的前提它也是大多数问题可以解决的，此特征反映了递归思想的应用； 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具有第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。 第四条特征涉及到分治法的效率，如果各子问题是不独立的分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。</p>
-<h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +, - 以及 * 。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>分治： 自顶向下地拆分子问题</li>
-<li>分解：每一步都针对一个运算符分割表达式。</li>
-<li>解决：递归停止条件，无运算符只有数字</li>
-<li>合并</li>
-<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。</li>
-</ul>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h2 id="2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II"><a href="#2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II" class="headerlink" title="2. (LC95) 不同的二叉搜索树 II 不同的二叉搜索树 II"></a>2. (LC95) 不同的二叉搜索树 II <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">不同的二叉搜索树 II</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：3</span><br><span class="line">输出：</span><br><span class="line">[</span><br><span class="line">&nbsp; [1,null,3,2],</span><br><span class="line">&nbsp; [3,2,null,1],</span><br><span class="line">&nbsp; [3,1,null,null,2],</span><br><span class="line">&nbsp; [2,1,3],</span><br><span class="line">&nbsp; [1,null,2,null,3]</span><br><span class="line">]</span><br><span class="line">解释：</span><br><span class="line">以上的输出对应以下 5 种不同结构的二叉搜索树：</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       /     /      / \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    /     /       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>分治： 自顶向下地拆分子问题</li>
-<li>分解：每一步都针对一个运算符分割表达式。</li>
-<li>解决：递归停止条件，无运算符只有数字</li>
-<li>合并</li>
-<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。通过利用查找二叉树的性质。左子树的所有值小于根节点，右子树的所有值都大于根节点。<ul>
-<li>我们需要把1作为根节点，[]空作为左子树，[2,…,n] 的所有可能作为右子树</li>
-<li>n 作为根节点，[1,..,n]的所有可能作为左子树，[]作为右子树</li>
-<li>至于上面提到的 [2,…,n]的所有可能以及其他可能，可以利用上面的方法，把每个数字作为根节点，然后把所有可能的左子树和右子树组合起来即可。</li>
-<li>如果只有一个数字，那么所有可能就说一种情况，把该数字作为一棵树。而如果是[]，那么返回null。</li>
-</ul>
-</li>
-</ul>
-<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; List[TreeNode]:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_gen</span>(<span class="params">nums</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="literal">None</span>]</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [TreeNode(nums[<span class="number">0</span>])]</span><br><span class="line">            </span><br><span class="line">            ans = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">for</span> left <span class="keyword">in</span> _gen(nums[:i]):</span><br><span class="line">                    <span class="keyword">for</span> right <span class="keyword">in</span> _gen(nums[i+<span class="number">1</span>:]):</span><br><span class="line">                        ans.append(TreeNode(nums[i], left = left, right = right))</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        <span class="keyword">return</span> _gen(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>)))</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2><ol>
-<li><a href="https://zhuanlan.zhihu.com/p/44213575">“python算法实现-分治法”</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode竞赛(第231场周赛)</title>
     <url>/2021/03/07/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B231/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p> 就做出来第一题和第二题<br> <span id="more"></span></p>
@@ -303,6 +257,52 @@
       <tags>
         <tag>python</tag>
         <tag>竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分治</title>
+    <url>/2021/03/18/%E5%88%86%E6%B2%BB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治</a></h2><h3 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h3><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—-分 （2) 将最后子问题可以简单的直接求解—-“治” （3) 将所有子问题的解合并起来就说原问题的解—-“合”<br><span id="more"></span></p>
+<p><strong>目录 (Table of Contents)</strong></p>
+<!-- toc -->
+<p>[TOC]</p>
+<h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
+<p>第一条特征是绝大多数问题都可以满足的，因为问题的计算计算复杂度一般是随着问题规模的增加而增加； 第二个特征是应用分治法的前提它也是大多数问题可以解决的，此特征反映了递归思想的应用； 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具有第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。 第四条特征涉及到分治法的效率，如果各子问题是不独立的分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。</p>
+<h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +, - 以及 * 。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>分治： 自顶向下地拆分子问题</li>
+<li>分解：每一步都针对一个运算符分割表达式。</li>
+<li>解决：递归停止条件，无运算符只有数字</li>
+<li>合并</li>
+<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。</li>
+</ul>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diffWaysToCompute</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">str</span></span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">input</span>.isdigit():</span><br><span class="line">            <span class="keyword">return</span> [<span class="built_in">int</span>(<span class="built_in">input</span>)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">input</span>):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">in</span> [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>]:</span><br><span class="line">                left = self.diffWaysToCompute(<span class="built_in">input</span>[:i])</span><br><span class="line">                right = self.diffWaysToCompute(<span class="built_in">input</span>[i+<span class="number">1</span>:])</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> left:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> right:</span><br><span class="line">                        <span class="keyword">if</span> char == <span class="string">'+'</span>:</span><br><span class="line">                            res.append(r+l)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'-'</span>:</span><br><span class="line">                            res.append(l-r)</span><br><span class="line">                        <span class="keyword">elif</span> char == <span class="string">'*'</span>:</span><br><span class="line">                            res.append(l*r)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h2 id="2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II"><a href="#2-LC95-不同的二叉搜索树-II-不同的二叉搜索树-II" class="headerlink" title="2. (LC95) 不同的二叉搜索树 II 不同的二叉搜索树 II"></a>2. (LC95) 不同的二叉搜索树 II <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">不同的二叉搜索树 II</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：3</span><br><span class="line">输出：</span><br><span class="line">[</span><br><span class="line">&nbsp; [1,null,3,2],</span><br><span class="line">&nbsp; [3,2,null,1],</span><br><span class="line">&nbsp; [3,1,null,null,2],</span><br><span class="line">&nbsp; [2,1,3],</span><br><span class="line">&nbsp; [1,null,2,null,3]</span><br><span class="line">]</span><br><span class="line">解释：</span><br><span class="line">以上的输出对应以下 5 种不同结构的二叉搜索树：</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       /     /      / \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    /     /       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>分治： 自顶向下地拆分子问题</li>
+<li>分解：每一步都针对一个运算符分割表达式。</li>
+<li>解决：递归停止条件，无运算符只有数字</li>
+<li>合并</li>
+<li>递归的方式去寻找子问题和原问题解的关系。 可以通过运算符把整个式子分成两部分，两部分再利用递归解决。通过利用查找二叉树的性质。左子树的所有值小于根节点，右子树的所有值都大于根节点。<ul>
+<li>我们需要把1作为根节点，[]空作为左子树，[2,…,n] 的所有可能作为右子树</li>
+<li>n 作为根节点，[1,..,n]的所有可能作为左子树，[]作为右子树</li>
+<li>至于上面提到的 [2,…,n]的所有可能以及其他可能，可以利用上面的方法，把每个数字作为根节点，然后把所有可能的左子树和右子树组合起来即可。</li>
+<li>如果只有一个数字，那么所有可能就说一种情况，把该数字作为一棵树。而如果是[]，那么返回null。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; List[TreeNode]:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_gen</span>(<span class="params">nums</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="literal">None</span>]</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [TreeNode(nums[<span class="number">0</span>])]</span><br><span class="line">            </span><br><span class="line">            ans = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">for</span> left <span class="keyword">in</span> _gen(nums[:i]):</span><br><span class="line">                    <span class="keyword">for</span> right <span class="keyword">in</span> _gen(nums[i+<span class="number">1</span>:]):</span><br><span class="line">                        ans.append(TreeNode(nums[i], left = left, right = right))</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        <span class="keyword">return</span> _gen(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>)))</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h2 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/44213575">“python算法实现-分治法”</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -517,6 +517,361 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode竞赛(第235场周赛)</title>
+    <url>/2021/04/04/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B235/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>排名： 哼，时间忘了 ，我才不说呢</p>
+<h1 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h1><p>(5722)[ <a href="https://leetcode-cn.com/problems/truncate-sentence/">https://leetcode-cn.com/problems/truncate-sentence/</a> ]</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>句子 是一个单词列表，列表中的单词之间用单个空格隔开，且不存在前导或尾随空格。每个单词仅由大小写英文字母组成（不含标点符号）。</p>
+<p>例如，”Hello World”、”HELLO” 和 “hello world hello world” 都是句子。<br>给你一个句子 s  和一个整数 k ，请你将 s 截断 ， 使截断后的句子仅含 前 k 个单词。返回 截断 s 后得到的句子。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：s = "Hello how are you Contestant", k = 4</span><br><span class="line">输出："Hello how are you"</span><br><span class="line">解释：</span><br><span class="line">s 中的单词为 ["Hello", "how" "are", "you", "Contestant"]</span><br><span class="line">前 4 个单词为 ["Hello", "how", "are", "you"]</span><br><span class="line">因此，应当返回 "Hello how are you"</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">truncateSentence</span>(<span class="params">self, s: <span class="built_in">str</span>, k: <span class="built_in">int</span></span>) -&gt; str:</span></span><br><span class="line">        firststep = s.split( )</span><br><span class="line">        secondstep = firststep[:k]</span><br><span class="line">        result = <span class="string">' '</span>.join(secondstep)</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$ 遍历一遍</li>
+<li>空间复杂度：$O(1)$  </li>
+</ul>
+<h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2. 题目"></a>2. 题目</h1><p>(5723. 查找用户活跃分钟数)[<a href="https://leetcode-cn.com/problems/finding-the-users-active-minutes/">https://leetcode-cn.com/problems/finding-the-users-active-minutes/</a>]</p>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你用户在 LeetCode 的操作日志，和一个整数 k 。日志用一个二维整数数组 logs 表示，其中每个 logs[i] = [IDi, timei] 表示 ID 为 $ID_i$ 的用户在 $time_i$ 分钟时执行了某个操作。</p>
+<p>多个用户 可以同时执行操作，单个用户可以在同一分钟内执行 多个操作 。</p>
+<p>指定用户的 用户活跃分钟数（user active minutes，UAM） 定义为用户对 LeetCode 执行操作的 唯一分钟数 。 即使一分钟内执行多个操作，也只能按一分钟计数。</p>
+<p>请你统计用户活跃分钟数的分布情况，统计结果是一个长度为 k 且 下标从 1 开始计数 的数组 answer ，对于每个 j（1 &lt;= j &lt;= k），answer[j] 表示 用户活跃分钟数 等于 j 的用户数。</p>
+<p>返回上面描述的答案数组 answer 。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：logs = [[0,5],[1,2],[0,2],[0,5],[1,3]], k = 5</span><br><span class="line">输出：[0,2,0,0,0]</span><br><span class="line">解释：</span><br><span class="line">ID=0 的用户执行操作的分钟分别是：5 、2 和 5 。因此，该用户的用户活跃分钟数为 2（分钟 5 只计数一次）</span><br><span class="line">ID=1 的用户执行操作的分钟分别是：2 和 3 。因此，该用户的用户活跃分钟数为 2</span><br><span class="line">2 个用户的用户活跃分钟数都是 2 ，answer[2] 为 2 ，其余 answer[j] 的值都是 0 </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>字典 <a href="https://www.pythonforbeginners.com/dictionary/how-to-use-dictionaries-in-python">Python for beginners</a>  </li>
+<li>collection module <a href="https://www.geeksforgeeks.org/python-collections-module/">Python Collections Module</a></li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findingUsersActiveMinutes</span>(<span class="params">self, logs: List[List[<span class="built_in">int</span>]], k: <span class="built_in">int</span></span>) -&gt; List[int]:</span></span><br><span class="line">        ans = collections.defaultdict(<span class="built_in">set</span>)</span><br><span class="line">        <span class="keyword">for</span> i, t <span class="keyword">in</span> logs:</span><br><span class="line">            ans[i].add(t) </span><br><span class="line">        res = [<span class="number">0</span>] * k</span><br><span class="line">        <span class="keyword">for</span> u <span class="keyword">in</span> ans:</span><br><span class="line">            res[<span class="built_in">len</span>(ans[u]) - <span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$ 遍历一遍</li>
+<li>空间复杂度：$O(1)$  </li>
+</ul>
+<h1 id="3-题目"><a href="#3-题目" class="headerlink" title="3. 题目"></a>3. 题目</h1><p>(5724. 绝对差值和)[ <a href="https://leetcode-cn.com/problems/minimum-absolute-sum-difference/">https://leetcode-cn.com/problems/minimum-absolute-sum-difference/</a> ]</p>
+<h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你两个正整数数组 nums1 和 nums2 ，数组的长度都是 n 。</p>
+<p>数组 nums1 和 nums2 的 绝对差值和 定义为所有 |nums1[i] - nums2[i]|（0 &lt;= i &lt; n）的 总和（下标从 0 开始）。</p>
+<p>你可以选用 nums1 中的 任意一个 元素来替换 nums1 中的 至多 一个元素，以 最小化 绝对差值和。</p>
+<p>在替换数组 nums1 中最多一个元素 之后 ，返回最小绝对差值和。因为答案可能很大，所以需要对 109 + 7 取余 后返回。</p>
+<p>|x| 定义为：</p>
+<p>如果 x &gt;= 0 ，值为 x ，或者<br>如果 x &lt;= 0 ，值为 -x </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums1 = [1,7,5], nums2 = [2,3,5]</span><br><span class="line">输出：3</span><br><span class="line">解释：有两种可能的最优方案：</span><br><span class="line">- 将第二个元素替换为第一个元素：[1,7,5] =&gt; [1,1,5] ，或者</span><br><span class="line">- 将第二个元素替换为第三个元素：[1,7,5] =&gt; [1,5,5]</span><br><span class="line">两种方案的绝对差值和都是 |1-2| + (|1-3| 或者 |5-3|) + |5-5| = 3 </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li></li>
+</ul>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minAbsoluteSumDiff</span>(<span class="params">self, nums1, nums2</span>):</span>  <span class="comment"># Max's solution</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums1: List[int]</span></span><br><span class="line"><span class="string">        :type nums2: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> nums1 == nums2:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            diff = [a - b <span class="keyword">for</span> a, b <span class="keyword">in</span> <span class="built_in">zip</span>(nums1, nums2)]</span><br><span class="line">            diff = [<span class="built_in">abs</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> diff]</span><br><span class="line">            max_abs_value = <span class="built_in">max</span>(diff)</span><br><span class="line">            max_abs_value_idx = diff.index(max_abs_value) <span class="comment"># the nums1[max_abs_value_idx] needs to be replaced </span></span><br><span class="line">            </span><br><span class="line">            temp = [x - nums2[max_abs_value_idx] <span class="keyword">for</span> x <span class="keyword">in</span> nums1]</span><br><span class="line">            diff_single = [<span class="built_in">abs</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> temp]</span><br><span class="line">            min_abs_value = <span class="built_in">min</span>(diff_single)</span><br><span class="line">            </span><br><span class="line">            min_abs_value_idx = diff_single.index(min_abs_value) <span class="comment"># the nums1[min_abs_value_idx] is used to do the replace</span></span><br><span class="line"></span><br><span class="line">            nums1[max_abs_value_idx] = nums1[min_abs_value_idx]</span><br><span class="line"></span><br><span class="line">            diff_two_nums = [a - b <span class="keyword">for</span> a, b <span class="keyword">in</span> <span class="built_in">zip</span>(nums1, nums2)]</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">sum</span>([<span class="built_in">abs</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> diff_two_nums]) % (<span class="number">10</span>**<span class="number">9</span> + <span class="number">7</span>)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minAbsoluteSumDiff</span>(<span class="params">self, nums1: List[<span class="built_in">int</span>], nums2: List[<span class="built_in">int</span>]</span>) -&gt; int:</span> <span class="comment"># me's solution</span></span><br><span class="line">    </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">sumoperation</span>(<span class="params"> n1, n2</span>):</span></span><br><span class="line">            result = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(n1)):</span><br><span class="line">                result += <span class="built_in">abs</span>(n1[i] - n2[i])</span><br><span class="line">            <span class="keyword">return</span> result </span><br><span class="line">        <span class="keyword">if</span> nums1 == nums2:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums1)</span><br><span class="line">        helper = []</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            helper.append(<span class="built_in">abs</span>(nums1[i]-nums2[i]))</span><br><span class="line">        </span><br><span class="line">        a = <span class="built_in">max</span>(helper)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> helper[i] == a:</span><br><span class="line">                ind = i</span><br><span class="line">   </span><br><span class="line">        mindif = inf</span><br><span class="line">        index1 = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> mindif &gt; <span class="built_in">abs</span>(nums1[j]-nums2[ind]):</span><br><span class="line">                mindif = <span class="built_in">min</span>(mindif,<span class="built_in">abs</span>(nums1[j]-nums2[ind]))</span><br><span class="line">                index1 = j</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> (sumoperation(nums1[:ind], nums2[:ind])+mindif+ sumoperation(nums1[ind+<span class="number">1</span>:],nums2[ind+<span class="number">1</span>:]) )%(<span class="number">10</span>**<span class="number">9</span> + <span class="number">7</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$ 遍历一遍</li>
+<li>空间复杂度：$O(1)$  </li>
+</ul>
+<h1 id="4-题目"><a href="#4-题目" class="headerlink" title="4. 题目"></a>4. 题目</h1><p>(5725. 序列中不同最大公约数的数目)[ <a href="https://leetcode-cn.com/problems/number-of-different-subsequences-gcds/">https://leetcode-cn.com/problems/number-of-different-subsequences-gcds/</a>]</p>
+<h2 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个由正整数组成的数组 nums 。</p>
+<p>数字序列的 最大公约数定义为序列中所有整数的共有约数中的最大整数。</p>
+<p>例如，序列 [4,6,16] 的最大公约数是 2 。数组的一个 子序列 本质是一个序列，可以通过删除数组中的某些元素（或者不删）得到。</p>
+<p>例如，[2,5,10] 是 [1,2,1,2,4,1,5,10] 的一个子序列。计算并返回 nums 的所有 非空 子序列中 不同 最大公约数的 数目 。 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：primeFactors = 5</span><br><span class="line">输出：6</span><br><span class="line">解释：200 是一个可行的 n 。</span><br><span class="line">它有 5 个质因子：[2,2,2,5,5] ，且有 6 个好因子：[10,20,40,50,100,200] 。</span><br><span class="line">不存在别的 n 有至多 5 个质因子，且同时有更多的好因子。 </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>不明白！咋的</li>
+</ul>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countDifferentSubsequenceGCDs</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">from</span> math <span class="keyword">import</span> gcd</span><br><span class="line">        tag = [<span class="literal">False</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">max</span>(nums) + <span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            tag[n] = <span class="literal">True</span></span><br><span class="line">            </span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(tag)):</span><br><span class="line">            cur_gcd = -<span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i, <span class="built_in">len</span>(tag), i):</span><br><span class="line">                <span class="keyword">if</span> tag[j]:</span><br><span class="line">                    cur_gcd = gcd(cur_gcd, j) <span class="keyword">if</span> cur_gcd != -<span class="number">1</span> <span class="keyword">else</span> j</span><br><span class="line">                    <span class="keyword">if</span> cur_gcd == i:</span><br><span class="line">                        ans += <span class="number">1</span></span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countDifferentSubsequenceGCDs</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        f = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">200010</span>)]</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> f[num] == <span class="number">0</span>:</span><br><span class="line">                f[num] += <span class="number">1</span></span><br><span class="line">                ans += <span class="number">1</span></span><br><span class="line">        maxn = <span class="built_in">max</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, maxn + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> f[i]: <span class="keyword">continue</span></span><br><span class="line">            r = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i, maxn + <span class="number">1</span>, i):</span><br><span class="line">                <span class="keyword">if</span> f[j]:</span><br><span class="line">                    r = self.gcd(r, j)</span><br><span class="line">                    <span class="keyword">if</span> r == i:</span><br><span class="line">                        ans += <span class="number">1</span></span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">gcd</span>(<span class="params">self, x, y</span>):</span>  <span class="comment">#最大公约数</span></span><br><span class="line">        <span class="keyword">if</span> x == <span class="number">0</span>: <span class="keyword">return</span> y</span><br><span class="line">        <span class="keyword">if</span> y == <span class="number">0</span>: <span class="keyword">return</span> x</span><br><span class="line">        <span class="keyword">return</span> gcd(y, x % y) </span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O( )$  </li>
+<li>空间复杂度：$O( )$  </li>
+</ul>
+]]></content>
+      <categories>
+        <category>力扣</category>
+        <category>力扣周赛</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动态规划之0-1背包</title>
+    <url>/2021/04/02/%E5%8A%A8%E6%80%81%E8%A7%84%E6%A0%BC%E4%B9%8B0-1%E8%83%8C%E5%8C%85/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-1背包"><a href="#0-1背包" class="headerlink" title="0-1背包"></a>0-1背包</h1><p>有一个容量为<script type="math/tex">N</script>的背包，要用这个背包装下物品的价值最大，这些物品有两个属性：体积<script type="math/tex">w</script>和价值<script type="math/tex">v</script>。</p>
+<span id="more"></span>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>有一个容量为<script type="math/tex">N</script>的背包，要用这个背包装下物品的价值最大，这些物品有两个属性：体积<script type="math/tex">w</script>和价值<script type="math/tex">v</script>。<br>定义一个二维数组<code>dp</code>存储最大价值，其中<code>dp[i][j]</code>表示前<code>i</code>件物品体积不超过<code>j</code>的情况下能达到的最大价值。设第<code>i</code>件物品体积为<code>w</code>，价值为<code>v</code>，根据第<code>i</code>件物品是否添加到背包中，可以分为两种情况：</p>
+<ul>
+<li>第<code>i</code>件物品没添加到背包，总体积不超过<code>j</code>的前<code>i</code>件物品的最大价值就是总体积不超过<code>j</code>的前<code>i-1</code>件物品的最大价值，<code>dp[i][j]= dp[i-1][j]</code></li>
+<li>第<code>i</code>件物品添加到背包，<code>dp[i][j]= dp[i-1][j-w] + v</code><br>第<code>i</code>件物品可添加也可以不添加，取决于哪种情况下最大价值更大。因此，0-1背包的状态转移方程为：<br><code>dp[i][j]= max(dp[i-1][j],dp[i-1][j-w] + v)</code></li>
+</ul>
+<h2 id="无法使用贪心算法的解释"><a href="#无法使用贪心算法的解释" class="headerlink" title="无法使用贪心算法的解释"></a>无法使用贪心算法的解释</h2><p>0-1背包问题无法使用贪心算法来求解，也就是说不能按照先添加性价比最高的物品来达到最优，这是因为这种方式可能造成背包空间的浪费，从而无法达到最优解。</p>
+<h1 id="变种"><a href="#变种" class="headerlink" title="变种"></a>变种</h1><ul>
+<li>完全背包：物品数量为无限个</li>
+<li>多重背包：物品数量有限制</li>
+<li>多维费用背包：物品不仅有重量，还有体积，同时考虑这两种限制</li>
+<li>其它：物品之间相互约束或者依赖</li>
+</ul>
+<h2 id="大佬解释"><a href="#大佬解释" class="headerlink" title="大佬解释"></a>大佬解释</h2><p><a href="https://github.com/tianyicui/pack/blob/master/V2.pdf">背包九讲</a><br><a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/solution/0-1-bei-bao-wen-ti-xiang-jie-zhen-dui-ben-ti-de-yo/">liweiwei解释</a><br><a href="https://zhuanlan.zhihu.com/p/30959069">BAT特白</a></p>
+<p><a href="https://leetcode-cn.com/problems/target-sum/solution/dong-tai-gui-hua-si-kao-quan-guo-cheng-by-keepal/">超强解释</a></p>
+<h3 id="LC416-分割等和子集-分割等和子集"><a href="#LC416-分割等和子集-分割等和子集" class="headerlink" title="(LC416)分割等和子集   分割等和子集"></a>(LC416)分割等和子集   <a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/description/">分割等和子集</a></h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。</p>
+<p>注意:<br>每个数组中的元素不会超过 100<br>数组的大小不会超过 200<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: [1, 5, 11, 5]</span><br><span class="line">输出: true</span><br><span class="line">解释: 数组可以分割成 [1, 5, 5] 和 [11].</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/04/02/4SbhcBFw2ViTM95.png" alt="分割等和子集"></p>
+<ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canPartition</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; bool:</span></span><br><span class="line">        target, v = <span class="built_in">divmod</span>(<span class="built_in">sum</span>(nums),<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> v != <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        dp = [ [ <span class="literal">False</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(target+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)) ]</span><br><span class="line">        <span class="keyword">if</span> nums[<span class="number">0</span>] &gt; target:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        dp[<span class="number">0</span>][nums[<span class="number">0</span>]] = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            dp[k][<span class="number">0</span>] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(target+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> j &gt;= nums[i]: </span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j] <span class="keyword">or</span> dp[i-<span class="number">1</span>][j- nums[i]]  <span class="comment"># 用 | 也可</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j]</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][-<span class="number">1</span>]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(m*n)</script>   </li>
+<li>空间复杂度：<script type="math/tex">O(m*n )</script> </li>
+</ul>
+</li>
+</ul>
+<h3 id="LC494-目标和-目标和"><a href="#LC494-目标和-目标和" class="headerlink" title="(LC494)  目标和  目标和"></a>(LC494)  目标和  <a href="https://leetcode-cn.com/problems/target-sum/description/">目标和</a></h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>给定一个非负整数数组，a1, a2, …, an, 和一个目标数，S。现在你有两个符号 + 和 -。对于数组中的任意一个整数，你都可以从 + 或 -中选择一个符号添加在前面。</p>
+<p>返回可以使最终数组和为目标数 S 的所有添加符号的方法数</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums: [1, 1, 1, 1, 1], S: 3</span><br><span class="line">输出：5</span><br><span class="line">解释：</span><br><span class="line"></span><br><span class="line">-1+1+1+1+1 = 3</span><br><span class="line">+1-1+1+1+1 = 3</span><br><span class="line">+1+1-1+1+1 = 3</span><br><span class="line">+1+1+1-1+1 = 3</span><br><span class="line">+1+1+1+1-1 = 3</span><br><span class="line"></span><br><span class="line">一共有5种方法让最终目标和为3。 </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划<br><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/04/02/Kf76P42sTUaxiMg.png" alt="分割等和子集"></li>
+</ul>
+<h4 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-1"><a href="#动态规划-1" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findTargetSumWays</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], S: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        <span class="comment"># dp[][]</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        numS = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">if</span> numS == S <span class="keyword">and</span> <span class="built_in">len</span>(nums)== <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> </span><br><span class="line">        <span class="keyword">if</span> numS == -S <span class="keyword">and</span> <span class="built_in">len</span>(nums)== <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> </span><br><span class="line">        <span class="keyword">if</span> numS&lt;S:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">       </span><br><span class="line">         </span><br><span class="line">        dp = [ [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>*numS+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n) ]</span><br><span class="line">        dp[<span class="number">0</span>][numS+nums[<span class="number">0</span>]] = <span class="number">1</span></span><br><span class="line">        dp[<span class="number">0</span>][numS-nums[<span class="number">0</span>]] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(-numS -<span class="number">1</span>, numS +<span class="number">1</span>):</span><br><span class="line">                l = dp[i-<span class="number">1</span>][ numS+j-nums[i]] <span class="keyword">if</span> <span class="number">0</span> &lt;=  numS+ j - nums[i] &lt; <span class="number">2</span>* numS +<span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">                r = dp[i-<span class="number">1</span>][ numS+j+nums[i]] <span class="keyword">if</span> <span class="number">0</span> &lt;= numS+ j + nums[i] &lt;  <span class="number">2</span>*numS +<span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">                dp[i][numS+j] = l + r</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][numS+S]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬"><a href="#大佬" class="headerlink" title="大佬"></a>大佬</h5><p><a href="https://leetcode-cn.com/problems/target-sum/solution/dong-tai-gui-hua-si-kao-quan-guo-cheng-by-keepal/">超强解释</a></p>
+<h3 id="LC474-一和零-一和零"><a href="#LC474-一和零-一和零" class="headerlink" title="(LC474)  一和零  一和零"></a>(LC474)  一和零  <a href="https://leetcode-cn.com/problems/ones-and-zeroes/description/">一和零</a></h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><p>给你一个二进制字符串数组 strs 和两个整数 m 和 n 。</p>
+<p>请你找出并返回 strs 的最大子集的大小，该子集中 最多 有 m 个 0 和 n 个 1 。</p>
+<p>如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：strs = ["10", "0001", "111001", "1", "0"], m = 5, n = 3</span><br><span class="line">输出：4</span><br><span class="line">解释：最多有 5 个 0 和 3 个 1 的最大子集是 {"10","0001","1","0"} ，因此答案是 4 。</span><br><span class="line">其他满足题意但较小的子集包括 {"0001","1"} 和 {"10","1","0"} 。{"111001"} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。 </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><p>动态规划：把总共的<code>0</code>和<code>1</code>的个数视为背包的容量，每一个字符串视为装进背包的物品。这道题就可以使用<code>0-1</code>背包问题的思路完成，这个目标值是能放进背包的字符串的数量。物品一个一个尝试，容量一点一点尝试，每个物品分类讨论的标准是：选与不选。<br>定义状态：尝试题目问啥，就把啥定义成状态。<code>dp[i][j][k]</code>表示输入字符串在子区间<code>[0,i]</code>能够使用<code>j</code>个<code>0</code>和<code>k</code>个<code>1</code>的字符串的最大数量。</p>
+<ul>
+<li>动态方程  </li>
+</ul>
+<script type="math/tex; mode=display">
+dp[i][j][k]
+\begin{cases}
+dp[i-1][j][k], &if\ choosing\ str[i]\\
+dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
+\end{cases}</script><ul>
+<li>初始化，为了避免分类套路，可以多设一行。<br>-</li>
+</ul>
+<h4 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-2"><a href="#动态规划-2" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMaxForm</span>(<span class="params">self, strs: List[<span class="built_in">str</span>], m: <span class="built_in">int</span>, n: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        str_num = <span class="built_in">len</span>(strs)</span><br><span class="line">        dp = [[[<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(str_num+<span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,str_num+<span class="number">1</span>):</span><br><span class="line">            ones = strs[i-<span class="number">1</span>].count(<span class="string">'1'</span>)</span><br><span class="line">            zeros = strs[i-<span class="number">1</span>].count(<span class="string">'0'</span>)</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>):</span><br><span class="line">                    dp[i][j][k] = dp[i-<span class="number">1</span>][j][k] </span><br><span class="line">                    <span class="keyword">if</span> j&gt;=zeros <span class="keyword">and</span> k&gt;=ones:</span><br><span class="line">                        dp[i][j][k] = <span class="built_in">max</span>( dp[i-<span class="number">1</span>][j][k] ,  dp[i-<span class="number">1</span>][j-zeros][k-ones] +<span class="number">1</span> )</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][-<span class="number">1</span>][-<span class="number">1</span>]</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^3 )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( n^3)</script> </li>
+</ul>
+</li>
+</ul>
+<h3 id="L322-零钱兑换-零钱兑换"><a href="#L322-零钱兑换-零钱兑换" class="headerlink" title="(L322)  零钱兑换  零钱兑换"></a>(L322)  零钱兑换  <a href="https://leetcode-cn.com/problems/coin-change/description/">零钱兑换</a></h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><p>给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。</p>
+<p>你可以认为每种硬币的数量是无限的。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：coins = [1, 2, 5], amount = 11</span><br><span class="line">输出：3 </span><br><span class="line">解释：11 = 5 + 5 + 1</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-3"><a href="#动态规划-3" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-1"><a href="#大佬-1" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-4"><a href="#动态规划-4" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-2"><a href="#大佬-2" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-5"><a href="#动态规划-5" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-3"><a href="#大佬-3" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-6"><a href="#动态规划-6" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-4"><a href="#大佬-4" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-7"><a href="#动态规划-7" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-5"><a href="#大佬-5" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-8"><a href="#Python3-Code-8" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-8"><a href="#动态规划-8" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-6"><a href="#大佬-6" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-5"><a href="#LC-5" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-9"><a href="#Python3-Code-9" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-9"><a href="#动态规划-9" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-7"><a href="#大佬-7" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-6"><a href="#LC-6" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-10"><a href="#Python3-Code-10" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-10"><a href="#动态规划-10" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-8"><a href="#大佬-8" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-7"><a href="#LC-7" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-11"><a href="#Python3-Code-11" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-11"><a href="#动态规划-11" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-9"><a href="#大佬-9" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-8"><a href="#LC-8" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-12"><a href="#题目-12" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-12"><a href="#Python3-Code-12" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-12"><a href="#动态规划-12" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-10"><a href="#大佬-10" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-9"><a href="#LC-9" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-13"><a href="#题目-13" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-13"><a href="#思路-13" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-13"><a href="#Python3-Code-13" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-13"><a href="#动态规划-13" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-11"><a href="#大佬-11" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-10"><a href="#LC-10" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-14"><a href="#题目-14" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-14"><a href="#思路-14" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-14"><a href="#Python3-Code-14" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-14"><a href="#动态规划-14" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-12"><a href="#大佬-12" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-11"><a href="#LC-11" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-15"><a href="#题目-15" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-15"><a href="#思路-15" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-15"><a href="#Python3-Code-15" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-15"><a href="#动态规划-15" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-13"><a href="#大佬-13" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-12"><a href="#LC-12" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-16"><a href="#题目-16" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-16"><a href="#思路-16" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-16"><a href="#Python3-Code-16" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-16"><a href="#动态规划-16" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-14"><a href="#大佬-14" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-13"><a href="#LC-13" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-17"><a href="#题目-17" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-17"><a href="#思路-17" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-17"><a href="#Python3-Code-17" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-17"><a href="#动态规划-17" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-15"><a href="#大佬-15" class="headerlink" title="大佬"></a>大佬</h5>]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>双指针（easy篇）</title>
     <url>/2021/03/18/%E5%8F%8C%E6%8C%87%E9%92%88/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="双指针-顺序"><a href="#双指针-顺序" class="headerlink" title="双指针 (顺序)"></a>双指针 (<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8F%8C%E6%8C%87%E9%92%88.md#1-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84-two-sum">顺序</a>)</h1><hr>
@@ -684,35 +1039,6 @@
       </tags>
   </entry>
   <entry>
-    <title>声学信号处理系列（二）说话人识别</title>
-    <url>/2021/03/13/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%971_%E8%AF%B4%E8%AF%9D%E4%BA%BA%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="声学信号处理系列（二）说话人识别"><a href="#声学信号处理系列（二）说话人识别" class="headerlink" title="声学信号处理系列（二）说话人识别"></a>声学信号处理系列（二）说话人识别</h1><p><em>by max</em></p>
-<p><em>2021/03/13</em></p>
-<p>“闻其声，知其人”</p>
-<p>说话人识别(speaker recognition)是语音信号处理中一个非常贴近实际生活应用的研究领域，其主要目的是通过对语音信号进行处理来对讲话者的身份进行识别、确认和分类。除了通过一个人的长相，我们也可以通过其声音，来在众多讲话人中将某一特定说话人认出来。这背后的主要原理，是利用语音中承载的与每个人类个体身份有关的声学信息来实现的。在系列第一篇文章里我们介绍了声学信号的一些基本特征，例如共振峰等，就可以作为识别说话人的依据。更多的具体原理我们在后面会介绍，首先来看说话人识别的两个基本任务。</p>
-<h2 id="说话人识别的两个基本任务"><a href="#说话人识别的两个基本任务" class="headerlink" title="说话人识别的两个基本任务"></a>说话人识别的两个基本任务</h2><p>说话人识别可以分为说话人辨认(speaker identification)和说话人确认(speaker verification)两个基本任务[1]。在说话人辨认中，给定一条语音，我们需要在已注册的说话人中找到这句话是谁说的。而在说话人确认中，我们需要对说话人所声明的身份进行核验，确认其身份是否真实。一个比较形象的示意图如下所示：</p>
-<p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/03/20/zVXIacumEiJLqlb.png" style="zoom:80%"></p>
-<h2 id="说话人辨认"><a href="#说话人辨认" class="headerlink" title="说话人辨认"></a>说话人辨认</h2><p>一般在说话人辨认任务中，我们对来自一条未知说话人的语音进行处理和分析，将其与已注册的各个已知说话人的模型进行比对。当我们找到一个最佳匹配的说话人模型时，就认为该未知语音是来自该最佳匹配模型背后的说话人。换句话说，我们可以把说话人辨认看做是一个1对N的分类任务，我们需要将1条未知的测试样例，正确归类入N个已知类别其中的一个类别里。</p>
-<p>那么不难想到，假如说话人辨认系统接收到的语音，与所有已注册说话人的模型全部不匹配该怎么办？这种情况我们称之为“开集说话人辨认问题”，即未知语音可能来自于说话人注册集集外的某个说话人，该说话人的身份并没有提前保存于系统模型匹配库中。此时系统是无法对该语音进行正确分类的，一般会将其归类于“其他”或者是“未授权用户”这种类别里。与之相对的就是“闭集说话人辨认问题”，未知语音已知肯定来自于某个已注册的说话人。一般来说，闭集系统比较适用于人数较少的应用场景，例如政府机关或私人安保场景等等。而开集系统则广泛部署于各类生活场景中[2]。</p>
-<h2 id="说话人确认"><a href="#说话人确认" class="headerlink" title="说话人确认"></a>说话人确认</h2><p>在说话人确认任务中，我们需要通过一条语音去确定一个说话人的身份是其所声明的真实身份。实现原理是，我们将该条语音去与其声明的说话人模型进行对比，符合该身份则判定接受，否则判定拒绝。这里我们与说话人辨认对比的话，可以看到说话人确认其实本质是一个1对1的分类任务。</p>
-<p>在与声明的说话人模型进行比对时，由于判决分数一般在一个连续数值范围内，所以我们需要设立一个固定的阈值来帮助判定。当判决分数高于该阈值时，判定为接受，反之，当判决分数低于该阈值时，判定为拒绝。这个阈值的选取，对于说话人确认系统的准确性十分重要。阈值定的过高，则可有助于减小误检率，即“将本该拒绝的误判为接受”(漏检false acceptance)这种情况的发生次数减少。但也会导致“将本该接受的误判为拒绝”(误检false rejection)这种情况发生的风险变大。那么反之，假如阈值设置得过低，则“将本该拒绝的误判为接受”这种情况的几率会上升。</p>
-<h2 id="两个任务的区别和联系"><a href="#两个任务的区别和联系" class="headerlink" title="两个任务的区别和联系"></a>两个任务的区别和联系</h2><p>Speaker identification 和 speaker verification 的主要区别在于二者需要进行判决的类别数目的不同。具体说来，在说话人辨认里，我们需要在N个可能的结果中选择一个，N这里等于说话人的人数；而在说话人确认里，我们只需要在“接收”和“拒绝”两个可能的结果中选择一个，而不用考虑系统所面对的说话人的人数。因此，当N越大时，说话人辨认系统的性能会随之下降，而说话人确认系统的性能是不受N的影响的。极端情况时，当某个说话人群体的集体声学特性比较特殊时，说话人确认系统的准确性也会受影响。举个例子，一个主要为英语国家人群服务的说话人确认系统，可能当面对汉语国家人群时，系统的准确性会有所下降。</p>
-<h2 id="系统评价指标"><a href="#系统评价指标" class="headerlink" title="系统评价指标"></a>系统评价指标</h2><p>说话人辨认系统的评价指标与通常的分类任务的评价指标是类似的，这里我们暂时只介绍说话人确认系统的评价指标。有对说话人辨认评价指标感兴趣的读者可以参考此博客[3]以便了解更多。</p>
-<p>通常，我们使用DET曲线去衡量一个说话人确认系统的有效性。DET曲线全称为 Detection Error Trade-off曲线。该曲线可以通过计算FRR(false rejection rate，也可称为false negative rate)和FAR(false acceptance rate，也可称为false positive rate)这两种事件的概率来描绘出来。在一个二维图纸上，我们令纵轴代表FRR，横轴代表FAR，即可画出类似下图的DET曲线图。</p>
-<p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/03/20/2zIguxCaSl9DcNX.png" style="zoom:150%"></p>
-<p>图中红色曲线为DET曲线，其与蓝色对角线的交叉点，定义为EER(equal error rate)点，在该点上FRR=FAR。一般EER的值越低，代表一个系统的性能越好。通常我们将横纵轴的数值以对数尺度进行转换，以便能更全面更直观地观察到系统在一个大范围上的表现。</p>
-<h2 id="文本有关-vs-文本无关"><a href="#文本有关-vs-文本无关" class="headerlink" title="文本有关 vs 文本无关"></a>文本有关 vs 文本无关</h2><p>一个说话人识别系统，可以基于文本相关去设计，也可以基于文本无关。顾名思义，文本相关指的是说话人需要讲出固定的一句话，来让系统进行验证。而文本无关的系统里，说话人可以说出任意一句话，来令识别系统进行分析处理。文本无关相比文本有关的系统，使用场景更灵活方便，但安全性方面会有一定的下降。系统的设计难度上，文本有关的系统相对较简单一些，我们可以沿着时间轴按顺序检验每个文本单元的声学特征，将其与说话人已注册的声纹进行匹配，根据该句话从头到尾的累积准确率，最终以达到识别的目的。由于这种文本有关的设计与每个音素音节在时间上强相关，所以基于该方法设计的系统通常可以取得比文本无关的系统更高的识别率。</p>
-<p>相比下来，文本无关的系统常应用于法庭取证或者安保监控等场景，此类场景无法要求说话人提供指定文本段的语音样本，所以基于文本无关的系统的重要性也正在逐渐进入公众视野。而且，基于文本无关的识别系统，更符合人类自然的识别能力，我们不需要身边的亲人朋友说出指定的话语就可以轻松地识别出他们的身份，同理，当我们听到一句来自陌生人的语音时，我们也能很快地识别出我们不认识该说话人。而且这种识别系统也更人性化，当识别前端接收到的语音有卡顿或者遗漏时，不需要说话人不停地重复识别口令，减少了识别耗费的时间成本，使用场景也更广泛和人性化。</p>
-<p>除了文本有关和文本无关这两大类系统以外，还有一个文本提示型系统(text-prompted)。该系统的提出主要是为了更进一步的提升识别系统的鲁棒性。文本无关和文本相关的系统可能会面临一个实际性的安全问题，就是会有“黑客”可能想冒充某个特定说话人的身份，去入侵说话人识别系统。具体手段通常会使用录音回放设备，提前取得已注册说话人的语音口令，然后回放给说话人识别系统进而取得授权。因此，文本提示型系统里，系统会随机生成一串数字或一句文本，待识别人只需要跟着给出的提示念出语音即可。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>说话人识别系统是语音识别领域的一个主要方向，基于该系统设计的各种安防系统和应用APP已经在日常生活中比较常见了。虽然有文本提示型识别系统来提升识别系统的鲁棒性和安全性，但说话人识别系统近年来正面临着越来越严峻的安全问题。</p>
-<p>在博客系列的下一篇文章中，我们会介绍与说话人识别相关的另一个新领域 — “说话人识别反欺骗系统”。</p>
-<h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] “Speaker recognition”词条 — <a href="http://www.scholarpedia.org/article/Speaker_recognition#Speaker_Identification_and_Verification">http://www.scholarpedia.org/article/Speaker_recognition#Speaker_Identification_and_Verification</a><br>[2] Togneri, R., &amp; Pullella, D. (2011). An overview of speaker identification: Accuracy and robustness issues. IEEE circuits and systems magazine, 11(2), 23-61.<br>[3] “The 5 Classification Evaluation metrics every Data Scientist must know” — <a href="https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226">https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226</a></p>
-]]></content>
-      <tags>
-        <tag>声学信号处理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>小知识点们儿（全局局部区别，self参数）</title>
     <url>/2021/03/29/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%AC%E5%84%BF/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h1 id="Python-全局变量-局部变量区"><a href="#Python-全局变量-局部变量区" class="headerlink" title="Python 全局变量-局部变量区"></a>Python 全局变量-局部变量区</h1><p>整理一下<a href="https://www.cnblogs.com/insane-Mr-Li/p/9813226.html">这个</a><br>对于很多初学者来说，对于全局和局部变量容易混淆，我们来尝试解释一下：</p>
@@ -751,6 +1077,35 @@
       </categories>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>声学信号处理系列（二）说话人识别</title>
+    <url>/2021/03/13/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%971_%E8%AF%B4%E8%AF%9D%E4%BA%BA%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="声学信号处理系列（二）说话人识别"><a href="#声学信号处理系列（二）说话人识别" class="headerlink" title="声学信号处理系列（二）说话人识别"></a>声学信号处理系列（二）说话人识别</h1><p><em>by max</em></p>
+<p><em>2021/03/13</em></p>
+<p>“闻其声，知其人”</p>
+<p>说话人识别(speaker recognition)是语音信号处理中一个非常贴近实际生活应用的研究领域，其主要目的是通过对语音信号进行处理来对讲话者的身份进行识别、确认和分类。除了通过一个人的长相，我们也可以通过其声音，来在众多讲话人中将某一特定说话人认出来。这背后的主要原理，是利用语音中承载的与每个人类个体身份有关的声学信息来实现的。在系列第一篇文章里我们介绍了声学信号的一些基本特征，例如共振峰等，就可以作为识别说话人的依据。更多的具体原理我们在后面会介绍，首先来看说话人识别的两个基本任务。</p>
+<h2 id="说话人识别的两个基本任务"><a href="#说话人识别的两个基本任务" class="headerlink" title="说话人识别的两个基本任务"></a>说话人识别的两个基本任务</h2><p>说话人识别可以分为说话人辨认(speaker identification)和说话人确认(speaker verification)两个基本任务[1]。在说话人辨认中，给定一条语音，我们需要在已注册的说话人中找到这句话是谁说的。而在说话人确认中，我们需要对说话人所声明的身份进行核验，确认其身份是否真实。一个比较形象的示意图如下所示：</p>
+<p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/03/20/zVXIacumEiJLqlb.png" style="zoom:80%"></p>
+<h2 id="说话人辨认"><a href="#说话人辨认" class="headerlink" title="说话人辨认"></a>说话人辨认</h2><p>一般在说话人辨认任务中，我们对来自一条未知说话人的语音进行处理和分析，将其与已注册的各个已知说话人的模型进行比对。当我们找到一个最佳匹配的说话人模型时，就认为该未知语音是来自该最佳匹配模型背后的说话人。换句话说，我们可以把说话人辨认看做是一个1对N的分类任务，我们需要将1条未知的测试样例，正确归类入N个已知类别其中的一个类别里。</p>
+<p>那么不难想到，假如说话人辨认系统接收到的语音，与所有已注册说话人的模型全部不匹配该怎么办？这种情况我们称之为“开集说话人辨认问题”，即未知语音可能来自于说话人注册集集外的某个说话人，该说话人的身份并没有提前保存于系统模型匹配库中。此时系统是无法对该语音进行正确分类的，一般会将其归类于“其他”或者是“未授权用户”这种类别里。与之相对的就是“闭集说话人辨认问题”，未知语音已知肯定来自于某个已注册的说话人。一般来说，闭集系统比较适用于人数较少的应用场景，例如政府机关或私人安保场景等等。而开集系统则广泛部署于各类生活场景中[2]。</p>
+<h2 id="说话人确认"><a href="#说话人确认" class="headerlink" title="说话人确认"></a>说话人确认</h2><p>在说话人确认任务中，我们需要通过一条语音去确定一个说话人的身份是其所声明的真实身份。实现原理是，我们将该条语音去与其声明的说话人模型进行对比，符合该身份则判定接受，否则判定拒绝。这里我们与说话人辨认对比的话，可以看到说话人确认其实本质是一个1对1的分类任务。</p>
+<p>在与声明的说话人模型进行比对时，由于判决分数一般在一个连续数值范围内，所以我们需要设立一个固定的阈值来帮助判定。当判决分数高于该阈值时，判定为接受，反之，当判决分数低于该阈值时，判定为拒绝。这个阈值的选取，对于说话人确认系统的准确性十分重要。阈值定的过高，则可有助于减小误检率，即“将本该拒绝的误判为接受”(漏检false acceptance)这种情况的发生次数减少。但也会导致“将本该接受的误判为拒绝”(误检false rejection)这种情况发生的风险变大。那么反之，假如阈值设置得过低，则“将本该拒绝的误判为接受”这种情况的几率会上升。</p>
+<h2 id="两个任务的区别和联系"><a href="#两个任务的区别和联系" class="headerlink" title="两个任务的区别和联系"></a>两个任务的区别和联系</h2><p>Speaker identification 和 speaker verification 的主要区别在于二者需要进行判决的类别数目的不同。具体说来，在说话人辨认里，我们需要在N个可能的结果中选择一个，N这里等于说话人的人数；而在说话人确认里，我们只需要在“接收”和“拒绝”两个可能的结果中选择一个，而不用考虑系统所面对的说话人的人数。因此，当N越大时，说话人辨认系统的性能会随之下降，而说话人确认系统的性能是不受N的影响的。极端情况时，当某个说话人群体的集体声学特性比较特殊时，说话人确认系统的准确性也会受影响。举个例子，一个主要为英语国家人群服务的说话人确认系统，可能当面对汉语国家人群时，系统的准确性会有所下降。</p>
+<h2 id="系统评价指标"><a href="#系统评价指标" class="headerlink" title="系统评价指标"></a>系统评价指标</h2><p>说话人辨认系统的评价指标与通常的分类任务的评价指标是类似的，这里我们暂时只介绍说话人确认系统的评价指标。有对说话人辨认评价指标感兴趣的读者可以参考此博客[3]以便了解更多。</p>
+<p>通常，我们使用DET曲线去衡量一个说话人确认系统的有效性。DET曲线全称为 Detection Error Trade-off曲线。该曲线可以通过计算FRR(false rejection rate，也可称为false negative rate)和FAR(false acceptance rate，也可称为false positive rate)这两种事件的概率来描绘出来。在一个二维图纸上，我们令纵轴代表FRR，横轴代表FAR，即可画出类似下图的DET曲线图。</p>
+<p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/03/20/2zIguxCaSl9DcNX.png" style="zoom:150%"></p>
+<p>图中红色曲线为DET曲线，其与蓝色对角线的交叉点，定义为EER(equal error rate)点，在该点上FRR=FAR。一般EER的值越低，代表一个系统的性能越好。通常我们将横纵轴的数值以对数尺度进行转换，以便能更全面更直观地观察到系统在一个大范围上的表现。</p>
+<h2 id="文本有关-vs-文本无关"><a href="#文本有关-vs-文本无关" class="headerlink" title="文本有关 vs 文本无关"></a>文本有关 vs 文本无关</h2><p>一个说话人识别系统，可以基于文本相关去设计，也可以基于文本无关。顾名思义，文本相关指的是说话人需要讲出固定的一句话，来让系统进行验证。而文本无关的系统里，说话人可以说出任意一句话，来令识别系统进行分析处理。文本无关相比文本有关的系统，使用场景更灵活方便，但安全性方面会有一定的下降。系统的设计难度上，文本有关的系统相对较简单一些，我们可以沿着时间轴按顺序检验每个文本单元的声学特征，将其与说话人已注册的声纹进行匹配，根据该句话从头到尾的累积准确率，最终以达到识别的目的。由于这种文本有关的设计与每个音素音节在时间上强相关，所以基于该方法设计的系统通常可以取得比文本无关的系统更高的识别率。</p>
+<p>相比下来，文本无关的系统常应用于法庭取证或者安保监控等场景，此类场景无法要求说话人提供指定文本段的语音样本，所以基于文本无关的系统的重要性也正在逐渐进入公众视野。而且，基于文本无关的识别系统，更符合人类自然的识别能力，我们不需要身边的亲人朋友说出指定的话语就可以轻松地识别出他们的身份，同理，当我们听到一句来自陌生人的语音时，我们也能很快地识别出我们不认识该说话人。而且这种识别系统也更人性化，当识别前端接收到的语音有卡顿或者遗漏时，不需要说话人不停地重复识别口令，减少了识别耗费的时间成本，使用场景也更广泛和人性化。</p>
+<p>除了文本有关和文本无关这两大类系统以外，还有一个文本提示型系统(text-prompted)。该系统的提出主要是为了更进一步的提升识别系统的鲁棒性。文本无关和文本相关的系统可能会面临一个实际性的安全问题，就是会有“黑客”可能想冒充某个特定说话人的身份，去入侵说话人识别系统。具体手段通常会使用录音回放设备，提前取得已注册说话人的语音口令，然后回放给说话人识别系统进而取得授权。因此，文本提示型系统里，系统会随机生成一串数字或一句文本，待识别人只需要跟着给出的提示念出语音即可。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>说话人识别系统是语音识别领域的一个主要方向，基于该系统设计的各种安防系统和应用APP已经在日常生活中比较常见了。虽然有文本提示型识别系统来提升识别系统的鲁棒性和安全性，但说话人识别系统近年来正面临着越来越严峻的安全问题。</p>
+<p>在博客系列的下一篇文章中，我们会介绍与说话人识别相关的另一个新领域 — “说话人识别反欺骗系统”。</p>
+<h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] “Speaker recognition”词条 — <a href="http://www.scholarpedia.org/article/Speaker_recognition#Speaker_Identification_and_Verification">http://www.scholarpedia.org/article/Speaker_recognition#Speaker_Identification_and_Verification</a><br>[2] Togneri, R., &amp; Pullella, D. (2011). An overview of speaker identification: Accuracy and robustness issues. IEEE circuits and systems magazine, 11(2), 23-61.<br>[3] “The 5 Classification Evaluation metrics every Data Scientist must know” — <a href="https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226">https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226</a></p>
+]]></content>
+      <tags>
+        <tag>声学信号处理</tag>
       </tags>
   </entry>
   <entry>
@@ -857,6 +1212,103 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>计划</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a><span id="more"></span></h2><h1 id="2021-03-31"><a href="#2021-03-31" class="headerlink" title="2021/03/31"></a>2021/03/31</h1><h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><ul>
 <li>把pdf（C++PRIME）传到blog上，教程好找。 (地址)[<a href="https://github.com/SabrinaHuang/CppPrimeExercise/blob/master/C%2B%2B%20Primer%E7%AC%AC%E4%BA%94%E7%89%88%E4%B8%AD%E6%96%87%E7%89%88.pdf">https://github.com/SabrinaHuang/CppPrimeExercise/blob/master/C%2B%2B%20Primer%E7%AC%AC%E4%BA%94%E7%89%88%E4%B8%AD%E6%96%87%E7%89%88.pdf</a>]</li>
+</ul>
+]]></content>
+      <categories>
+        <category>力扣</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>贪心</title>
+    <url>/2021/03/18/%E8%B4%AA%E5%BF%83/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>思路是：(1) 保证每次操作都是局部最优的，并且最后得到的结果是全局最优的 (2)贪心算法一般是先需要排序的。<br><span id="more"></span></p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3.md">贪心</a></p>
+<h2 id="smirk-LC455-分发饼干-分发饼干"><a href="#smirk-LC455-分发饼干-分发饼干" class="headerlink" title=":smirk: (LC455) 分发饼干 分发饼干"></a><span class="github-emoji"><span>😏</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> (LC455) 分发饼干 <a href="https://leetcode-cn.com/problems/assign-cookies/">分发饼干</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。<br>对每个孩子 i，都有一个胃口值 g[i]，这是能让孩子们满足胃口的饼干的最小尺寸；并且每块饼干 j，都有一个尺寸 s[j] 。如果 s[j] &gt;= g[i]，我们可以将这个饼干 j 分配给孩子 i ，这个孩子会得到满足。你的目标是尽可能满足越多数量的孩子，并输出这个最大数值。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: g = [1,2,3], s = [1,1]</span><br><span class="line">输出: 1</span><br><span class="line">解释: </span><br><span class="line">你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。</span><br><span class="line">虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。</span><br><span class="line">所以你应该输出1。</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li><p>排序+贪心：我觉得这个也很好想，因为我们要求分配给最多的小孩的数量，肯定是可着吃的少的孩子先来。因为一个大胖子吃10斤的，可以给10个吃一斤的孩子啊。</p>
+</li>
+<li><p>贪心贪在哪里：</p>
+<ul>
+<li>在示例中可以看到，在计算起点的时候，一定从<code>g[i]</code>最小的开始计算， 也就是优先给需求低的分配最下尺寸的饼干，这就是贪心的地方。</li>
+<li>局部最优：每个小孩得到的饼干最少化，多一点都不给，多给浪费的呀</li>
+<li>全局最优：保障让每一个饼干刚好满足当前的小朋友，就可以使得最后满足的人数最多。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findContentChildren</span>(<span class="params">self, g: List[<span class="built_in">int</span>], s: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        g.sort()</span><br><span class="line">        s.sort()</span><br><span class="line">        n = <span class="built_in">len</span>(g) <span class="comment">#greed factor</span></span><br><span class="line">        m = <span class="built_in">len</span>(s) <span class="comment">#size</span></span><br><span class="line">        i = <span class="number">0</span> </span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> j&lt;m <span class="keyword">and</span> i&lt;n:</span><br><span class="line">            <span class="keyword">while</span> j &lt; m <span class="keyword">and</span> g[i]&gt;s[j]:</span><br><span class="line">                j+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> j &lt; m:</span><br><span class="line">                count+=<span class="number">1</span></span><br><span class="line">            j+=<span class="number">1</span></span><br><span class="line">            i+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
+<li>时间复杂度： $O( m log m + n logn)$ 其中<code>m</code>和<code>n</code>分别是数组g和s的长度。对两个数组排序的时间复杂度是 $O(mlogm+nlogn)$，遍历数组的时间复杂度是$O(m+n)$。</li>
+<li>空间复杂度：$O(log m + log n)$ 其中m和n分别是数组<code>g</code>和<code>s</code>的长度。主要是排序的额外空间开销。</li>
+</ul>
+<h2 id="satisfied-LC435-无重叠区间-无重叠区间"><a href="#satisfied-LC435-无重叠区间-无重叠区间" class="headerlink" title=":satisfied:(LC435) 无重叠区间 无重叠区间"></a><span class="github-emoji"><span>😆</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>(LC435) 无重叠区间 <a href="https://leetcode-cn.com/problems/non-overlapping-intervals/">无重叠区间</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个区间的集合，找到需要移除区间的最小数量，使剩余区间互不重叠。</p>
+<p>注意:</p>
+<p>可以认为区间的终点总是大于它的起点。<br>区间 [1,2] 和 [2,3] 的边界相互“接触”，但没有相互重叠</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: [ [1,2], [2,3], [3,4], [1,3] ]</span><br><span class="line">输出: 1</span><br><span class="line">解释: 移除 [1,3] 后，剩下的区间没有重叠。</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>排序+贪心：这个题还是排序+贪心。为什么这么说呢，首先区间边界没有相互重叠，和第一题的分饼干相似。这种类型的题的思路是，每一步都选的很小心，生怕影响后面的人。</li>
+</ol>
+<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMinArrowShots</span>(<span class="params">self, points: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> points:<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        points = <span class="built_in">sorted</span>(points,key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br><span class="line">        print(points)</span><br><span class="line">        right = points[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">        result = <span class="number">1</span></span><br><span class="line">        n = <span class="built_in">len</span>(points)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="keyword">if</span> points[i][<span class="number">0</span>] &gt;right:</span><br><span class="line">                result+=<span class="number">1</span></span><br><span class="line">                right = points[i][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
+<li>时间复杂度： $O(n logn)$ 其中n是数组的长度。 </li>
+<li>空间复杂度：$O(log n)$  </li>
+</ul>
+<h2 id="satisfied-LC406-根据身高重建队列-根据身高重建队列"><a href="#satisfied-LC406-根据身高重建队列-根据身高重建队列" class="headerlink" title=":satisfied: (LC406) 根据身高重建队列 根据身高重建队列"></a><span class="github-emoji"><span>😆</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> (LC406) 根据身高重建队列 <a href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/">根据身高重建队列</a></h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>假设有打乱顺序的一群人站成一个队列，数组 people 表示队列中一些人的属性（不一定按顺序）。每个 people[i] = [hi, ki] 表示第 i 个人的身高为 hi ，前面 正好 有 ki 个身高大于或等于 hi 的人。<br>请你重新构造并返回输入数组 people 所表示的队列。返回的队列应该格式化为数组 queue ，其中 queue[j] = [hj, kj] 是队列中第 j 个人的属性（queue[0] 是排在队列前面的人）。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：people = [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]</span><br><span class="line">输出：[[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]</span><br><span class="line">解释：</span><br><span class="line">编号为 0 的人身高为 5 ，没有身高更高或者相同的人排在他前面。</span><br><span class="line">编号为 1 的人身高为 7 ，没有身高更高或者相同的人排在他前面。</span><br><span class="line">编号为 2 的人身高为 5 ，有 2 个身高更高或者相同的人排在他前面，即编号为 0 和 1 的人。</span><br><span class="line">编号为 3 的人身高为 6 ，有 1 个身高更高或者相同的人排在他前面，即编号为 1 的人。</span><br><span class="line">编号为 4 的人身高为 4 ，有 4 个身高更高或者相同的人排在他前面，即编号为 0、1、2、3 的人。</span><br><span class="line">编号为 5 的人身高为 7 ，有 1 个身高更高或者相同的人排在他前面，即编号为 1 的人。</span><br><span class="line">因此 [[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]] 是重新构造后的队列。</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>排序+贪心： </li>
+</ol>
+<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reconstructQueue</span>(<span class="params">self, people: List[List[<span class="built_in">int</span>]]</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        people = <span class="built_in">sorted</span>(people, key = <span class="keyword">lambda</span> x:(-x[<span class="number">0</span>],x[<span class="number">1</span>]))</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(people) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> people</span><br><span class="line">        <span class="comment">## 对队列排序，先按h降序，再按k升序</span></span><br><span class="line">        people = <span class="built_in">sorted</span>(people, key = <span class="keyword">lambda</span> x: (-x[<span class="number">0</span>], x[<span class="number">1</span>]))</span><br><span class="line">        new_people = [people[<span class="number">0</span>]]    <span class="comment"># 这个人是从前往后、从上往下看到的第一个人</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> people[<span class="number">1</span>:]:</span><br><span class="line">            new_people.insert(i[<span class="number">1</span>], i)</span><br><span class="line">        <span class="keyword">return</span> new_people</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
+<li>时间复杂度： $O(n^2)$，其中n是数组people的长度。我们需要O(n log n) 的时间进行排序，随后需要O(n^2)的时间遍历每一个人并将他们放入队列中。由于前者在渐近意义下小于后者，因此总时间复杂度为  O(n^2)</li>
+<li>空间复杂度：$O( log n )$  </li>
+</ul>
+<h2 id="anguished-LC53-最大子序和-最大子序和"><a href="#anguished-LC53-最大子序和-最大子序和" class="headerlink" title=":anguished: (LC53) 最大子序和 最大子序和"></a><span class="github-emoji"><span>😧</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f627.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> (LC53) 最大子序和 <a href="https://leetcode-cn.com/problems/maximum-subarray/">最大子序和</a></h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<p>示例1：<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [-2,1,-3,4,-1,2,1,-5,4]</span><br><span class="line">输出：6</span><br><span class="line">解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>-贪心， 贪心竟然这么难想</p>
+<h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>贪心贪在哪里（<a href="https://leetcode-cn.com/problems/maximum-subarray/solution/53-zui-da-zi-xu-he-bao-li-tan-xin-dong-t-jkeq/">详解</a>）？<ul>
+<li>如果在示例中可以看到 -2 1 在一起，计算起点的时候，一定是从1开始计算，因为负数只会拉低总和，这就是贪心的地方！</li>
+<li>局部最优：当前 “ 连续和 ”为负数的时候立即放弃，从下一个元素重新计算 “ 连续和 ”， 因为负数加上下一个“连续和”只会越来越小。</li>
+<li>全局最优：选取最大“连续和”  </li>
+<li>局部最优的情况下，并记录最大的“连续和”，可以推出全局最优。</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) &lt;=<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">sum</span>(nums)</span><br><span class="line">        ans = -inf</span><br><span class="line">        result = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> ans&gt;<span class="number">0</span>:</span><br><span class="line">                ans += nums[i] </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans = nums[i]</span><br><span class="line">            result = <span class="built_in">max</span>(result,ans)</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+<h2 id="anguished-LC53-用最少数量的箭引爆气球-用最少数量的箭引爆气球"><a href="#anguished-LC53-用最少数量的箭引爆气球-用最少数量的箭引爆气球" class="headerlink" title=":anguished: (LC53) 用最少数量的箭引爆气球 用最少数量的箭引爆气球"></a><span class="github-emoji"><span>😧</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f627.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> (LC53) 用最少数量的箭引爆气球 <a href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/description/">用最少数量的箭引爆气球</a></h2><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。</p>
+<p>一支弓箭可以沿着 x 轴从不同点完全垂直地射出。在坐标 x 处射出一支箭，若有一个气球的直径的开始和结束坐标为 xstart，xend， 且满足  xstart ≤ x ≤ xend，则该气球会被引爆。可以射出的弓箭的数量没有限制。 弓箭一旦被射出之后，可以无限地前进。我们想找到使得所有气球全部被引爆，所需的弓箭的最小数量。</p>
+<p>给你一个数组 points ，其中 points [i] = [xstart,xend] ，返回引爆所有气球所必须射出的最小弓箭数。</p>
+<p>示例1：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：points = [[10,16],[2,8],[1,6],[7,12]]</span><br><span class="line">输出：2</span><br><span class="line">解释：对于该样例，x = 6 可以射爆 [2,8],[1,6] 两个气球，以及 x = 11 射爆另外两个气球</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="前置知识-1"><a href="#前置知识-1" class="headerlink" title="前置知识"></a>前置知识</h2><p>-贪心+排序</p>
+<h2 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">                   [10.........16]</span><br><span class="line">   [2..........8]</span><br><span class="line">[1.......6]</span><br><span class="line">            [7.........12]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>贪心贪在<a href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/solution/tu-jie-tan-tao-wei-shi-yao-yao-an-qu-jian-de-you-d/">哪里</a>？</li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMinArrowShots</span>(<span class="params">self, points: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> points:<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        points = <span class="built_in">sorted</span>(points,key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br><span class="line">        print(points)</span><br><span class="line">        right = points[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">        result = <span class="number">1</span></span><br><span class="line">        n = <span class="built_in">len</span>(points)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="keyword">if</span> points[i][<span class="number">0</span>] &gt;right:</span><br><span class="line">                result+=<span class="number">1</span></span><br><span class="line">                right = points[i][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(  )$ </li>
+<li>空间复杂度：$O( )$</li>
 </ul>
 ]]></content>
       <categories>
@@ -1607,364 +2059,6 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 <h4 id="复杂度分析-21"><a href="#复杂度分析-21" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-21"><a href="#大佬题解-21" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-22"><a href="#题目-22" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-22"><a href="#思路-22" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-22"><a href="#Python3-Code-22" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="复杂度分析-22"><a href="#复杂度分析-22" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-22"><a href="#大佬题解-22" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>动态规划之0-1背包</title>
-    <url>/2021/04/02/%E5%8A%A8%E6%80%81%E8%A7%84%E6%A0%BC%E4%B9%8B0-1%E8%83%8C%E5%8C%85/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-1背包"><a href="#0-1背包" class="headerlink" title="0-1背包"></a>0-1背包</h1><p>有一个容量为<script type="math/tex">N</script>的背包，要用这个背包装下物品的价值最大，这些物品有两个属性：体积<script type="math/tex">w</script>和价值<script type="math/tex">v</script>。</p>
-<span id="more"></span>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>有一个容量为<script type="math/tex">N</script>的背包，要用这个背包装下物品的价值最大，这些物品有两个属性：体积<script type="math/tex">w</script>和价值<script type="math/tex">v</script>。<br>定义一个二维数组<code>dp</code>存储最大价值，其中<code>dp[i][j]</code>表示前<code>i</code>件物品体积不超过<code>j</code>的情况下能达到的最大价值。设第<code>i</code>件物品体积为<code>w</code>，价值为<code>v</code>，根据第<code>i</code>件物品是否添加到背包中，可以分为两种情况：</p>
-<ul>
-<li>第<code>i</code>件物品没添加到背包，总体积不超过<code>j</code>的前<code>i</code>件物品的最大价值就是总体积不超过<code>j</code>的前<code>i-1</code>件物品的最大价值，<code>dp[i][j]= dp[i-1][j]</code></li>
-<li>第<code>i</code>件物品添加到背包，<code>dp[i][j]= dp[i-1][j-w] + v</code><br>第<code>i</code>件物品可添加也可以不添加，取决于哪种情况下最大价值更大。因此，0-1背包的状态转移方程为：<br><code>dp[i][j]= max(dp[i-1][j],dp[i-1][j-w] + v)</code></li>
-</ul>
-<h2 id="无法使用贪心算法的解释"><a href="#无法使用贪心算法的解释" class="headerlink" title="无法使用贪心算法的解释"></a>无法使用贪心算法的解释</h2><p>0-1背包问题无法使用贪心算法来求解，也就是说不能按照先添加性价比最高的物品来达到最优，这是因为这种方式可能造成背包空间的浪费，从而无法达到最优解。</p>
-<h1 id="变种"><a href="#变种" class="headerlink" title="变种"></a>变种</h1><ul>
-<li>完全背包：物品数量为无限个</li>
-<li>多重背包：物品数量有限制</li>
-<li>多维费用背包：物品不仅有重量，还有体积，同时考虑这两种限制</li>
-<li>其它：物品之间相互约束或者依赖</li>
-</ul>
-<h2 id="大佬解释"><a href="#大佬解释" class="headerlink" title="大佬解释"></a>大佬解释</h2><p><a href="https://github.com/tianyicui/pack/blob/master/V2.pdf">背包九讲</a><br><a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/solution/0-1-bei-bao-wen-ti-xiang-jie-zhen-dui-ben-ti-de-yo/">liweiwei解释</a><br><a href="https://zhuanlan.zhihu.com/p/30959069">BAT特白</a></p>
-<p><a href="https://leetcode-cn.com/problems/target-sum/solution/dong-tai-gui-hua-si-kao-quan-guo-cheng-by-keepal/">超强解释</a></p>
-<h3 id="LC416-分割等和子集-分割等和子集"><a href="#LC416-分割等和子集-分割等和子集" class="headerlink" title="(LC416)分割等和子集   分割等和子集"></a>(LC416)分割等和子集   <a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/description/">分割等和子集</a></h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。</p>
-<p>注意:<br>每个数组中的元素不会超过 100<br>数组的大小不会超过 200<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: [1, 5, 11, 5]</span><br><span class="line">输出: true</span><br><span class="line">解释: 数组可以分割成 [1, 5, 5] 和 [11].</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/04/02/4SbhcBFw2ViTM95.png" alt="分割等和子集"></p>
-<ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canPartition</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; bool:</span></span><br><span class="line">        target, v = <span class="built_in">divmod</span>(<span class="built_in">sum</span>(nums),<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> v != <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        dp = [ [ <span class="literal">False</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(target+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)) ]</span><br><span class="line">        <span class="keyword">if</span> nums[<span class="number">0</span>] &gt; target:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        dp[<span class="number">0</span>][nums[<span class="number">0</span>]] = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            dp[k][<span class="number">0</span>] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(target+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> j &gt;= nums[i]: </span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j] <span class="keyword">or</span> dp[i-<span class="number">1</span>][j- nums[i]]  <span class="comment"># 用 | 也可</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j]</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][-<span class="number">1</span>]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O(m*n)</script>   </li>
-<li>空间复杂度：<script type="math/tex">O(m*n )</script> </li>
-</ul>
-</li>
-</ul>
-<h3 id="LC494-目标和-目标和"><a href="#LC494-目标和-目标和" class="headerlink" title="(LC494)  目标和  目标和"></a>(LC494)  目标和  <a href="https://leetcode-cn.com/problems/target-sum/description/">目标和</a></h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>给定一个非负整数数组，a1, a2, …, an, 和一个目标数，S。现在你有两个符号 + 和 -。对于数组中的任意一个整数，你都可以从 + 或 -中选择一个符号添加在前面。</p>
-<p>返回可以使最终数组和为目标数 S 的所有添加符号的方法数</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums: [1, 1, 1, 1, 1], S: 3</span><br><span class="line">输出：5</span><br><span class="line">解释：</span><br><span class="line"></span><br><span class="line">-1+1+1+1+1 = 3</span><br><span class="line">+1-1+1+1+1 = 3</span><br><span class="line">+1+1-1+1+1 = 3</span><br><span class="line">+1+1+1-1+1 = 3</span><br><span class="line">+1+1+1+1-1 = 3</span><br><span class="line"></span><br><span class="line">一共有5种方法让最终目标和为3。 </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划<br><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/04/02/Kf76P42sTUaxiMg.png" alt="分割等和子集"></li>
-</ul>
-<h4 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-1"><a href="#动态规划-1" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findTargetSumWays</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], S: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        <span class="comment"># dp[][]</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        numS = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">if</span> numS == S <span class="keyword">and</span> <span class="built_in">len</span>(nums)== <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> </span><br><span class="line">        <span class="keyword">if</span> numS == -S <span class="keyword">and</span> <span class="built_in">len</span>(nums)== <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> </span><br><span class="line">        <span class="keyword">if</span> numS&lt;S:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">       </span><br><span class="line">         </span><br><span class="line">        dp = [ [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>*numS+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n) ]</span><br><span class="line">        dp[<span class="number">0</span>][numS+nums[<span class="number">0</span>]] = <span class="number">1</span></span><br><span class="line">        dp[<span class="number">0</span>][numS-nums[<span class="number">0</span>]] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(-numS -<span class="number">1</span>, numS +<span class="number">1</span>):</span><br><span class="line">                l = dp[i-<span class="number">1</span>][ numS+j-nums[i]] <span class="keyword">if</span> <span class="number">0</span> &lt;=  numS+ j - nums[i] &lt; <span class="number">2</span>* numS +<span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">                r = dp[i-<span class="number">1</span>][ numS+j+nums[i]] <span class="keyword">if</span> <span class="number">0</span> &lt;= numS+ j + nums[i] &lt;  <span class="number">2</span>*numS +<span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">                dp[i][numS+j] = l + r</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][numS+S]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬"><a href="#大佬" class="headerlink" title="大佬"></a>大佬</h5><p><a href="https://leetcode-cn.com/problems/target-sum/solution/dong-tai-gui-hua-si-kao-quan-guo-cheng-by-keepal/">超强解释</a></p>
-<h3 id="LC474-一和零-一和零"><a href="#LC474-一和零-一和零" class="headerlink" title="(LC474)  一和零  一和零"></a>(LC474)  一和零  <a href="https://leetcode-cn.com/problems/ones-and-zeroes/description/">一和零</a></h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><p>给你一个二进制字符串数组 strs 和两个整数 m 和 n 。</p>
-<p>请你找出并返回 strs 的最大子集的大小，该子集中 最多 有 m 个 0 和 n 个 1 。</p>
-<p>如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集 </p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：strs = ["10", "0001", "111001", "1", "0"], m = 5, n = 3</span><br><span class="line">输出：4</span><br><span class="line">解释：最多有 5 个 0 和 3 个 1 的最大子集是 {"10","0001","1","0"} ，因此答案是 4 。</span><br><span class="line">其他满足题意但较小的子集包括 {"0001","1"} 和 {"10","1","0"} 。{"111001"} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。 </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><p>动态规划：把总共的<code>0</code>和<code>1</code>的个数视为背包的容量，每一个字符串视为装进背包的物品。这道题就可以使用<code>0-1</code>背包问题的思路完成，这个目标值是能放进背包的字符串的数量。物品一个一个尝试，容量一点一点尝试，每个物品分类讨论的标准是：选与不选。<br>定义状态：尝试题目问啥，就把啥定义成状态。<code>dp[i][j][k]</code>表示输入字符串在子区间<code>[0,i]</code>能够使用<code>j</code>个<code>0</code>和<code>k</code>个<code>1</code>的字符串的最大数量。</p>
-<ul>
-<li>动态方程  </li>
-</ul>
-<script type="math/tex; mode=display">
-dp[i][j][k]
-\begin{cases}
-dp[i-1][j][k], &if\ choosing\ str[i]\\
-dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
-\end{cases}</script><ul>
-<li>初始化，为了避免分类套路，可以多设一行。<br>-</li>
-</ul>
-<h4 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-2"><a href="#动态规划-2" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMaxForm</span>(<span class="params">self, strs: List[<span class="built_in">str</span>], m: <span class="built_in">int</span>, n: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        str_num = <span class="built_in">len</span>(strs)</span><br><span class="line">        dp = [[[<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(str_num+<span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,str_num+<span class="number">1</span>):</span><br><span class="line">            ones = strs[i-<span class="number">1</span>].count(<span class="string">'1'</span>)</span><br><span class="line">            zeros = strs[i-<span class="number">1</span>].count(<span class="string">'0'</span>)</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>):</span><br><span class="line">                    dp[i][j][k] = dp[i-<span class="number">1</span>][j][k] </span><br><span class="line">                    <span class="keyword">if</span> j&gt;=zeros <span class="keyword">and</span> k&gt;=ones:</span><br><span class="line">                        dp[i][j][k] = <span class="built_in">max</span>( dp[i-<span class="number">1</span>][j][k] ,  dp[i-<span class="number">1</span>][j-zeros][k-ones] +<span class="number">1</span> )</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][-<span class="number">1</span>][-<span class="number">1</span>]</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O(n^3 )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( n^3)</script> </li>
-</ul>
-</li>
-</ul>
-<h3 id="L322-零钱兑换-零钱兑换"><a href="#L322-零钱兑换-零钱兑换" class="headerlink" title="(L322)  零钱兑换  零钱兑换"></a>(L322)  零钱兑换  <a href="https://leetcode-cn.com/problems/coin-change/description/">零钱兑换</a></h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><p>给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。</p>
-<p>你可以认为每种硬币的数量是无限的。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：coins = [1, 2, 5], amount = 11</span><br><span class="line">输出：3 </span><br><span class="line">解释：11 = 5 + 5 + 1</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-3"><a href="#动态规划-3" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-1"><a href="#大佬-1" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-4"><a href="#动态规划-4" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-2"><a href="#大佬-2" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-5"><a href="#动态规划-5" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-3"><a href="#大佬-3" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-6"><a href="#动态规划-6" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-4"><a href="#大佬-4" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-7"><a href="#动态规划-7" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-5"><a href="#大佬-5" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-8"><a href="#Python3-Code-8" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-8"><a href="#动态规划-8" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-6"><a href="#大佬-6" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-5"><a href="#LC-5" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-9"><a href="#Python3-Code-9" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-9"><a href="#动态规划-9" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-7"><a href="#大佬-7" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-6"><a href="#LC-6" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-10"><a href="#Python3-Code-10" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-10"><a href="#动态规划-10" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-8"><a href="#大佬-8" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-7"><a href="#LC-7" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-11"><a href="#Python3-Code-11" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-11"><a href="#动态规划-11" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-9"><a href="#大佬-9" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-8"><a href="#LC-8" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-12"><a href="#题目-12" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-12"><a href="#Python3-Code-12" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-12"><a href="#动态规划-12" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-10"><a href="#大佬-10" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-9"><a href="#LC-9" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-13"><a href="#题目-13" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-13"><a href="#思路-13" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-13"><a href="#Python3-Code-13" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-13"><a href="#动态规划-13" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-11"><a href="#大佬-11" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-10"><a href="#LC-10" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-14"><a href="#题目-14" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-14"><a href="#思路-14" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-14"><a href="#Python3-Code-14" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-14"><a href="#动态规划-14" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-12"><a href="#大佬-12" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-11"><a href="#LC-11" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-15"><a href="#题目-15" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-15"><a href="#思路-15" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-15"><a href="#Python3-Code-15" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-15"><a href="#动态规划-15" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-13"><a href="#大佬-13" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-12"><a href="#LC-12" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-16"><a href="#题目-16" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-16"><a href="#思路-16" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-16"><a href="#Python3-Code-16" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-16"><a href="#动态规划-16" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-14"><a href="#大佬-14" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-13"><a href="#LC-13" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-17"><a href="#题目-17" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-17"><a href="#思路-17" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-17"><a href="#Python3-Code-17" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-17"><a href="#动态规划-17" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-15"><a href="#大佬-15" class="headerlink" title="大佬"></a>大佬</h5>]]></content>
-      <categories>
-        <category>力扣</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>贪心</title>
-    <url>/2021/03/18/%E8%B4%AA%E5%BF%83/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>思路是：(1) 保证每次操作都是局部最优的，并且最后得到的结果是全局最优的 (2)贪心算法一般是先需要排序的。<br><span id="more"></span></p>
-<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3.md">贪心</a></p>
-<h2 id="smirk-LC455-分发饼干-分发饼干"><a href="#smirk-LC455-分发饼干-分发饼干" class="headerlink" title=":smirk: (LC455) 分发饼干 分发饼干"></a><span class="github-emoji"><span>😏</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> (LC455) 分发饼干 <a href="https://leetcode-cn.com/problems/assign-cookies/">分发饼干</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。<br>对每个孩子 i，都有一个胃口值 g[i]，这是能让孩子们满足胃口的饼干的最小尺寸；并且每块饼干 j，都有一个尺寸 s[j] 。如果 s[j] &gt;= g[i]，我们可以将这个饼干 j 分配给孩子 i ，这个孩子会得到满足。你的目标是尽可能满足越多数量的孩子，并输出这个最大数值。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: g = [1,2,3], s = [1,1]</span><br><span class="line">输出: 1</span><br><span class="line">解释: </span><br><span class="line">你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。</span><br><span class="line">虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。</span><br><span class="line">所以你应该输出1。</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li><p>排序+贪心：我觉得这个也很好想，因为我们要求分配给最多的小孩的数量，肯定是可着吃的少的孩子先来。因为一个大胖子吃10斤的，可以给10个吃一斤的孩子啊。</p>
-</li>
-<li><p>贪心贪在哪里：</p>
-<ul>
-<li>在示例中可以看到，在计算起点的时候，一定从<code>g[i]</code>最小的开始计算， 也就是优先给需求低的分配最下尺寸的饼干，这就是贪心的地方。</li>
-<li>局部最优：每个小孩得到的饼干最少化，多一点都不给，多给浪费的呀</li>
-<li>全局最优：保障让每一个饼干刚好满足当前的小朋友，就可以使得最后满足的人数最多。</li>
-</ul>
-</li>
-</ul>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findContentChildren</span>(<span class="params">self, g: List[<span class="built_in">int</span>], s: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        g.sort()</span><br><span class="line">        s.sort()</span><br><span class="line">        n = <span class="built_in">len</span>(g) <span class="comment">#greed factor</span></span><br><span class="line">        m = <span class="built_in">len</span>(s) <span class="comment">#size</span></span><br><span class="line">        i = <span class="number">0</span> </span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> j&lt;m <span class="keyword">and</span> i&lt;n:</span><br><span class="line">            <span class="keyword">while</span> j &lt; m <span class="keyword">and</span> g[i]&gt;s[j]:</span><br><span class="line">                j+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> j &lt; m:</span><br><span class="line">                count+=<span class="number">1</span></span><br><span class="line">            j+=<span class="number">1</span></span><br><span class="line">            i+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
-<li>时间复杂度： $O( m log m + n logn)$ 其中<code>m</code>和<code>n</code>分别是数组g和s的长度。对两个数组排序的时间复杂度是 $O(mlogm+nlogn)$，遍历数组的时间复杂度是$O(m+n)$。</li>
-<li>空间复杂度：$O(log m + log n)$ 其中m和n分别是数组<code>g</code>和<code>s</code>的长度。主要是排序的额外空间开销。</li>
-</ul>
-<h2 id="satisfied-LC435-无重叠区间-无重叠区间"><a href="#satisfied-LC435-无重叠区间-无重叠区间" class="headerlink" title=":satisfied:(LC435) 无重叠区间 无重叠区间"></a><span class="github-emoji"><span>😆</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>(LC435) 无重叠区间 <a href="https://leetcode-cn.com/problems/non-overlapping-intervals/">无重叠区间</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个区间的集合，找到需要移除区间的最小数量，使剩余区间互不重叠。</p>
-<p>注意:</p>
-<p>可以认为区间的终点总是大于它的起点。<br>区间 [1,2] 和 [2,3] 的边界相互“接触”，但没有相互重叠</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: [ [1,2], [2,3], [3,4], [1,3] ]</span><br><span class="line">输出: 1</span><br><span class="line">解释: 移除 [1,3] 后，剩下的区间没有重叠。</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ol>
-<li>排序+贪心：这个题还是排序+贪心。为什么这么说呢，首先区间边界没有相互重叠，和第一题的分饼干相似。这种类型的题的思路是，每一步都选的很小心，生怕影响后面的人。</li>
-</ol>
-<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMinArrowShots</span>(<span class="params">self, points: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> points:<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        points = <span class="built_in">sorted</span>(points,key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br><span class="line">        print(points)</span><br><span class="line">        right = points[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">        result = <span class="number">1</span></span><br><span class="line">        n = <span class="built_in">len</span>(points)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="keyword">if</span> points[i][<span class="number">0</span>] &gt;right:</span><br><span class="line">                result+=<span class="number">1</span></span><br><span class="line">                right = points[i][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
-<li>时间复杂度： $O(n logn)$ 其中n是数组的长度。 </li>
-<li>空间复杂度：$O(log n)$  </li>
-</ul>
-<h2 id="satisfied-LC406-根据身高重建队列-根据身高重建队列"><a href="#satisfied-LC406-根据身高重建队列-根据身高重建队列" class="headerlink" title=":satisfied: (LC406) 根据身高重建队列 根据身高重建队列"></a><span class="github-emoji"><span>😆</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> (LC406) 根据身高重建队列 <a href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/">根据身高重建队列</a></h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>假设有打乱顺序的一群人站成一个队列，数组 people 表示队列中一些人的属性（不一定按顺序）。每个 people[i] = [hi, ki] 表示第 i 个人的身高为 hi ，前面 正好 有 ki 个身高大于或等于 hi 的人。<br>请你重新构造并返回输入数组 people 所表示的队列。返回的队列应该格式化为数组 queue ，其中 queue[j] = [hj, kj] 是队列中第 j 个人的属性（queue[0] 是排在队列前面的人）。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：people = [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]</span><br><span class="line">输出：[[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]</span><br><span class="line">解释：</span><br><span class="line">编号为 0 的人身高为 5 ，没有身高更高或者相同的人排在他前面。</span><br><span class="line">编号为 1 的人身高为 7 ，没有身高更高或者相同的人排在他前面。</span><br><span class="line">编号为 2 的人身高为 5 ，有 2 个身高更高或者相同的人排在他前面，即编号为 0 和 1 的人。</span><br><span class="line">编号为 3 的人身高为 6 ，有 1 个身高更高或者相同的人排在他前面，即编号为 1 的人。</span><br><span class="line">编号为 4 的人身高为 4 ，有 4 个身高更高或者相同的人排在他前面，即编号为 0、1、2、3 的人。</span><br><span class="line">编号为 5 的人身高为 7 ，有 1 个身高更高或者相同的人排在他前面，即编号为 1 的人。</span><br><span class="line">因此 [[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]] 是重新构造后的队列。</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><ol>
-<li>排序+贪心： </li>
-</ol>
-<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reconstructQueue</span>(<span class="params">self, people: List[List[<span class="built_in">int</span>]]</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        people = <span class="built_in">sorted</span>(people, key = <span class="keyword">lambda</span> x:(-x[<span class="number">0</span>],x[<span class="number">1</span>]))</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(people) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> people</span><br><span class="line">        <span class="comment">## 对队列排序，先按h降序，再按k升序</span></span><br><span class="line">        people = <span class="built_in">sorted</span>(people, key = <span class="keyword">lambda</span> x: (-x[<span class="number">0</span>], x[<span class="number">1</span>]))</span><br><span class="line">        new_people = [people[<span class="number">0</span>]]    <span class="comment"># 这个人是从前往后、从上往下看到的第一个人</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> people[<span class="number">1</span>:]:</span><br><span class="line">            new_people.insert(i[<span class="number">1</span>], i)</span><br><span class="line">        <span class="keyword">return</span> new_people</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
-<li>时间复杂度： $O(n^2)$，其中n是数组people的长度。我们需要O(n log n) 的时间进行排序，随后需要O(n^2)的时间遍历每一个人并将他们放入队列中。由于前者在渐近意义下小于后者，因此总时间复杂度为  O(n^2)</li>
-<li>空间复杂度：$O( log n )$  </li>
-</ul>
-<h2 id="anguished-LC53-最大子序和-最大子序和"><a href="#anguished-LC53-最大子序和-最大子序和" class="headerlink" title=":anguished: (LC53) 最大子序和 最大子序和"></a><span class="github-emoji"><span>😧</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f627.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> (LC53) 最大子序和 <a href="https://leetcode-cn.com/problems/maximum-subarray/">最大子序和</a></h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
-<p>示例1：<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [-2,1,-3,4,-1,2,1,-5,4]</span><br><span class="line">输出：6</span><br><span class="line">解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>-贪心， 贪心竟然这么难想</p>
-<h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><ul>
-<li>贪心贪在哪里（<a href="https://leetcode-cn.com/problems/maximum-subarray/solution/53-zui-da-zi-xu-he-bao-li-tan-xin-dong-t-jkeq/">详解</a>）？<ul>
-<li>如果在示例中可以看到 -2 1 在一起，计算起点的时候，一定是从1开始计算，因为负数只会拉低总和，这就是贪心的地方！</li>
-<li>局部最优：当前 “ 连续和 ”为负数的时候立即放弃，从下一个元素重新计算 “ 连续和 ”， 因为负数加上下一个“连续和”只会越来越小。</li>
-<li>全局最优：选取最大“连续和”  </li>
-<li>局部最优的情况下，并记录最大的“连续和”，可以推出全局最优。</li>
-</ul>
-</li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) &lt;=<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">sum</span>(nums)</span><br><span class="line">        ans = -inf</span><br><span class="line">        result = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> ans&gt;<span class="number">0</span>:</span><br><span class="line">                ans += nums[i] </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans = nums[i]</span><br><span class="line">            result = <span class="built_in">max</span>(result,ans)</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-<h2 id="anguished-LC53-用最少数量的箭引爆气球-用最少数量的箭引爆气球"><a href="#anguished-LC53-用最少数量的箭引爆气球-用最少数量的箭引爆气球" class="headerlink" title=":anguished: (LC53) 用最少数量的箭引爆气球 用最少数量的箭引爆气球"></a><span class="github-emoji"><span>😧</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f627.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> (LC53) 用最少数量的箭引爆气球 <a href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/description/">用最少数量的箭引爆气球</a></h2><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。</p>
-<p>一支弓箭可以沿着 x 轴从不同点完全垂直地射出。在坐标 x 处射出一支箭，若有一个气球的直径的开始和结束坐标为 xstart，xend， 且满足  xstart ≤ x ≤ xend，则该气球会被引爆。可以射出的弓箭的数量没有限制。 弓箭一旦被射出之后，可以无限地前进。我们想找到使得所有气球全部被引爆，所需的弓箭的最小数量。</p>
-<p>给你一个数组 points ，其中 points [i] = [xstart,xend] ，返回引爆所有气球所必须射出的最小弓箭数。</p>
-<p>示例1：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：points = [[10,16],[2,8],[1,6],[7,12]]</span><br><span class="line">输出：2</span><br><span class="line">解释：对于该样例，x = 6 可以射爆 [2,8],[1,6] 两个气球，以及 x = 11 射爆另外两个气球</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="前置知识-1"><a href="#前置知识-1" class="headerlink" title="前置知识"></a>前置知识</h2><p>-贪心+排序</p>
-<h2 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">                   [10.........16]</span><br><span class="line">   [2..........8]</span><br><span class="line">[1.......6]</span><br><span class="line">            [7.........12]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>贪心贪在<a href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/solution/tu-jie-tan-tao-wei-shi-yao-yao-an-qu-jian-de-you-d/">哪里</a>？</li>
-</ul>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><ul>
-<li>语言支持：Python3</li>
-</ul>
-<p>Python3 Code:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMinArrowShots</span>(<span class="params">self, points: List[List[<span class="built_in">int</span>]]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> points:<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        points = <span class="built_in">sorted</span>(points,key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br><span class="line">        print(points)</span><br><span class="line">        right = points[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">        result = <span class="number">1</span></span><br><span class="line">        n = <span class="built_in">len</span>(points)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="keyword">if</span> points[i][<span class="number">0</span>] &gt;right:</span><br><span class="line">                result+=<span class="number">1</span></span><br><span class="line">                right = points[i][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>复杂度分析</strong></p>
-<p>令 n 为数组长度。</p>
-<ul>
-<li>时间复杂度：$O(  )$ </li>
-<li>空间复杂度：$O( )$</li>
-</ul>
-]]></content>
       <categories>
         <category>力扣</category>
       </categories>
