@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数据结构的分析</title>
+    <url>/2021/03/06/dataStructure/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据结构</p>
+<ol>
+<li>内存的物理表现的一系列连续的内存单元，每个内存单元大小是固定的。数据结构只有两个对应基础的数据结构，数组和链表，其他的数据结构都是由他们产生的。</li>
+<li>数组用来表示连续的内存空间，链表通常用来表示不连续的内存空间。</li>
+<li>不连续内存空间的意思是，链表有数据域和指针域。</li>
+</ol>
+<hr>
+<h2 id="算法的性能"><a href="#算法的性能" class="headerlink" title="算法的性能"></a>算法的性能</h2><h2 id="1-一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。"><a href="#1-一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。" class="headerlink" title="1. 一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。"></a>1. 一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。</h2><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
+<li>操作简单和支持随机访问</li>
+<li>数组是一段连续的地址空间</li>
+<li>数组使用连续的内存空间，来存储一系列同一数据类型的值。</li>
+</ol>
+<hr>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><ol>
+<li>栈是一种受限的数据结构，LIFO</li>
+<li>常用操作：进栈push, 出栈pop，取栈顶top，isEmply</li>
+<li>是一种逻辑结构</li>
+<li>给数组和链表增加一个限制就是队列</li>
+</ol>
+<hr>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><ol>
+<li>也是一种逻辑结构</li>
+<li>给数组和链表增加一个限制就是队列</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Python数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2021春季力扣杯（个人）</title>
     <url>/2021/04/05/2021%E6%98%A5%E5%AD%A3%E5%8A%9B%E6%89%A3%E6%9D%AF%E4%B8%AA%E4%BA%BA/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="joy-题目"><a href="#joy-题目" class="headerlink" title=":joy: 题目"></a><span class="github-emoji"><span>😂</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 题目</h1><p> <a href="https://leetcode-cn.com/problems/4xy4Wx/">采购方案</a></p>
@@ -130,43 +167,6 @@
       <tags>
         <tag>python</tag>
         <tag>竞赛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构的分析</title>
-    <url>/2021/03/06/dataStructure/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据结构</p>
-<ol>
-<li>内存的物理表现的一系列连续的内存单元，每个内存单元大小是固定的。数据结构只有两个对应基础的数据结构，数组和链表，其他的数据结构都是由他们产生的。</li>
-<li>数组用来表示连续的内存空间，链表通常用来表示不连续的内存空间。</li>
-<li>不连续内存空间的意思是，链表有数据域和指针域。</li>
-</ol>
-<hr>
-<h2 id="算法的性能"><a href="#算法的性能" class="headerlink" title="算法的性能"></a>算法的性能</h2><h2 id="1-一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。"><a href="#1-一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。" class="headerlink" title="1. 一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。"></a>1. 一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。</h2><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
-<li>操作简单和支持随机访问</li>
-<li>数组是一段连续的地址空间</li>
-<li>数组使用连续的内存空间，来存储一系列同一数据类型的值。</li>
-</ol>
-<hr>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><ol>
-<li>栈是一种受限的数据结构，LIFO</li>
-<li>常用操作：进栈push, 出栈pop，取栈顶top，isEmply</li>
-<li>是一种逻辑结构</li>
-<li>给数组和链表增加一个限制就是队列</li>
-</ol>
-<hr>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><ol>
-<li>也是一种逻辑结构</li>
-<li>给数组和链表增加一个限制就是队列</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-        <category>Python数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -327,14 +327,11 @@
   <entry>
     <title>分治</title>
     <url>/2021/03/04/%E5%88%86%E6%B2%BB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治</a></p>
-<h3 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h3><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—-分 （2) 将最后子问题可以简单的直接求解—-“治” （3) 将所有子问题的解合并起来就说原问题的解—-“合”<br><span id="more"></span></p>
-<p><strong>目录 (Table of Contents)</strong></p>
-<!-- toc -->
-<p>[TOC]</p>
-<h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%88%86%E6%B2%BB.md">分治刷题顺序</a></p>
+<h1 id="讲解分治"><a href="#讲解分治" class="headerlink" title="讲解分治"></a>讲解分治</h1><h2 id="思路是："><a href="#思路是：" class="headerlink" title="思路是："></a>思路是：</h2><p>(1) 将一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分为更小的子问题—-分 （2) 将最后子问题可以简单的直接求解—-“治” （3) 将所有子问题的解合并起来就说原问题的解—-“合”。</p>
+<h2 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h2><p>（1） 将问题的规模缩小到一定的程度就可以容易地解决<br>（2） 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。<br>（3） 利用该问题分解出的子问题的解可以合并为该问题的解。<br>（4） 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。</p>
 <p>第一条特征是绝大多数问题都可以满足的，因为问题的计算计算复杂度一般是随着问题规模的增加而增加； 第二个特征是应用分治法的前提它也是大多数问题可以解决的，此特征反映了递归思想的应用； 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具有第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。 第四条特征涉及到分治法的效率，如果各子问题是不独立的分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。</p>
-<h2 id="1-LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#1-LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="1. (LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>1. (LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +, - 以及 * 。</p>
+<h1 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h1><h2 id="LC241-为运算表达式设计优先级-为运算表达式设计优先级"><a href="#LC241-为运算表达式设计优先级-为运算表达式设计优先级" class="headerlink" title="(LC241) 为运算表达式设计优先级 为运算表达式设计优先级"></a>(LC241) 为运算表达式设计优先级 <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">为运算表达式设计优先级</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +, - 以及 * 。</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: "2-1-1"</span><br><span class="line">输出: [0, 2]</span><br><span class="line">解释: </span><br><span class="line">((2-1)-1) = 0 </span><br><span class="line">(2-(1-1)) = 2</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
 <li>分治： 自顶向下地拆分子问题</li>
@@ -747,88 +744,6 @@
       </tags>
   </entry>
   <entry>
-    <title>哈希表</title>
-    <url>/2021/04/09/%E5%93%88%E5%B8%8C%E8%A1%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>哈希表<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%93%88%E5%B8%8C%E8%A1%A8.md">刷题顺序</a></p>
-<p><a href="https://www.edureka.co/blog/data-structures-in-python/">data structures</a></p>
-<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><p>字典和列表完全不同，字典里的对象是无序的，他是通过一对对的键和值来反映一种映射关系。字典里，每个键都是唯一的，我们可以通过键来存储对应的值，而不能像列表那样通过位置来索引。</p>
-<p>生成字典的方法：第一种方法：初始为空字典，动态填充新的键和值。重点是第二种方法，用列表动态生成字典。第三种方法，用键值对元组组成的列表构造字典。</p>
-<h2 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h2><ul>
-<li>哈希映射的用途： 我个人理解是方便搜索定位吧</li>
-</ul>
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><h2 id="大佬解释"><a href="#大佬解释" class="headerlink" title="大佬解释"></a>大佬解释</h2><ul>
-<li><a href="https://www.zhihu.com/question/58099937">Python中列表和字典有什么区别，分别适用于什么场景？
-</a></li>
-</ul>
-<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><h2 id="LC1-两数之和-两数之和"><a href="#LC1-两数之和-两数之和" class="headerlink" title="(LC1)  两数之和    两数之和"></a>(LC1)  两数之和   <a href="https://leetcode-cn.com/problems/two-sum/description/"> 两数之和</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 的那 两个 整数，并返回它们的数组下标。</p>
-<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
-<p>你可以按任意顺序返回答案。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [2,7,11,15], target = 9</span><br><span class="line">输出：[0,1]</span><br><span class="line">解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。 </span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
-<li> 注意到方法一的时间复杂度较高的原因是寻找 <code>target - x</code> 的时间复杂度过高。因此，我们需要一种更优秀的方法，能够快速寻找数组中是否存在目标元素。如果存在，我们需要找出它的索引。<br> 使用哈希表，可以将寻找 <code>target - x</code> 的时间复杂度降低到从 <script type="math/tex">O(N)</script>  降低到 <code>$O(1)$</code> 。<br> 这样我们创建一个哈希表，对于每一个 <code>x</code>，我们首先查询哈希表中是否存在 <code>target - x</code>，然后将 x 插入到哈希表中，即可保证不会让 <code>x</code> 和自己匹配。 </li>
-<li>可以先对数组进行排序，然后使用双指针方法或者二分查找方法。这样做的时间复杂度为 $O(NlogN)$，空间复杂度为 $O(1)$。</li>
-<li>用 HashMap 存储数组元素和索引的映射，在访问到 <code>nums[i]</code> 时，判断 HashMap 中是否存在 <code>target - nums[i]</code>，如果存在说明 <code>target - nums[i]</code> 所在的索引和 <code>i</code> 就是要找的两个数。该方法的时间复杂度为 $O(N)$，空间复杂度为 $O(N)$，使用空间来换取时间。</li>
-</ol>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; List[int]:</span></span><br><span class="line">        hashtable = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> i , num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> target - num <span class="keyword">in</span> hashtable:</span><br><span class="line">                <span class="keyword">return</span> [hashtable[target - num], i]</span><br><span class="line">            hashtable[num] = i</span><br><span class="line">        <span class="keyword">return</span> []</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( n)</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( n )</script> </li>
-</ul>
-</li>
-</ul>
-<h4 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC217-存在重复元素-存在重复元素"><a href="#LC217-存在重复元素-存在重复元素" class="headerlink" title="(LC217)  存在重复元素  存在重复元素"></a>(LC217)  存在重复元素  <a href="https://leetcode-cn.com/problems/contains-duplicate/">存在重复元素</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数数组，判断是否存在重复元素。</p>
-<p>如果存在一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ol>
-<li><code>set</code>的特点是不重复的数组。 比较数组<code>nums</code>和集合<code>nums</code>长度，如果长度不一致，就返回<code>true</code>，否则返回<code>False</code></li>
-<li>字典， 遍历<code>nums</code>，将其加入字典中，加入之前判断一下是否存在，如果存在就return False,否则true</li>
-</ol>
-<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">containsDuplicate</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; bool:</span> <span class="comment"># 思路1：set思路</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) != <span class="built_in">len</span>(<span class="built_in">set</span>(nums)):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">containsDuplicate</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; bool:</span> <span class="comment"># 思路2：dic思路</span></span><br><span class="line">        pairs = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> i, num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">in</span> pairs:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            pairs[num] = i</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
-<li>复杂度分析 （思路1,思路2）<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( n)</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( n )</script> </li>
-</ul>
-</li>
-</ul>
-<h4 id="大佬题解-1"><a href="#大佬题解-1" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC594-最长和谐序列-最长和谐序列"><a href="#LC594-最长和谐序列-最长和谐序列" class="headerlink" title="(LC594)  最长和谐序列  最长和谐序列"></a>(LC594)  最长和谐序列  <a href="">最长和谐序列</a></h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><p>和谐数组是指一个数组里元素的最大值和最小值之间的差别 正好是 1 。</p>
-<p>现在，给你一个整数数组 nums ，请你在所有可能的子序列中找到最长的和谐子序列的长度。</p>
-<p>数组的子序列是一个由数组派生出来的序列，它可以通过删除一些元素或不删除元素、且不改变其余元素的顺序而得到。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [1,3,2,2,5,2,3,7]</span><br><span class="line">输出：5</span><br><span class="line">解释：最长的和谐子序列是 [3,2,2,2,3]</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>枚举：我们可以枚举数组中的每一个元素，对于当前枚举的元素<code>x</code>，它可以和<code>x+1</code>组成和谐子序列。我们遍历一遍整个数组，找出等于<code>x</code>或<code>x+1</code>的元素的个数，就可以得到以<code>x</code>为最小值的和谐子序列的长度。（一开始我同时找了<code>x-1</code>和<code>x+1</code>，其实就找<code>x+1</code>就行，再找<code>x-1</code>就重复了，比如<code>1</code>找<code>2</code>，<code>2</code>又找<code>1</code>。不是一样的吗！）</li>
-<li>字典：枚举超时的，怎么办？我们枚举完<code>x</code>后，其实可以通过HashMap来直接找到<code>x</code>和<code>x+1</code>出现的次数。这样就能在$O(1)$的时间内得到<code>x</code>和<code>x+1</code>的次数。我们首先还是遍历一遍数组，得到HashMap。随后遍历哈希映射，设当前遍历到的key-value对为<code>(x,value)</code>，那么我们就查询<code>x+1</code>在HashMap 中对应的值，就得到了<code>x</code>和<code>x+1</code>出现的次数。</li>
-</ul>
-<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findLHS</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        dic_nums = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            dic_nums[num] = dic_nums.get(num,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">      </span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> key,value <span class="keyword">in</span> dic_nums.items():</span><br><span class="line">            <span class="keyword">if</span> dic_nums.get(key+<span class="number">1</span>,<span class="number">0</span>) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                tmp = dic_nums.get(key+<span class="number">1</span>,<span class="number">0</span>)+ value</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, tmp)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O(n)</script>   </li>
-<li>空间复杂度：<script type="math/tex">O(n)</script> </li>
-</ul>
-</li>
-</ul>
-<h4 id="大佬题解-2"><a href="#大佬题解-2" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC128-最长连续序列-最长连续序列"><a href="#LC128-最长连续序列-最长连续序列" class="headerlink" title="(LC128)  最长连续序列   最长连续序列"></a>(LC128)  最长连续序列  <a href="https://leetcode-cn.com/problems/longest-consecutive-sequence/"> 最长连续序列</a></h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><p>给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [100,4,200,1,3,2]</span><br><span class="line">输出：4</span><br><span class="line">解释：最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><ol>
-<li>暴力改良版：首先我们会想到最直接暴力的破解。我们可以用一个<code>set</code>把给的数组，去重的保存起来。然后再考虑数组的每个数，比如这个数是<code>n</code>，然后看到<code>n+1</code>在不在<code>set</code>中，然后再看<code>n+2</code>。这样时间复杂度就是$n^2$。 如果我们只考虑从序列最小的数开始的话，我们就直接跳过了很多数，复杂度就降低了。</li>
-<li></li>
-</ol>
-<h4 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span>  <span class="comment">#思路1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestConsecutive</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        nums_set = <span class="built_in">set</span>(nums)</span><br><span class="line">        longest_seq = <span class="number">1</span></span><br><span class="line">        current_seq = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums_set:</span><br><span class="line">            <span class="keyword">if</span> num - <span class="number">1</span> <span class="keyword">in</span> nums_set:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">elif</span> num + <span class="number">1</span> <span class="keyword">in</span> nums_set:</span><br><span class="line">                <span class="keyword">while</span> num + <span class="number">1</span> <span class="keyword">in</span> nums_set:</span><br><span class="line">                    current_seq += <span class="number">1</span></span><br><span class="line">                    num += <span class="number">1</span></span><br><span class="line">                longest_seq = <span class="built_in">max</span>(longest_seq, current_seq)</span><br><span class="line">                current_seq = <span class="number">1</span></span><br><span class="line">                print(longest_seq)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">return</span> longest_seq</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>虽然 for 循环里套了 while 循环，但每个元素其实最多也就是被访问两次。比如极端情况 987654 ，98765 循环的时候都不会进入 while 循环，只有到 4 的时候才进入了 while 循环。所以总共的话， 98765 也只会被访问两次，所以时间复杂度就是 O(2n) 了。<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O(n)</script>   </li>
-<li>空间复杂度：<script type="math/tex">O(n)</script> </li>
-</ul>
-</li>
-</ul>
-<h4 id="大佬题解-3"><a href="#大佬题解-3" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-5"><a href="#大佬题解-5" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
-      <categories>
-        <category>力扣</category>
-        <category>力扣数据类型</category>
-      </categories>
-  </entry>
-  <entry>
     <title>双指针</title>
     <url>/2021/03/18/%E5%8F%8C%E6%8C%87%E9%92%88/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="双指针-顺序"><a href="#双指针-顺序" class="headerlink" title="双指针 (顺序)"></a>双指针 (<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8F%8C%E6%8C%87%E9%92%88.md#1-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84-two-sum">顺序</a>)</h1><p>双指针用于遍历数组，两个指针指向不同的元素，从而共同的完成一个任务。<br>（1）共同完成一个和的target<br>（2）从后往前，从前往后，两边夹击，快慢指针</p>
@@ -937,6 +852,88 @@
       <tags>
         <tag>python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>哈希表</title>
+    <url>/2021/04/09/%E5%93%88%E5%B8%8C%E8%A1%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>哈希表<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%93%88%E5%B8%8C%E8%A1%A8.md">刷题顺序</a></p>
+<p><a href="https://www.edureka.co/blog/data-structures-in-python/">data structures</a></p>
+<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><p>字典和列表完全不同，字典里的对象是无序的，他是通过一对对的键和值来反映一种映射关系。字典里，每个键都是唯一的，我们可以通过键来存储对应的值，而不能像列表那样通过位置来索引。</p>
+<p>生成字典的方法：第一种方法：初始为空字典，动态填充新的键和值。重点是第二种方法，用列表动态生成字典。第三种方法，用键值对元组组成的列表构造字典。</p>
+<h2 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h2><ul>
+<li>哈希映射的用途： 我个人理解是方便搜索定位吧</li>
+</ul>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><h2 id="大佬解释"><a href="#大佬解释" class="headerlink" title="大佬解释"></a>大佬解释</h2><ul>
+<li><a href="https://www.zhihu.com/question/58099937">Python中列表和字典有什么区别，分别适用于什么场景？
+</a></li>
+</ul>
+<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><h2 id="LC1-两数之和-两数之和"><a href="#LC1-两数之和-两数之和" class="headerlink" title="(LC1)  两数之和    两数之和"></a>(LC1)  两数之和   <a href="https://leetcode-cn.com/problems/two-sum/description/"> 两数之和</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 的那 两个 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [2,7,11,15], target = 9</span><br><span class="line">输出：[0,1]</span><br><span class="line">解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。 </span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
+<li> 注意到方法一的时间复杂度较高的原因是寻找 <code>target - x</code> 的时间复杂度过高。因此，我们需要一种更优秀的方法，能够快速寻找数组中是否存在目标元素。如果存在，我们需要找出它的索引。<br> 使用哈希表，可以将寻找 <code>target - x</code> 的时间复杂度降低到从 <script type="math/tex">O(N)</script>  降低到 <code>$O(1)$</code> 。<br> 这样我们创建一个哈希表，对于每一个 <code>x</code>，我们首先查询哈希表中是否存在 <code>target - x</code>，然后将 x 插入到哈希表中，即可保证不会让 <code>x</code> 和自己匹配。 </li>
+<li>可以先对数组进行排序，然后使用双指针方法或者二分查找方法。这样做的时间复杂度为 $O(NlogN)$，空间复杂度为 $O(1)$。</li>
+<li>用 HashMap 存储数组元素和索引的映射，在访问到 <code>nums[i]</code> 时，判断 HashMap 中是否存在 <code>target - nums[i]</code>，如果存在说明 <code>target - nums[i]</code> 所在的索引和 <code>i</code> 就是要找的两个数。该方法的时间复杂度为 $O(N)$，空间复杂度为 $O(N)$，使用空间来换取时间。</li>
+</ol>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; List[int]:</span></span><br><span class="line">        hashtable = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> i , num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> target - num <span class="keyword">in</span> hashtable:</span><br><span class="line">                <span class="keyword">return</span> [hashtable[target - num], i]</span><br><span class="line">            hashtable[num] = i</span><br><span class="line">        <span class="keyword">return</span> []</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( n)</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( n )</script> </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC217-存在重复元素-存在重复元素"><a href="#LC217-存在重复元素-存在重复元素" class="headerlink" title="(LC217)  存在重复元素  存在重复元素"></a>(LC217)  存在重复元素  <a href="https://leetcode-cn.com/problems/contains-duplicate/">存在重复元素</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数数组，判断是否存在重复元素。</p>
+<p>如果存在一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ol>
+<li><code>set</code>的特点是不重复的数组。 比较数组<code>nums</code>和集合<code>nums</code>长度，如果长度不一致，就返回<code>true</code>，否则返回<code>False</code></li>
+<li>字典， 遍历<code>nums</code>，将其加入字典中，加入之前判断一下是否存在，如果存在就return False,否则true</li>
+</ol>
+<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">containsDuplicate</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; bool:</span> <span class="comment"># 思路1：set思路</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) != <span class="built_in">len</span>(<span class="built_in">set</span>(nums)):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">containsDuplicate</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; bool:</span> <span class="comment"># 思路2：dic思路</span></span><br><span class="line">        pairs = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> i, num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">in</span> pairs:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            pairs[num] = i</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
+<li>复杂度分析 （思路1,思路2）<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( n)</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( n )</script> </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-1"><a href="#大佬题解-1" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC594-最长和谐序列-最长和谐序列"><a href="#LC594-最长和谐序列-最长和谐序列" class="headerlink" title="(LC594)  最长和谐序列  最长和谐序列"></a>(LC594)  最长和谐序列  <a href="">最长和谐序列</a></h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><p>和谐数组是指一个数组里元素的最大值和最小值之间的差别 正好是 1 。</p>
+<p>现在，给你一个整数数组 nums ，请你在所有可能的子序列中找到最长的和谐子序列的长度。</p>
+<p>数组的子序列是一个由数组派生出来的序列，它可以通过删除一些元素或不删除元素、且不改变其余元素的顺序而得到。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [1,3,2,2,5,2,3,7]</span><br><span class="line">输出：5</span><br><span class="line">解释：最长的和谐子序列是 [3,2,2,2,3]</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>枚举：我们可以枚举数组中的每一个元素，对于当前枚举的元素<code>x</code>，它可以和<code>x+1</code>组成和谐子序列。我们遍历一遍整个数组，找出等于<code>x</code>或<code>x+1</code>的元素的个数，就可以得到以<code>x</code>为最小值的和谐子序列的长度。（一开始我同时找了<code>x-1</code>和<code>x+1</code>，其实就找<code>x+1</code>就行，再找<code>x-1</code>就重复了，比如<code>1</code>找<code>2</code>，<code>2</code>又找<code>1</code>。不是一样的吗！）</li>
+<li>字典：枚举超时的，怎么办？我们枚举完<code>x</code>后，其实可以通过HashMap来直接找到<code>x</code>和<code>x+1</code>出现的次数。这样就能在$O(1)$的时间内得到<code>x</code>和<code>x+1</code>的次数。我们首先还是遍历一遍数组，得到HashMap。随后遍历哈希映射，设当前遍历到的key-value对为<code>(x,value)</code>，那么我们就查询<code>x+1</code>在HashMap 中对应的值，就得到了<code>x</code>和<code>x+1</code>出现的次数。</li>
+</ul>
+<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findLHS</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        dic_nums = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            dic_nums[num] = dic_nums.get(num,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">      </span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> key,value <span class="keyword">in</span> dic_nums.items():</span><br><span class="line">            <span class="keyword">if</span> dic_nums.get(key+<span class="number">1</span>,<span class="number">0</span>) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                tmp = dic_nums.get(key+<span class="number">1</span>,<span class="number">0</span>)+ value</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, tmp)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>   </li>
+<li>空间复杂度：<script type="math/tex">O(n)</script> </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-2"><a href="#大佬题解-2" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC128-最长连续序列-最长连续序列"><a href="#LC128-最长连续序列-最长连续序列" class="headerlink" title="(LC128)  最长连续序列   最长连续序列"></a>(LC128)  最长连续序列  <a href="https://leetcode-cn.com/problems/longest-consecutive-sequence/"> 最长连续序列</a></h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><p>给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [100,4,200,1,3,2]</span><br><span class="line">输出：4</span><br><span class="line">解释：最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><ol>
+<li>暴力改良版：首先我们会想到最直接暴力的破解。我们可以用一个<code>set</code>把给的数组，去重的保存起来。然后再考虑数组的每个数，比如这个数是<code>n</code>，然后看到<code>n+1</code>在不在<code>set</code>中，然后再看<code>n+2</code>。这样时间复杂度就是$n^2$。 如果我们只考虑从序列最小的数开始的话，我们就直接跳过了很多数，复杂度就降低了。</li>
+<li></li>
+</ol>
+<h4 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span>  <span class="comment">#思路1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestConsecutive</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        nums_set = <span class="built_in">set</span>(nums)</span><br><span class="line">        longest_seq = <span class="number">1</span></span><br><span class="line">        current_seq = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums_set:</span><br><span class="line">            <span class="keyword">if</span> num - <span class="number">1</span> <span class="keyword">in</span> nums_set:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">elif</span> num + <span class="number">1</span> <span class="keyword">in</span> nums_set:</span><br><span class="line">                <span class="keyword">while</span> num + <span class="number">1</span> <span class="keyword">in</span> nums_set:</span><br><span class="line">                    current_seq += <span class="number">1</span></span><br><span class="line">                    num += <span class="number">1</span></span><br><span class="line">                longest_seq = <span class="built_in">max</span>(longest_seq, current_seq)</span><br><span class="line">                current_seq = <span class="number">1</span></span><br><span class="line">                print(longest_seq)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">return</span> longest_seq</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>虽然 for 循环里套了 while 循环，但每个元素其实最多也就是被访问两次。比如极端情况 987654 ，98765 循环的时候都不会进入 while 循环，只有到 4 的时候才进入了 while 循环。所以总共的话， 98765 也只会被访问两次，所以时间复杂度就是 O(2n) 了。<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>   </li>
+<li>空间复杂度：<script type="math/tex">O(n)</script> </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-3"><a href="#大佬题解-3" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-5"><a href="#大佬题解-5" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
+      <categories>
+        <category>力扣</category>
+        <category>力扣数据类型</category>
+      </categories>
   </entry>
   <entry>
     <title>堆</title>
@@ -1053,47 +1050,6 @@
       </tags>
   </entry>
   <entry>
-    <title>小知识点们儿（全局局部区别，self参数）</title>
-    <url>/2021/03/29/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%AC%E5%84%BF/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h1 id="Python-全局变量-局部变量区"><a href="#Python-全局变量-局部变量区" class="headerlink" title="Python 全局变量-局部变量区"></a>Python 全局变量-局部变量区</h1><p>整理一下<a href="https://www.cnblogs.com/insane-Mr-Li/p/9813226.html">这个</a><br>对于很多初学者来说，对于全局和局部变量容易混淆，我们来尝试解释一下：</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>全局变量：在模块内、在所有函数的外面、在class 外面<br>局部变量：在函数内，在class的方法内</strong></p>
-<ol>
-<li>在子程序中定义的变量成为局部变量，在程序的一开始定义的变量成为全局变量。全局变量作用域是整个程序，局部变量作用域是定义该变量的子程序。</li>
-<li>全局变量没有任何缩进，在任何位置都可以调用</li>
-<li>子程序：如用def定义的函数。</li>
-<li>作用域 ：全局作用域（global)在整个程序运行中都可见。局部作用域：在函数内部、类等内部可见；局部变量使用范围不能超过其所在的局部作用域。</li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Name =<span class="string">"nicholas"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    print(<span class="string">"change_name"</span>,Name)</span><br><span class="line">change_name()</span><br><span class="line">print(Name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>change_name nicholas</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>nicholas</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>分析： <code>Name ="nicholas"</code>就是全局变量，在<code>change_name()</code>函数体内可以直接调用打印出<code>change_name nicholas</code></li>
-</ul>
-<ol>
-<li>当全局变量与局部变量同名时<br>在定义局部变量的子程序内，局部变量起作用；在其他地方全局起作用</li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Name =<span class="string">"nicholas"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    Name =<span class="string">"ZhaoSiEr"</span></span><br><span class="line">    print(<span class="string">"change_name"</span>,Name)</span><br><span class="line">change_name()</span><br><span class="line">print(Name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>change_name ZhaoSiEr</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>nicholas</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>分析：当全局变量与局部变量同名时：在<code>def change_name():</code>函数内部，执行<code>print("change_name",Name)</code>语句时，这里的<code>Name</code>优先调用函数内部的值，函数执行结束后执行<code>print(Name)</code>语句，全局变量<code>Name ="nicholas"</code> 起作用。</li>
-</ul>
-<ol>
-<li><p>如果函数内部无global关键字<br>优先读取局部变量，如果没有局部变量则读取全局变量，此时无法对全局变量进行赋值。 但是对于可变对象可以对内部元素进行操作（如<code>append()</code>,<code>pop()</code>）</p>
-<ul>
-<li>有声明（同名）局部变量<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">name =[<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br><span class="line">print(<span class="number">1</span>,name)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    name =<span class="string">"Dan Li"</span></span><br><span class="line">    print(<span class="string">"Dalao"</span>,name)</span><br><span class="line">change_name()</span><br><span class="line">print(<span class="number">2</span>,name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> [<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Dalao Dan Li</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> [<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ul>
-<ul>
-<li>这里无<code>global</code>关键字，执行<code>print(1,name)</code>语句时读取全局变量<code>name =["Lijing Yi","Shaogang Zhang"]</code>，之后执行<code>change_name()</code>函数，在函数里面<code>name ="Dan Li"</code>。执行<code>print("Dalao",name)</code>语句，这里的<code>name</code>优先读取函数内部的局部变量<code>name ="Dan Li"</code>，因此输出<code>Dalao Dan Li</code>。之后<code>change_name()</code>函数结束。执行<code>print(2,name)</code>语句时，这里仍然读取全局变量<code>name =["Lijing Yi","Shaogang Zhang"]</code>。</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>字符串</title>
     <url>/2021/04/09/%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>字符串<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2.md#leetcode-%E9%A2%98%E8%A7%A3---%E5%AD%97%E7%AC%A6%E4%B8%B2">刷题顺序</a></p>
@@ -1195,6 +1151,47 @@
         <category>力扣</category>
         <category>力扣数据类型</category>
       </categories>
+  </entry>
+  <entry>
+    <title>小知识点们儿（全局局部区别，self参数）</title>
+    <url>/2021/03/29/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%AC%E5%84%BF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h1 id="Python-全局变量-局部变量区"><a href="#Python-全局变量-局部变量区" class="headerlink" title="Python 全局变量-局部变量区"></a>Python 全局变量-局部变量区</h1><p>整理一下<a href="https://www.cnblogs.com/insane-Mr-Li/p/9813226.html">这个</a><br>对于很多初学者来说，对于全局和局部变量容易混淆，我们来尝试解释一下：</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>全局变量：在模块内、在所有函数的外面、在class 外面<br>局部变量：在函数内，在class的方法内</strong></p>
+<ol>
+<li>在子程序中定义的变量成为局部变量，在程序的一开始定义的变量成为全局变量。全局变量作用域是整个程序，局部变量作用域是定义该变量的子程序。</li>
+<li>全局变量没有任何缩进，在任何位置都可以调用</li>
+<li>子程序：如用def定义的函数。</li>
+<li>作用域 ：全局作用域（global)在整个程序运行中都可见。局部作用域：在函数内部、类等内部可见；局部变量使用范围不能超过其所在的局部作用域。</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Name =<span class="string">"nicholas"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    print(<span class="string">"change_name"</span>,Name)</span><br><span class="line">change_name()</span><br><span class="line">print(Name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>change_name nicholas</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>nicholas</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>分析： <code>Name ="nicholas"</code>就是全局变量，在<code>change_name()</code>函数体内可以直接调用打印出<code>change_name nicholas</code></li>
+</ul>
+<ol>
+<li>当全局变量与局部变量同名时<br>在定义局部变量的子程序内，局部变量起作用；在其他地方全局起作用</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Name =<span class="string">"nicholas"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    Name =<span class="string">"ZhaoSiEr"</span></span><br><span class="line">    print(<span class="string">"change_name"</span>,Name)</span><br><span class="line">change_name()</span><br><span class="line">print(Name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>change_name ZhaoSiEr</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>nicholas</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>分析：当全局变量与局部变量同名时：在<code>def change_name():</code>函数内部，执行<code>print("change_name",Name)</code>语句时，这里的<code>Name</code>优先调用函数内部的值，函数执行结束后执行<code>print(Name)</code>语句，全局变量<code>Name ="nicholas"</code> 起作用。</li>
+</ul>
+<ol>
+<li><p>如果函数内部无global关键字<br>优先读取局部变量，如果没有局部变量则读取全局变量，此时无法对全局变量进行赋值。 但是对于可变对象可以对内部元素进行操作（如<code>append()</code>,<code>pop()</code>）</p>
+<ul>
+<li>有声明（同名）局部变量<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">name =[<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br><span class="line">print(<span class="number">1</span>,name)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    name =<span class="string">"Dan Li"</span></span><br><span class="line">    print(<span class="string">"Dalao"</span>,name)</span><br><span class="line">change_name()</span><br><span class="line">print(<span class="number">2</span>,name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> [<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Dalao Dan Li</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> [<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<ul>
+<li>这里无<code>global</code>关键字，执行<code>print(1,name)</code>语句时读取全局变量<code>name =["Lijing Yi","Shaogang Zhang"]</code>，之后执行<code>change_name()</code>函数，在函数里面<code>name ="Dan Li"</code>。执行<code>print("Dalao",name)</code>语句，这里的<code>name</code>优先读取函数内部的局部变量<code>name ="Dan Li"</code>，因此输出<code>Dalao Dan Li</code>。之后<code>change_name()</code>函数结束。执行<code>print(2,name)</code>语句时，这里仍然读取全局变量<code>name =["Lijing Yi","Shaogang Zhang"]</code>。</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
   </entry>
   <entry>
     <title>排序 （熟到可以默写）</title>
@@ -1321,6 +1318,179 @@
         <tag>数据结构</tag>
         <tag>学习笔记</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>数组与矩阵</title>
+    <url>/2021/04/12/%E6%95%B0%E7%BB%84%E4%B8%8E%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>字符串<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%95%B0%E7%BB%84%E4%B8%8E%E7%9F%A9%E9%98%B5.md">刷题顺序</a></p>
+<h2 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h2><h2 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><h2 id="大佬"><a href="#大佬" class="headerlink" title="大佬"></a>大佬</h2><h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><h2 id="LC283-移动零-移动零"><a href="#LC283-移动零-移动零" class="headerlink" title="(LC283) 移动零    移动零 "></a>(LC283) 移动零   <a href="https://leetcode-cn.com/problems/move-zeroes/description/"> 移动零 </a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。<br>Given an integer array nums, move all 0’s to the end of it while maintaining the relative order of the non-zero elements.<br>Note that you must do this in-place without making a copy of the array </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Input: nums = [0,1,0,3,12]</span><br><span class="line">Output: [1,3,12,0,0]</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC"><a href="#LC" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-1"><a href="#大佬题解-1" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-2"><a href="#大佬题解-2" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-3"><a href="#大佬题解-3" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-5"><a href="#大佬题解-5" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-5"><a href="#LC-5" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-6"><a href="#大佬题解-6" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-6"><a href="#LC-6" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-7"><a href="#大佬题解-7" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-7"><a href="#LC-7" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-8"><a href="#Python3-Code-8" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-8"><a href="#大佬题解-8" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-8"><a href="#LC-8" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-9"><a href="#Python3-Code-9" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-9"><a href="#大佬题解-9" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-9"><a href="#LC-9" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-10"><a href="#Python3-Code-10" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-10"><a href="#大佬题解-10" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-10"><a href="#LC-10" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-11"><a href="#Python3-Code-11" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-11"><a href="#大佬题解-11" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-11"><a href="#LC-11" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-12"><a href="#题目-12" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-12"><a href="#Python3-Code-12" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-12"><a href="#大佬题解-12" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-12"><a href="#LC-12" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-13"><a href="#题目-13" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-13"><a href="#思路-13" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-13"><a href="#Python3-Code-13" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-13"><a href="#大佬题解-13" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-13"><a href="#LC-13" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-14"><a href="#题目-14" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-14"><a href="#思路-14" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-14"><a href="#Python3-Code-14" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-14"><a href="#大佬题解-14" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-14"><a href="#LC-14" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-15"><a href="#题目-15" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-15"><a href="#思路-15" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-15"><a href="#Python3-Code-15" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-15"><a href="#大佬题解-15" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-15"><a href="#LC-15" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-16"><a href="#题目-16" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-16"><a href="#思路-16" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-16"><a href="#Python3-Code-16" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-16"><a href="#大佬题解-16" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC-16"><a href="#LC-16" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h2><h3 id="题目-17"><a href="#题目-17" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-17"><a href="#思路-17" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-17"><a href="#Python3-Code-17" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(s)</script>。 </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬题解-17"><a href="#大佬题解-17" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
+      <categories>
+        <category>力扣</category>
+        <category>力扣数据类型</category>
+      </categories>
   </entry>
   <entry>
     <title>经典到默写的</title>
@@ -1587,284 +1757,6 @@
       <tags>
         <tag>力扣</tag>
         <tag>力扣数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>动态规划之0-1背包</title>
-    <url>/2021/03/03/%E5%8A%A8%E6%80%81%E8%A7%84%E6%A0%BC%E4%B9%8B0-1%E8%83%8C%E5%8C%85/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-1背包"><a href="#0-1背包" class="headerlink" title="0-1背包"></a>0-1背包</h1><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.md#0-1-%E8%83%8C%E5%8C%85">戳一下</a></p>
-<p>有一个容量为<script type="math/tex">N</script>的背包，要用这个背包装下物品的价值最大，这些物品有两个属性：体积<script type="math/tex">w</script>和价值<script type="math/tex">v</script>。</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>有一个容量为<script type="math/tex">N</script>的背包，要用这个背包装下物品的价值最大，这些物品有两个属性：体积<script type="math/tex">w</script>和价值<script type="math/tex">v</script>。<br>定义一个二维数组<code>dp</code>存储最大价值，其中<code>dp[i][j]</code>表示前<code>i</code>件物品体积不超过<code>j</code>的情况下能达到的最大价值。设第<code>i</code>件物品体积为<code>w</code>，价值为<code>v</code>，根据第<code>i</code>件物品是否添加到背包中，可以分为两种情况：</p>
-<ul>
-<li>第<code>i</code>件物品没添加到背包，总体积不超过<code>j</code>的前<code>i</code>件物品的最大价值就是总体积不超过<code>j</code>的前<code>i-1</code>件物品的最大价值，<code>dp[i][j]= dp[i-1][j]</code></li>
-<li>第<code>i</code>件物品添加到背包，<code>dp[i][j]= dp[i-1][j-w] + v</code><br>第<code>i</code>件物品可添加也可以不添加，取决于哪种情况下最大价值更大。因此，0-1背包的状态转移方程为：<br><code>dp[i][j]= max(dp[i-1][j],dp[i-1][j-w] + v)</code></li>
-</ul>
-<h2 id="无法使用贪心算法的解释"><a href="#无法使用贪心算法的解释" class="headerlink" title="无法使用贪心算法的解释"></a>无法使用贪心算法的解释</h2><p>0-1背包问题无法使用贪心算法来求解，也就是说不能按照先添加性价比最高的物品来达到最优，这是因为这种方式可能造成背包空间的浪费，从而无法达到最优解。</p>
-<h1 id="变种"><a href="#变种" class="headerlink" title="变种"></a>变种</h1><ul>
-<li>完全背包：物品数量为无限个</li>
-<li>多重背包：物品数量有限制</li>
-<li>多维费用背包：物品不仅有重量，还有体积，同时考虑这两种限制</li>
-<li>其它：物品之间相互约束或者依赖</li>
-</ul>
-<h2 id="大佬解释"><a href="#大佬解释" class="headerlink" title="大佬解释"></a>大佬解释</h2><p><a href="https://github.com/tianyicui/pack/blob/master/V2.pdf">背包九讲</a><br><a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/solution/0-1-bei-bao-wen-ti-xiang-jie-zhen-dui-ben-ti-de-yo/">liweiwei解释</a><br><a href="https://zhuanlan.zhihu.com/p/30959069">BAT特白</a></p>
-<p><a href="https://leetcode-cn.com/problems/target-sum/solution/dong-tai-gui-hua-si-kao-quan-guo-cheng-by-keepal/">超强解释</a></p>
-<h1 id="Leetcode题"><a href="#Leetcode题" class="headerlink" title="Leetcode题"></a>Leetcode题</h1><h2 id="LC416-分割等和子集-分割等和子集"><a href="#LC416-分割等和子集-分割等和子集" class="headerlink" title="(LC416)分割等和子集   分割等和子集"></a>(LC416)分割等和子集   <a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/description/">分割等和子集</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。</p>
-<p>注意:<br>每个数组中的元素不会超过 100<br>数组的大小不会超过 200<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: [1, 5, 11, 5]</span><br><span class="line">输出: true</span><br><span class="line">解释: 数组可以分割成 [1, 5, 5] 和 [11].</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/04/02/4SbhcBFw2ViTM95.png" alt="分割等和子集"></p>
-<ul>
-<li>动态规划</li>
-</ul>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canPartition</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; bool:</span></span><br><span class="line">        target, v = <span class="built_in">divmod</span>(<span class="built_in">sum</span>(nums),<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> v != <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        dp = [ [ <span class="literal">False</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(target+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)) ]</span><br><span class="line">        <span class="keyword">if</span> nums[<span class="number">0</span>] &gt; target:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        dp[<span class="number">0</span>][nums[<span class="number">0</span>]] = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            dp[k][<span class="number">0</span>] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(target+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> j &gt;= nums[i]: </span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j] <span class="keyword">or</span> dp[i-<span class="number">1</span>][j- nums[i]]  <span class="comment"># 用 | 也可</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j]</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][-<span class="number">1</span>]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O(m*n)</script>   </li>
-<li>空间复杂度：<script type="math/tex">O(m*n )</script> </li>
-</ul>
-</li>
-</ul>
-<h2 id="LC494-目标和-目标和"><a href="#LC494-目标和-目标和" class="headerlink" title="(LC494)  目标和  目标和"></a>(LC494)  目标和  <a href="https://leetcode-cn.com/problems/target-sum/description/">目标和</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个非负整数数组，a1, a2, …, an, 和一个目标数，S。现在你有两个符号 + 和 -。对于数组中的任意一个整数，你都可以从 + 或 -中选择一个符号添加在前面。</p>
-<p>返回可以使最终数组和为目标数 S 的所有添加符号的方法数</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums: [1, 1, 1, 1, 1], S: 3</span><br><span class="line">输出：5</span><br><span class="line">解释：</span><br><span class="line"></span><br><span class="line">-1+1+1+1+1 = 3</span><br><span class="line">+1-1+1+1+1 = 3</span><br><span class="line">+1+1-1+1+1 = 3</span><br><span class="line">+1+1+1-1+1 = 3</span><br><span class="line">+1+1+1+1-1 = 3</span><br><span class="line"></span><br><span class="line">一共有5种方法让最终目标和为3。 </span><br></pre></td></tr></tbody></table></figure>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>动态规划<br><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/04/02/Kf76P42sTUaxiMg.png" alt="分割等和子集"></li>
-</ul>
-<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-1"><a href="#动态规划-1" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findTargetSumWays</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], S: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        <span class="comment"># dp[][]</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        numS = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">if</span> numS == S <span class="keyword">and</span> <span class="built_in">len</span>(nums)== <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> </span><br><span class="line">        <span class="keyword">if</span> numS == -S <span class="keyword">and</span> <span class="built_in">len</span>(nums)== <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> </span><br><span class="line">        <span class="keyword">if</span> numS&lt;S:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">       </span><br><span class="line">         </span><br><span class="line">        dp = [ [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>*numS+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n) ]</span><br><span class="line">        dp[<span class="number">0</span>][numS+nums[<span class="number">0</span>]] = <span class="number">1</span></span><br><span class="line">        dp[<span class="number">0</span>][numS-nums[<span class="number">0</span>]] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(-numS -<span class="number">1</span>, numS +<span class="number">1</span>):</span><br><span class="line">                l = dp[i-<span class="number">1</span>][ numS+j-nums[i]] <span class="keyword">if</span> <span class="number">0</span> &lt;=  numS+ j - nums[i] &lt; <span class="number">2</span>* numS +<span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">                r = dp[i-<span class="number">1</span>][ numS+j+nums[i]] <span class="keyword">if</span> <span class="number">0</span> &lt;= numS+ j + nums[i] &lt;  <span class="number">2</span>*numS +<span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">                dp[i][numS+j] = l + r</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][numS+S]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h4 id="大佬"><a href="#大佬" class="headerlink" title="大佬"></a>大佬</h4><p><a href="https://leetcode-cn.com/problems/target-sum/solution/dong-tai-gui-hua-si-kao-quan-guo-cheng-by-keepal/">超强解释</a></p>
-<h2 id="LC474-一和零-一和零"><a href="#LC474-一和零-一和零" class="headerlink" title="(LC474)  一和零  一和零"></a>(LC474)  一和零  <a href="https://leetcode-cn.com/problems/ones-and-zeroes/description/">一和零</a></h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>给你一个二进制字符串数组 strs 和两个整数 m 和 n 。</p>
-<p>请你找出并返回 strs 的最大子集的大小，该子集中 最多 有 m 个 0 和 n 个 1 。</p>
-<p>如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集 </p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：strs = ["10", "0001", "111001", "1", "0"], m = 5, n = 3</span><br><span class="line">输出：4</span><br><span class="line">解释：最多有 5 个 0 和 3 个 1 的最大子集是 {"10","0001","1","0"} ，因此答案是 4 。</span><br><span class="line">其他满足题意但较小的子集包括 {"0001","1"} 和 {"10","1","0"} 。{"111001"} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。 </span><br></pre></td></tr></tbody></table></figure>
-<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>动态规划：把总共的<code>0</code>和<code>1</code>的个数视为背包的容量，每一个字符串视为装进背包的物品。这道题就可以使用<code>0-1</code>背包问题的思路完成，这个目标值是能放进背包的字符串的数量。物品一个一个尝试，容量一点一点尝试，每个物品分类讨论的标准是：选与不选。<br>定义状态：尝试题目问啥，就把啥定义成状态。<code>dp[i][j][k]</code>表示输入字符串在子区间<code>[0,i]</code>能够使用<code>j</code>个<code>0</code>和<code>k</code>个<code>1</code>的字符串的最大数量。</p>
-<ul>
-<li>动态方程  </li>
-</ul>
-<script type="math/tex; mode=display">
-dp[i][j][k]
-\begin{cases}
-dp[i-1][j][k], &if\ choosing\ str[i]\\
-dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
-\end{cases}</script><ul>
-<li>初始化，为了避免分类套路，可以多设一行。<br>-</li>
-</ul>
-<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-2"><a href="#动态规划-2" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMaxForm</span>(<span class="params">self, strs: List[<span class="built_in">str</span>], m: <span class="built_in">int</span>, n: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        str_num = <span class="built_in">len</span>(strs)</span><br><span class="line">        dp = [[[<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(str_num+<span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,str_num+<span class="number">1</span>):</span><br><span class="line">            ones = strs[i-<span class="number">1</span>].count(<span class="string">'1'</span>)</span><br><span class="line">            zeros = strs[i-<span class="number">1</span>].count(<span class="string">'0'</span>)</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>):</span><br><span class="line">                    dp[i][j][k] = dp[i-<span class="number">1</span>][j][k] </span><br><span class="line">                    <span class="keyword">if</span> j&gt;=zeros <span class="keyword">and</span> k&gt;=ones:</span><br><span class="line">                        dp[i][j][k] = <span class="built_in">max</span>( dp[i-<span class="number">1</span>][j][k] ,  dp[i-<span class="number">1</span>][j-zeros][k-ones] +<span class="number">1</span> )</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][-<span class="number">1</span>][-<span class="number">1</span>]</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O(n^3 )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( n^3)</script> </li>
-</ul>
-</li>
-</ul>
-<h2 id="L322-零钱兑换-零钱兑换"><a href="#L322-零钱兑换-零钱兑换" class="headerlink" title="(L322)  零钱兑换  零钱兑换"></a>(L322)  零钱兑换  <a href="https://leetcode-cn.com/problems/coin-change/description/">零钱兑换</a></h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>给定不同面额的硬币 <code>coins</code>和一个总金额 <code>amount</code>。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。</p>
-<p>你可以认为每种硬币的数量是无限的。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：coins = [1, 2, 5], amount = 11</span><br><span class="line">输出：3 </span><br><span class="line">解释：11 = 5 + 5 + 1</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>动态规划</li>
-</ul>
-<h3 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-3"><a href="#动态规划-3" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">coinChange</span>(<span class="params">self, coins: List[<span class="built_in">int</span>], amount: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        coins.sort()</span><br><span class="line">        dp = [ ([<span class="number">0</span>] + [inf]*(amount) ) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(coins)+<span class="number">1</span>)]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(coins)+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(amount+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> j &gt;= coins[i-<span class="number">1</span>]:</span><br><span class="line">                    dp[i][j] = <span class="built_in">min</span>(dp[i-<span class="number">1</span>][j] , dp[i][j - coins[i-<span class="number">1</span>]]+<span class="number">1</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j] =  dp[i-<span class="number">1</span>][j]</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][-<span class="number">1</span>] <span class="keyword">if</span> dp[-<span class="number">1</span>][-<span class="number">1</span>] != inf <span class="keyword">else</span> -<span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h4 id="大佬-1"><a href="#大佬-1" class="headerlink" title="大佬"></a>大佬</h4><h2 id="LC518-零钱兑换-II-零钱兑换-II"><a href="#LC518-零钱兑换-II-零钱兑换-II" class="headerlink" title="(LC518)零钱兑换 II 零钱兑换 II"></a>(LC518)零钱兑换 II <a href="https://leetcode-cn.com/problems/coin-change-2/">零钱兑换 II</a></h2><h3 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h3><p>给定不同面额的硬币和一个总金额。写出函数来计算可以凑成总金额的硬币组合数。假设每一种面额的硬币有无限个。 </p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: amount = 5, coins = [1, 2, 5]</span><br><span class="line">输出: 4</span><br><span class="line">解释: 有四种方式可以凑成总金额:</span><br><span class="line">5=5</span><br><span class="line">5=2+2+1</span><br><span class="line">5=2+1+1+1</span><br><span class="line">5=1+1+1+1+1  </span><br></pre></td></tr></tbody></table></figure>
-<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>动态规划<br>dp[coin][price] = dp[coin][price] + dp[coin][price-coin]</li>
-</ul>
-<h3 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-4"><a href="#动态规划-4" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">change</span>(<span class="params">self, amount: <span class="built_in">int</span>, coins: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        length = <span class="built_in">len</span>(coins)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> coins <span class="keyword">and</span> amount == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> coins <span class="keyword">and</span> amount &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        dp = [([<span class="number">1</span>] + [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(amount)] )<span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(length )]</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> <span class="built_in">range</span>(length):</span><br><span class="line">            <span class="keyword">for</span> price <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,amount+<span class="number">1</span>):</span><br><span class="line">                dp[num][price] =  dp[num-<span class="number">1</span>][price] </span><br><span class="line">                <span class="keyword">if</span> amount &gt;= price-coins[num] &gt;= <span class="number">0</span>:</span><br><span class="line">                    dp[num][price] += dp[num][price-coins[num]]</span><br><span class="line">        <span class="keyword">return</span> dp[length-<span class="number">1</span>][amount]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O(n^2 )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O(n^2 )</script> </li>
-</ul>
-</li>
-</ul>
-<h4 id="大佬-2"><a href="#大佬-2" class="headerlink" title="大佬"></a>大佬</h4><h2 id="LC139-单词拆分-单词拆分"><a href="#LC139-单词拆分-单词拆分" class="headerlink" title="(LC139) 单词拆分   单词拆分"></a>(LC139) 单词拆分   <a href="https://leetcode-cn.com/problems/word-break/description/">单词拆分</a></h2><h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><p>给定一个非空字符串 s 和一个包含非空单词的列表 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。</p>
-<p>说明：</p>
-<p>拆分时可以重复使用字典中的单词。<br>你可以假设字典中没有重复的单词。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: s = "leetcode", wordDict = ["leet", "code"]</span><br><span class="line">输出: true</span><br><span class="line">解释: 返回 true 因为 "leetcode" 可以被拆分成 "leet code"。</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>动态规划  <code>dp[i]</code>表示前<code>i</code>位 <code>dp[i] == True</code>and<code>s[i,...,j)</code>在<code>wordDict</code>中，<code>dp[j] = True</code></li>
-<li>求解顺序的完全背包问题时，对物品的迭代应该放在最里层，对背包的迭代放在外层，只有这样才能让物品按一定顺序放入背包中。</li>
-</ul>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li><p><a href="https://thispointer.com/python-how-to-convert-a-list-to-dictionary/">Python : How to convert a list to dictionary ?</a></p>
-</li>
-<li><p><a href="">Difference between Hashtable and Dictionary</a>??</p>
-</li>
-</ul>
-<h3 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-5"><a href="#动态规划-5" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wordBreak</span>(<span class="params">self, s: <span class="built_in">str</span>, wordDict: List[<span class="built_in">str</span>]</span>) -&gt; bool:</span></span><br><span class="line">        dp = [<span class="literal">True</span>] + [<span class="literal">False</span>] * <span class="built_in">len</span>(s)</span><br><span class="line">        dicWordDict = { _ <span class="keyword">for</span> _ <span class="keyword">in</span> wordDict} <span class="comment"># map list to dic</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i,<span class="built_in">len</span>(s)+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> dp[i] == <span class="literal">True</span>:</span><br><span class="line">                    <span class="keyword">if</span> s[i:j] <span class="keyword">in</span> dicWordDict:</span><br><span class="line">                        dp[j]= <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O()</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h4 id="大佬-3"><a href="#大佬-3" class="headerlink" title="大佬"></a>大佬</h4><p><a href="https://zhuanlan.zhihu.com/p/55538325">DP思想</a></p>
-<h2 id="LC377-组合总和-Ⅳ-组合总和-Ⅳ"><a href="#LC377-组合总和-Ⅳ-组合总和-Ⅳ" class="headerlink" title="(LC377) 组合总和 Ⅳ  组合总和 Ⅳ"></a>(LC377) 组合总和 Ⅳ  <a href="https://leetcode-cn.com/problems/combination-sum-iv/">组合总和 Ⅳ</a></h2><h3 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h3><p>给你一个由 不同 整数组成的数组 nums ，和一个目标整数 target 。请你从 nums 中找出并返回总和为 target 的元素组合的个数。</p>
-<p>题目数据保证答案符合 32 位整数范围。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [1,2,3], target = 4</span><br><span class="line">输出：7</span><br><span class="line">解释：</span><br><span class="line">所有可能的组合为：</span><br><span class="line">(1, 1, 1, 1)</span><br><span class="line">(1, 1, 2)</span><br><span class="line">(1, 2, 1)</span><br><span class="line">(1, 3)</span><br><span class="line">(2, 1, 1)</span><br><span class="line">(2, 2)</span><br><span class="line">(3, 1)</span><br><span class="line">请注意，顺序不同的序列被视作不同的组合。 </span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>动态规划 (涉及顺序的完全背包。)</li>
-<li>动态方程<br>此题的状态转移方程为dp[i] = dp[i-nums[0]]+dp[i-nums[1]]+…dp[i-nums[len-1]],条件为i&gt;=nums[j];<br>dp[0] = 1,dp[0]表示组成0，一个数都不选就可以了，所以dp[0]=1<br>举个例子。假设nums={1,2,3}; target = 4</li>
-</ul>
-<p>dp[4] = dp[4-1]+dp[4-2]+dp[4-3] = dp[3]+dp[2]+dp[1]</p>
-<p>dp[1] = dp[0] = 1;<br>dp[2] = dp[1]+dp[0] = 2;<br>dp[3] = dp[2]+dp[1]+dp[0] = 4;<br>dp[4] = dp[4-1]+dp[4-2]+dp[4-3] = dp[3]+dp[2]+dp[1] = 7 </p>
-<h3 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-6"><a href="#动态规划-6" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">combinationSum4</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        dp = [<span class="number">0</span>] * (target+<span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(target+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">if</span> target&gt;=i -nums[j] &gt;=<span class="number">0</span>:</span><br><span class="line">                    dp[i]+= dp[i- nums[j]]</span><br><span class="line">        <span class="keyword">return</span> dp[target]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O(target*n )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O(n )</script> </li>
-</ul>
-</li>
-</ul>
-<h4 id="大佬-4"><a href="#大佬-4" class="headerlink" title="大佬"></a>大佬</h4><h2 id="LC"><a href="#LC" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h2><h3 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>动态规划</li>
-</ul>
-<h3 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-7"><a href="#动态规划-7" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-5"><a href="#大佬-5" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-8"><a href="#Python3-Code-8" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-8"><a href="#动态规划-8" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-6"><a href="#大佬-6" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-9"><a href="#Python3-Code-9" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-9"><a href="#动态规划-9" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-7"><a href="#大佬-7" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-10"><a href="#Python3-Code-10" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-10"><a href="#动态规划-10" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-8"><a href="#大佬-8" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-11"><a href="#Python3-Code-11" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-11"><a href="#动态规划-11" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-9"><a href="#大佬-9" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-5"><a href="#LC-5" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-12"><a href="#题目-12" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-12"><a href="#Python3-Code-12" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-12"><a href="#动态规划-12" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-10"><a href="#大佬-10" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-6"><a href="#LC-6" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-13"><a href="#题目-13" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-13"><a href="#思路-13" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-13"><a href="#Python3-Code-13" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-13"><a href="#动态规划-13" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-11"><a href="#大佬-11" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-7"><a href="#LC-7" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-14"><a href="#题目-14" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-14"><a href="#思路-14" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-14"><a href="#Python3-Code-14" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-14"><a href="#动态规划-14" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-12"><a href="#大佬-12" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-8"><a href="#LC-8" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-15"><a href="#题目-15" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-15"><a href="#思路-15" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-15"><a href="#Python3-Code-15" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-15"><a href="#动态规划-15" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-13"><a href="#大佬-13" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-9"><a href="#LC-9" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-16"><a href="#题目-16" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-16"><a href="#思路-16" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-16"><a href="#Python3-Code-16" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-16"><a href="#动态规划-16" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-14"><a href="#大佬-14" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-10"><a href="#LC-10" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-17"><a href="#题目-17" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-17"><a href="#思路-17" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>动态规划</li>
-</ul>
-<h4 id="Python3-Code-17"><a href="#Python3-Code-17" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-17"><a href="#动态规划-17" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
-<li>空间复杂度：<script type="math/tex">O( )</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-15"><a href="#大佬-15" class="headerlink" title="大佬"></a>大佬</h5>]]></content>
-      <categories>
-        <category>力扣</category>
-        <category>力扣算法</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -2255,6 +2147,284 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 </li>
 </ul>
 <h5 id="大佬-13"><a href="#大佬-13" class="headerlink" title="大佬"></a>大佬</h5>]]></content>
+      <categories>
+        <category>力扣</category>
+        <category>力扣算法</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动态规划之0-1背包</title>
+    <url>/2021/03/03/%E5%8A%A8%E6%80%81%E8%A7%84%E6%A0%BC%E4%B9%8B0-1%E8%83%8C%E5%8C%85/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-1背包"><a href="#0-1背包" class="headerlink" title="0-1背包"></a>0-1背包</h1><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.md#0-1-%E8%83%8C%E5%8C%85">戳一下</a></p>
+<p>有一个容量为<script type="math/tex">N</script>的背包，要用这个背包装下物品的价值最大，这些物品有两个属性：体积<script type="math/tex">w</script>和价值<script type="math/tex">v</script>。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>有一个容量为<script type="math/tex">N</script>的背包，要用这个背包装下物品的价值最大，这些物品有两个属性：体积<script type="math/tex">w</script>和价值<script type="math/tex">v</script>。<br>定义一个二维数组<code>dp</code>存储最大价值，其中<code>dp[i][j]</code>表示前<code>i</code>件物品体积不超过<code>j</code>的情况下能达到的最大价值。设第<code>i</code>件物品体积为<code>w</code>，价值为<code>v</code>，根据第<code>i</code>件物品是否添加到背包中，可以分为两种情况：</p>
+<ul>
+<li>第<code>i</code>件物品没添加到背包，总体积不超过<code>j</code>的前<code>i</code>件物品的最大价值就是总体积不超过<code>j</code>的前<code>i-1</code>件物品的最大价值，<code>dp[i][j]= dp[i-1][j]</code></li>
+<li>第<code>i</code>件物品添加到背包，<code>dp[i][j]= dp[i-1][j-w] + v</code><br>第<code>i</code>件物品可添加也可以不添加，取决于哪种情况下最大价值更大。因此，0-1背包的状态转移方程为：<br><code>dp[i][j]= max(dp[i-1][j],dp[i-1][j-w] + v)</code></li>
+</ul>
+<h2 id="无法使用贪心算法的解释"><a href="#无法使用贪心算法的解释" class="headerlink" title="无法使用贪心算法的解释"></a>无法使用贪心算法的解释</h2><p>0-1背包问题无法使用贪心算法来求解，也就是说不能按照先添加性价比最高的物品来达到最优，这是因为这种方式可能造成背包空间的浪费，从而无法达到最优解。</p>
+<h1 id="变种"><a href="#变种" class="headerlink" title="变种"></a>变种</h1><ul>
+<li>完全背包：物品数量为无限个</li>
+<li>多重背包：物品数量有限制</li>
+<li>多维费用背包：物品不仅有重量，还有体积，同时考虑这两种限制</li>
+<li>其它：物品之间相互约束或者依赖</li>
+</ul>
+<h2 id="大佬解释"><a href="#大佬解释" class="headerlink" title="大佬解释"></a>大佬解释</h2><p><a href="https://github.com/tianyicui/pack/blob/master/V2.pdf">背包九讲</a><br><a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/solution/0-1-bei-bao-wen-ti-xiang-jie-zhen-dui-ben-ti-de-yo/">liweiwei解释</a><br><a href="https://zhuanlan.zhihu.com/p/30959069">BAT特白</a></p>
+<p><a href="https://leetcode-cn.com/problems/target-sum/solution/dong-tai-gui-hua-si-kao-quan-guo-cheng-by-keepal/">超强解释</a></p>
+<h1 id="Leetcode题"><a href="#Leetcode题" class="headerlink" title="Leetcode题"></a>Leetcode题</h1><h2 id="LC416-分割等和子集-分割等和子集"><a href="#LC416-分割等和子集-分割等和子集" class="headerlink" title="(LC416)分割等和子集   分割等和子集"></a>(LC416)分割等和子集   <a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/description/">分割等和子集</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。</p>
+<p>注意:<br>每个数组中的元素不会超过 100<br>数组的大小不会超过 200<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: [1, 5, 11, 5]</span><br><span class="line">输出: true</span><br><span class="line">解释: 数组可以分割成 [1, 5, 5] 和 [11].</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/04/02/4SbhcBFw2ViTM95.png" alt="分割等和子集"></p>
+<ul>
+<li>动态规划</li>
+</ul>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canPartition</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; bool:</span></span><br><span class="line">        target, v = <span class="built_in">divmod</span>(<span class="built_in">sum</span>(nums),<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> v != <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        dp = [ [ <span class="literal">False</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(target+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)) ]</span><br><span class="line">        <span class="keyword">if</span> nums[<span class="number">0</span>] &gt; target:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        dp[<span class="number">0</span>][nums[<span class="number">0</span>]] = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            dp[k][<span class="number">0</span>] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(target+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> j &gt;= nums[i]: </span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j] <span class="keyword">or</span> dp[i-<span class="number">1</span>][j- nums[i]]  <span class="comment"># 用 | 也可</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j]</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][-<span class="number">1</span>]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(m*n)</script>   </li>
+<li>空间复杂度：<script type="math/tex">O(m*n )</script> </li>
+</ul>
+</li>
+</ul>
+<h2 id="LC494-目标和-目标和"><a href="#LC494-目标和-目标和" class="headerlink" title="(LC494)  目标和  目标和"></a>(LC494)  目标和  <a href="https://leetcode-cn.com/problems/target-sum/description/">目标和</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给定一个非负整数数组，a1, a2, …, an, 和一个目标数，S。现在你有两个符号 + 和 -。对于数组中的任意一个整数，你都可以从 + 或 -中选择一个符号添加在前面。</p>
+<p>返回可以使最终数组和为目标数 S 的所有添加符号的方法数</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums: [1, 1, 1, 1, 1], S: 3</span><br><span class="line">输出：5</span><br><span class="line">解释：</span><br><span class="line"></span><br><span class="line">-1+1+1+1+1 = 3</span><br><span class="line">+1-1+1+1+1 = 3</span><br><span class="line">+1+1-1+1+1 = 3</span><br><span class="line">+1+1+1-1+1 = 3</span><br><span class="line">+1+1+1+1-1 = 3</span><br><span class="line"></span><br><span class="line">一共有5种方法让最终目标和为3。 </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>动态规划<br><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/04/02/Kf76P42sTUaxiMg.png" alt="分割等和子集"></li>
+</ul>
+<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-1"><a href="#动态规划-1" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findTargetSumWays</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], S: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        <span class="comment"># dp[][]</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        numS = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">if</span> numS == S <span class="keyword">and</span> <span class="built_in">len</span>(nums)== <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> </span><br><span class="line">        <span class="keyword">if</span> numS == -S <span class="keyword">and</span> <span class="built_in">len</span>(nums)== <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> </span><br><span class="line">        <span class="keyword">if</span> numS&lt;S:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">       </span><br><span class="line">         </span><br><span class="line">        dp = [ [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>*numS+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n) ]</span><br><span class="line">        dp[<span class="number">0</span>][numS+nums[<span class="number">0</span>]] = <span class="number">1</span></span><br><span class="line">        dp[<span class="number">0</span>][numS-nums[<span class="number">0</span>]] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(-numS -<span class="number">1</span>, numS +<span class="number">1</span>):</span><br><span class="line">                l = dp[i-<span class="number">1</span>][ numS+j-nums[i]] <span class="keyword">if</span> <span class="number">0</span> &lt;=  numS+ j - nums[i] &lt; <span class="number">2</span>* numS +<span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">                r = dp[i-<span class="number">1</span>][ numS+j+nums[i]] <span class="keyword">if</span> <span class="number">0</span> &lt;= numS+ j + nums[i] &lt;  <span class="number">2</span>*numS +<span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">                dp[i][numS+j] = l + r</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][numS+S]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬"><a href="#大佬" class="headerlink" title="大佬"></a>大佬</h4><p><a href="https://leetcode-cn.com/problems/target-sum/solution/dong-tai-gui-hua-si-kao-quan-guo-cheng-by-keepal/">超强解释</a></p>
+<h2 id="LC474-一和零-一和零"><a href="#LC474-一和零-一和零" class="headerlink" title="(LC474)  一和零  一和零"></a>(LC474)  一和零  <a href="https://leetcode-cn.com/problems/ones-and-zeroes/description/">一和零</a></h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>给你一个二进制字符串数组 strs 和两个整数 m 和 n 。</p>
+<p>请你找出并返回 strs 的最大子集的大小，该子集中 最多 有 m 个 0 和 n 个 1 。</p>
+<p>如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：strs = ["10", "0001", "111001", "1", "0"], m = 5, n = 3</span><br><span class="line">输出：4</span><br><span class="line">解释：最多有 5 个 0 和 3 个 1 的最大子集是 {"10","0001","1","0"} ，因此答案是 4 。</span><br><span class="line">其他满足题意但较小的子集包括 {"0001","1"} 和 {"10","1","0"} 。{"111001"} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。 </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>动态规划：把总共的<code>0</code>和<code>1</code>的个数视为背包的容量，每一个字符串视为装进背包的物品。这道题就可以使用<code>0-1</code>背包问题的思路完成，这个目标值是能放进背包的字符串的数量。物品一个一个尝试，容量一点一点尝试，每个物品分类讨论的标准是：选与不选。<br>定义状态：尝试题目问啥，就把啥定义成状态。<code>dp[i][j][k]</code>表示输入字符串在子区间<code>[0,i]</code>能够使用<code>j</code>个<code>0</code>和<code>k</code>个<code>1</code>的字符串的最大数量。</p>
+<ul>
+<li>动态方程  </li>
+</ul>
+<script type="math/tex; mode=display">
+dp[i][j][k]
+\begin{cases}
+dp[i-1][j][k], &if\ choosing\ str[i]\\
+dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
+\end{cases}</script><ul>
+<li>初始化，为了避免分类套路，可以多设一行。<br>-</li>
+</ul>
+<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-2"><a href="#动态规划-2" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMaxForm</span>(<span class="params">self, strs: List[<span class="built_in">str</span>], m: <span class="built_in">int</span>, n: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        str_num = <span class="built_in">len</span>(strs)</span><br><span class="line">        dp = [[[<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(str_num+<span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,str_num+<span class="number">1</span>):</span><br><span class="line">            ones = strs[i-<span class="number">1</span>].count(<span class="string">'1'</span>)</span><br><span class="line">            zeros = strs[i-<span class="number">1</span>].count(<span class="string">'0'</span>)</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>):</span><br><span class="line">                    dp[i][j][k] = dp[i-<span class="number">1</span>][j][k] </span><br><span class="line">                    <span class="keyword">if</span> j&gt;=zeros <span class="keyword">and</span> k&gt;=ones:</span><br><span class="line">                        dp[i][j][k] = <span class="built_in">max</span>( dp[i-<span class="number">1</span>][j][k] ,  dp[i-<span class="number">1</span>][j-zeros][k-ones] +<span class="number">1</span> )</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][-<span class="number">1</span>][-<span class="number">1</span>]</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^3 )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( n^3)</script> </li>
+</ul>
+</li>
+</ul>
+<h2 id="L322-零钱兑换-零钱兑换"><a href="#L322-零钱兑换-零钱兑换" class="headerlink" title="(L322)  零钱兑换  零钱兑换"></a>(L322)  零钱兑换  <a href="https://leetcode-cn.com/problems/coin-change/description/">零钱兑换</a></h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>给定不同面额的硬币 <code>coins</code>和一个总金额 <code>amount</code>。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。</p>
+<p>你可以认为每种硬币的数量是无限的。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：coins = [1, 2, 5], amount = 11</span><br><span class="line">输出：3 </span><br><span class="line">解释：11 = 5 + 5 + 1</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>动态规划</li>
+</ul>
+<h3 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-3"><a href="#动态规划-3" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">coinChange</span>(<span class="params">self, coins: List[<span class="built_in">int</span>], amount: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        coins.sort()</span><br><span class="line">        dp = [ ([<span class="number">0</span>] + [inf]*(amount) ) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(coins)+<span class="number">1</span>)]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(coins)+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(amount+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> j &gt;= coins[i-<span class="number">1</span>]:</span><br><span class="line">                    dp[i][j] = <span class="built_in">min</span>(dp[i-<span class="number">1</span>][j] , dp[i][j - coins[i-<span class="number">1</span>]]+<span class="number">1</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j] =  dp[i-<span class="number">1</span>][j]</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>][-<span class="number">1</span>] <span class="keyword">if</span> dp[-<span class="number">1</span>][-<span class="number">1</span>] != inf <span class="keyword">else</span> -<span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬-1"><a href="#大佬-1" class="headerlink" title="大佬"></a>大佬</h4><h2 id="LC518-零钱兑换-II-零钱兑换-II"><a href="#LC518-零钱兑换-II-零钱兑换-II" class="headerlink" title="(LC518)零钱兑换 II 零钱兑换 II"></a>(LC518)零钱兑换 II <a href="https://leetcode-cn.com/problems/coin-change-2/">零钱兑换 II</a></h2><h3 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h3><p>给定不同面额的硬币和一个总金额。写出函数来计算可以凑成总金额的硬币组合数。假设每一种面额的硬币有无限个。 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: amount = 5, coins = [1, 2, 5]</span><br><span class="line">输出: 4</span><br><span class="line">解释: 有四种方式可以凑成总金额:</span><br><span class="line">5=5</span><br><span class="line">5=2+2+1</span><br><span class="line">5=2+1+1+1</span><br><span class="line">5=1+1+1+1+1  </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>动态规划<br>dp[coin][price] = dp[coin][price] + dp[coin][price-coin]</li>
+</ul>
+<h3 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-4"><a href="#动态规划-4" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">change</span>(<span class="params">self, amount: <span class="built_in">int</span>, coins: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        length = <span class="built_in">len</span>(coins)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> coins <span class="keyword">and</span> amount == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> coins <span class="keyword">and</span> amount &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        dp = [([<span class="number">1</span>] + [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(amount)] )<span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(length )]</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> <span class="built_in">range</span>(length):</span><br><span class="line">            <span class="keyword">for</span> price <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,amount+<span class="number">1</span>):</span><br><span class="line">                dp[num][price] =  dp[num-<span class="number">1</span>][price] </span><br><span class="line">                <span class="keyword">if</span> amount &gt;= price-coins[num] &gt;= <span class="number">0</span>:</span><br><span class="line">                    dp[num][price] += dp[num][price-coins[num]]</span><br><span class="line">        <span class="keyword">return</span> dp[length-<span class="number">1</span>][amount]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2 )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O(n^2 )</script> </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬-2"><a href="#大佬-2" class="headerlink" title="大佬"></a>大佬</h4><h2 id="LC139-单词拆分-单词拆分"><a href="#LC139-单词拆分-单词拆分" class="headerlink" title="(LC139) 单词拆分   单词拆分"></a>(LC139) 单词拆分   <a href="https://leetcode-cn.com/problems/word-break/description/">单词拆分</a></h2><h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><p>给定一个非空字符串 s 和一个包含非空单词的列表 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。</p>
+<p>说明：</p>
+<p>拆分时可以重复使用字典中的单词。<br>你可以假设字典中没有重复的单词。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: s = "leetcode", wordDict = ["leet", "code"]</span><br><span class="line">输出: true</span><br><span class="line">解释: 返回 true 因为 "leetcode" 可以被拆分成 "leet code"。</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>动态规划  <code>dp[i]</code>表示前<code>i</code>位 <code>dp[i] == True</code>and<code>s[i,...,j)</code>在<code>wordDict</code>中，<code>dp[j] = True</code></li>
+<li>求解顺序的完全背包问题时，对物品的迭代应该放在最里层，对背包的迭代放在外层，只有这样才能让物品按一定顺序放入背包中。</li>
+</ul>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li><p><a href="https://thispointer.com/python-how-to-convert-a-list-to-dictionary/">Python : How to convert a list to dictionary ?</a></p>
+</li>
+<li><p><a href="">Difference between Hashtable and Dictionary</a>??</p>
+</li>
+</ul>
+<h3 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-5"><a href="#动态规划-5" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wordBreak</span>(<span class="params">self, s: <span class="built_in">str</span>, wordDict: List[<span class="built_in">str</span>]</span>) -&gt; bool:</span></span><br><span class="line">        dp = [<span class="literal">True</span>] + [<span class="literal">False</span>] * <span class="built_in">len</span>(s)</span><br><span class="line">        dicWordDict = { _ <span class="keyword">for</span> _ <span class="keyword">in</span> wordDict} <span class="comment"># map list to dic</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i,<span class="built_in">len</span>(s)+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> dp[i] == <span class="literal">True</span>:</span><br><span class="line">                    <span class="keyword">if</span> s[i:j] <span class="keyword">in</span> dicWordDict:</span><br><span class="line">                        dp[j]= <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O()</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬-3"><a href="#大佬-3" class="headerlink" title="大佬"></a>大佬</h4><p><a href="https://zhuanlan.zhihu.com/p/55538325">DP思想</a></p>
+<h2 id="LC377-组合总和-Ⅳ-组合总和-Ⅳ"><a href="#LC377-组合总和-Ⅳ-组合总和-Ⅳ" class="headerlink" title="(LC377) 组合总和 Ⅳ  组合总和 Ⅳ"></a>(LC377) 组合总和 Ⅳ  <a href="https://leetcode-cn.com/problems/combination-sum-iv/">组合总和 Ⅳ</a></h2><h3 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h3><p>给你一个由 不同 整数组成的数组 nums ，和一个目标整数 target 。请你从 nums 中找出并返回总和为 target 的元素组合的个数。</p>
+<p>题目数据保证答案符合 32 位整数范围。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [1,2,3], target = 4</span><br><span class="line">输出：7</span><br><span class="line">解释：</span><br><span class="line">所有可能的组合为：</span><br><span class="line">(1, 1, 1, 1)</span><br><span class="line">(1, 1, 2)</span><br><span class="line">(1, 2, 1)</span><br><span class="line">(1, 3)</span><br><span class="line">(2, 1, 1)</span><br><span class="line">(2, 2)</span><br><span class="line">(3, 1)</span><br><span class="line">请注意，顺序不同的序列被视作不同的组合。 </span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>动态规划 (涉及顺序的完全背包。)</li>
+<li>动态方程<br>此题的状态转移方程为dp[i] = dp[i-nums[0]]+dp[i-nums[1]]+…dp[i-nums[len-1]],条件为i&gt;=nums[j];<br>dp[0] = 1,dp[0]表示组成0，一个数都不选就可以了，所以dp[0]=1<br>举个例子。假设nums={1,2,3}; target = 4</li>
+</ul>
+<p>dp[4] = dp[4-1]+dp[4-2]+dp[4-3] = dp[3]+dp[2]+dp[1]</p>
+<p>dp[1] = dp[0] = 1;<br>dp[2] = dp[1]+dp[0] = 2;<br>dp[3] = dp[2]+dp[1]+dp[0] = 4;<br>dp[4] = dp[4-1]+dp[4-2]+dp[4-3] = dp[3]+dp[2]+dp[1] = 7 </p>
+<h3 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-6"><a href="#动态规划-6" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">combinationSum4</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        dp = [<span class="number">0</span>] * (target+<span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(target+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">if</span> target&gt;=i -nums[j] &gt;=<span class="number">0</span>:</span><br><span class="line">                    dp[i]+= dp[i- nums[j]]</span><br><span class="line">        <span class="keyword">return</span> dp[target]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(target*n )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O(n )</script> </li>
+</ul>
+</li>
+</ul>
+<h4 id="大佬-4"><a href="#大佬-4" class="headerlink" title="大佬"></a>大佬</h4><h2 id="LC"><a href="#LC" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h2><h3 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>动态规划</li>
+</ul>
+<h3 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><h4 id="动态规划-7"><a href="#动态规划-7" class="headerlink" title="动态规划"></a>动态规划</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-5"><a href="#大佬-5" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-8"><a href="#Python3-Code-8" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-8"><a href="#动态规划-8" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-6"><a href="#大佬-6" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-9"><a href="#Python3-Code-9" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-9"><a href="#动态规划-9" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-7"><a href="#大佬-7" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-10"><a href="#Python3-Code-10" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-10"><a href="#动态规划-10" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-8"><a href="#大佬-8" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-11"><a href="#Python3-Code-11" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-11"><a href="#动态规划-11" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-9"><a href="#大佬-9" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-5"><a href="#LC-5" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-12"><a href="#题目-12" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-12"><a href="#Python3-Code-12" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-12"><a href="#动态规划-12" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-10"><a href="#大佬-10" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-6"><a href="#LC-6" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-13"><a href="#题目-13" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-13"><a href="#思路-13" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-13"><a href="#Python3-Code-13" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-13"><a href="#动态规划-13" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-11"><a href="#大佬-11" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-7"><a href="#LC-7" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-14"><a href="#题目-14" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-14"><a href="#思路-14" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-14"><a href="#Python3-Code-14" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-14"><a href="#动态规划-14" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-12"><a href="#大佬-12" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-8"><a href="#LC-8" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-15"><a href="#题目-15" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-15"><a href="#思路-15" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-15"><a href="#Python3-Code-15" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-15"><a href="#动态规划-15" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-13"><a href="#大佬-13" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-9"><a href="#LC-9" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-16"><a href="#题目-16" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-16"><a href="#思路-16" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-16"><a href="#Python3-Code-16" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-16"><a href="#动态规划-16" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-14"><a href="#大佬-14" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-10"><a href="#LC-10" class="headerlink" title="(LC )     "></a>(LC )    <a href=""> </a></h3><h4 id="题目-17"><a href="#题目-17" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-17"><a href="#思路-17" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-17"><a href="#Python3-Code-17" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-17"><a href="#动态规划-17" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O( )</script>   </li>
+<li>空间复杂度：<script type="math/tex">O( )</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-15"><a href="#大佬-15" class="headerlink" title="大佬"></a>大佬</h5>]]></content>
       <categories>
         <category>力扣</category>
         <category>力扣算法</category>
