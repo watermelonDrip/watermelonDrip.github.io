@@ -1756,7 +1756,7 @@ CapWords</code></li>
   </entry>
   <entry>
     <title>链表</title>
-    <url>/2021/04/23/%E9%93%BE%E8%A1%A8/</url>
+    <url>/2021/04/26/%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>链表<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E9%93%BE%E8%A1%A8.md#7-%E9%93%BE%E8%A1%A8%E6%B1%82%E5%92%8C">刷题顺序</a></p>
 <h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h2><ul>
 <li>Important notice: 涉及到链表的操作，一定要在纸上把过程先画出来，再写程序！不要断链子。</li>
@@ -1771,9 +1771,27 @@ CapWords</code></li>
 <li>双指针：</li>
 <li>栈：</li>
 </ol>
-<span id="more"></span>
-<h2 id="1-LC160-相交链表-相交链表"><a href="#1-LC160-相交链表-相交链表" class="headerlink" title="1. (LC160) 相交链表 相交链表"></a>1. (LC160) 相交链表 <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">相交链表</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>编写一个程序，找到两个单链表相交的起始节点。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
+<h1 id="剑指Offer"><a href="#剑指Offer" class="headerlink" title="剑指Offer"></a>剑指Offer</h1><h2 id="剑指-Offer-24-反转链表"><a href="#剑指-Offer-24-反转链表" class="headerlink" title="剑指 Offer 24. 反转链表"></a>剑指 Offer 24. 反转链表</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL</span><br><span class="line">输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseList</span>(<span class="params">self, head: ListNode</span>) -&gt; ListNode:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        cur = head</span><br><span class="line">        cur_next = cur.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">        cur_pre = <span class="literal">None</span> </span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            cur.<span class="built_in">next</span> = cur_pre</span><br><span class="line">            cur_pre = cur</span><br><span class="line">            cur = cur_next</span><br><span class="line">            <span class="keyword">if</span> cur_next:</span><br><span class="line">                cur_next = cur_next.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">return</span> cur_pre </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  其中 nn 是链表的长度。需要遍历链表一次。</li>
+<li>空间复杂度：<script type="math/tex">O(1)</script>。</li>
+</ul>
+</li>
+</ul>
+<h2 id="剑指-Offer-06-从尾到头打印链表"><a href="#剑指-Offer-06-从尾到头打印链表" class="headerlink" title="剑指 Offer 06. 从尾到头打印链表"></a>剑指 Offer 06. 从尾到头打印链表</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：head = [1,3,2]</span><br><span class="line">输出：[2,3,1]</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reversePrint</span>(<span class="params">self, head: ListNode</span>) -&gt; List[int]:</span></span><br><span class="line">         </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">print_list</span>(<span class="params">node</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node:</span><br><span class="line">                <span class="keyword">return</span> []</span><br><span class="line">            <span class="keyword">return</span> print_list(node.<span class="built_in">next</span>) +[node.val]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> print_list(head)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析   <ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>。  </li>
+<li>空间复杂度：<script type="math/tex">O(n)</script>。</li>
+</ul>
+</li>
+</ul>
+<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h2 id="1-LC160-相交链表-相交链表"><a href="#1-LC160-相交链表-相交链表" class="headerlink" title="1. (LC160) 相交链表 相交链表"></a>1. (LC160) 相交链表 <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/">相交链表</a></h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>编写一个程序，找到两个单链表相交的起始节点。</p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><ol>
 <li>图解</li>
 </ol>
 <p><img src= "/img/watermelon.gif" data-lazy-src="https://pic.leetcode-cn.com/1614527163-BKaiqs-Picture1.png" alt=""></p>
@@ -1790,7 +1808,7 @@ CapWords</code></li>
 <ul>
 <li>链表来说，首先是先动手走一走，再一个如果碰到交点问题，要看看怎么才能得到一个等式。</li>
 </ul>
-<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
+<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
 <li>语言支持：Python3</li>
 </ul>
 <p>Python3 Code:</p>
@@ -1799,13 +1817,13 @@ CapWords</code></li>
 <li>时间复杂度：$O(n+m)$ n是链表A的长度，m是链表B的长度  </li>
 <li>空间复杂度：$O(1)$  </li>
 </ul>
-<h2 id="2-LC2206-反转链表-反转链表"><a href="#2-LC2206-反转链表-反转链表" class="headerlink" title="2. (LC2206) 反转链表 反转链表"></a>2. (LC2206) 反转链表 <a href="https://leetcode-cn.com/problems/reverse-linked-list/">反转链表</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>反转一个单链表。</p>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ol>
+<h2 id="2-LC2206-反转链表-反转链表"><a href="#2-LC2206-反转链表-反转链表" class="headerlink" title="2. (LC2206) 反转链表 反转链表"></a>2. (LC2206) 反转链表 <a href="https://leetcode-cn.com/problems/reverse-linked-list/">反转链表</a></h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>反转一个单链表。</p>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><ol>
 <li>双指针：为了防止断链子，要保持下一个节点<code>temp</code>和前一个节点<code>pre</code></li>
 <li>递归：和双指针是一样的逻辑，同样是当<code>cur</code>为空的时候循环结束，不断将<code>cur</code>指向<code>pre</code>的过程。递归的这个好绕啊，第一遍没太理解，先记下来吧。一个很好的解释，慢慢理解，<a href="https://leetcode-cn.com/problems/reverse-linked-list/solution/dong-hua-yan-shi-206-fan-zhuan-lian-biao-by-user74/">戳这里</a></li>
 <li>栈：最简单的一种方式就是使用栈，因为栈是先进后出的，实现原理是把链表点一个个入栈，当全部入栈之后在一个个出栈，出栈的时候在把出栈的结点串成一个新的链表。</li>
 </ol>
-<h3 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
+<h3 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
 <li>语言支持：Python3</li>
 </ul>
 <p>Python3 Code:</p>
@@ -1816,15 +1834,15 @@ CapWords</code></li>
 <li>时间复杂度：$O( )$ n是链表的长度，  </li>
 <li>空间复杂度：$O( )$  </li>
 </ul>
-<h2 id="3-LC21-合并两个有序链表-合并两个有序链表"><a href="#3-LC21-合并两个有序链表-合并两个有序链表" class="headerlink" title="3. (LC21) 合并两个有序链表 合并两个有序链表"></a>3. (LC21) 合并两个有序链表 <a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">合并两个有序链表</a></h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
-<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><ol>
+<h2 id="3-LC21-合并两个有序链表-合并两个有序链表"><a href="#3-LC21-合并两个有序链表-合并两个有序链表" class="headerlink" title="3. (LC21) 合并两个有序链表 合并两个有序链表"></a>3. (LC21) 合并两个有序链表 <a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">合并两个有序链表</a></h2><h3 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h3><p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><ol>
 <li>迭代<ul>
 <li>首先，我们设定一个哨兵节点<code>prehead</code>，这可以在最后让我们比较容易地返回合并后的链表。我们维护一个<code>prev</code>指针，我们需要做的是调整它的<code>next</code>指针。然后我们重复以下过程，直到<code>l1</code>或者<code>l2</code>指向<code>null</code>。在循环终止的时候，<code>l1</code>和<code>l2</code>至多有一个是非空的。</li>
 </ul>
 </li>
 <li>递归</li>
 </ol>
-<h3 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
+<h3 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
 <li>语言支持：Python3</li>
 </ul>
 <p>Python3 Code:</p>
@@ -1833,9 +1851,9 @@ CapWords</code></li>
 <li>时间复杂度：$O(n+m)$, 其中n和m个链表长度</li>
 <li>空间复杂度：$O(1)$  </li>
 </ul>
-<h2 id="4-LC83-从有序链表中删除重复节点-从有序链表中删除重复节点"><a href="#4-LC83-从有序链表中删除重复节点-从有序链表中删除重复节点" class="headerlink" title="4. (LC83) 从有序链表中删除重复节点 从有序链表中删除重复节点"></a>4. (LC83) 从有序链表中删除重复节点 <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/description/">从有序链表中删除重复节点</a></h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。</p>
+<h2 id="4-LC83-从有序链表中删除重复节点-从有序链表中删除重复节点"><a href="#4-LC83-从有序链表中删除重复节点-从有序链表中删除重复节点" class="headerlink" title="4. (LC83) 从有序链表中删除重复节点 从有序链表中删除重复节点"></a>4. (LC83) 从有序链表中删除重复节点 <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/description/">从有序链表中删除重复节点</a></h2><h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><p>给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: 1-&gt;1-&gt;2</span><br><span class="line">输出: 1-&gt;2</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><ul>
 <li>语言支持：Python3</li>
 </ul>
 <p>Python3 Code:</p>
@@ -1844,23 +1862,23 @@ CapWords</code></li>
 <li>时间复杂度：$O(n)$ n是链表的长度。因为列表中的每个节点都检查一次以确定它是否重复，所以总运行时间为$O(n)$</li>
 <li>空间复杂度：$O(1)$，没有使用额外的空间</li>
 </ul>
-<h3 id="LC19-删除链表的倒数第-N-个结点-删除链表的倒数第-N-个结点"><a href="#LC19-删除链表的倒数第-N-个结点-删除链表的倒数第-N-个结点" class="headerlink" title="(LC19)删除链表的倒数第 N 个结点   删除链表的倒数第 N 个结点"></a>(LC19)删除链表的倒数第 N 个结点   <a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/description/">删除链表的倒数第 N 个结点</a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><p>给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。<br>进阶：你能尝试使用一趟扫描实现吗？<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure><p></p>
-<h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC2-两数相加-2-两数相加"><a href="#LC2-两数相加-2-两数相加" class="headerlink" title="(LC2. 两数相加)     2. 两数相加 "></a>(LC2. 两数相加)    <a href="https://leetcode-cn.com/problems/add-two-numbers/"> 2. 两数相加 </a></h3><h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><p>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。</p>
+<h3 id="LC19-删除链表的倒数第-N-个结点-删除链表的倒数第-N-个结点"><a href="#LC19-删除链表的倒数第-N-个结点-删除链表的倒数第-N-个结点" class="headerlink" title="(LC19)删除链表的倒数第 N 个结点   删除链表的倒数第 N 个结点"></a>(LC19)删除链表的倒数第 N 个结点   <a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/description/">删除链表的倒数第 N 个结点</a></h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><p>给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。<br>进阶：你能尝试使用一趟扫描实现吗？<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解"><a href="#大佬题解" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC2-两数相加-2-两数相加"><a href="#LC2-两数相加-2-两数相加" class="headerlink" title="(LC2. 两数相加)     2. 两数相加 "></a>(LC2. 两数相加)    <a href="https://leetcode-cn.com/problems/add-two-numbers/"> 2. 两数相加 </a></h3><h4 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h4><p>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。</p>
 <p>请你将两个数相加，并以相同形式返回一个表示和的链表。</p>
 <p>你可以假设除了数字 0 之外，这两个数都不会以 0 开头</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]</span><br><span class="line">输出：[8,9,9,9,0,0,0,1]</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-1"><a href="#大佬题解-1" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-2"><a href="#大佬题解-2" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-3"><a href="#复杂度分析-3" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-3"><a href="#大佬题解-3" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-1"><a href="#大佬题解-1" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-8"><a href="#Python3-Code-8" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-4"><a href="#复杂度分析-4" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-2"><a href="#大佬题解-2" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-9"><a href="#Python3-Code-9" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="复杂度分析-5"><a href="#复杂度分析-5" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-5"><a href="#大佬题解-5" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-3"><a href="#复杂度分析-3" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-3"><a href="#大佬题解-3" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-10"><a href="#Python3-Code-10" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-4"><a href="#复杂度分析-4" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-11"><a href="#Python3-Code-11" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="复杂度分析-5"><a href="#复杂度分析-5" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-5"><a href="#大佬题解-5" class="headerlink" title="大佬题解"></a>大佬题解</h4><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )      "></a>(LC )    <a href="">  </a></h3><h4 id="题目-12"><a href="#题目-12" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-12"><a href="#Python3-Code-12" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="复杂度分析-6"><a href="#复杂度分析-6" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="大佬题解-6"><a href="#大佬题解-6" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
       <categories>
         <category>力扣</category>
@@ -2785,6 +2803,69 @@ dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
       <categories>
         <category>力扣</category>
         <category>力扣算法</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode竞赛(第238场周赛)</title>
+    <url>/2021/04/25/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B238/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h1><p> <a href="https://leetcode-cn.com/problems/sum-of-digits-in-base-k/">5738. K 进制表示下的各位数字总和</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个整数 n（10 进制）和一个基数 k ，请你将 n 从 10 进制表示转换为 k 进制表示，计算并返回转换后各位数字的 总和 。</p>
+<p>转换后，各位数字应当视作是 10 进制数字，且它们的总和也应当按 10 进制表示返回。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：n = 34, k = 6</span><br><span class="line">输出：9</span><br><span class="line">解释：34 (10 进制) 在 6 进制下表示为 54 。5 + 4 = 9 。</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sumBase</span>(<span class="params">self, n: <span class="built_in">int</span>, k: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> n&gt;<span class="number">0</span>:</span><br><span class="line"></span><br><span class="line">            res1 = n%k</span><br><span class="line">            res2 = n//k</span><br><span class="line">     </span><br><span class="line">            n = res2</span><br><span class="line">            res += res1</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$ 遍历一遍</li>
+<li>空间复杂度：$O(1)$  </li>
+</ul>
+<h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2. 题目"></a>2. 题目</h1><p> <a href="https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element/">5739. 最高频元素的频数</a></p>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>元素的 频数 是该元素在一个数组中出现的次数。</p>
+<p>给你一个整数数组 nums 和一个整数 k 。在一步操作中，你可以选择 nums 的一个下标，并将该下标对应元素的值增加 1 。</p>
+<p>执行最多 k 次操作后，返回数组中最高频元素的 最大可能频数 。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [1,2,4], k = 5</span><br><span class="line">输出：3</span><br><span class="line">解释：对第一个元素执行 3 次递增操作，对第二个元素执 2 次递增操作，此时 nums = [4,4,4] 。</span><br><span class="line">4 是数组中最高频元素，频数是 3 。 </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>双指针</li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxFrequency</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        res = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">            total += (nums[r] - nums[r - <span class="number">1</span>]) * (r - l)</span><br><span class="line">            <span class="keyword">while</span> total &gt; k:</span><br><span class="line">                total -= nums[r] - nums[l]</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">            res = <span class="built_in">max</span>(res, r - l + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<p>-时间复杂度：$ O(nlogn)$，排序数组的时间复杂度为 $O(nlogn)$，使用双指针遍历目标值的时间复杂度为$O(n)$。</p>
+<ul>
+<li>空间复杂度：$O(logn)$，即为排序数组需要使用的栈空间。</li>
+</ul>
+<h1 id="3-题目"><a href="#3-题目" class="headerlink" title="3. 题目"></a>3. 题目</h1><p> <a href="https://leetcode-cn.com/problems/longest-substring-of-all-vowels-in-order/">5740. 所有元音按顺序排布的最长子字符串</a></p>
+<h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><p>当一个字符串满足如下条件时，我们称它是 美丽的 ：</p>
+<p>所有 5 个英文元音字母（’a’ ，’e’ ，’i’ ，’o’ ，’u’）都必须 至少 出现一次。<br>这些元音字母的顺序都必须按照 字典序 升序排布（也就是说所有的 ‘a’ 都在 ‘e’ 前面，所有的 ‘e’ 都在 ‘i’ 前面，以此类推）<br>比方说，字符串 “aeiou” 和 “aaaaaaeiiiioou” 都是 美丽的 ，但是 “uaeio” ，”aeoiu” 和 “aaaeeeooo” 不是美丽的 。</p>
+<p>给你一个只包含英文元音字母的字符串 word ，请你返回 word 中 最长美丽子字符串的长度 。如果不存在这样的子字符串，请返回 0 。</p>
+<p>子字符串 是字符串中一个连续的字符序列。  </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：word = "aeiaaioaaaaeiiiiouuuooaauuaeiu"</span><br><span class="line">输出：13</span><br><span class="line">解释：最长子字符串是 "aaaaeiiiiouuu" ，长度为 13 。 </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h2><h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestBeautifulSubstring</span>(<span class="params">self, word: <span class="built_in">str</span></span>) -&gt; int:</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        output= <span class="number">0</span></span><br><span class="line">        list_word = <span class="built_in">list</span>(word)</span><br><span class="line">        yuanyin = [<span class="string">'a'</span>,<span class="string">'e'</span>,<span class="string">'i'</span>,<span class="string">'o'</span>,<span class="string">'u'</span>]</span><br><span class="line">        step = <span class="number">1</span></span><br><span class="line">        i=<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(list_word):</span><br><span class="line">            <span class="keyword">if</span> list_word[i] == <span class="string">'a'</span> <span class="keyword">and</span> step == <span class="number">1</span>:</span><br><span class="line">                res =<span class="number">1</span></span><br><span class="line">                i+=<span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'a'</span>:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">                    res +=<span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'e'</span>:</span><br><span class="line">                    step = <span class="number">2</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    step = <span class="number">1</span></span><br><span class="line">                    res =<span class="number">1</span></span><br><span class="line">                    i-=<span class="number">1</span></span><br><span class="line">    </span><br><span class="line">            <span class="keyword">if</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'e'</span> <span class="keyword">and</span> step == <span class="number">2</span>:</span><br><span class="line">                i+=<span class="number">1</span></span><br><span class="line">                res +=<span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'e'</span>:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">                    res +=<span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'i'</span>:</span><br><span class="line">                    step = <span class="number">3</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    step = <span class="number">1</span></span><br><span class="line">                    res =<span class="number">1</span></span><br><span class="line">                    i-=<span class="number">1</span></span><br><span class="line"> </span><br><span class="line">            <span class="keyword">if</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'i'</span> <span class="keyword">and</span> step == <span class="number">3</span>:</span><br><span class="line">                i+=<span class="number">1</span></span><br><span class="line">                res +=<span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'i'</span>:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">                    res +=<span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'o'</span>:</span><br><span class="line">                    step = <span class="number">4</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    step = <span class="number">1</span></span><br><span class="line">                    res =<span class="number">1</span></span><br><span class="line">                    i-=<span class="number">1</span></span><br><span class="line"> </span><br><span class="line">                    </span><br><span class="line">            <span class="keyword">if</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'o'</span> <span class="keyword">and</span> step == <span class="number">4</span>:</span><br><span class="line">                i+=<span class="number">1</span></span><br><span class="line">                res +=<span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'o'</span>:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">                    res +=<span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'u'</span>:</span><br><span class="line">                    step = <span class="number">5</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    step = <span class="number">1</span></span><br><span class="line">                    res =<span class="number">1</span></span><br><span class="line">                    i-=<span class="number">1</span></span><br><span class="line"> </span><br><span class="line">                    </span><br><span class="line">            <span class="keyword">if</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'u'</span> <span class="keyword">and</span> step == <span class="number">5</span>:</span><br><span class="line">                i+=<span class="number">1</span></span><br><span class="line">                res +=<span class="number">1</span></span><br><span class="line">                </span><br><span class="line">                <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(list_word) <span class="keyword">and</span> list_word[i] == <span class="string">'u'</span>:</span><br><span class="line">                    i+=<span class="number">1</span></span><br><span class="line">                    res +=<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    step = <span class="number">1</span></span><br><span class="line">                    i-=<span class="number">1</span></span><br><span class="line">                output= <span class="built_in">max</span>(output,res)</span><br><span class="line">                 </span><br><span class="line">             </span><br><span class="line">            i+=<span class="number">1</span></span><br><span class="line">            step = <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">            output= <span class="built_in">max</span>(output,res)</span><br><span class="line">        <span class="keyword">if</span> output&lt;<span class="number">5</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> output</span><br><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$ 遍历一遍</li>
+<li>空间复杂度：$O(1)$ </li>
+</ul>
+]]></content>
+      <categories>
+        <category>力扣</category>
+        <category>力扣周赛</category>
       </categories>
       <tags>
         <tag>python</tag>
