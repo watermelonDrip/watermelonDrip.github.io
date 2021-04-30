@@ -1,99 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Python小教程</title>
-    <url>/2021/04/16/Python%E5%B0%8F%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Python-Introduction"><a href="#Python-Introduction" class="headerlink" title="Python Introduction"></a>Python Introduction</h1><h2 id="Python-Keywords-关键词"><a href="#Python-Keywords-关键词" class="headerlink" title="Python Keywords(关键词)"></a>Python Keywords(关键词)</h2><p>关键词是指在Python中，保留的单词。我们不可以把关键词当作变量名variable name, 函数名，或者是其他标识符。关键词除了<code>True</code>，<code>False</code>，<code>None</code>，其他都是小写的。here is the complete <a href="https://www.programiz.com/python-programming/keyword-list">list of all the keywords</a> with examples</p>
-<h2 id="Python-标识符"><a href="#Python-标识符" class="headerlink" title="Python 标识符"></a>Python 标识符</h2><p>标识符是一个名字，可以用来区别不同的<code>class</code>，<code>functions</code>，<code>variables</code></p>
-<h3 id="标识符规则"><a href="#标识符规则" class="headerlink" title="标识符规则"></a>标识符规则</h3><ul>
-<li>可以由各种小写字母或者数字表示或者是下划线<code>_</code>，比如名字为<code>MyDest</code>,<code>v_1</code></li>
-<li>不能由数字开头</li>
-<li>关键词不能做标识符，比如：<code>global = 1</code>是不运行的，如果执行会报错<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">File <span class="string">"&lt;interactive input&gt;"</span>, line <span class="number">1</span></span><br><span class="line">    <span class="keyword">global</span> = <span class="number">1</span></span><br><span class="line">           ^</span><br><span class="line">SyntaxError: invalid syntax</span><br></pre></td></tr></tbody></table></figure></li>
-<li>不能用特殊符号比如<code>!,@</code>等。比如运行<code>a@ = 0</code>,会报错<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">File <span class="string">"&lt;interactive input&gt;"</span>, line <span class="number">1</span></span><br><span class="line">    a@ = <span class="number">0</span></span><br><span class="line">     ^</span><br><span class="line">SyntaxError: invalid syntax</span><br></pre></td></tr></tbody></table></figure></li>
-<li>标识符长度不限</li>
-</ul>
-<h3 id="Things-to-Remember"><a href="#Things-to-Remember" class="headerlink" title="Things to Remember"></a>Things to Remember</h3><p>python 是一个区分大小写（case-sensitive）语言。</p>
-<h2 id="Python-Statement-语句-Indentation-缩进-and-Comments-注释"><a href="#Python-Statement-语句-Indentation-缩进-and-Comments-注释" class="headerlink" title="Python  Statement(语句), Indentation(缩进) and Comments(注释)"></a>Python  Statement(语句), Indentation(缩进) and Comments(注释)</h2><h3 id="Python-Statement-语句"><a href="#Python-Statement-语句" class="headerlink" title="Python  Statement(语句)"></a>Python  Statement(语句)</h3><p>Python 的运行需要执行语句。例如，<code>a = 1</code>是一个赋值语句。<code>if</code>语句等等。</p>
-<h4 id="Multi-line-statement-多行语句"><a href="#Multi-line-statement-多行语句" class="headerlink" title="Multi-line statement 多行语句"></a>Multi-line statement 多行语句</h4><p>在Python中，我们可以用 行继续符（line continuation charater）<code>\</code>来把一个长的语句，变成多行语句来方便阅读。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a = <span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span> + \</span><br><span class="line">    <span class="number">4</span> + <span class="number">5</span> + <span class="number">6</span> + \</span><br><span class="line">    <span class="number">7</span> + <span class="number">8</span> + <span class="number">9</span></span><br></pre></td></tr></tbody></table></figure><br>这是一个明确的行继续符。 在Python里，行继续符直接应用在 parentheses ( ), brackets [ ], and braces { }里。例如<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a = (<span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span> +</span><br><span class="line">    <span class="number">4</span> + <span class="number">5</span> + <span class="number">6</span> +</span><br><span class="line">    <span class="number">7</span> + <span class="number">8</span> + <span class="number">9</span>)</span><br><span class="line">colors = [<span class="string">'red'</span>,</span><br><span class="line">          <span class="string">'blue'</span>,</span><br><span class="line">          <span class="string">'green'</span>]</span><br></pre></td></tr></tbody></table></figure><br>我们也可以用semicolons分号区别多个语句。例如<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a = <span class="number">1</span>; b = <span class="number">2</span>; c = <span class="number">3</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="Python-Indentation-缩进"><a href="#Python-Indentation-缩进" class="headerlink" title="Python  Indentation(缩进)"></a>Python  Indentation(缩进)</h3><p>Python美好的地方就是用缩进。<br>一个程序块开始于缩进，结束于第一个取消缩进的那行。一般用四个whitespaces用作缩进。为了可读性，不支持把缩进取消，比如：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="literal">True</span>: print(<span class="string">'Hello'</span>); a = <span class="number">5</span></span><br></pre></td></tr></tbody></table></figure><br>上面这个代码块可读性就比较差，如果换成下面的code，可读性就高了<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">'Hello'</span>)</span><br><span class="line">    a = <span class="number">5</span></span><br></pre></td></tr></tbody></table></figure><br>所以莫装逼哟！<p></p>
-<h3 id="Python-Comments-注释"><a href="#Python-Comments-注释" class="headerlink" title="Python  Comments(注释)"></a>Python  Comments(注释)</h3><p>注释在写程序的过程中是非常重要的。注释可以描述在这段程序在做一个什么事，可以帮助别人在看这段源代码的时候，就不那么头疼和想吐了。<br>在写程序的时候，其实很有可能会忘记一些很关键的步骤和细节。所以花些时间来写这些注释绝对是有意义的。<br>Python中，我们用hash(#)符号来写注释部分。比如<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">#This is a comment</span></span><br><span class="line"><span class="comment">#print out Hello</span></span><br><span class="line">print(<span class="string">'Hello'</span>)</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h4 id="Multi-line-comments-多行注释"><a href="#Multi-line-comments-多行注释" class="headerlink" title="Multi-line comments(多行注释)"></a>Multi-line comments(多行注释)</h4><p>python 中除了刚刚提到的用hash#注释之外，也可以用<code>``和</code>“””`。<br>比如<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""This is also a</span></span><br><span class="line"><span class="string">perfect example of</span></span><br><span class="line"><span class="string">multi-line comments"""</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<h4 id="Docstrings-文档字符串"><a href="#Docstrings-文档字符串" class="headerlink" title="Docstrings (文档字符串)"></a>Docstrings (文档字符串)</h4><p>Docstrings 是 documentation string 的缩写，意思是文档字符串。<br>Python的文档字符串是一行字符串在定义一个函数，方法，类或者模型后面。Triple quotes用于写文档字符串。<br>比如<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">double</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="string">"""Function to double the value"""</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*num</span><br></pre></td></tr></tbody></table></figure><br>The docstrings are associated with the object as their <strong>doc</strong> attribute.<p></p>
-<p>我们可以读取函数的docstrings<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">double</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="string">"""Function to double the value"""</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*num</span><br><span class="line">print(double.__doc__)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Function to double the value</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="Python-Variables-变量-Constants-常熟-and-Literals-关键词"><a href="#Python-Variables-变量-Constants-常熟-and-Literals-关键词" class="headerlink" title="Python Variables(变量), Constants(常熟) and Literals (关键词)"></a>Python Variables(变量), Constants(常熟) and Literals (关键词)</h2><h3 id="Python-Variables-变量"><a href="#Python-Variables-变量" class="headerlink" title="Python Variables(变量)"></a>Python Variables(变量)</h3><p>一个变量（Variable）其实是一个被命名的地址，这个地址用来在存储器里来存储数据的。也可以理解成，变量是一个容器，这个容器可以装着数据data，在程序里，这个容器可以进行改变。<br>例如<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">number = <span class="number">10</span></span><br></pre></td></tr></tbody></table></figure><br>我们创建了一个新的变量叫做<code>number</code>。我们把<code>10</code>这个数值assign to the variable(分配给了这个变量)。<br>我们也可以这么想，变量是一个大书包，这个书包里可以放很多的书，同时这些书也可以随时被其他的书替代。<br>例如：<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">number = <span class="number">10</span></span><br><span class="line">number = <span class="number">1.1</span></span><br></pre></td></tr></tbody></table></figure><br>我们初始<code>number</code>的值是<code>10</code>。过了一瞬间，就一会会儿，他就变成了<code>1.1</code>了。<br><strong>Note: 其实python里， 严格的说，我们实际上不是把value（数值）赋给了变量。其实是Python gives the reference of the object(value) to the variable。（这个我们后面再解释</strong><p></p>
-<h4 id="Assigning-values-to-Variables-分配数值给变量"><a href="#Assigning-values-to-Variables-分配数值给变量" class="headerlink" title="Assigning values to Variables (分配数值给变量)"></a>Assigning values to Variables (分配数值给变量)</h4><p>我觉得中文里很难找到一个合适的词来描述assign这个动作，所有后面我有时候会写assign，而不翻译成英文了。</p>
-<p>用上面的例子看到了我们可以用assginment操作<code>=</code>来assign一个数组给变量。</p>
-<ul>
-<li><p>Example 1: Declaring and assigning value to a variable</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">website = <span class="string">"apple.com"</span></span><br><span class="line">print(website)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>apple.com</span><br></pre></td></tr></tbody></table></figure>
-<p>在上面的程序里，我们可以把值<code>apple.com</code>分配给变量<code>website</code>。 然后我们打印出这个变量，这个被分配了<code>apple.com</code>的变量，<code>apple.com</code>。<br><strong>Note:  Python是一个type-inferred语言（隐式类型），所以我们不需要明确的定义出变量的类型。比如例子中，python 自动的就可以知道<code>apple.com</code>是字符串，然后接下来，声明变量<code>website</code>为字符串 </strong></p>
-</li>
-<li><p>Example 2: Changing the value of a variable</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">website = <span class="string">"apple.com"</span></span><br><span class="line">print(website)</span><br><span class="line"></span><br><span class="line"><span class="comment"># assigning a new value to website</span></span><br><span class="line">website = <span class="string">"programiz.com"</span></span><br><span class="line"></span><br><span class="line">print(website)</span><br><span class="line">&gt;&gt;&gt;apple.com</span><br><span class="line">&gt;&gt;&gt;programiz.com</span><br></pre></td></tr></tbody></table></figure>
-<p>在上面的程序里，我们把初始值<code>apple.com</code>分配给变量<code>website</code>。 然后 这个变量又被改成了<code>programiz.com</code>。</p>
-</li>
-<li><p>Example 3: Assigning multiple values to multiple variables</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a, b, c = <span class="number">5</span>, <span class="number">3.2</span>, <span class="string">"Hello"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> (a)</span><br><span class="line"><span class="built_in">print</span> (b)</span><br><span class="line"><span class="built_in">print</span> (c)</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Python-Constan-常量"><a href="#Python-Constan-常量" class="headerlink" title="Python Constan(常量)"></a>Python Constan(常量)</h3><p>Constant是一种变量，这种变量的值是不可变的。是不是很绕哈哈哈，所以说这时候，把变量这个概念理解成容器是很方便的，就是说constant是一种耿直的容器哈哈哈。也就是说，constant 是一个容器，这个容器里面保存的这些信息，是不可以改变的。<br>我们同时也可以把constant理解成一个书包，里面同样也放了很多的书，但是这些书可是被替换不了的，一次也不可以的！</p>
-</li>
-</ul>
-<h4 id="Assigning-value-to-constant-in-Python"><a href="#Assigning-value-to-constant-in-Python" class="headerlink" title="Assigning value to constant in Python"></a>Assigning value to constant in Python</h4><p>在Python里，constants常常用来被declared(声明)和assgined(分配)在一个module(模块)里。module（模块。Module是一个新的文件，这个文件包括 variables, functions, etc。Module 可以被导入到主文件里。在module 里，常量一般用大写字母表示，同时用下划线把词和词直接分隔开。</p>
-<ul>
-<li>Example 3: Declaring and assigning value to a constant<br>(1） Create a constant.py:<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">PI = <span class="number">3.14</span></span><br><span class="line">GRAVITY = <span class="number">9.8</span></span><br></pre></td></tr></tbody></table></figure>
-(2） Create a main.py:<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> constant</span><br><span class="line">print(constant.PI)</span><br><span class="line">print(constant.GRAVITY)</span><br></pre></td></tr></tbody></table></figure>
-（3）Output:<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="number">3.14</span></span><br><span class="line"><span class="number">9.8</span></span><br></pre></td></tr></tbody></table></figure>
-在上面的程序里，我们创建了一个<code>constant.py</code>模块文件。然后我们分配给常量值<code>3.14</code>，<code>9.8</code>给常量<code>PI</code>和<code>GRAVITY</code>。然后我们由创建了主文件<code>main.py</code>，导入<code>constant</code>模块。最后打印常数值。</li>
-</ul>
-<h3 id="Rules-and-Naming-Convention-for-Variables-and-constants-（命名规范）"><a href="#Rules-and-Naming-Convention-for-Variables-and-constants-（命名规范）" class="headerlink" title="Rules and Naming Convention for Variables and constants （命名规范）"></a>Rules and Naming Convention for Variables and constants （命名规范）</h3><ul>
-<li>常量变量名应该是由大写小写和下划线组成<code>snake_case
-MACRO_CASE
-camelCase
-CapWords</code></li>
-<li>命名的名字要意义，比如，<code>vowel</code>比<code>v</code>在程序中更容易理解</li>
-<li>如果你想创建一个变量名字由两个单词组成，两个单词中间需要用下划线分开<code>my_name</code></li>
-<li>通常用大写字母来declare常量constant，比如<code>PI</code>,<code>G</code></li>
-<li>不要用特殊符号@#￥，也不要用数字来开头</li>
-</ul>
-<h2 id="Literals-（）"><a href="#Literals-（）" class="headerlink" title="Literals （）"></a>Literals （）</h2>]]></content>
-  </entry>
-  <entry>
-    <title>数据结构的分析</title>
-    <url>/2021/03/06/dataStructure/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据结构</p>
-<ol>
-<li>内存的物理表现的一系列连续的内存单元，每个内存单元大小是固定的。数据结构只有两个对应基础的数据结构，数组和链表，其他的数据结构都是由他们产生的。</li>
-<li>数组用来表示连续的内存空间，链表通常用来表示不连续的内存空间。</li>
-<li>不连续内存空间的意思是，链表有数据域和指针域。</li>
-</ol>
-<hr>
-<h2 id="算法的性能"><a href="#算法的性能" class="headerlink" title="算法的性能"></a>算法的性能</h2><h2 id="1-一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。"><a href="#1-一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。" class="headerlink" title="1. 一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。"></a>1. 一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。</h2><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
-<li>操作简单和支持随机访问</li>
-<li>数组是一段连续的地址空间</li>
-<li>数组使用连续的内存空间，来存储一系列同一数据类型的值。</li>
-</ol>
-<hr>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><ol>
-<li>栈是一种受限的数据结构，LIFO</li>
-<li>常用操作：进栈push, 出栈pop，取栈顶top，isEmply</li>
-<li>是一种逻辑结构</li>
-<li>给数组和链表增加一个限制就是队列</li>
-</ol>
-<hr>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><ol>
-<li>也是一种逻辑结构</li>
-<li>给数组和链表增加一个限制就是队列</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-        <category>Python数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2021春季力扣杯（个人）</title>
     <url>/2021/04/05/2021%E6%98%A5%E5%AD%A3%E5%8A%9B%E6%89%A3%E6%9D%AF%E4%B8%AA%E4%BA%BA/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="joy-题目"><a href="#joy-题目" class="headerlink" title=":joy: 题目"></a><span class="github-emoji"><span>😂</span><img src= "/img/watermelon.gif" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 题目</h1><p> <a href="https://leetcode-cn.com/problems/4xy4Wx/">采购方案</a></p>
@@ -226,14 +133,95 @@ CapWords</code></li>
       </tags>
   </entry>
   <entry>
-    <title>第一天坚持坚持</title>
-    <url>/2021/02/27/firstday/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>第一次记录一下</p>
+    <title>Python小教程</title>
+    <url>/2021/04/16/Python%E5%B0%8F%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Python-Introduction"><a href="#Python-Introduction" class="headerlink" title="Python Introduction"></a>Python Introduction</h1><h2 id="Python-Keywords-关键词"><a href="#Python-Keywords-关键词" class="headerlink" title="Python Keywords(关键词)"></a>Python Keywords(关键词)</h2><p>关键词是指在Python中，保留的单词。我们不可以把关键词当作变量名variable name, 函数名，或者是其他标识符。关键词除了<code>True</code>，<code>False</code>，<code>None</code>，其他都是小写的。here is the complete <a href="https://www.programiz.com/python-programming/keyword-list">list of all the keywords</a> with examples</p>
+<h2 id="Python-标识符"><a href="#Python-标识符" class="headerlink" title="Python 标识符"></a>Python 标识符</h2><p>标识符是一个名字，可以用来区别不同的<code>class</code>，<code>functions</code>，<code>variables</code></p>
+<h3 id="标识符规则"><a href="#标识符规则" class="headerlink" title="标识符规则"></a>标识符规则</h3><ul>
+<li>可以由各种小写字母或者数字表示或者是下划线<code>_</code>，比如名字为<code>MyDest</code>,<code>v_1</code></li>
+<li>不能由数字开头</li>
+<li>关键词不能做标识符，比如：<code>global = 1</code>是不运行的，如果执行会报错<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">File <span class="string">"&lt;interactive input&gt;"</span>, line <span class="number">1</span></span><br><span class="line">    <span class="keyword">global</span> = <span class="number">1</span></span><br><span class="line">           ^</span><br><span class="line">SyntaxError: invalid syntax</span><br></pre></td></tr></tbody></table></figure></li>
+<li>不能用特殊符号比如<code>!,@</code>等。比如运行<code>a@ = 0</code>,会报错<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">File <span class="string">"&lt;interactive input&gt;"</span>, line <span class="number">1</span></span><br><span class="line">    a@ = <span class="number">0</span></span><br><span class="line">     ^</span><br><span class="line">SyntaxError: invalid syntax</span><br></pre></td></tr></tbody></table></figure></li>
+<li>标识符长度不限</li>
+</ul>
+<h3 id="Things-to-Remember"><a href="#Things-to-Remember" class="headerlink" title="Things to Remember"></a>Things to Remember</h3><p>python 是一个区分大小写（case-sensitive）语言。</p>
+<h2 id="Python-Statement-语句-Indentation-缩进-and-Comments-注释"><a href="#Python-Statement-语句-Indentation-缩进-and-Comments-注释" class="headerlink" title="Python  Statement(语句), Indentation(缩进) and Comments(注释)"></a>Python  Statement(语句), Indentation(缩进) and Comments(注释)</h2><h3 id="Python-Statement-语句"><a href="#Python-Statement-语句" class="headerlink" title="Python  Statement(语句)"></a>Python  Statement(语句)</h3><p>Python 的运行需要执行语句。例如，<code>a = 1</code>是一个赋值语句。<code>if</code>语句等等。</p>
+<h4 id="Multi-line-statement-多行语句"><a href="#Multi-line-statement-多行语句" class="headerlink" title="Multi-line statement 多行语句"></a>Multi-line statement 多行语句</h4><p>在Python中，我们可以用 行继续符（line continuation charater）<code>\</code>来把一个长的语句，变成多行语句来方便阅读。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a = <span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span> + \</span><br><span class="line">    <span class="number">4</span> + <span class="number">5</span> + <span class="number">6</span> + \</span><br><span class="line">    <span class="number">7</span> + <span class="number">8</span> + <span class="number">9</span></span><br></pre></td></tr></tbody></table></figure><br>这是一个明确的行继续符。 在Python里，行继续符直接应用在 parentheses ( ), brackets [ ], and braces { }里。例如<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a = (<span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span> +</span><br><span class="line">    <span class="number">4</span> + <span class="number">5</span> + <span class="number">6</span> +</span><br><span class="line">    <span class="number">7</span> + <span class="number">8</span> + <span class="number">9</span>)</span><br><span class="line">colors = [<span class="string">'red'</span>,</span><br><span class="line">          <span class="string">'blue'</span>,</span><br><span class="line">          <span class="string">'green'</span>]</span><br></pre></td></tr></tbody></table></figure><br>我们也可以用semicolons分号区别多个语句。例如<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a = <span class="number">1</span>; b = <span class="number">2</span>; c = <span class="number">3</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="Python-Indentation-缩进"><a href="#Python-Indentation-缩进" class="headerlink" title="Python  Indentation(缩进)"></a>Python  Indentation(缩进)</h3><p>Python美好的地方就是用缩进。<br>一个程序块开始于缩进，结束于第一个取消缩进的那行。一般用四个whitespaces用作缩进。为了可读性，不支持把缩进取消，比如：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="literal">True</span>: print(<span class="string">'Hello'</span>); a = <span class="number">5</span></span><br></pre></td></tr></tbody></table></figure><br>上面这个代码块可读性就比较差，如果换成下面的code，可读性就高了<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">'Hello'</span>)</span><br><span class="line">    a = <span class="number">5</span></span><br></pre></td></tr></tbody></table></figure><br>所以莫装逼哟！<p></p>
+<h3 id="Python-Comments-注释"><a href="#Python-Comments-注释" class="headerlink" title="Python  Comments(注释)"></a>Python  Comments(注释)</h3><p>注释在写程序的过程中是非常重要的。注释可以描述在这段程序在做一个什么事，可以帮助别人在看这段源代码的时候，就不那么头疼和想吐了。<br>在写程序的时候，其实很有可能会忘记一些很关键的步骤和细节。所以花些时间来写这些注释绝对是有意义的。<br>Python中，我们用hash(#)符号来写注释部分。比如<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">#This is a comment</span></span><br><span class="line"><span class="comment">#print out Hello</span></span><br><span class="line">print(<span class="string">'Hello'</span>)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="Multi-line-comments-多行注释"><a href="#Multi-line-comments-多行注释" class="headerlink" title="Multi-line comments(多行注释)"></a>Multi-line comments(多行注释)</h4><p>python 中除了刚刚提到的用hash#注释之外，也可以用<code>``和</code>“””`。<br>比如<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""This is also a</span></span><br><span class="line"><span class="string">perfect example of</span></span><br><span class="line"><span class="string">multi-line comments"""</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="Docstrings-文档字符串"><a href="#Docstrings-文档字符串" class="headerlink" title="Docstrings (文档字符串)"></a>Docstrings (文档字符串)</h4><p>Docstrings 是 documentation string 的缩写，意思是文档字符串。<br>Python的文档字符串是一行字符串在定义一个函数，方法，类或者模型后面。Triple quotes用于写文档字符串。<br>比如<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">double</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="string">"""Function to double the value"""</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*num</span><br></pre></td></tr></tbody></table></figure><br>The docstrings are associated with the object as their <strong>doc</strong> attribute.<p></p>
+<p>我们可以读取函数的docstrings<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">double</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="string">"""Function to double the value"""</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*num</span><br><span class="line">print(double.__doc__)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Function to double the value</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="Python-Variables-变量-Constants-常熟-and-Literals-关键词"><a href="#Python-Variables-变量-Constants-常熟-and-Literals-关键词" class="headerlink" title="Python Variables(变量), Constants(常熟) and Literals (关键词)"></a>Python Variables(变量), Constants(常熟) and Literals (关键词)</h2><h3 id="Python-Variables-变量"><a href="#Python-Variables-变量" class="headerlink" title="Python Variables(变量)"></a>Python Variables(变量)</h3><p>一个变量（Variable）其实是一个被命名的地址，这个地址用来在存储器里来存储数据的。也可以理解成，变量是一个容器，这个容器可以装着数据data，在程序里，这个容器可以进行改变。<br>例如<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">number = <span class="number">10</span></span><br></pre></td></tr></tbody></table></figure><br>我们创建了一个新的变量叫做<code>number</code>。我们把<code>10</code>这个数值assign to the variable(分配给了这个变量)。<br>我们也可以这么想，变量是一个大书包，这个书包里可以放很多的书，同时这些书也可以随时被其他的书替代。<br>例如：<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">number = <span class="number">10</span></span><br><span class="line">number = <span class="number">1.1</span></span><br></pre></td></tr></tbody></table></figure><br>我们初始<code>number</code>的值是<code>10</code>。过了一瞬间，就一会会儿，他就变成了<code>1.1</code>了。<br><strong>Note: 其实python里， 严格的说，我们实际上不是把value（数值）赋给了变量。其实是Python gives the reference of the object(value) to the variable。（这个我们后面再解释</strong><p></p>
+<h4 id="Assigning-values-to-Variables-分配数值给变量"><a href="#Assigning-values-to-Variables-分配数值给变量" class="headerlink" title="Assigning values to Variables (分配数值给变量)"></a>Assigning values to Variables (分配数值给变量)</h4><p>我觉得中文里很难找到一个合适的词来描述assign这个动作，所有后面我有时候会写assign，而不翻译成英文了。</p>
+<p>用上面的例子看到了我们可以用assginment操作<code>=</code>来assign一个数组给变量。</p>
+<ul>
+<li><p>Example 1: Declaring and assigning value to a variable</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">website = <span class="string">"apple.com"</span></span><br><span class="line">print(website)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>apple.com</span><br></pre></td></tr></tbody></table></figure>
+<p>在上面的程序里，我们可以把值<code>apple.com</code>分配给变量<code>website</code>。 然后我们打印出这个变量，这个被分配了<code>apple.com</code>的变量，<code>apple.com</code>。<br><strong>Note:  Python是一个type-inferred语言（隐式类型），所以我们不需要明确的定义出变量的类型。比如例子中，python 自动的就可以知道<code>apple.com</code>是字符串，然后接下来，声明变量<code>website</code>为字符串 </strong></p>
+</li>
+<li><p>Example 2: Changing the value of a variable</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">website = <span class="string">"apple.com"</span></span><br><span class="line">print(website)</span><br><span class="line"></span><br><span class="line"><span class="comment"># assigning a new value to website</span></span><br><span class="line">website = <span class="string">"programiz.com"</span></span><br><span class="line"></span><br><span class="line">print(website)</span><br><span class="line">&gt;&gt;&gt;apple.com</span><br><span class="line">&gt;&gt;&gt;programiz.com</span><br></pre></td></tr></tbody></table></figure>
+<p>在上面的程序里，我们把初始值<code>apple.com</code>分配给变量<code>website</code>。 然后 这个变量又被改成了<code>programiz.com</code>。</p>
+</li>
+<li><p>Example 3: Assigning multiple values to multiple variables</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a, b, c = <span class="number">5</span>, <span class="number">3.2</span>, <span class="string">"Hello"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> (a)</span><br><span class="line"><span class="built_in">print</span> (b)</span><br><span class="line"><span class="built_in">print</span> (c)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Python-Constan-常量"><a href="#Python-Constan-常量" class="headerlink" title="Python Constan(常量)"></a>Python Constan(常量)</h3><p>Constant是一种变量，这种变量的值是不可变的。是不是很绕哈哈哈，所以说这时候，把变量这个概念理解成容器是很方便的，就是说constant是一种耿直的容器哈哈哈。也就是说，constant 是一个容器，这个容器里面保存的这些信息，是不可以改变的。<br>我们同时也可以把constant理解成一个书包，里面同样也放了很多的书，但是这些书可是被替换不了的，一次也不可以的！</p>
+</li>
+</ul>
+<h4 id="Assigning-value-to-constant-in-Python"><a href="#Assigning-value-to-constant-in-Python" class="headerlink" title="Assigning value to constant in Python"></a>Assigning value to constant in Python</h4><p>在Python里，constants常常用来被declared(声明)和assgined(分配)在一个module(模块)里。module（模块。Module是一个新的文件，这个文件包括 variables, functions, etc。Module 可以被导入到主文件里。在module 里，常量一般用大写字母表示，同时用下划线把词和词直接分隔开。</p>
+<ul>
+<li>Example 3: Declaring and assigning value to a constant<br>(1） Create a constant.py:<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">PI = <span class="number">3.14</span></span><br><span class="line">GRAVITY = <span class="number">9.8</span></span><br></pre></td></tr></tbody></table></figure>
+(2） Create a main.py:<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> constant</span><br><span class="line">print(constant.PI)</span><br><span class="line">print(constant.GRAVITY)</span><br></pre></td></tr></tbody></table></figure>
+（3）Output:<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="number">3.14</span></span><br><span class="line"><span class="number">9.8</span></span><br></pre></td></tr></tbody></table></figure>
+在上面的程序里，我们创建了一个<code>constant.py</code>模块文件。然后我们分配给常量值<code>3.14</code>，<code>9.8</code>给常量<code>PI</code>和<code>GRAVITY</code>。然后我们由创建了主文件<code>main.py</code>，导入<code>constant</code>模块。最后打印常数值。</li>
+</ul>
+<h3 id="Rules-and-Naming-Convention-for-Variables-and-constants-（命名规范）"><a href="#Rules-and-Naming-Convention-for-Variables-and-constants-（命名规范）" class="headerlink" title="Rules and Naming Convention for Variables and constants （命名规范）"></a>Rules and Naming Convention for Variables and constants （命名规范）</h3><ul>
+<li>常量变量名应该是由大写小写和下划线组成<code>snake_case
+MACRO_CASE
+camelCase
+CapWords</code></li>
+<li>命名的名字要意义，比如，<code>vowel</code>比<code>v</code>在程序中更容易理解</li>
+<li>如果你想创建一个变量名字由两个单词组成，两个单词中间需要用下划线分开<code>my_name</code></li>
+<li>通常用大写字母来declare常量constant，比如<code>PI</code>,<code>G</code></li>
+<li>不要用特殊符号@#￥，也不要用数字来开头</li>
+</ul>
+<h2 id="Literals-（）"><a href="#Literals-（）" class="headerlink" title="Literals （）"></a>Literals （）</h2>]]></content>
+  </entry>
+  <entry>
+    <title>数据结构的分析</title>
+    <url>/2021/03/06/dataStructure/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据结构</p>
+<ol>
+<li>内存的物理表现的一系列连续的内存单元，每个内存单元大小是固定的。数据结构只有两个对应基础的数据结构，数组和链表，其他的数据结构都是由他们产生的。</li>
+<li>数组用来表示连续的内存空间，链表通常用来表示不连续的内存空间。</li>
+<li>不连续内存空间的意思是，链表有数据域和指针域。</li>
+</ol>
+<hr>
+<h2 id="算法的性能"><a href="#算法的性能" class="headerlink" title="算法的性能"></a>算法的性能</h2><h2 id="1-一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。"><a href="#1-一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。" class="headerlink" title="1. 一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。"></a>1. 一个程序的运行时间主要主要是两个因素：（1）执行每条语句的耗时（2）执行每条语句的频率。</h2><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
+<li>操作简单和支持随机访问</li>
+<li>数组是一段连续的地址空间</li>
+<li>数组使用连续的内存空间，来存储一系列同一数据类型的值。</li>
+</ol>
+<hr>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><ol>
+<li>栈是一种受限的数据结构，LIFO</li>
+<li>常用操作：进栈push, 出栈pop，取栈顶top，isEmply</li>
+<li>是一种逻辑结构</li>
+<li>给数组和链表增加一个限制就是队列</li>
+</ol>
+<hr>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><ol>
+<li>也是一种逻辑结构</li>
+<li>给数组和链表增加一个限制就是队列</li>
+</ol>
 ]]></content>
       <categories>
-        <category>知识及记录</category>
+        <category>Python</category>
+        <category>Python数据结构</category>
       </categories>
       <tags>
+        <tag>数据结构</tag>
         <tag>学习笔记</tag>
       </tags>
   </entry>
@@ -246,6 +234,18 @@ CapWords</code></li>
 <p><strong>建立这个博客网页的主要目的是为了记录刷题过程中的收获，包括题解、算法思路和一些相关资料等。</strong></p>
 <p><code>此网站也会收藏一些平日学习和工作中有价值的资料</code></p>
 <p>网站仍在建设中，更多功能会逐步完善，包括评论功能等，敬请期待！！！</p>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一天坚持坚持</title>
+    <url>/2021/02/27/firstday/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>第一次记录一下</p>
 ]]></content>
       <categories>
         <category>知识及记录</category>
@@ -1169,6 +1169,47 @@ CapWords</code></li>
       </tags>
   </entry>
   <entry>
+    <title>小知识点们儿（全局局部区别，self参数）</title>
+    <url>/2021/03/29/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%AC%E5%84%BF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h1 id="Python-全局变量-局部变量区"><a href="#Python-全局变量-局部变量区" class="headerlink" title="Python 全局变量-局部变量区"></a>Python 全局变量-局部变量区</h1><p>整理一下<a href="https://www.cnblogs.com/insane-Mr-Li/p/9813226.html">这个</a><br>对于很多初学者来说，对于全局和局部变量容易混淆，我们来尝试解释一下：</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>全局变量：在模块内、在所有函数的外面、在class 外面<br>局部变量：在函数内，在class的方法内</strong></p>
+<ol>
+<li>在子程序中定义的变量成为局部变量，在程序的一开始定义的变量成为全局变量。全局变量作用域是整个程序，局部变量作用域是定义该变量的子程序。</li>
+<li>全局变量没有任何缩进，在任何位置都可以调用</li>
+<li>子程序：如用def定义的函数。</li>
+<li>作用域 ：全局作用域（global)在整个程序运行中都可见。局部作用域：在函数内部、类等内部可见；局部变量使用范围不能超过其所在的局部作用域。</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Name =<span class="string">"nicholas"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    print(<span class="string">"change_name"</span>,Name)</span><br><span class="line">change_name()</span><br><span class="line">print(Name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>change_name nicholas</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>nicholas</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>分析： <code>Name ="nicholas"</code>就是全局变量，在<code>change_name()</code>函数体内可以直接调用打印出<code>change_name nicholas</code></li>
+</ul>
+<ol>
+<li>当全局变量与局部变量同名时<br>在定义局部变量的子程序内，局部变量起作用；在其他地方全局起作用</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Name =<span class="string">"nicholas"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    Name =<span class="string">"ZhaoSiEr"</span></span><br><span class="line">    print(<span class="string">"change_name"</span>,Name)</span><br><span class="line">change_name()</span><br><span class="line">print(Name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>change_name ZhaoSiEr</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>nicholas</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>分析：当全局变量与局部变量同名时：在<code>def change_name():</code>函数内部，执行<code>print("change_name",Name)</code>语句时，这里的<code>Name</code>优先调用函数内部的值，函数执行结束后执行<code>print(Name)</code>语句，全局变量<code>Name ="nicholas"</code> 起作用。</li>
+</ul>
+<ol>
+<li><p>如果函数内部无global关键字<br>优先读取局部变量，如果没有局部变量则读取全局变量，此时无法对全局变量进行赋值。 但是对于可变对象可以对内部元素进行操作（如<code>append()</code>,<code>pop()</code>）</p>
+<ul>
+<li>有声明（同名）局部变量<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">name =[<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br><span class="line">print(<span class="number">1</span>,name)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    name =<span class="string">"Dan Li"</span></span><br><span class="line">    print(<span class="string">"Dalao"</span>,name)</span><br><span class="line">change_name()</span><br><span class="line">print(<span class="number">2</span>,name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> [<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Dalao Dan Li</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> [<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<ul>
+<li>这里无<code>global</code>关键字，执行<code>print(1,name)</code>语句时读取全局变量<code>name =["Lijing Yi","Shaogang Zhang"]</code>，之后执行<code>change_name()</code>函数，在函数里面<code>name ="Dan Li"</code>。执行<code>print("Dalao",name)</code>语句，这里的<code>name</code>优先读取函数内部的局部变量<code>name ="Dan Li"</code>，因此输出<code>Dalao Dan Li</code>。之后<code>change_name()</code>函数结束。执行<code>print(2,name)</code>语句时，这里仍然读取全局变量<code>name =["Lijing Yi","Shaogang Zhang"]</code>。</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>知识及记录</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>字符串</title>
     <url>/2021/04/09/%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>字符串<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2.md#leetcode-%E9%A2%98%E8%A7%A3---%E5%AD%97%E7%AC%A6%E4%B8%B2">刷题顺序</a></p>
@@ -1270,47 +1311,6 @@ CapWords</code></li>
         <category>力扣</category>
         <category>力扣数据类型</category>
       </categories>
-  </entry>
-  <entry>
-    <title>小知识点们儿（全局局部区别，self参数）</title>
-    <url>/2021/03/29/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%AC%E5%84%BF/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h1 id="Python-全局变量-局部变量区"><a href="#Python-全局变量-局部变量区" class="headerlink" title="Python 全局变量-局部变量区"></a>Python 全局变量-局部变量区</h1><p>整理一下<a href="https://www.cnblogs.com/insane-Mr-Li/p/9813226.html">这个</a><br>对于很多初学者来说，对于全局和局部变量容易混淆，我们来尝试解释一下：</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>全局变量：在模块内、在所有函数的外面、在class 外面<br>局部变量：在函数内，在class的方法内</strong></p>
-<ol>
-<li>在子程序中定义的变量成为局部变量，在程序的一开始定义的变量成为全局变量。全局变量作用域是整个程序，局部变量作用域是定义该变量的子程序。</li>
-<li>全局变量没有任何缩进，在任何位置都可以调用</li>
-<li>子程序：如用def定义的函数。</li>
-<li>作用域 ：全局作用域（global)在整个程序运行中都可见。局部作用域：在函数内部、类等内部可见；局部变量使用范围不能超过其所在的局部作用域。</li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Name =<span class="string">"nicholas"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    print(<span class="string">"change_name"</span>,Name)</span><br><span class="line">change_name()</span><br><span class="line">print(Name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>change_name nicholas</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>nicholas</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>分析： <code>Name ="nicholas"</code>就是全局变量，在<code>change_name()</code>函数体内可以直接调用打印出<code>change_name nicholas</code></li>
-</ul>
-<ol>
-<li>当全局变量与局部变量同名时<br>在定义局部变量的子程序内，局部变量起作用；在其他地方全局起作用</li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Name =<span class="string">"nicholas"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    Name =<span class="string">"ZhaoSiEr"</span></span><br><span class="line">    print(<span class="string">"change_name"</span>,Name)</span><br><span class="line">change_name()</span><br><span class="line">print(Name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>change_name ZhaoSiEr</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>nicholas</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>分析：当全局变量与局部变量同名时：在<code>def change_name():</code>函数内部，执行<code>print("change_name",Name)</code>语句时，这里的<code>Name</code>优先调用函数内部的值，函数执行结束后执行<code>print(Name)</code>语句，全局变量<code>Name ="nicholas"</code> 起作用。</li>
-</ul>
-<ol>
-<li><p>如果函数内部无global关键字<br>优先读取局部变量，如果没有局部变量则读取全局变量，此时无法对全局变量进行赋值。 但是对于可变对象可以对内部元素进行操作（如<code>append()</code>,<code>pop()</code>）</p>
-<ul>
-<li>有声明（同名）局部变量<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">name =[<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br><span class="line">print(<span class="number">1</span>,name)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span>():</span></span><br><span class="line">    name =<span class="string">"Dan Li"</span></span><br><span class="line">    print(<span class="string">"Dalao"</span>,name)</span><br><span class="line">change_name()</span><br><span class="line">print(<span class="number">2</span>,name)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> [<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Dalao Dan Li</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> [<span class="string">"Lijing Yi"</span>,<span class="string">"Shaogang Zhang"</span>]</span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ul>
-<ul>
-<li>这里无<code>global</code>关键字，执行<code>print(1,name)</code>语句时读取全局变量<code>name =["Lijing Yi","Shaogang Zhang"]</code>，之后执行<code>change_name()</code>函数，在函数里面<code>name ="Dan Li"</code>。执行<code>print("Dalao",name)</code>语句，这里的<code>name</code>优先读取函数内部的局部变量<code>name ="Dan Li"</code>，因此输出<code>Dalao Dan Li</code>。之后<code>change_name()</code>函数结束。执行<code>print(2,name)</code>语句时，这里仍然读取全局变量<code>name =["Lijing Yi","Shaogang Zhang"]</code>。</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>知识及记录</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
   </entry>
   <entry>
     <title>排序 （熟到可以默写）</title>
@@ -1702,6 +1702,18 @@ CapWords</code></li>
       </categories>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设计模式</title>
+    <url>/2021/04/09/%E7%8A%B6%E6%80%81%E6%9C%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="http://www.cyc2018.xyz/%E5%85%B6%E5%AE%83/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%20-%20%E7%9B%AE%E5%BD%95.html#%E4%B8%80%E3%80%81%E5%89%8D%E8%A8%80">设计模式</a></p>
+]]></content>
+      <categories>
+        <category>实际开发</category>
+      </categories>
+      <tags>
+        <tag>面向对象</tag>
       </tags>
   </entry>
   <entry>
@@ -2905,18 +2917,6 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
       </categories>
       <tags>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>设计模式</title>
-    <url>/2021/04/09/%E7%8A%B6%E6%80%81%E6%9C%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="http://www.cyc2018.xyz/%E5%85%B6%E5%AE%83/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%20-%20%E7%9B%AE%E5%BD%95.html#%E4%B8%80%E3%80%81%E5%89%8D%E8%A8%80">设计模式</a></p>
-]]></content>
-      <categories>
-        <category>实际开发</category>
-      </categories>
-      <tags>
-        <tag>面向对象</tag>
       </tags>
   </entry>
 </search>
