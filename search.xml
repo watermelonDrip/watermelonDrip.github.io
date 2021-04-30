@@ -2456,27 +2456,7 @@ dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
 <h4 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h4><ul>
 <li>动态规划</li>
 </ul>
-<h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><p>class Solution:<br>    def numDecodings(self, s: str) -&gt; int:<br>        if s[0] == ‘0’:<br>            return 0<br>        dp = [1]*(1+ len(s))<br>        dp[0] = 1<br>        dp[1] = 1<br>        for i in range(1,len(s)):</p>
-<pre><code>        if s[i] == '0':
-            if s[i-1] == '1' or s[i-1] == '2':
-                dp[i] = dp[i-2]
-            else:
-                return 0
-        else:
-            if s[i-1] != '0' and 1&lt;= int(s[i-1:i+1])&lt;= 26:
-                dp[i] = dp[i-2] +dp[i-1] 
-            else:
-                dp[i] = dp[i-1] 
-    return dp[len(s)-1]
-</code></pre><ul>
-<li>复杂度分析<br>令 n 为数组长度。<ul>
-<li>时间复杂度：<script type="math/tex">O(n)</script> 1层迭代 </li>
-<li>空间复杂度：<script type="math/tex">O(n)</script> </li>
-</ul>
-</li>
-</ul>
-<h5 id="大佬-4"><a href="#大佬-4" class="headerlink" title="大佬"></a>大佬</h5><h1 id="最长递增子序列-（LIS）"><a href="#最长递增子序列-（LIS）" class="headerlink" title="最长递增子序列 （LIS）"></a>最长递增子序列 （LIS）</h1><p>已知一个序列{<script type="math/tex">{S_1, S_2,...,S_n}</script>}，取出若干数组成新的序列{<script type="math/tex">{S_{i_1}, S_{i_2},...,S_{i_m}}</script>}，其中<script type="math/tex">i_1,i_2,...,i_m</script>保持递增，即新序列中各个数仍然保持原数列的先后顺序，称新序列为原序列的一个<strong>子序列</strong>。<br>如果在子序列中，当下标<script type="math/tex">i_x > i_y</script>时，<script type="math/tex">S_{i_x} > S_{i_y}</script>，称子序列为原序列的一个<strong>递增子序列</strong>。<br>定义一个数组dp存储最长递增子序列的长度， <code>dp[n]</code>表示以<code>S_n</code>结尾的序列的最长递增子序列长度，对于一个递增子序列{<script type="math/tex">S_{i_1}, S_{i_2},...,S_{i_m}</script>}，如果<script type="math/tex">i_m < n</script> 并且  <script type="math/tex">S_{i_m}<S_{n}</script> ，此时 {<script type="math/tex">S_{i_1}, S_{i_2},...,S_{i_m},S_n</script>}为一个递增子序列，递增子序列的长度增加<code>1</code>。满足上述条件的递增子序列中，长度最长的那个递增子序列就是要找的，在长度最长的递增子序列上加上<script type="math/tex">S_n</script>就构成了以<script type="math/tex">S_n</script>为结尾的最长递增子序列。</p>
-<h2 id="LIS动态方程是：-dp-n-max-dp-i-1-S-i-S-n-i"><a href="#LIS动态方程是：-dp-n-max-dp-i-1-S-i-S-n-i" class="headerlink" title="LIS动态方程是：{dp[n] = max( dp[i]+1 | S_i< S_n , i"></a>LIS动态方程是：<script type="math/tex">{dp[n] = max( dp[i]+1 | S_i< S_n , i<n)}</script> </h2><h2 id="LC300-最长递增子序列-最长递增子序列"><a href="#LC300-最长递增子序列-最长递增子序列" class="headerlink" title="(LC300) 最长递增子序列  最长递增子序列"></a>(LC300) 最长递增子序列  <a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/description/">最长递增子序列</a></h2><h3 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h3><p>给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。子序列是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [10,9,2,5,3,7,101,18]</span><br><span class="line">输出：4</span><br><span class="line">解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numDecodings</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> s[<span class="number">0</span>] == <span class="string">'0'</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        dp = [<span class="number">1</span>]*(<span class="number">1</span>+ <span class="built_in">len</span>(s)) </span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="built_in">len</span>(s)):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> s[i] == <span class="string">'0'</span>:</span><br><span class="line">                <span class="keyword">if</span> s[i-<span class="number">1</span>] == <span class="string">'1'</span> <span class="keyword">or</span> s[i-<span class="number">1</span>] == <span class="string">'2'</span>:</span><br><span class="line">                    dp[i] = dp[i-<span class="number">2</span>]</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> s[i-<span class="number">1</span>] != <span class="string">'0'</span> <span class="keyword">and</span> <span class="number">1</span>&lt;= <span class="built_in">int</span>(s[i-<span class="number">1</span>:i+<span class="number">1</span>])&lt;= <span class="number">26</span>:</span><br><span class="line">                    dp[i] = dp[i-<span class="number">2</span>] +dp[i-<span class="number">1</span>] </span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i] = dp[i-<span class="number">1</span>] </span><br><span class="line">        <span class="keyword">return</span> dp[<span class="built_in">len</span>(s)-<span class="number">1</span>]</span><br><span class="line"> </span><br><span class="line">- 复杂度分析  </span><br><span class="line">令 n 为数组长度。</span><br><span class="line">  +  时间复杂度：`$O(n)$` <span class="number">1</span>层迭代 </span><br><span class="line">  +  空间复杂度：`$O(n)$` </span><br><span class="line"> </span><br><span class="line">  </span><br><span class="line"><span class="comment">##### 大佬 </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 最长递增子序列 （LIS）</span></span><br><span class="line"></span><br><span class="line">已知一个序列{`${S_1, S_2,...,S_n}$`}，取出若干数组成新的序列{`${S_{i_1}, S_{i_2},...,S_{i_m}}$`}，其中`$i_1,i_2,...,i_m$`保持递增，即新序列中各个数仍然保持原数列的先后顺序，称新序列为原序列的一个**子序列**。</span><br><span class="line">如果在子序列中，当下标`$i_x &gt; i_y$`时，`$S_{i_x} &gt; S_{i_y}$`，称子序列为原序列的一个**递增子序列**。</span><br><span class="line">定义一个数组dp存储最长递增子序列的长度， `dp[n]`表示以`S_n`结尾的序列的最长递增子序列长度，对于一个递增子序列{`$S_{i_1}, S_{i_2},...,S_{i_m}$`}，如果`$i_m &lt; n$` 并且  `$S_{i_m}&lt;S_{n}$` ，此时 {`$S_{i_1}, S_{i_2},...,S_{i_m},S_n$`}为一个递增子序列，递增子序列的长度增加`<span class="number">1</span>`。满足上述条件的递增子序列中，长度最长的那个递增子序列就是要找的，在长度最长的递增子序列上加上`$S_n$`就构成了以`$S_n$`为结尾的最长递增子序列。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">LIS动态方程是：`${dp[n] = <span class="built_in">max</span>( dp[i]+<span class="number">1</span> | S_i&lt; S_n , i&lt;n)}$` </span><br><span class="line">---------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##   (LC300) 最长递增子序列  [最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/description/)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###   题目  </span></span><br><span class="line"></span><br><span class="line">给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。子序列是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[<span class="number">3</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">7</span>] 是数组 [<span class="number">0</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">7</span>] 的子序列。 </span><br><span class="line">```示例</span><br><span class="line">输入：nums = [<span class="number">10</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">101</span>,<span class="number">18</span>]</span><br><span class="line">输出：<span class="number">4</span></span><br><span class="line">解释：最长递增子序列是 [<span class="number">2</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">101</span>]，因此长度为 <span class="number">4</span> 。</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h3><ul>
 <li>动态规划 dp[n] = max(dp[i] +1 ) if <script type="math/tex">s_n > s_i</script> and <script type="math/tex">n > i</script></li>
 </ul>
@@ -2488,7 +2468,7 @@ dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
 </ul>
 </li>
 </ul>
-<h2 id="LC646-最长数对链-最长数对链"><a href="#LC646-最长数对链-最长数对链" class="headerlink" title="(LC646) 最长数对链  最长数对链"></a>(LC646) 最长数对链  <a href="https://leetcode-cn.com/problems/maximum-length-of-pair-chain/description/">最长数对链</a></h2><h3 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h3><p> 给出 n 个数对。 在每一个数对中，第一个数字总是比第二个数字小。</p>
+<h2 id="LC646-最长数对链-最长数对链"><a href="#LC646-最长数对链-最长数对链" class="headerlink" title="(LC646) 最长数对链  最长数对链"></a>(LC646) 最长数对链  <a href="https://leetcode-cn.com/problems/maximum-length-of-pair-chain/description/">最长数对链</a></h2><h3 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h3><p> 给出 n 个数对。 在每一个数对中，第一个数字总是比第二个数字小。</p>
 <p>现在，我们定义一种跟随关系，当且仅当 b &lt; c 时，数对(c, d) 才可以跟在 (a, b) 后面。我们用这种形式来构造一个数对链。</p>
 <p>给定一个数对集合，找出能够形成的最长数对链的长度。你不需要用到所有的数对，你可以以任何顺序选择其中的一些数对来构造。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：[[1,2], [2,3], [3,4]]</span><br><span class="line">输出：2</span><br><span class="line">解释：最长的数对链是 [1,2] -&gt; [3,4]</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h3 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h3><ul>
@@ -2502,7 +2482,7 @@ dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
 </ul>
 </li>
 </ul>
-<h2 id="LC376-最长摆动子序列-最长摆动子序列"><a href="#LC376-最长摆动子序列-最长摆动子序列" class="headerlink" title="(LC376)  最长摆动子序列   最长摆动子序列"></a>(LC376)  最长摆动子序列  <a href="https://leetcode-cn.com/problems/wiggle-subsequence/description/"> 最长摆动子序列</a></h2><h3 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h3><p>如果连续数字之间的差严格地在正数和负数之间交替，则数字序列称为摆动序列。第一个差（如果存在的话）可能是正数或负数。少于两个元素的序列也是摆动序列。</p>
+<h2 id="LC376-最长摆动子序列-最长摆动子序列"><a href="#LC376-最长摆动子序列-最长摆动子序列" class="headerlink" title="(LC376)  最长摆动子序列   最长摆动子序列"></a>(LC376)  最长摆动子序列  <a href="https://leetcode-cn.com/problems/wiggle-subsequence/description/"> 最长摆动子序列</a></h2><h3 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h3><p>如果连续数字之间的差严格地在正数和负数之间交替，则数字序列称为摆动序列。第一个差（如果存在的话）可能是正数或负数。少于两个元素的序列也是摆动序列。</p>
 <p>例如， [1,7,4,9,2,5] 是一个摆动序列，因为差值 (6,-3,5,-7,3) 是正负交替出现的。相反, [1,4,7,2,5] 和 [1,7,4,5,5] 不是摆动序列，第一个序列是因为它的前两个差值都是正数，第二个序列是因为它的最后一个差值为零。</p>
 <p>给定一个整数序列，返回作为摆动序列的最长子序列的长度。 通过从原始序列中删除一些（也可以不删除）元素来获得子序列，剩下的元素保持其原始顺序。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: [1,7,4,9,2,5]</span><br><span class="line">输出: 6 </span><br><span class="line">解释: 整个序列均为摆动序列。 </span><br></pre></td></tr></tbody></table></figure><p></p>
 <h3 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h3><ul>
@@ -2524,7 +2504,7 @@ dp[i][j-zeros][k-ones]+1, &if\  not\ choosing\ str[i]\\
 </ul>
 </li>
 </ul>
-<h2 id="LC368-最大整除子集-最大整除子集"><a href="#LC368-最大整除子集-最大整除子集" class="headerlink" title="(LC368)  最大整除子集   最大整除子集"></a>(LC368)  最大整除子集  <a href="https://leetcode-cn.com/problems/largest-divisible-subset/"> 最大整除子集</a></h2><h3 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h3><p>给你一个由 无重复 正整数组成的集合 nums ，请你找出并返回其中最大的整除子集 answer ，子集中每一元素对 (answer[i], answer[j]) 都应当满足：<br>answer[i] % answer[j] == 0 ，或<br>answer[j] % answer[i] == 0<br>如果存在多个有效解子集，返回其中任何一个均可。 </p>
+<h2 id="LC368-最大整除子集-最大整除子集"><a href="#LC368-最大整除子集-最大整除子集" class="headerlink" title="(LC368)  最大整除子集   最大整除子集"></a>(LC368)  最大整除子集  <a href="https://leetcode-cn.com/problems/largest-divisible-subset/"> 最大整除子集</a></h2><h3 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h3><p>给你一个由 无重复 正整数组成的集合 nums ，请你找出并返回其中最大的整除子集 answer ，子集中每一元素对 (answer[i], answer[j]) 都应当满足：<br>answer[i] % answer[j] == 0 ，或<br>answer[j] % answer[i] == 0<br>如果存在多个有效解子集，返回其中任何一个均可。 </p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [1,2,3]</span><br><span class="line">输出：[1,2]</span><br><span class="line">解释：[1,3] 也会被视为正确答案。</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h3><ul>
 <li>动态规划</li>
@@ -2549,7 +2529,7 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 \end{case}</script><h2 id="与最长递增子序列相比，最长公共子序列有以下不同点："><a href="#与最长递增子序列相比，最长公共子序列有以下不同点：" class="headerlink" title="与最长递增子序列相比，最长公共子序列有以下不同点："></a>与最长递增子序列相比，最长公共子序列有以下不同点：</h2><pre><code>- 针对的是两个序列，求它们的最长公共子序列
 - 在最长递增子序列中，`dp[i]`表示以`S_i`为结尾的最长递增子序列长度，子序列必须包含`S_i`；在最长公共子序列中，`dp[i][j]`表示`S_1`中前`i`个字符与`S_2`中前`j`个字符的最长公共子序列长度，不一定包含$$ S_{1_i}$$ 和$$ S_{2_j}$$。
 - 在求最终解时，最长公共子序列中`dp[N][M]`就是最终解，而最长递增子序列中`dp[N]`不一定是最终解，因为以$$S_N$$为结尾的最长递增子序列不一定是整个序列最长递增子序列，需要遍历一遍`dp`数组找到最大值。
-</code></pre><h3 id="LC1143-最长公共子序列-最长公共子序列"><a href="#LC1143-最长公共子序列-最长公共子序列" class="headerlink" title="(LC1143)最长公共子序列   最长公共子序列 "></a>(LC1143)最长公共子序列   <a href="https://leetcode-cn.com/problems/longest-common-subsequence/">最长公共子序列 </a></h3><h4 id="题目-12"><a href="#题目-12" class="headerlink" title="题目"></a>题目</h4><p> 给定两个字符串 text1 和 text2，返回这两个字符串的最长公共子序列的长度。</p>
+</code></pre><h3 id="LC1143-最长公共子序列-最长公共子序列"><a href="#LC1143-最长公共子序列-最长公共子序列" class="headerlink" title="(LC1143)最长公共子序列   最长公共子序列 "></a>(LC1143)最长公共子序列   <a href="https://leetcode-cn.com/problems/longest-common-subsequence/">最长公共子序列 </a></h3><h4 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h4><p> 给定两个字符串 text1 和 text2，返回这两个字符串的最长公共子序列的长度。</p>
 <p>一个字符串的 子序列 是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。<br>例如，”ace” 是 “abcde” 的子序列，但 “aec” 不是 “abcde” 的子序列。两个字符串的「公共子序列」是这两个字符串所共同拥有的子序列。</p>
 <p>若这两个字符串没有公共子序列，则返回 0。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure><p></p>
 <h4 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h4><ul>
@@ -2576,7 +2556,7 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 <li>多维费用背包：物品不仅有重量，还有体积，同时考虑这两种限制</li>
 <li>其它：物品之间相互约束或者依赖</li>
 </ul>
-<h3 id="LC416-分割等和子集-分割等和子集"><a href="#LC416-分割等和子集-分割等和子集" class="headerlink" title="(LC416)分割等和子集   分割等和子集"></a>(LC416)分割等和子集   <a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/description/">分割等和子集</a></h3><h4 id="题目-13"><a href="#题目-13" class="headerlink" title="题目"></a>题目</h4><p>给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。</p>
+<h3 id="LC416-分割等和子集-分割等和子集"><a href="#LC416-分割等和子集-分割等和子集" class="headerlink" title="(LC416)分割等和子集   分割等和子集"></a>(LC416)分割等和子集   <a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/description/">分割等和子集</a></h3><h4 id="题目-12"><a href="#题目-12" class="headerlink" title="题目"></a>题目</h4><p>给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。</p>
 <p>注意:<br>每个数组中的元素不会超过 100<br>数组的大小不会超过 200<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: [1, 5, 11, 5]</span><br><span class="line">输出: true</span><br><span class="line">解释: 数组可以分割成 [1, 5, 5] 和 [11].</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h4 id="思路-13"><a href="#思路-13" class="headerlink" title="思路"></a>思路</h4><ul>
 <li>动态规划</li>
@@ -2589,7 +2569,7 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 </ul>
 </li>
 </ul>
-<h5 id="大佬-5"><a href="#大佬-5" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-14"><a href="#题目-14" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h5 id="大佬-4"><a href="#大佬-4" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-13"><a href="#题目-13" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-14"><a href="#思路-14" class="headerlink" title="思路"></a>思路</h4><ul>
 <li>动态规划</li>
 </ul>
@@ -2601,7 +2581,7 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 </ul>
 </li>
 </ul>
-<h5 id="大佬-6"><a href="#大佬-6" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-15"><a href="#题目-15" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h5 id="大佬-5"><a href="#大佬-5" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-14"><a href="#题目-14" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-15"><a href="#思路-15" class="headerlink" title="思路"></a>思路</h4><ul>
 <li>动态规划</li>
 </ul>
@@ -2613,7 +2593,7 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 </ul>
 </li>
 </ul>
-<h5 id="大佬-7"><a href="#大佬-7" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-16"><a href="#题目-16" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h5 id="大佬-6"><a href="#大佬-6" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-15"><a href="#题目-15" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-16"><a href="#思路-16" class="headerlink" title="思路"></a>思路</h4><ul>
 <li>动态规划</li>
 </ul>
@@ -2625,7 +2605,7 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 </ul>
 </li>
 </ul>
-<h5 id="大佬-8"><a href="#大佬-8" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-17"><a href="#题目-17" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h5 id="大佬-7"><a href="#大佬-7" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-3"><a href="#LC-3" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-16"><a href="#题目-16" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-17"><a href="#思路-17" class="headerlink" title="思路"></a>思路</h4><ul>
 <li>动态规划</li>
 </ul>
@@ -2637,7 +2617,7 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 </ul>
 </li>
 </ul>
-<h5 id="大佬-9"><a href="#大佬-9" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-18"><a href="#题目-18" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h5 id="大佬-8"><a href="#大佬-8" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-4"><a href="#LC-4" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-17"><a href="#题目-17" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-18"><a href="#思路-18" class="headerlink" title="思路"></a>思路</h4><ul>
 <li>动态规划</li>
 </ul>
@@ -2649,7 +2629,7 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 </ul>
 </li>
 </ul>
-<h5 id="大佬-10"><a href="#大佬-10" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-5"><a href="#LC-5" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-19"><a href="#题目-19" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h5 id="大佬-9"><a href="#大佬-9" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-5"><a href="#LC-5" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-18"><a href="#题目-18" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-19"><a href="#思路-19" class="headerlink" title="思路"></a>思路</h4><ul>
 <li>动态规划</li>
 </ul>
@@ -2661,7 +2641,7 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 </ul>
 </li>
 </ul>
-<h5 id="大佬-11"><a href="#大佬-11" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-6"><a href="#LC-6" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-20"><a href="#题目-20" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h5 id="大佬-10"><a href="#大佬-10" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-6"><a href="#LC-6" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-19"><a href="#题目-19" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-20"><a href="#思路-20" class="headerlink" title="思路"></a>思路</h4><ul>
 <li>动态规划</li>
 </ul>
@@ -2673,7 +2653,7 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 </ul>
 </li>
 </ul>
-<h5 id="大佬-12"><a href="#大佬-12" class="headerlink" title="大佬"></a>大佬</h5>]]></content>
+<h5 id="大佬-11"><a href="#大佬-11" class="headerlink" title="大佬"></a>大佬</h5>]]></content>
       <categories>
         <category>力扣</category>
         <category>力扣算法</category>
@@ -2925,6 +2905,18 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
       </categories>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设计模式</title>
+    <url>/2021/04/09/%E7%8A%B6%E6%80%81%E6%9C%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="http://www.cyc2018.xyz/%E5%85%B6%E5%AE%83/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%20-%20%E7%9B%AE%E5%BD%95.html#%E4%B8%80%E3%80%81%E5%89%8D%E8%A8%80">设计模式</a></p>
+]]></content>
+      <categories>
+        <category>实际开发</category>
+      </categories>
+      <tags>
+        <tag>面向对象</tag>
       </tags>
   </entry>
 </search>
