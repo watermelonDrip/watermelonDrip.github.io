@@ -326,7 +326,7 @@
   </entry>
   <entry>
     <title>位运算</title>
-    <url>/2021/04/30/%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
+    <url>/2021/05/06/%E4%BD%8D%E8%BF%90%E7%AE%97%20(2)/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>位运算<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E4%BD%8D%E8%BF%90%E7%AE%97.md#leetcode-%E9%A2%98%E8%A7%A3---%E4%BD%8D%E8%BF%90%E7%AE%97">刷题顺序</a></p>
 <h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><div class="table-container">
 <table>
@@ -401,7 +401,9 @@
 <li><p>利用<code>x^1 = ~x</code>，可以将一个数的位级表示翻转。利用 x ^ x = 0 的特点，可以将三个数中重复的两个数去除，只留下另一个数。</p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="number">1</span>^<span class="number">1</span>^<span class="number">2</span> = <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
-<li></li>
+<li><p>只想保留最后一位</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">n = <span class="number">0b101</span></span><br><span class="line">n = n&amp;<span class="number">1</span></span><br><span class="line">&gt;&gt;&gt;<span class="number">0b1</span></span><br><span class="line">n = <span class="number">0b10</span> </span><br><span class="line">n = n&amp;<span class="number">1</span></span><br><span class="line">&gt;&gt;&gt;<span class="number">0b0</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
 <h1 id="剑指Offer"><a href="#剑指Offer" class="headerlink" title="剑指Offer"></a>剑指Offer</h1><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">  </span><br></pre></td></tr></tbody></table></figure>
 <ul>
@@ -452,112 +454,117 @@
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-3"><a href="#大佬题解-3" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC136-只出现一次的数字-只出现一次的数字-1"><a href="#LC136-只出现一次的数字-只出现一次的数字-1" class="headerlink" title="(LC136)  只出现一次的数字  只出现一次的数字"></a>(LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h2><h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-3"><a href="#大佬题解-3" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC190-190-颠倒二进制位-190-颠倒二进制位"><a href="#LC190-190-颠倒二进制位-190-颠倒二进制位" class="headerlink" title="(LC190)  190. 颠倒二进制位  190. 颠倒二进制位"></a>(LC190)  190. 颠倒二进制位  <a href="https://leetcode-cn.com/problems/reverse-bits/description/">190. 颠倒二进制位</a></h2><h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><p>颠倒给定的 32 位无符号整数的二进制位。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: 00000010100101000001111010011100</span><br><span class="line">输出: 00111001011110000010100101000000</span><br><span class="line">解释: 输入的二进制串 00000010100101000001111010011100 表示无符号整数 43261596，</span><br><span class="line">     因此返回 964176192，其二进制表示形式为 00111001011110000010100101000000。 </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-5"><a href="#Python3-Code-5" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC231-231-Power-of-Two-231-Power-of-Two"><a href="#LC231-231-Power-of-Two-231-Power-of-Two" class="headerlink" title="(LC231)  231. Power of Two  231. Power of Two"></a>(LC231)  231. Power of Two  <a href="https://leetcode-cn.com/problems/power-of-two/">231. Power of Two</a></h2><h3 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数，编写一个函数来判断它是否是 2 的幂次方。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: 1</span><br><span class="line">输出: true</span><br><span class="line">解释: 20 = 1</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-6"><a href="#Python3-Code-6" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isPowerOfTwo</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; bool:</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> n &lt;=<span class="number">0</span> :</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">while</span> n &gt;<span class="number">1</span>: </span><br><span class="line">            <span class="keyword">if</span> (n&amp;<span class="number">1</span>) == <span class="number">0</span>: <span class="comment"># 取最后一位，判断是不是0</span></span><br><span class="line">                n = n&gt;&gt;<span class="number">1</span></span><br><span class="line">               </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isPowerOfFour</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; bool:</span> <span class="comment">#4的幂</span></span><br><span class="line">        <span class="keyword">if</span> n &lt;=<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">while</span> n &gt;<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> (n &amp; <span class="number">3</span>) == <span class="number">0</span>:</span><br><span class="line">                n = n&gt;&gt;<span class="number">2</span></span><br><span class="line">                print(n)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-4"><a href="#大佬题解-4" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC136-只出现一次的数字-只出现一次的数字-2"><a href="#LC136-只出现一次的数字-只出现一次的数字-2" class="headerlink" title="(LC136)  只出现一次的数字  只出现一次的数字"></a>(LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h2><h3 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-5"><a href="#大佬题解-5" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC693-693-交替位二进制数-693-交替位二进制数"><a href="#LC693-693-交替位二进制数-693-交替位二进制数" class="headerlink" title="(LC693)  693. 交替位二进制数  693. 交替位二进制数"></a>(LC693)  693. 交替位二进制数  <a href="https://leetcode-cn.com/problems/binary-number-with-alternating-bits/description/">693. 交替位二进制数</a></h2><h3 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h3><p>给定一个正整数，检查它的二进制表示是否总是 0、1 交替出现：换句话说，就是二进制表示中相邻两位的数字永不相同。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：n = 5</span><br><span class="line">输出：true</span><br><span class="line">解释：5 的二进制表示是：101</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-7"><a href="#Python3-Code-7" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasAlternatingBits</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; bool:</span></span><br><span class="line">        a = n ^(n&gt;&gt;<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> (a &amp;(a+<span class="number">1</span>)) == <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析 </li>
+<li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
+<li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
+</ul>
+<h4 id="大佬题解-6"><a href="#大佬题解-6" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC476-476-数字的补数-476-数字的补数"><a href="#LC476-476-数字的补数-476-数字的补数" class="headerlink" title="(LC476)  476. 数字的补数  476. 数字的补数"></a>(LC476)  476. 数字的补数  <a href="https://leetcode-cn.com/problems/number-complement/">476. 数字的补数</a></h2><h3 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h3><p>给你一个 正 整数 num，输出它的补数。补数是对该数的二进制表示取反。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：num = 5</span><br><span class="line">输出：2</span><br><span class="line">解释：5 的二进制表示为 101（没有前导零位），其补数为 010。所以你需要输出 2 。</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h4><p>对于 10000000 这样的数要扩展成 11111111，可以利用以下方法：</p>
+<p>mask |= mask &gt;&gt; 1    11000000<br>mask |= mask &gt;&gt; 2    11110000<br>mask |= mask &gt;&gt; 4    11111111</p>
+<h4 id="Python3-Code-8"><a href="#Python3-Code-8" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findComplement</span>(<span class="params">self, num: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        tmp = num </span><br><span class="line">      </span><br><span class="line">        tmp = tmp | tmp&gt;&gt;<span class="number">1</span></span><br><span class="line">         </span><br><span class="line">        tmp = tmp | tmp&gt;&gt;<span class="number">2</span></span><br><span class="line">         </span><br><span class="line">        tmp = tmp | tmp&gt;&gt;<span class="number">4</span></span><br><span class="line">        </span><br><span class="line">        tmp = tmp | tmp&gt;&gt;<span class="number">8</span></span><br><span class="line">         </span><br><span class="line">        tmp = tmp | tmp&gt;&gt;<span class="number">16</span></span><br><span class="line">      </span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> tmp^num  </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-5"><a href="#大佬题解-5" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC136-只出现一次的数字-只出现一次的数字-3"><a href="#LC136-只出现一次的数字-只出现一次的数字-3" class="headerlink" title="(LC136)  只出现一次的数字  只出现一次的数字"></a>(LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h2><h3 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<h4 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-8"><a href="#Python3-Code-8" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
-<pre><code>- 复杂度分析 
-</code></pre><ul>
-<li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
-<li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
-</ul>
-<h4 id="大佬题解-6"><a href="#大佬题解-6" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC136-只出现一次的数字-只出现一次的数字-4"><a href="#LC136-只出现一次的数字-只出现一次的数字-4" class="headerlink" title="(LC136)  只出现一次的数字  只出现一次的数字"></a>(LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h2><h3 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-7"><a href="#大佬题解-7" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC136-只出现一次的数字-只出现一次的数字-1"><a href="#LC136-只出现一次的数字-只出现一次的数字-1" class="headerlink" title="(LC136)  只出现一次的数字  只出现一次的数字"></a>(LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h2><h3 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-9"><a href="#Python3-Code-9" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-7"><a href="#大佬题解-7" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC136-只出现一次的数字-只出现一次的数字-5"><a href="#LC136-只出现一次的数字-只出现一次的数字-5" class="headerlink" title="(LC136)  只出现一次的数字  只出现一次的数字"></a>(LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h2><h3 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-8"><a href="#大佬题解-8" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC136-只出现一次的数字-只出现一次的数字-2"><a href="#LC136-只出现一次的数字-只出现一次的数字-2" class="headerlink" title="(LC136)  只出现一次的数字  只出现一次的数字"></a>(LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h2><h3 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-10"><a href="#Python3-Code-10" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-8"><a href="#大佬题解-8" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC136-只出现一次的数字-只出现一次的数字-6"><a href="#LC136-只出现一次的数字-只出现一次的数字-6" class="headerlink" title="(LC136)  只出现一次的数字  只出现一次的数字"></a>(LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h2><h3 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-9"><a href="#大佬题解-9" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC136-只出现一次的数字-只出现一次的数字-3"><a href="#LC136-只出现一次的数字-只出现一次的数字-3" class="headerlink" title="(LC136)  只出现一次的数字  只出现一次的数字"></a>(LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h2><h3 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-11"><a href="#Python3-Code-11" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字-1"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字-1" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-12"><a href="#题目-12" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-12"><a href="#题目-12" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-12"><a href="#Python3-Code-12" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字-2"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字-2" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-13"><a href="#题目-13" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字-1"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字-1" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-13"><a href="#题目-13" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-13"><a href="#思路-13" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-13"><a href="#Python3-Code-13" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字-3"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字-3" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-14"><a href="#题目-14" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字-2"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字-2" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-14"><a href="#题目-14" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-14"><a href="#思路-14" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-14"><a href="#Python3-Code-14" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字-4"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字-4" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-15"><a href="#题目-15" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字-3"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字-3" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-15"><a href="#题目-15" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-15"><a href="#思路-15" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-15"><a href="#Python3-Code-15" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字-5"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字-5" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-16"><a href="#题目-16" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字-4"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字-4" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-16"><a href="#题目-16" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-16"><a href="#思路-16" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-16"><a href="#Python3-Code-16" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字-6"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字-6" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-17"><a href="#题目-17" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-LC136-只出现一次的数字-只出现一次的数字-5"><a href="#大佬题解-LC136-只出现一次的数字-只出现一次的数字-5" class="headerlink" title="大佬题解##  (LC136)  只出现一次的数字  只出现一次的数字"></a>大佬题解##  (LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h4><h3 id="题目-17"><a href="#题目-17" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-17"><a href="#思路-17" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-17"><a href="#Python3-Code-17" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-9"><a href="#大佬题解-9" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC136-只出现一次的数字-只出现一次的数字-7"><a href="#LC136-只出现一次的数字-只出现一次的数字-7" class="headerlink" title="(LC136)  只出现一次的数字  只出现一次的数字"></a>(LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h2><h3 id="题目-18"><a href="#题目-18" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="大佬题解-10"><a href="#大佬题解-10" class="headerlink" title="大佬题解"></a>大佬题解</h4><h2 id="LC136-只出现一次的数字-只出现一次的数字-4"><a href="#LC136-只出现一次的数字-只出现一次的数字-4" class="headerlink" title="(LC136)  只出现一次的数字  只出现一次的数字"></a>(LC136)  只出现一次的数字  <a href="https://leetcode-cn.com/problems/single-number/description/">只出现一次的数字</a></h2><h3 id="题目-18"><a href="#题目-18" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <h4 id="思路-18"><a href="#思路-18" class="headerlink" title="思路"></a>思路</h4><h4 id="Python3-Code-18"><a href="#Python3-Code-18" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
 <pre><code>- 复杂度分析 
 </code></pre><ul>
 <li>时间复杂度：$O(1)$,  在 Python 和 Java 中 Integer 的大小是固定的，处理时间也是固定的。 32 位整数需要 32 次迭代。</li>
 <li>空间复杂度：$O(1)$,  使用恒定大小的空间。 </li>
 </ul>
-<h4 id="大佬题解-10"><a href="#大佬题解-10" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
+<h4 id="大佬题解-11"><a href="#大佬题解-11" class="headerlink" title="大佬题解"></a>大佬题解</h4>]]></content>
       <categories>
         <category>力扣</category>
         <category>力扣数据类型</category>
       </categories>
       <tags>
         <tag>力扣</tag>
-        <tag>力扣数据结构</tag>
+        <tag>力扣算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1221,57 +1228,6 @@
       </tags>
   </entry>
   <entry>
-    <title>堆</title>
-    <url>/2021/03/21/%E5%A0%86heapq%E6%A8%A1%E5%9D%97/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这个模块提供了堆队列算法的实现，也成为优先队列算法。<br>堆是一个二叉树，它的每个父节点的值都只会小于或等于所有孩子节点（的值）。它使用了数组来实现：从零开始计数，对于所有的<code>k</code>，都有<code>heap[k] &lt;= heap[2*k+1]</code>和<code>heap[k] &lt;= heap[2*k+2]</code>。为了便于笔记，不存在的元素被认为是无限大。堆最有趣的特性在于最小的元素总是在根结点：heap[0]。</p>
-<p>这个API与教材的对算法实现有所不同，具体区别有两方面：（a）我们使用了从零开始的索引。这使得节点和其孩子节点索引之间的关系不太直观但更加适合，因为Python使用从零开始的索引。（b) 我们的pop方法返回最小的项而不是最大的项（这在教材中称为“最小堆”；而“最大堆”在教材中更为常见，因为它更适用于原地排序）。<br>基于这两个方面，把堆看作原生的Python List也没有什么奇怪的：<code>heap[0]</code>表示最小的元素，同时<code>heap.sort()</code>维护了堆的不变性。<br>要创造一个堆，可以使用list来初始化为<code>[]</code>，或者你也可以通过一个函数<code>heapify()</code>，来把一个list转换成堆。</p>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="heapq-headpush-heap-item"><a href="#heapq-headpush-heap-item" class="headerlink" title="heapq.headpush(heap,item)"></a>heapq.headpush(heap,item)</h2><p>将<code>item</code>的值加入<code>heap</code>中，保持堆的不变性。</p>
-<h2 id="heapq-headpop-heap"><a href="#heapq-headpop-heap" class="headerlink" title="heapq.headpop(heap)"></a>heapq.headpop(heap)</h2><p>弹出并返回<code>heap</code>的最小的元素，保持堆的不变性。如果堆为空，抛出<code>IndexError</code>。使用<code>heap[0]</code>，可以只访问最小的元素而不弹出它。</p>
-<h2 id="heapq-headpop-heap-item"><a href="#heapq-headpop-heap-item" class="headerlink" title="heapq.headpop(heap,item)"></a>heapq.headpop(heap,item)</h2><p>将<code>item</code>放入堆中，然后弹出并返回<code>heap</code>的最小元素。该组合操作比先调用<code>heappush()</code>再调用<code>heappop()</code>运行起来更有效率。</p>
-<h2 id="heapq-heapify-x"><a href="#heapq-heapify-x" class="headerlink" title="heapq.heapify(x)"></a>heapq.heapify(x)</h2><p>将list <code>x</code>转换成堆，原地，线性时间内。</p>
-<h2 id="heapq-heapreplace-heap-item"><a href="#heapq-heapreplace-heap-item" class="headerlink" title="heapq.heapreplace(heap,item)"></a>heapq.heapreplace(heap,item)</h2><p>弹出并返回<code>heap</code>中最小的一项，同时推入新的<code>item</code>。堆的大小不变。如果堆为空则引发<code>IndexError</code>。这个单步骤操作比<code>heappop()</code>加<code>heappush()</code>更高效，并且在使用固定大小的堆时更为适宜。 <code>pop</code>/<code>push</code> 组合总是会从堆中返回一个元素并将其替换为 <code>item</code>。<br>返回的值可能会比添加的 item 更大。 如果不希望如此，可考虑改用 <code>heappushpop()</code>。 它的 <code>push/pop</code> 组合会返回两个值中较小的一个，将较大的值留在堆中。</p>
-<h1 id="创建堆"><a href="#创建堆" class="headerlink" title="创建堆"></a>创建堆</h1><ul>
-<li>heapq有两种方式创建堆，一种是使用一个空列表，然后使用<code>heapq.heappush()</code>函数把值加入堆中，另外一种就是使用<code>heap.heapify(list)</code>转换列表成为堆结构。</li>
-</ul>
-<h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.heappush(heap,item)</span></span><br><span class="line"><span class="string">    - push the value item onto the heap, maintaining the heap invariant</span></span><br><span class="line"><span class="string">heapq.heappop(heap)</span></span><br><span class="line"><span class="string">    - pop and return the smallest item from the heap, maintaining the heap invariant</span></span><br><span class="line"><span class="string">    If the heap is empty, IndexError is raised. To access the smallest item without popping it, use heap[0]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heap = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    heapq.heappush(heap,num) <span class="comment">#加入堆</span></span><br><span class="line"></span><br><span class="line">print(heap[<span class="number">0</span>])  <span class="comment"># 如果只是想获取最小值而不是弹出，使用heap[0]</span></span><br><span class="line">print([heapq.heappop(heap) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])  <span class="comment"># 堆排序结果</span></span><br><span class="line"><span class="comment"># out: [1, 2, 3, 5, 23, 54, 132]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">print([heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])  <span class="comment"># 堆排序结果</span></span><br><span class="line"><span class="comment"># out: [1, 2, 3, 5, 23, 54, 132]</span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li><code>heapq</code> 模块还有一个<code>heapq.merge(*iterables)</code> 方法，用于合并多个排序后的序列成一个排序后的序列， 返回排序后的值的迭代器。类似于<code>sorted(itertools.chain(*iterables))</code>，但返回的是可迭代的。</li>
-</ul>
-<h2 id="基本示例-1"><a href="#基本示例-1" class="headerlink" title="基本示例"></a>基本示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.merge(*iterables)</span></span><br><span class="line"><span class="string">    - Merge multiple sorted inputs into a single sorted output (for example, merge timestamped entries from multiple log files). Returns an iterator over the sorted values.</span></span><br><span class="line"><span class="string">    - Similar to sorted(itertools.chain(*iterables)) but returns an iterable, does not pull the data into memory all at once, and assumes that each of the input streams is already sorted (smallest to largest).</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">num1 = [<span class="number">32</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">34</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">num2 = [<span class="number">23</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">656</span>, <span class="number">324</span>, <span class="number">23</span>, <span class="number">54</span>]</span><br><span class="line">num1 = <span class="built_in">sorted</span>(num1)</span><br><span class="line">num2 = <span class="built_in">sorted</span>(num2)</span><br><span class="line"></span><br><span class="line">res = heapq.merge(num1, num2)</span><br><span class="line">print(<span class="built_in">list</span>(res))</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="访问堆内容"><a href="#访问堆内容" class="headerlink" title="访问堆内容"></a>访问堆内容</h1><ul>
-<li>堆创建好后，可以通过<code>heapq.heappop()</code> 函数弹出堆中最小值。</li>
-</ul>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">43</span>, <span class="number">45</span>, <span class="number">23</span>, <span class="number">12</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line"></span><br><span class="line">print(heapq.heappop(nums))</span><br><span class="line"><span class="comment"># out: 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果需要所有堆排序后的元素</span></span><br><span class="line">result = [heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))]</span><br><span class="line">print(result)</span><br><span class="line"><span class="comment"># out: [12, 23, 43, 45]</span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>如果需要删除堆中最小元素并加入一个元素，可以使用<code>heapq.heaprepalce()</code> 函数</li>
-</ul>
-<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">heapq.heapreplace(nums, <span class="number">23</span>)</span><br><span class="line">print([heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])</span><br><span class="line"><span class="comment"># out: [2, 3, 4, 5, 23]</span></span><br></pre></td></tr></tbody></table></figure>
-<h1 id="获取堆最大或最小值"><a href="#获取堆最大或最小值" class="headerlink" title="获取堆最大或最小值"></a>获取堆最大或最小值</h1><ul>
-<li>如果需要获取堆中最大或最小的范围值，则可以使用<code>heapq.nlargest()</code> 或<code>heapq.nsmallest()</code> 函数</li>
-</ul>
-<h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.nlargest(n, iterable[, key])¶</span></span><br><span class="line"><span class="string">    - Return a list with the n largest elements from the dataset defined by iterable. </span></span><br><span class="line"><span class="string">    - key if provided, specifies a function of one argument that is used to extract a comparison key from each element in the iterable: key=str.lower</span></span><br><span class="line"><span class="string">    - Equivalent to: sorted(iterable, key=key, reverse=True)[:n]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>]</span><br><span class="line">print(heapq.nlargest(<span class="number">3</span>, nums))</span><br><span class="line">print(heapq.nsmallest(<span class="number">3</span>, nums))</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">输出：</span></span><br><span class="line"><span class="string">[5, 4, 3]</span></span><br><span class="line"><span class="string">[1, 2, 3]</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>这两个函数还接受一个key参数，用于dict或其他数据结构类型使用</li>
-</ul>
-<h2 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import heapq</span><br><span class="line">from pprint import pprint #美化打印 </span><br><span class="line">portfolio = [</span><br><span class="line">    {'name': 'IBM', 'shares': 100, 'price': 91.1},</span><br><span class="line">    {'name': 'AAPL', 'shares': 50, 'price': 543.22},</span><br><span class="line">    {'name': 'FB', 'shares': 200, 'price': 21.09},</span><br><span class="line">    {'name': 'HPQ', 'shares': 35, 'price': 31.75},</span><br><span class="line">    {'name': 'YHOO', 'shares': 45, 'price': 16.35},</span><br><span class="line">    {'name': 'ACME', 'shares': 75, 'price': 115.65}</span><br><span class="line">]</span><br><span class="line">cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])</span><br><span class="line">expensive = heapq.nlargest(3, portfolio, key=lambda s: s['price'])</span><br><span class="line">pprint(cheap)</span><br><span class="line">pprint(expensive)</span><br><span class="line"></span><br><span class="line">"""</span><br><span class="line">输出：</span><br><span class="line">[{'name': 'YHOO', 'price': 16.35, 'shares': 45},</span><br><span class="line"> {'name': 'FB', 'price': 21.09, 'shares': 200},</span><br><span class="line"> {'name': 'HPQ', 'price': 31.75, 'shares': 35}]</span><br><span class="line">[{'name': 'AAPL', 'price': 543.22, 'shares': 50},</span><br><span class="line"> {'name': 'ACME', 'price': 115.65, 'shares': 75},</span><br><span class="line"> {'name': 'IBM', 'price': 91.1, 'shares': 100}]</span><br><span class="line">"""</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="heapq-应用"><a href="#heapq-应用" class="headerlink" title="heapq 应用"></a>heapq 应用</h1><ul>
-<li>实现heap堆排序算法, 该算法和sorted(iterable) 类似，但是它是不稳定的。</li>
-</ul>
-<h2 id="示例-4"><a href="#示例-4" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">heapsort</span>(<span class="params">iterable</span>):</span></span><br><span class="line"><span class="meta">... </span>    h = []</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> value <span class="keyword">in</span> iterable:</span><br><span class="line"><span class="meta">... </span>        heappush(h, value)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> [heappop(h) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(h))]</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heapsort([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">0</span>])</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>堆的值可以是元组类型，可以实现对带权值的元素进行排序。</li>
-</ul>
-<h2 id="示例-5"><a href="#示例-5" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>h = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">5</span>, <span class="string">'write code'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">7</span>, <span class="string">'release product'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">1</span>, <span class="string">'write spec'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">3</span>, <span class="string">'create tests'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappop(h)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'write spec'</span>)</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>Python</category>
-        <category>Python数据类型</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>哈希表</title>
     <url>/2021/04/09/%E5%93%88%E5%B8%8C%E8%A1%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>哈希表<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%93%88%E5%B8%8C%E8%A1%A8.md">刷题顺序</a></p>
@@ -1354,32 +1310,54 @@
       </categories>
   </entry>
   <entry>
-    <title>声学信号处理系列（二）说话人识别</title>
-    <url>/2021/03/13/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%971_%E8%AF%B4%E8%AF%9D%E4%BA%BA%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="声学信号处理系列（二）说话人识别"><a href="#声学信号处理系列（二）说话人识别" class="headerlink" title="声学信号处理系列（二）说话人识别"></a>声学信号处理系列（二）说话人识别</h1><p><em>by max</em></p>
-<p><em>2021/03/13</em></p>
-<p>“闻其声，知其人”</p>
-<p>说话人识别(speaker recognition)是语音信号处理中一个非常贴近实际生活应用的研究领域，其主要目的是通过对语音信号进行处理来对讲话者的身份进行识别、确认和分类。除了通过一个人的长相，我们也可以通过其声音，来在众多讲话人中将某一特定说话人认出来。这背后的主要原理，是利用语音中承载的与每个人类个体身份有关的声学信息来实现的。在系列第一篇文章里我们介绍了声学信号的一些基本特征，例如共振峰等，就可以作为识别说话人的依据。更多的具体原理我们在后面会介绍，首先来看说话人识别的两个基本任务。</p>
-<h2 id="说话人识别的两个基本任务"><a href="#说话人识别的两个基本任务" class="headerlink" title="说话人识别的两个基本任务"></a>说话人识别的两个基本任务</h2><p>说话人识别可以分为说话人辨认(speaker identification)和说话人确认(speaker verification)两个基本任务[1]。在说话人辨认中，给定一条语音，我们需要在已注册的说话人中找到这句话是谁说的。而在说话人确认中，我们需要对说话人所声明的身份进行核验，确认其身份是否真实。一个比较形象的示意图如下所示：</p>
-<p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/03/20/zVXIacumEiJLqlb.png" style="zoom:80%"></p>
-<h2 id="说话人辨认"><a href="#说话人辨认" class="headerlink" title="说话人辨认"></a>说话人辨认</h2><p>一般在说话人辨认任务中，我们对来自一条未知说话人的语音进行处理和分析，将其与已注册的各个已知说话人的模型进行比对。当我们找到一个最佳匹配的说话人模型时，就认为该未知语音是来自该最佳匹配模型背后的说话人。换句话说，我们可以把说话人辨认看做是一个1对N的分类任务，我们需要将1条未知的测试样例，正确归类入N个已知类别其中的一个类别里。</p>
-<p>那么不难想到，假如说话人辨认系统接收到的语音，与所有已注册说话人的模型全部不匹配该怎么办？这种情况我们称之为“开集说话人辨认问题”，即未知语音可能来自于说话人注册集集外的某个说话人，该说话人的身份并没有提前保存于系统模型匹配库中。此时系统是无法对该语音进行正确分类的，一般会将其归类于“其他”或者是“未授权用户”这种类别里。与之相对的就是“闭集说话人辨认问题”，未知语音已知肯定来自于某个已注册的说话人。一般来说，闭集系统比较适用于人数较少的应用场景，例如政府机关或私人安保场景等等。而开集系统则广泛部署于各类生活场景中[2]。</p>
-<h2 id="说话人确认"><a href="#说话人确认" class="headerlink" title="说话人确认"></a>说话人确认</h2><p>在说话人确认任务中，我们需要通过一条语音去确定一个说话人的身份是其所声明的真实身份。实现原理是，我们将该条语音去与其声明的说话人模型进行对比，符合该身份则判定接受，否则判定拒绝。这里我们与说话人辨认对比的话，可以看到说话人确认其实本质是一个1对1的分类任务。</p>
-<p>在与声明的说话人模型进行比对时，由于判决分数一般在一个连续数值范围内，所以我们需要设立一个固定的阈值来帮助判定。当判决分数高于该阈值时，判定为接受，反之，当判决分数低于该阈值时，判定为拒绝。这个阈值的选取，对于说话人确认系统的准确性十分重要。阈值定的过高，则可有助于减小误检率，即“将本该拒绝的误判为接受”(漏检false acceptance)这种情况的发生次数减少。但也会导致“将本该接受的误判为拒绝”(误检false rejection)这种情况发生的风险变大。那么反之，假如阈值设置得过低，则“将本该拒绝的误判为接受”这种情况的几率会上升。</p>
-<h2 id="两个任务的区别和联系"><a href="#两个任务的区别和联系" class="headerlink" title="两个任务的区别和联系"></a>两个任务的区别和联系</h2><p>Speaker identification 和 speaker verification 的主要区别在于二者需要进行判决的类别数目的不同。具体说来，在说话人辨认里，我们需要在N个可能的结果中选择一个，N这里等于说话人的人数；而在说话人确认里，我们只需要在“接收”和“拒绝”两个可能的结果中选择一个，而不用考虑系统所面对的说话人的人数。因此，当N越大时，说话人辨认系统的性能会随之下降，而说话人确认系统的性能是不受N的影响的。极端情况时，当某个说话人群体的集体声学特性比较特殊时，说话人确认系统的准确性也会受影响。举个例子，一个主要为英语国家人群服务的说话人确认系统，可能当面对汉语国家人群时，系统的准确性会有所下降。</p>
-<h2 id="系统评价指标"><a href="#系统评价指标" class="headerlink" title="系统评价指标"></a>系统评价指标</h2><p>说话人辨认系统的评价指标与通常的分类任务的评价指标是类似的，这里我们暂时只介绍说话人确认系统的评价指标。有对说话人辨认评价指标感兴趣的读者可以参考此博客[3]以便了解更多。</p>
-<p>通常，我们使用DET曲线去衡量一个说话人确认系统的有效性。DET曲线全称为 Detection Error Trade-off曲线。该曲线可以通过计算FRR(false rejection rate，也可称为false negative rate)和FAR(false acceptance rate，也可称为false positive rate)这两种事件的概率来描绘出来。在一个二维图纸上，我们令纵轴代表FRR，横轴代表FAR，即可画出类似下图的DET曲线图。</p>
-<p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/03/20/2zIguxCaSl9DcNX.png" style="zoom:150%"></p>
-<p>图中红色曲线为DET曲线，其与蓝色对角线的交叉点，定义为EER(equal error rate)点，在该点上FRR=FAR。一般EER的值越低，代表一个系统的性能越好。通常我们将横纵轴的数值以对数尺度进行转换，以便能更全面更直观地观察到系统在一个大范围上的表现。</p>
-<h2 id="文本有关-vs-文本无关"><a href="#文本有关-vs-文本无关" class="headerlink" title="文本有关 vs 文本无关"></a>文本有关 vs 文本无关</h2><p>一个说话人识别系统，可以基于文本相关去设计，也可以基于文本无关。顾名思义，文本相关指的是说话人需要讲出固定的一句话，来让系统进行验证。而文本无关的系统里，说话人可以说出任意一句话，来令识别系统进行分析处理。文本无关相比文本有关的系统，使用场景更灵活方便，但安全性方面会有一定的下降。系统的设计难度上，文本有关的系统相对较简单一些，我们可以沿着时间轴按顺序检验每个文本单元的声学特征，将其与说话人已注册的声纹进行匹配，根据该句话从头到尾的累积准确率，最终以达到识别的目的。由于这种文本有关的设计与每个音素音节在时间上强相关，所以基于该方法设计的系统通常可以取得比文本无关的系统更高的识别率。</p>
-<p>相比下来，文本无关的系统常应用于法庭取证或者安保监控等场景，此类场景无法要求说话人提供指定文本段的语音样本，所以基于文本无关的系统的重要性也正在逐渐进入公众视野。而且，基于文本无关的识别系统，更符合人类自然的识别能力，我们不需要身边的亲人朋友说出指定的话语就可以轻松地识别出他们的身份，同理，当我们听到一句来自陌生人的语音时，我们也能很快地识别出我们不认识该说话人。而且这种识别系统也更人性化，当识别前端接收到的语音有卡顿或者遗漏时，不需要说话人不停地重复识别口令，减少了识别耗费的时间成本，使用场景也更广泛和人性化。</p>
-<p>除了文本有关和文本无关这两大类系统以外，还有一个文本提示型系统(text-prompted)。该系统的提出主要是为了更进一步的提升识别系统的鲁棒性。文本无关和文本相关的系统可能会面临一个实际性的安全问题，就是会有“黑客”可能想冒充某个特定说话人的身份，去入侵说话人识别系统。具体手段通常会使用录音回放设备，提前取得已注册说话人的语音口令，然后回放给说话人识别系统进而取得授权。因此，文本提示型系统里，系统会随机生成一串数字或一句文本，待识别人只需要跟着给出的提示念出语音即可。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>说话人识别系统是语音识别领域的一个主要方向，基于该系统设计的各种安防系统和应用APP已经在日常生活中比较常见了。虽然有文本提示型识别系统来提升识别系统的鲁棒性和安全性，但说话人识别系统近年来正面临着越来越严峻的安全问题。</p>
-<p>在博客系列的下一篇文章中，我们会介绍与说话人识别相关的另一个新领域 — “说话人识别反欺骗系统”。</p>
-<h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] “Speaker recognition”词条 — <a href="http://www.scholarpedia.org/article/Speaker_recognition#Speaker_Identification_and_Verification">http://www.scholarpedia.org/article/Speaker_recognition#Speaker_Identification_and_Verification</a><br>[2] Togneri, R., &amp; Pullella, D. (2011). An overview of speaker identification: Accuracy and robustness issues. IEEE circuits and systems magazine, 11(2), 23-61.<br>[3] “The 5 Classification Evaluation metrics every Data Scientist must know” — <a href="https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226">https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226</a></p>
+    <title>堆</title>
+    <url>/2021/03/21/%E5%A0%86heapq%E6%A8%A1%E5%9D%97/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这个模块提供了堆队列算法的实现，也成为优先队列算法。<br>堆是一个二叉树，它的每个父节点的值都只会小于或等于所有孩子节点（的值）。它使用了数组来实现：从零开始计数，对于所有的<code>k</code>，都有<code>heap[k] &lt;= heap[2*k+1]</code>和<code>heap[k] &lt;= heap[2*k+2]</code>。为了便于笔记，不存在的元素被认为是无限大。堆最有趣的特性在于最小的元素总是在根结点：heap[0]。</p>
+<p>这个API与教材的对算法实现有所不同，具体区别有两方面：（a）我们使用了从零开始的索引。这使得节点和其孩子节点索引之间的关系不太直观但更加适合，因为Python使用从零开始的索引。（b) 我们的pop方法返回最小的项而不是最大的项（这在教材中称为“最小堆”；而“最大堆”在教材中更为常见，因为它更适用于原地排序）。<br>基于这两个方面，把堆看作原生的Python List也没有什么奇怪的：<code>heap[0]</code>表示最小的元素，同时<code>heap.sort()</code>维护了堆的不变性。<br>要创造一个堆，可以使用list来初始化为<code>[]</code>，或者你也可以通过一个函数<code>heapify()</code>，来把一个list转换成堆。</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="heapq-headpush-heap-item"><a href="#heapq-headpush-heap-item" class="headerlink" title="heapq.headpush(heap,item)"></a>heapq.headpush(heap,item)</h2><p>将<code>item</code>的值加入<code>heap</code>中，保持堆的不变性。</p>
+<h2 id="heapq-headpop-heap"><a href="#heapq-headpop-heap" class="headerlink" title="heapq.headpop(heap)"></a>heapq.headpop(heap)</h2><p>弹出并返回<code>heap</code>的最小的元素，保持堆的不变性。如果堆为空，抛出<code>IndexError</code>。使用<code>heap[0]</code>，可以只访问最小的元素而不弹出它。</p>
+<h2 id="heapq-headpop-heap-item"><a href="#heapq-headpop-heap-item" class="headerlink" title="heapq.headpop(heap,item)"></a>heapq.headpop(heap,item)</h2><p>将<code>item</code>放入堆中，然后弹出并返回<code>heap</code>的最小元素。该组合操作比先调用<code>heappush()</code>再调用<code>heappop()</code>运行起来更有效率。</p>
+<h2 id="heapq-heapify-x"><a href="#heapq-heapify-x" class="headerlink" title="heapq.heapify(x)"></a>heapq.heapify(x)</h2><p>将list <code>x</code>转换成堆，原地，线性时间内。</p>
+<h2 id="heapq-heapreplace-heap-item"><a href="#heapq-heapreplace-heap-item" class="headerlink" title="heapq.heapreplace(heap,item)"></a>heapq.heapreplace(heap,item)</h2><p>弹出并返回<code>heap</code>中最小的一项，同时推入新的<code>item</code>。堆的大小不变。如果堆为空则引发<code>IndexError</code>。这个单步骤操作比<code>heappop()</code>加<code>heappush()</code>更高效，并且在使用固定大小的堆时更为适宜。 <code>pop</code>/<code>push</code> 组合总是会从堆中返回一个元素并将其替换为 <code>item</code>。<br>返回的值可能会比添加的 item 更大。 如果不希望如此，可考虑改用 <code>heappushpop()</code>。 它的 <code>push/pop</code> 组合会返回两个值中较小的一个，将较大的值留在堆中。</p>
+<h1 id="创建堆"><a href="#创建堆" class="headerlink" title="创建堆"></a>创建堆</h1><ul>
+<li>heapq有两种方式创建堆，一种是使用一个空列表，然后使用<code>heapq.heappush()</code>函数把值加入堆中，另外一种就是使用<code>heap.heapify(list)</code>转换列表成为堆结构。</li>
+</ul>
+<h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.heappush(heap,item)</span></span><br><span class="line"><span class="string">    - push the value item onto the heap, maintaining the heap invariant</span></span><br><span class="line"><span class="string">heapq.heappop(heap)</span></span><br><span class="line"><span class="string">    - pop and return the smallest item from the heap, maintaining the heap invariant</span></span><br><span class="line"><span class="string">    If the heap is empty, IndexError is raised. To access the smallest item without popping it, use heap[0]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heap = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    heapq.heappush(heap,num) <span class="comment">#加入堆</span></span><br><span class="line"></span><br><span class="line">print(heap[<span class="number">0</span>])  <span class="comment"># 如果只是想获取最小值而不是弹出，使用heap[0]</span></span><br><span class="line">print([heapq.heappop(heap) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])  <span class="comment"># 堆排序结果</span></span><br><span class="line"><span class="comment"># out: [1, 2, 3, 5, 23, 54, 132]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">print([heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])  <span class="comment"># 堆排序结果</span></span><br><span class="line"><span class="comment"># out: [1, 2, 3, 5, 23, 54, 132]</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><code>heapq</code> 模块还有一个<code>heapq.merge(*iterables)</code> 方法，用于合并多个排序后的序列成一个排序后的序列， 返回排序后的值的迭代器。类似于<code>sorted(itertools.chain(*iterables))</code>，但返回的是可迭代的。</li>
+</ul>
+<h2 id="基本示例-1"><a href="#基本示例-1" class="headerlink" title="基本示例"></a>基本示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.merge(*iterables)</span></span><br><span class="line"><span class="string">    - Merge multiple sorted inputs into a single sorted output (for example, merge timestamped entries from multiple log files). Returns an iterator over the sorted values.</span></span><br><span class="line"><span class="string">    - Similar to sorted(itertools.chain(*iterables)) but returns an iterable, does not pull the data into memory all at once, and assumes that each of the input streams is already sorted (smallest to largest).</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">num1 = [<span class="number">32</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">34</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">num2 = [<span class="number">23</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">656</span>, <span class="number">324</span>, <span class="number">23</span>, <span class="number">54</span>]</span><br><span class="line">num1 = <span class="built_in">sorted</span>(num1)</span><br><span class="line">num2 = <span class="built_in">sorted</span>(num2)</span><br><span class="line"></span><br><span class="line">res = heapq.merge(num1, num2)</span><br><span class="line">print(<span class="built_in">list</span>(res))</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="访问堆内容"><a href="#访问堆内容" class="headerlink" title="访问堆内容"></a>访问堆内容</h1><ul>
+<li>堆创建好后，可以通过<code>heapq.heappop()</code> 函数弹出堆中最小值。</li>
+</ul>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">43</span>, <span class="number">45</span>, <span class="number">23</span>, <span class="number">12</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line"></span><br><span class="line">print(heapq.heappop(nums))</span><br><span class="line"><span class="comment"># out: 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果需要所有堆排序后的元素</span></span><br><span class="line">result = [heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))]</span><br><span class="line">print(result)</span><br><span class="line"><span class="comment"># out: [12, 23, 43, 45]</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>如果需要删除堆中最小元素并加入一个元素，可以使用<code>heapq.heaprepalce()</code> 函数</li>
+</ul>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">heapq.heapreplace(nums, <span class="number">23</span>)</span><br><span class="line">print([heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))])</span><br><span class="line"><span class="comment"># out: [2, 3, 4, 5, 23]</span></span><br></pre></td></tr></tbody></table></figure>
+<h1 id="获取堆最大或最小值"><a href="#获取堆最大或最小值" class="headerlink" title="获取堆最大或最小值"></a>获取堆最大或最小值</h1><ul>
+<li>如果需要获取堆中最大或最小的范围值，则可以使用<code>heapq.nlargest()</code> 或<code>heapq.nsmallest()</code> 函数</li>
+</ul>
+<h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数定义：</span></span><br><span class="line"><span class="string">heapq.nlargest(n, iterable[, key])¶</span></span><br><span class="line"><span class="string">    - Return a list with the n largest elements from the dataset defined by iterable. </span></span><br><span class="line"><span class="string">    - key if provided, specifies a function of one argument that is used to extract a comparison key from each element in the iterable: key=str.lower</span></span><br><span class="line"><span class="string">    - Equivalent to: sorted(iterable, key=key, reverse=True)[:n]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>]</span><br><span class="line">print(heapq.nlargest(<span class="number">3</span>, nums))</span><br><span class="line">print(heapq.nsmallest(<span class="number">3</span>, nums))</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">输出：</span></span><br><span class="line"><span class="string">[5, 4, 3]</span></span><br><span class="line"><span class="string">[1, 2, 3]</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>这两个函数还接受一个key参数，用于dict或其他数据结构类型使用</li>
+</ul>
+<h2 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import heapq</span><br><span class="line">from pprint import pprint #美化打印 </span><br><span class="line">portfolio = [</span><br><span class="line">    {'name': 'IBM', 'shares': 100, 'price': 91.1},</span><br><span class="line">    {'name': 'AAPL', 'shares': 50, 'price': 543.22},</span><br><span class="line">    {'name': 'FB', 'shares': 200, 'price': 21.09},</span><br><span class="line">    {'name': 'HPQ', 'shares': 35, 'price': 31.75},</span><br><span class="line">    {'name': 'YHOO', 'shares': 45, 'price': 16.35},</span><br><span class="line">    {'name': 'ACME', 'shares': 75, 'price': 115.65}</span><br><span class="line">]</span><br><span class="line">cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])</span><br><span class="line">expensive = heapq.nlargest(3, portfolio, key=lambda s: s['price'])</span><br><span class="line">pprint(cheap)</span><br><span class="line">pprint(expensive)</span><br><span class="line"></span><br><span class="line">"""</span><br><span class="line">输出：</span><br><span class="line">[{'name': 'YHOO', 'price': 16.35, 'shares': 45},</span><br><span class="line"> {'name': 'FB', 'price': 21.09, 'shares': 200},</span><br><span class="line"> {'name': 'HPQ', 'price': 31.75, 'shares': 35}]</span><br><span class="line">[{'name': 'AAPL', 'price': 543.22, 'shares': 50},</span><br><span class="line"> {'name': 'ACME', 'price': 115.65, 'shares': 75},</span><br><span class="line"> {'name': 'IBM', 'price': 91.1, 'shares': 100}]</span><br><span class="line">"""</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="heapq-应用"><a href="#heapq-应用" class="headerlink" title="heapq 应用"></a>heapq 应用</h1><ul>
+<li>实现heap堆排序算法, 该算法和sorted(iterable) 类似，但是它是不稳定的。</li>
+</ul>
+<h2 id="示例-4"><a href="#示例-4" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">heapsort</span>(<span class="params">iterable</span>):</span></span><br><span class="line"><span class="meta">... </span>    h = []</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> value <span class="keyword">in</span> iterable:</span><br><span class="line"><span class="meta">... </span>        heappush(h, value)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> [heappop(h) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(h))]</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heapsort([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">0</span>])</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>堆的值可以是元组类型，可以实现对带权值的元素进行排序。</li>
+</ul>
+<h2 id="示例-5"><a href="#示例-5" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>h = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">5</span>, <span class="string">'write code'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">7</span>, <span class="string">'release product'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">1</span>, <span class="string">'write spec'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappush(h, (<span class="number">3</span>, <span class="string">'create tests'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>heappop(h)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'write spec'</span>)</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Python数据类型</category>
+      </categories>
       <tags>
-        <tag>声学信号处理</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -1411,6 +1389,35 @@
 <p>听觉掩蔽效应指的是在一个强信号附近，弱信号将变得听不到，被掩盖掉了。生活中这种例子常见的有：购物商场的大喇叭在外放吵闹的音乐时，两个人的对话可能即使很近也听不清楚。被掩蔽掉的不可闻信号的最大声压级称为掩蔽门限或掩蔽阈值，在这个掩蔽阈值以下的声音都会被掩盖掉。</p>
 <h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] 维基百科-声音词条：<a href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3">https://zh.wikipedia.org/wiki/%E5%A3%B0%E9%9F%B3</a></p>
 <p>[2] 赵力. 语音信号处理[M]. 机械工业出版社, 2016.</p>
+]]></content>
+      <tags>
+        <tag>声学信号处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>声学信号处理系列（二）说话人识别</title>
+    <url>/2021/03/13/%E5%A3%B0%E5%AD%A6%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%B3%BB%E5%88%971_%E8%AF%B4%E8%AF%9D%E4%BA%BA%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="声学信号处理系列（二）说话人识别"><a href="#声学信号处理系列（二）说话人识别" class="headerlink" title="声学信号处理系列（二）说话人识别"></a>声学信号处理系列（二）说话人识别</h1><p><em>by max</em></p>
+<p><em>2021/03/13</em></p>
+<p>“闻其声，知其人”</p>
+<p>说话人识别(speaker recognition)是语音信号处理中一个非常贴近实际生活应用的研究领域，其主要目的是通过对语音信号进行处理来对讲话者的身份进行识别、确认和分类。除了通过一个人的长相，我们也可以通过其声音，来在众多讲话人中将某一特定说话人认出来。这背后的主要原理，是利用语音中承载的与每个人类个体身份有关的声学信息来实现的。在系列第一篇文章里我们介绍了声学信号的一些基本特征，例如共振峰等，就可以作为识别说话人的依据。更多的具体原理我们在后面会介绍，首先来看说话人识别的两个基本任务。</p>
+<h2 id="说话人识别的两个基本任务"><a href="#说话人识别的两个基本任务" class="headerlink" title="说话人识别的两个基本任务"></a>说话人识别的两个基本任务</h2><p>说话人识别可以分为说话人辨认(speaker identification)和说话人确认(speaker verification)两个基本任务[1]。在说话人辨认中，给定一条语音，我们需要在已注册的说话人中找到这句话是谁说的。而在说话人确认中，我们需要对说话人所声明的身份进行核验，确认其身份是否真实。一个比较形象的示意图如下所示：</p>
+<p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/03/20/zVXIacumEiJLqlb.png" style="zoom:80%"></p>
+<h2 id="说话人辨认"><a href="#说话人辨认" class="headerlink" title="说话人辨认"></a>说话人辨认</h2><p>一般在说话人辨认任务中，我们对来自一条未知说话人的语音进行处理和分析，将其与已注册的各个已知说话人的模型进行比对。当我们找到一个最佳匹配的说话人模型时，就认为该未知语音是来自该最佳匹配模型背后的说话人。换句话说，我们可以把说话人辨认看做是一个1对N的分类任务，我们需要将1条未知的测试样例，正确归类入N个已知类别其中的一个类别里。</p>
+<p>那么不难想到，假如说话人辨认系统接收到的语音，与所有已注册说话人的模型全部不匹配该怎么办？这种情况我们称之为“开集说话人辨认问题”，即未知语音可能来自于说话人注册集集外的某个说话人，该说话人的身份并没有提前保存于系统模型匹配库中。此时系统是无法对该语音进行正确分类的，一般会将其归类于“其他”或者是“未授权用户”这种类别里。与之相对的就是“闭集说话人辨认问题”，未知语音已知肯定来自于某个已注册的说话人。一般来说，闭集系统比较适用于人数较少的应用场景，例如政府机关或私人安保场景等等。而开集系统则广泛部署于各类生活场景中[2]。</p>
+<h2 id="说话人确认"><a href="#说话人确认" class="headerlink" title="说话人确认"></a>说话人确认</h2><p>在说话人确认任务中，我们需要通过一条语音去确定一个说话人的身份是其所声明的真实身份。实现原理是，我们将该条语音去与其声明的说话人模型进行对比，符合该身份则判定接受，否则判定拒绝。这里我们与说话人辨认对比的话，可以看到说话人确认其实本质是一个1对1的分类任务。</p>
+<p>在与声明的说话人模型进行比对时，由于判决分数一般在一个连续数值范围内，所以我们需要设立一个固定的阈值来帮助判定。当判决分数高于该阈值时，判定为接受，反之，当判决分数低于该阈值时，判定为拒绝。这个阈值的选取，对于说话人确认系统的准确性十分重要。阈值定的过高，则可有助于减小误检率，即“将本该拒绝的误判为接受”(漏检false acceptance)这种情况的发生次数减少。但也会导致“将本该接受的误判为拒绝”(误检false rejection)这种情况发生的风险变大。那么反之，假如阈值设置得过低，则“将本该拒绝的误判为接受”这种情况的几率会上升。</p>
+<h2 id="两个任务的区别和联系"><a href="#两个任务的区别和联系" class="headerlink" title="两个任务的区别和联系"></a>两个任务的区别和联系</h2><p>Speaker identification 和 speaker verification 的主要区别在于二者需要进行判决的类别数目的不同。具体说来，在说话人辨认里，我们需要在N个可能的结果中选择一个，N这里等于说话人的人数；而在说话人确认里，我们只需要在“接收”和“拒绝”两个可能的结果中选择一个，而不用考虑系统所面对的说话人的人数。因此，当N越大时，说话人辨认系统的性能会随之下降，而说话人确认系统的性能是不受N的影响的。极端情况时，当某个说话人群体的集体声学特性比较特殊时，说话人确认系统的准确性也会受影响。举个例子，一个主要为英语国家人群服务的说话人确认系统，可能当面对汉语国家人群时，系统的准确性会有所下降。</p>
+<h2 id="系统评价指标"><a href="#系统评价指标" class="headerlink" title="系统评价指标"></a>系统评价指标</h2><p>说话人辨认系统的评价指标与通常的分类任务的评价指标是类似的，这里我们暂时只介绍说话人确认系统的评价指标。有对说话人辨认评价指标感兴趣的读者可以参考此博客[3]以便了解更多。</p>
+<p>通常，我们使用DET曲线去衡量一个说话人确认系统的有效性。DET曲线全称为 Detection Error Trade-off曲线。该曲线可以通过计算FRR(false rejection rate，也可称为false negative rate)和FAR(false acceptance rate，也可称为false positive rate)这两种事件的概率来描绘出来。在一个二维图纸上，我们令纵轴代表FRR，横轴代表FAR，即可画出类似下图的DET曲线图。</p>
+<p><img src= "/img/watermelon.gif" data-lazy-src="https://i.loli.net/2021/03/20/2zIguxCaSl9DcNX.png" style="zoom:150%"></p>
+<p>图中红色曲线为DET曲线，其与蓝色对角线的交叉点，定义为EER(equal error rate)点，在该点上FRR=FAR。一般EER的值越低，代表一个系统的性能越好。通常我们将横纵轴的数值以对数尺度进行转换，以便能更全面更直观地观察到系统在一个大范围上的表现。</p>
+<h2 id="文本有关-vs-文本无关"><a href="#文本有关-vs-文本无关" class="headerlink" title="文本有关 vs 文本无关"></a>文本有关 vs 文本无关</h2><p>一个说话人识别系统，可以基于文本相关去设计，也可以基于文本无关。顾名思义，文本相关指的是说话人需要讲出固定的一句话，来让系统进行验证。而文本无关的系统里，说话人可以说出任意一句话，来令识别系统进行分析处理。文本无关相比文本有关的系统，使用场景更灵活方便，但安全性方面会有一定的下降。系统的设计难度上，文本有关的系统相对较简单一些，我们可以沿着时间轴按顺序检验每个文本单元的声学特征，将其与说话人已注册的声纹进行匹配，根据该句话从头到尾的累积准确率，最终以达到识别的目的。由于这种文本有关的设计与每个音素音节在时间上强相关，所以基于该方法设计的系统通常可以取得比文本无关的系统更高的识别率。</p>
+<p>相比下来，文本无关的系统常应用于法庭取证或者安保监控等场景，此类场景无法要求说话人提供指定文本段的语音样本，所以基于文本无关的系统的重要性也正在逐渐进入公众视野。而且，基于文本无关的识别系统，更符合人类自然的识别能力，我们不需要身边的亲人朋友说出指定的话语就可以轻松地识别出他们的身份，同理，当我们听到一句来自陌生人的语音时，我们也能很快地识别出我们不认识该说话人。而且这种识别系统也更人性化，当识别前端接收到的语音有卡顿或者遗漏时，不需要说话人不停地重复识别口令，减少了识别耗费的时间成本，使用场景也更广泛和人性化。</p>
+<p>除了文本有关和文本无关这两大类系统以外，还有一个文本提示型系统(text-prompted)。该系统的提出主要是为了更进一步的提升识别系统的鲁棒性。文本无关和文本相关的系统可能会面临一个实际性的安全问题，就是会有“黑客”可能想冒充某个特定说话人的身份，去入侵说话人识别系统。具体手段通常会使用录音回放设备，提前取得已注册说话人的语音口令，然后回放给说话人识别系统进而取得授权。因此，文本提示型系统里，系统会随机生成一串数字或一句文本，待识别人只需要跟着给出的提示念出语音即可。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>说话人识别系统是语音识别领域的一个主要方向，基于该系统设计的各种安防系统和应用APP已经在日常生活中比较常见了。虽然有文本提示型识别系统来提升识别系统的鲁棒性和安全性，但说话人识别系统近年来正面临着越来越严峻的安全问题。</p>
+<p>在博客系列的下一篇文章中，我们会介绍与说话人识别相关的另一个新领域 — “说话人识别反欺骗系统”。</p>
+<h2 id="参考资料列表"><a href="#参考资料列表" class="headerlink" title="参考资料列表"></a>参考资料列表</h2><p>[1] “Speaker recognition”词条 — <a href="http://www.scholarpedia.org/article/Speaker_recognition#Speaker_Identification_and_Verification">http://www.scholarpedia.org/article/Speaker_recognition#Speaker_Identification_and_Verification</a><br>[2] Togneri, R., &amp; Pullella, D. (2011). An overview of speaker identification: Accuracy and robustness issues. IEEE circuits and systems magazine, 11(2), 23-61.<br>[3] “The 5 Classification Evaluation metrics every Data Scientist must know” — <a href="https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226">https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226</a></p>
 ]]></content>
       <tags>
         <tag>声学信号处理</tag>
@@ -1561,6 +1568,81 @@
       </tags>
   </entry>
   <entry>
+    <title>动态规划 - 打家劫舍</title>
+    <url>/2021/05/05/%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>打家劫舍是一系列很经典的问题，这个问题大概是假设一个什么样的场景呢？</p>
+<ol>
+<li>可以通过求一堆子问题的解，来求出原问题的解。</li>
+<li>每个子问题的解是和前面的子问题有关 ，和后面的子问题无关</li>
+<li>每个子问题要求最大值，并且该点的选取会影响这个点附近的值的选择与否，也就是说每个点和附近的点有关联性，但是这种关联不会延伸到很远。</li>
+</ol>
+<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rob</span>(<span class="params">nums</span>):</span></span><br><span class="line">    len_nums = <span class="built_in">len</span>(nums)</span><br><span class="line">    first, second = nums[<span class="number">0</span>], <span class="built_in">max</span>(nums[<span class="number">0</span>], nums[<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, len_nums):</span><br><span class="line">        first, second = second , <span class="built_in">max</span>(first + nums[i], second)</span><br><span class="line">    <span class="keyword">return</span> second</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ol>
+<li>首先是first 和 second,我觉得这个其中的奥秘是，选第一个还是选第二个，如果选第二个就不能选第一个了</li>
+<li>第三个数和以后的数呢， 选第三个数的时候就意味着不能选第二个了，但是可以选第一个了，所以第一个数得到的最大值就可以直接像接力棒接力似的，让第三棒接着跑了。</li>
+</ol>
+<h1 id="LC198-打家劫舍-打家劫舍"><a href="#LC198-打家劫舍-打家劫舍" class="headerlink" title="(LC198) 打家劫舍   打家劫舍"></a>(LC198) 打家劫舍   <a href="https://leetcode-cn.com/problems/house-robber/description/">打家劫舍</a></h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。<br>给定一个代表每个房屋存放金额的非负整数数组，计算你 不触动警报装置的情况下 ，一夜之内能够偷窃到的最高金额。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：[1,2,3,1]</span><br><span class="line">输出：4</span><br><span class="line">解释：偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。</span><br><span class="line">偷窃到的最高金额 = 1 + 3 = 4 。 </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态方程 <script type="math/tex">dp[i] = max(dp[i-1], dp[i-2] + nums[i])</script></li>
+</ul>
+<h4 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="数组存储"><a href="#数组存储" class="headerlink" title="数组存储"></a>数组存储</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rob</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums) &lt;<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>]</span><br><span class="line">        dp = [<span class="number">0</span>] * <span class="built_in">len</span>(nums)</span><br><span class="line">        dp[<span class="number">0</span>] = nums[<span class="number">0</span>]</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="built_in">max</span>(nums[<span class="number">1</span>],nums[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            dp[i] = <span class="built_in">max</span>(dp[i-<span class="number">1</span>], dp[i-<span class="number">2</span>] + nums[i])</span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>,其中 <script type="math/tex">n</script>是数组长度。只需要对数组遍历一次。 </li>
+<li>空间复杂度：<script type="math/tex">O(n)</script>。使用数组存储结果。</li>
+</ul>
+</li>
+</ul>
+<h5 id="滚动数组存储"><a href="#滚动数组存储" class="headerlink" title="滚动数组存储"></a>滚动数组存储</h5><p>考虑到每间房屋的最高总金额只和该房屋的前两间房屋的最高总金额有关，因此我们使用滚动数组，也就是每个时刻至保存前两间房屋的最高总金额。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rob</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums)&lt;<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>]</span><br><span class="line">        dp0 = nums[<span class="number">0</span>]</span><br><span class="line">        dp1 = <span class="built_in">max</span>(nums[<span class="number">0</span>],nums[<span class="number">1</span>])</span><br><span class="line">        first,second = dp0,dp1 </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="built_in">len</span>(nums)):</span><br><span class="line">            second,first =<span class="built_in">max</span>(second,first+nums[i]), second </span><br><span class="line">            print(<span class="string">'first,second ='</span>,first,second)</span><br><span class="line">        <span class="keyword">return</span> second</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>,其中 <script type="math/tex">n</script>是数组长度。只需要对数组遍历一次。 </li>
+<li>空间复杂度：<script type="math/tex">O(1)</script>。使用滚动数组存储结果。</li>
+</ul>
+</li>
+</ul>
+<h3 id="LC213-打家劫舍-II-打家劫舍-II"><a href="#LC213-打家劫舍-II-打家劫舍-II" class="headerlink" title="(LC213)  打家劫舍 II   打家劫舍 II"></a>(LC213)  打家劫舍 II   <a href="https://leetcode-cn.com/problems/house-robber-ii/">打家劫舍 II</a></h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>你是一个专业的小偷，计划偷窃沿街的房屋，每间房内都藏有一定的现金。这个地方所有的房屋都 围成一圈 ，这意味着第一个房屋和最后一个房屋是紧挨着的。同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警 。</p>
+<p>给定一个代表每个房屋存放金额的非负整数数组，计算你 在不触动警报装置的情况下 ，能够偷窃到的最高金额。 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：nums = [2,3,2]</span><br><span class="line">输出：3</span><br><span class="line">解释：你不能先偷窃 1 号房屋（金额 = 2），然后偷窃 3 号房屋（金额 = 2）, 因为他们是相邻的。</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>环形排列意味着第一个房子和最后一个房子只能选一个，因此环状排列问题化为两个单排排列房间问题<ul>
+<li>1.在不偷第一个房子的情况下<code>(nums[1:])</code>，最大金额是多少</li>
+<li>2.在不偷最后一个房子的情况下<code>(nums[:n-1])</code>，最大金额是多少<br>以上两个情况的最大值，求出最终的最大金额</li>
+</ul>
+</li>
+</ul>
+<h4 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="我写的"><a href="#我写的" class="headerlink" title="我写的"></a>我写的</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rob</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">max</span>(nums)</span><br><span class="line">        nums0, nums1 = nums[:n-<span class="number">1</span>], nums[<span class="number">1</span>:]</span><br><span class="line">        first0,second0 = nums0[<span class="number">0</span>],<span class="built_in">max</span>(nums0[<span class="number">1</span>],nums0[<span class="number">0</span>])</span><br><span class="line">        first1,second1 = nums1[<span class="number">0</span>], <span class="built_in">max</span>(nums1[<span class="number">1</span>],nums1[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,n-<span class="number">1</span>):</span><br><span class="line">            first0,second0 = second0, <span class="built_in">max</span>(second0,first0+nums0[i])</span><br><span class="line">            first1,second1 = second1, <span class="built_in">max</span>(second1,first1+nums1[i])</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(second0,second1)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>,其中 <script type="math/tex">n</script>是数组长度。只需要对数组遍历一次。 </li>
+<li>空间复杂度：<script type="math/tex">O(1)</script>。使用滚动数组存储结果。</li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬递归-（看起来更简洁）"><a href="#大佬递归-（看起来更简洁）" class="headerlink" title="大佬递归 （看起来更简洁）"></a>大佬递归 （看起来更简洁）</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rob</span>(<span class="params">self, nums: [<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">my_rob</span>(<span class="params">nums</span>):</span></span><br><span class="line">            cur, pre = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">                cur, pre = <span class="built_in">max</span>(pre + num, cur), cur</span><br><span class="line">            <span class="keyword">return</span> cur</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(my_rob(nums[:-<span class="number">1</span>]),my_rob(nums[<span class="number">1</span>:])) <span class="keyword">if</span> <span class="built_in">len</span>(nums) != <span class="number">1</span> <span class="keyword">else</span> nums[<span class="number">0</span>] </span><br></pre></td></tr></tbody></table></figure>
+<h5 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n)</script>,其中 <script type="math/tex">n</script>是数组长度。只需要对数组遍历一次。 </li>
+<li>空间复杂度：<script type="math/tex">O(1)</script> </li>
+</ul>
+</li>
+</ul>
+<h1 id="740-删除并获得点数-740-删除并获得点数"><a href="#740-删除并获得点数-740-删除并获得点数" class="headerlink" title="740. 删除并获得点数 740. 删除并获得点数"></a>740. 删除并获得点数 <a href="https://leetcode-cn.com/problems/delete-and-earn/">740. 删除并获得点数</a></h1><h2 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h2><p>给你一个整数数组<code>nums</code>，你可以对它进行一些操作。<br>每次操作中，选择任意一个<code>nums[i]</code>，删除它并获得<code>nums[i]</code>的点数。之后，你必须删除每个等于<code>nums[i] - 1</code>或<code>nums[i] + 1</code>的元素。<br>开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。 </p>
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>动态方程 <script type="math/tex">dp[i] = max(dp[i-1], dp[i-2] + nums[i])</script></li>
+</ul>
+<h2 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deleteAndEarn</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        dp = [<span class="number">0</span>]*(<span class="built_in">max</span>(nums) + <span class="number">1</span>)</span><br><span class="line">        nums.sort()</span><br><span class="line">        dict_nums = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            dict_nums[num] = dict_nums.get(num,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            dp[num] = num*dict_nums[num]</span><br><span class="line">     </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">rob</span>(<span class="params">nums</span>):</span></span><br><span class="line">            len_nums = <span class="built_in">len</span>(nums)</span><br><span class="line">            first, second = nums[<span class="number">0</span>], <span class="built_in">max</span>(nums[<span class="number">0</span>], nums[<span class="number">1</span>])</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, len_nums):</span><br><span class="line">                first, second = second , <span class="built_in">max</span>(first + nums[i], second)</span><br><span class="line">            <span class="keyword">return</span> second</span><br><span class="line">        </span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> rob(dp)</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>力扣</category>
+        <category>力扣算法</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>排序 （熟到可以默写）</title>
     <url>/2021/05/05/%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>排序<a href="https://github.com/CyC·2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%8E%92%E5%BA%8F.md">顺序</a></p>
@@ -1670,40 +1752,79 @@
       </tags>
   </entry>
   <entry>
-    <title>数据结构</title>
-    <url>/2021/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>文中有几个部分：</p>
+    <title>数学</title>
+    <url>/2021/05/06/%E6%95%B0%E5%AD%A6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="常见运算"><a href="#常见运算" class="headerlink" title="常见运算"></a>常见运算</h1><h2 id="素数分解"><a href="#素数分解" class="headerlink" title="素数分解"></a>素数分解</h2><p>每一个数都可以分解成素数的乘积，例如 <script type="math/tex">84 = 2^2 * 3^1 * 5^0 * 7^1 * 11^0 * 13^0 * 17^0 * ...</script></p>
+<h2 id="整除"><a href="#整除" class="headerlink" title="整除"></a>整除</h2><p>令 <script type="math/tex">x = 2^{m0} * 3^{m1} * 5^{m2} * 7^{m3} * 11^{m4 }* …</script></p>
+<p>令 <script type="math/tex">y = 2^{n0} * 3^{n1} * 5^{n2} * 7^{n3} * 11^{n4} * …</script></p>
+<p>如果 x  整除 y（y mod x == 0），则对于所有 i，mi &lt;= ni。</p>
+<h2 id="最大公约数最小公倍数"><a href="#最大公约数最小公倍数" class="headerlink" title="最大公约数最小公倍数"></a>最大公约数最小公倍数</h2><p>x 和 y 的最大公约数为：<script type="math/tex">gcd(x,y) = 2^{min(m0,n0)} * 3^{min(m1,n1)} * 5^{min(m2,n2)} * ...</script></p>
+<p>x 和 y 的最小公倍数为：<script type="math/tex">lcm(x,y) = 2^{max(m0,n0)} * 3^{max(m1,n1)} * 5^{max(m2,n2)} * ...</script></p>
+<h1 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h1><h2 id="LC204-204-计数质数-计数质数"><a href="#LC204-204-计数质数-计数质数" class="headerlink" title="(LC204 ) 204. 计数质数  计数质数"></a>(LC204 ) 204. 计数质数  <a href="https://leetcode-cn.com/problems/count-primes/">计数质数</a></h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>统计所有小于非负整数 n 的质数的数量。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：n = 10</span><br><span class="line">输出：4</span><br><span class="line">解释：小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>埃拉托斯特尼筛法在每次找到一个素数时，将能被素数整除的数排除掉。<br>我们考虑这样一个事实：如果 xx 是质数，那么大于 xx 的 xx 的倍数 2x,3x,\ldots2x,3x,… 一定不是质数，因此我们可以从这里入手。<br>我们设 <code>[i]isPrime[i]</code>表示数 <code>i</code> 是不是质数，如果是质数则为 1，否则为  0。从小到大遍历每个数，如果这个数为质数，则将其所有的倍数都标记为合数（除了该质数本身），即  0，这样在运行结束的时候我们即能知道质数的个数。 </p>
+<h3 id="Python3-Code"><a href="#Python3-Code" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countPrimes</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        notPrimes = [<span class="literal">False</span>]*(n+<span class="number">1</span>)</span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,n):</span><br><span class="line">            <span class="keyword">if</span> notPrimes[i]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            count+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i**<span class="number">2</span>,n,i):</span><br><span class="line">                notPrimes[j] = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br></pre></td></tr></tbody></table></figure>
 <ul>
-<li>什么是数据结构</li>
-<li>Python 中数据结构类型有哪些？</li>
-<li>Build-in 数据结构<ul>
-<li>List</li>
-<li>Dictionary</li>
-<li>Tuple</li>
-<li>Sets</li>
-</ul>
-</li>
-<li>用户定义的数据结构<ul>
-<li>Array数组 vs 列表List</li>
-<li>堆Stack</li>
-<li>队列Queue</li>
-<li>树Trees</li>
-<li>链表Linked Lists</li>
-<li>图Graphs</li>
-<li>哈希表HashMaps </li>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(nlogn)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O(n)</script> </li>
 </ul>
 </li>
 </ul>
-<h2 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构"></a>什么是数据结构</h2><p><strong>Organizing</strong>, <strong>managing</strong> and <strong>storing</strong> data is important as it enables easier access and efficient modifications. Data Structures allows you to organize your data in such a way that enables you to store collections of data, relate them and perform operations on them accordingly. </p>
-<h2 id="Python-中数据结构类型有哪些？"><a href="#Python-中数据结构类型有哪些？" class="headerlink" title="Python 中数据结构类型有哪些？"></a>Python 中数据结构类型有哪些？</h2><p>Python 的数据结构能帮助我们对数据进行存取。 结构类型有 <strong>List, Dictionary, Tuple , Sets </strong>。 Python 允许用户能够创建他们自己的数据类型，从而能够让他们更完全的使用这些数据类型。</p>
-]]></content>
+<h2 id="LC1819-序列中不同最大公约数的数目-序列中不同最大公约数的数目"><a href="#LC1819-序列中不同最大公约数的数目-序列中不同最大公约数的数目" class="headerlink" title="(LC1819 )  序列中不同最大公约数的数目 序列中不同最大公约数的数目"></a>(LC1819 )  序列中不同最大公约数的数目 <a href="https://leetcode-cn.com/problems/number-of-different-subsequences-gcds/">序列中不同最大公约数的数目</a></h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给你一个由正整数组成的数组 <code>nums</code> 。<br>数字序列的 最大公约数 定义为序列中所有整数的共有约数中的最大整数。<br>例如，序列 [4,6,16] 的最大公约数是 2 。<br>数组的一个 子序列 本质是一个序列，可以通过删除数组中的某些元素（或者不删除）得到。<br>例如，[2,5,10] 是 [1,2,1,2,4,1,5,10] 的一个子序列。<br>计算并返回 nums 的所有 非空 子序列中 不同 最大公约数的 数目 。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-1"><a href="#Python3-Code-1" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬"><a href="#大佬" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC"><a href="#LC" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-2"><a href="#Python3-Code-2" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-1"><a href="#动态规划-1" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-1"><a href="#大佬-1" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-1"><a href="#LC-1" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-3"><a href="#Python3-Code-3" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-2"><a href="#动态规划-2" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-2"><a href="#大佬-2" class="headerlink" title="大佬"></a>大佬</h5><h3 id="LC-2"><a href="#LC-2" class="headerlink" title="(LC )    "></a>(LC )   <a href=""> </a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>动态规划</li>
+</ul>
+<h4 id="Python3-Code-4"><a href="#Python3-Code-4" class="headerlink" title="Python3 Code:"></a>Python3 Code:</h4><h5 id="动态规划-3"><a href="#动态规划-3" class="headerlink" title="动态规划"></a>动态规划</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>复杂度分析<br>令 n 为数组长度。<ul>
+<li>时间复杂度：<script type="math/tex">O(n^2)</script> 双层迭代 </li>
+<li>空间复杂度：<script type="math/tex">O((n+1)*(n+1))</script> </li>
+</ul>
+</li>
+</ul>
+<h5 id="大佬-3"><a href="#大佬-3" class="headerlink" title="大佬"></a>大佬</h5>]]></content>
       <categories>
-        <category>Python</category>
-        <category>Python数据结构</category>
+        <category>力扣</category>
+        <category>力扣算法</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
-        <tag>学习笔记</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -1880,6 +2001,43 @@
       </categories>
   </entry>
   <entry>
+    <title>数据结构</title>
+    <url>/2021/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>文中有几个部分：</p>
+<ul>
+<li>什么是数据结构</li>
+<li>Python 中数据结构类型有哪些？</li>
+<li>Build-in 数据结构<ul>
+<li>List</li>
+<li>Dictionary</li>
+<li>Tuple</li>
+<li>Sets</li>
+</ul>
+</li>
+<li>用户定义的数据结构<ul>
+<li>Array数组 vs 列表List</li>
+<li>堆Stack</li>
+<li>队列Queue</li>
+<li>树Trees</li>
+<li>链表Linked Lists</li>
+<li>图Graphs</li>
+<li>哈希表HashMaps </li>
+</ul>
+</li>
+</ul>
+<h2 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构"></a>什么是数据结构</h2><p><strong>Organizing</strong>, <strong>managing</strong> and <strong>storing</strong> data is important as it enables easier access and efficient modifications. Data Structures allows you to organize your data in such a way that enables you to store collections of data, relate them and perform operations on them accordingly. </p>
+<h2 id="Python-中数据结构类型有哪些？"><a href="#Python-中数据结构类型有哪些？" class="headerlink" title="Python 中数据结构类型有哪些？"></a>Python 中数据结构类型有哪些？</h2><p>Python 的数据结构能帮助我们对数据进行存取。 结构类型有 <strong>List, Dictionary, Tuple , Sets </strong>。 Python 允许用户能够创建他们自己的数据类型，从而能够让他们更完全的使用这些数据类型。</p>
+]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Python数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>栈和队列</title>
     <url>/2021/04/16/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>栈和队列<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97.md#leetcode-%E9%A2%98%E8%A7%A3---%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97">刷题顺序</a></p>
@@ -1996,10 +2154,12 @@
 </li>
 </ul>
 <ul>
-<li>学学xcode how to use</li>
-</ul>
-<ul>
-<li>把pdf（C++PRIME）传到blog上，教程好找。 (地址)[<a href="https://github.com/SabrinaHuang/CppPrimeExercise/blob/master/C%2B%2B%20Primer%E7%AC%AC%E4%BA%94%E7%89%88%E4%B8%AD%E6%96%87%E7%89%88.pdf">https://github.com/SabrinaHuang/CppPrimeExercise/blob/master/C%2B%2B%20Primer%E7%AC%AC%E4%BA%94%E7%89%88%E4%B8%AD%E6%96%87%E7%89%88.pdf</a>]</li>
+<li><p>学学xcode how to use</p>
+</li>
+<li><p>学学Pandas dataframe (GreeksforGreeks)</p>
+</li>
+<li><p>把pdf（C++PRIME）传到blog上，教程好找。 (地址)[<a href="https://github.com/SabrinaHuang/CppPrimeExercise/blob/master/C%2B%2B%20Primer%E7%AC%AC%E4%BA%94%E7%89%88%E4%B8%AD%E6%96%87%E7%89%88.pdf">https://github.com/SabrinaHuang/CppPrimeExercise/blob/master/C%2B%2B%20Primer%E7%AC%AC%E4%BA%94%E7%89%88%E4%B8%AD%E6%96%87%E7%89%88.pdf</a>]</p>
+</li>
 </ul>
 ]]></content>
       <tags>
@@ -2364,6 +2524,56 @@ Output:<figure class="highlight python"><table><tbody><tr><td class="code"><pre>
 <h3 id="python-set-（集合）"><a href="#python-set-（集合）" class="headerlink" title="python set （集合）"></a>python set （集合）</h3><p>集合是没有顺序的不重复的项的集合。 集合set定义在花括号<code>{}</code>里，逗号分开。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a = {<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment"># printing set variable</span></span><br><span class="line">print(<span class="string">"a = "</span>, a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># data type of variable a</span></span><br><span class="line">print(<span class="built_in">type</span>(a))</span><br></pre></td></tr></tbody></table></figure><br>Output:<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a =  {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>}</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">set</span>'&gt;</span></span><br></pre></td></tr></tbody></table></figure><br>我们在集合上实现操作比如联通和交叉两个集合。集合的每个值都是唯一的，集合操作也可用来消除重复。<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a = {<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>}</span><br><span class="line">print(a) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>{<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>}</span><br></pre></td></tr></tbody></table></figure><br>因为集合是无序的一个集合，所以序号index对于集合来说是没有意义的。因此切片操作在集合上是没办法实现的。<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = {<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>}</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">1</span>]</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;string&gt;"</span>, line <span class="number">301</span>, <span class="keyword">in</span> runcode</span><br><span class="line">  File <span class="string">"&lt;interactive input&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: <span class="string">'set'</span> <span class="built_in">object</span> does <span class="keyword">not</span> support indexing</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h3 id="python-Dictionary-（字典）"><a href="#python-Dictionary-（字典）" class="headerlink" title="python Dictionary （字典）"></a>python Dictionary （字典）</h3><p>字典是由key-value对组成的无序集合。一般我们有很大的数据的时候，我们会想到用字典。 字典对于检索数据来说是最优的。但是我们需要知道key 才能检索到value。<br>在Python 里，字典定义在<code>{}</code>里，每项是的形式是一个对<code>key:value</code>。key 和value 可以是任何的数据类型。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = {<span class="number">1</span>:<span class="string">'value'</span>,<span class="string">'key'</span> = <span class="number">2</span>}</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(d)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">dict</span>'&gt;</span></span><br></pre></td></tr></tbody></table></figure><br>我们可以通过key 来检索到相应的value。不可以用value来检索到key哟。not the other way around.<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">d = {<span class="number">1</span>:<span class="string">'value'</span>,<span class="string">'key'</span>:<span class="number">2</span>}</span><br><span class="line">print(<span class="built_in">type</span>(d))</span><br><span class="line"></span><br><span class="line">print(<span class="string">"d[1] = "</span>, d[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">print(<span class="string">"d['key'] = "</span>, d[<span class="string">'key'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Generates error</span></span><br><span class="line">print(<span class="string">"d[2] = "</span>, d[<span class="number">2</span>])</span><br></pre></td></tr></tbody></table></figure><br>Output:<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">dict</span>'&gt;</span></span><br><span class="line">d[1] = value</span><br><span class="line">d[<span class="string">'key'</span>] = <span class="number">2</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;string&gt;"</span>, line <span class="number">9</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">KeyError: <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <h3 id="数据类型之间相互转换"><a href="#数据类型之间相互转换" class="headerlink" title="数据类型之间相互转换"></a>数据类型之间相互转换</h3><p>python 可以很方便的把各种数据类型进行转换，比如<code>int()</code>,<code>float()</code>,<code>str()</code>等<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="number">5</span>)</span><br><span class="line"><span class="number">5.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="number">10.6</span>) <span class="comment">#make it closet to 0</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(-<span class="number">10.6</span>) <span class="comment">#make it closet to 0</span></span><br><span class="line">-<span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">{<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>}</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">tuple</span>({<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>})</span><br><span class="line">(<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="string">'hello'</span>)</span><br><span class="line">[<span class="string">'h'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dict</span>([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">{<span class="number">1</span>:<span class="number">2</span>,<span class="number">3</span>:<span class="number">4</span>}</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dict</span>([(<span class="number">3</span>,<span class="number">26</span>),(<span class="number">4</span>,<span class="number">44</span>)])</span><br><span class="line">{<span class="number">3</span>: <span class="number">26</span>, <span class="number">4</span>: <span class="number">44</span>}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="python-文件"><a href="#python-文件" class="headerlink" title="python 文件"></a>python 文件</h2><p>文件被定义在disk 的一个位置，用来存储相关的信息，他们用来永远保存数据在non-volatile的存储器里（比如硬盘）<br>因为在Random Access Memory (RAM) 是volatile(易失性的)(当电脑关机的时候，会丢失数据)，我们用文件为了以后不知道未来的某一时刻用，所以我们需要永久保存他们。<br>当我们想读或者写一个文件的时候，我们需要打开他。当我们完成之后，需要把资源解放，但是要和文件紧紧的绑在一起。<br>因此，在PYthon里，一个文件的操作发生以下的顺序里：</p>
+<ol>
+<li>打开一个文件</li>
+<li>读或者写（进行操作）</li>
+<li>关闭一个文件</li>
+</ol>
+<h3 id="python-里打开文件"><a href="#python-里打开文件" class="headerlink" title="python 里打开文件"></a>python 里打开文件</h3><p>Python有个内嵌的函数可以打开文件<code>open()</code>。这个函数返回return 一个文件对象，也叫做一个handle(句柄)，可以用来读或者相对应的改变文件<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = <span class="built_in">open</span>(<span class="string">"test.txt"</span>) <span class="comment"># 打开一个current directory 的文件</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = <span class="built_in">open</span>(<span class="string">"C:/Readme.txt"</span>) <span class="comment">#specifying full path</span></span><br></pre></td></tr></tbody></table></figure><br>当我们打开一个文件的时候，我们可以指定一个模式。 在模式里，我们可以确定我们想读<code>r</code>，写<code>w</code>或添加<code>a</code>在一个文件上进行操作。我们也可以选择我们想要打开的在text模式里还是在binary模式。<br>默认模式是在text上读， 在这个模式，我们获取的是字符串当我们读文件。另一方面，二进制模式返回的是比特，这个模式用来处理非text文件像图片或者可执行文件。<p></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>r</code></td>
+<td style="text-align:center">打开一个文件来读</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td style="text-align:center">打开一个文件来写，当没有这个文件的时候，创建一个文件。如果存在这个文件的时候， 删截这个文件</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td style="text-align:center">打开一个文件用来操作第一次，如果文件存在，则操作失败</td>
+</tr>
+<tr>
+<td><code>t</code></td>
+<td style="text-align:center">打开text模式</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td style="text-align:center">打开二进制模式</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td style="text-align:center">打开文件为了更新（读或者写）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">"test.txt"</span>)      <span class="comment"># equivalent to 'r' or 'rt'</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">"test.txt"</span>,<span class="string">'w'</span>)  <span class="comment"># write in text mode</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">"img.bmp"</span>,<span class="string">'r+b'</span>) <span class="comment"># read and write in binary mode</span></span><br></pre></td></tr></tbody></table></figure>
+<p>不像其他的语言，字符串<code>a</code>不表示数字97，除非被编码<code>ASCII</code>码。 此外，默认的编码和平台是相关的。在windows下是<code>cp1252</code>，Linux下是<code>utf-8</code>。<br>所以我们必须不仅仅考虑默认的编码形式也需要考虑不同的Platform上不同的形式。<br>因此，当我们处理text模式的时候，我们强烈建议特别指出编码的类型<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">"test.txt"</span>, mode=<span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="python-里关闭文件"><a href="#python-里关闭文件" class="headerlink" title="python 里关闭文件"></a>python 里关闭文件</h3><p>当我们结束对文件的操作的时候，我们需要关闭文件。关闭一个文件会空出来资源，资源仅仅的和文件绑在一起。执行函数是<code>close()</code>。<br>python有一个垃圾收集器，用来清理没有引用的对像，这些对象和我们关闭文件没有任何关系。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">"text.txt"</span>,encoding =<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="comment"># performing file operation </span></span><br><span class="line">f.write(<span class="string">'hello world !'</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>这个方法不是很安全。如果出现一个异常的时候，代码在并且没有执行关闭文件。<br>一个更安全的方式是用<code>try...finally</code>块<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>：</span><br><span class="line">	f = <span class="built_in">open</span>(<span class="string">"text.txt"</span>,encoding = <span class="string">'utf-8'</span>)</span><br><span class="line">    f.write(<span class="string">'hello world'</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">	f = close()</span><br></pre></td></tr></tbody></table></figure><br><code>finally</code>模块的的作用其实是，不管是否有异常错误发生 或者try 里面的执行完了，都执行finally 块里的语句。<p></p>
+<p>其实，最好的用来关闭文件的方法是使用<code>with</code>声明。 这个可以保证文件关闭当with里面有声明。其实我理解的意思是，with 可以自动的关闭文件。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">"text.txt"</span>,encoding = <span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line"><span class="comment"># performing file operation </span></span><br><span class="line">    f.write(<span class="string">'hello world'</span>)</span><br></pre></td></tr></tbody></table></figure><br>我们可以看出来最后的那种方式<code>with</code>中，是没有<code>f.close()</code>这个语句的。<code>with</code>声明就神奇在可以保证合适的释放和获取资源。<p></p>
+<h3 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h3><p>为了在python里写文件，我们需要先打开文件，然后开始写<code>w</code>，然后添加通过<code>a</code>或者<code>x</code>。<br>我们需要很小心用这个<code>w</code>模式，因为如果这个文件本身已经存在的话，很容易就没注意 ，然后就把以前的文件覆盖了，最后就找不到以前的文件了。<br>写一个字符串或者比特，我们用<code>write()</code>方法。这个方法返回很多字符串。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">"text.txt"</span>,<span class="string">'w'</span>,encoding = <span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">	f.write(<span class="string">"my first file \n"</span>)</span><br><span class="line">    f.write(<span class="string">"This file\n\n"</span>)</span><br><span class="line">    f.write(<span class="string">"contains three lines\n"</span>)</span><br></pre></td></tr></tbody></table></figure><br>这段程序将创建一个新的文件叫做<code>test.txt</code>在当前的目录下，如果不存在这个名的文件的时候被第一次创建出来，如果存在这个名字的文件的话，会被覆盖的overwrite.<br>需要注意的是，使用<code>write</code>进行写的时候，如果要想向文件写入多行数据的时候，不会自动给各行添加换行符(newline characters)，我们需要加换行符，因为我们在读的时候，读取各行数据的同时，我们还读取了行尾的换行符。<p></p>
+<h3 id="读文件了"><a href="#读文件了" class="headerlink" title="读文件了"></a>读文件了</h3><p>为了用Python来读文件，我们必须打开文件用<code>r</code>这个模式。<br>在Python里有好几种方式来通过Python读取文件。我们用<code>read(size)</code> 方法来读取size 数量的数据。</p>
 ]]></content>
   </entry>
   <entry>
