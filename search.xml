@@ -1659,7 +1659,10 @@
     <title>工具</title>
     <url>/2021/06/01/%E5%B7%A5%E5%85%B7%E4%BB%AC/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li>在线画板：<a href="https://excalidraw.com">https://excalidraw.com</a></li>
+<li><p>在线画板：<a href="https://excalidraw.com">https://excalidraw.com</a></p>
+</li>
+<li><p>markdown github code block</p>
+</li>
 </ul>
 ]]></content>
       <tags>
@@ -3778,6 +3781,72 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
       <categories>
         <category>力扣</category>
         <category>力扣算法</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode竞赛(第242场周赛)</title>
+    <url>/2021/05/24/%E5%8A%9B%E6%89%A3%E5%91%A8%E8%B5%9B242/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h1><p> <a href="https://leetcode-cn.com/problems/longer-contiguous-segments-of-ones-than-zeros/">1869. 哪种连续子字符串更长</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个二进制字符串 s 。如果字符串中由 1 组成的 最长 连续子字符串 严格长于 由 0 组成的 最长 连续子字符串，返回 true ；否则，返回 false 。</p>
+<p>例如，s = “110100010” 中，由 1 组成的最长连续子字符串的长度是 2 ，由 0 组成的最长连续子字符串的长度是 3 。<br>注意，如果字符串中不存在 0 ，此时认为由 0 组成的最长连续子字符串的长度是 0 。字符串中不存在 1 的情况也适用此规则。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：s = "1101"</span><br><span class="line">输出：true</span><br><span class="line">解释：</span><br><span class="line">由 1 组成的最长连续子字符串的长度是 2："1101"</span><br><span class="line">由 0 组成的最长连续子字符串的长度是 1："1101"</span><br><span class="line">由 1 组成的子字符串更长，故返回 true 。 </span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
+<li></li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">checkZeroOnes</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; bool:</span></span><br><span class="line">        ones, mo = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        zeros, mz = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">            <span class="keyword">if</span> s[i] == <span class="string">'0'</span>:</span><br><span class="line">                <span class="keyword">if</span> zeros == <span class="number">0</span>:</span><br><span class="line">                    mo = <span class="built_in">max</span>(mo, ones)</span><br><span class="line">                    ones = <span class="number">0</span></span><br><span class="line">                zeros += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> ones == <span class="number">0</span>:</span><br><span class="line">                    mz = <span class="built_in">max</span>(mz, zeros)</span><br><span class="line">                    zeros = <span class="number">0</span></span><br><span class="line">                ones += <span class="number">1</span></span><br><span class="line">        mo = <span class="built_in">max</span>(mo, ones)</span><br><span class="line">        mz = <span class="built_in">max</span>(mz, zeros)</span><br><span class="line">        <span class="keyword">return</span> mo&gt;mz</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$ 遍历一遍</li>
+<li>空间复杂度：$O(n)$  </li>
+</ul>
+<h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2. 题目"></a>2. 题目</h1><p> <a href="https://leetcode-cn.com/problems/minimum-speed-to-arrive-on-time/">1870. 准时到达的列车最小时速</a></p>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个浮点数 hour ，表示你到达办公室可用的总通勤时间。要到达办公室，你必须按给定次序乘坐 n 趟列车。另给你一个长度为 n 的整数数组 dist ，其中 dist[i] 表示第 i 趟列车的行驶距离（单位是千米）。</p>
+<p>每趟列车均只能在整点发车，所以你可能需要在两趟列车之间等待一段时间。</p>
+<p>例如，第 1 趟列车需要 1.5 小时，那你必须再等待 0.5 小时，搭乘在第 2 小时发车的第 2 趟列车。<br>返回能满足你准时到达办公室所要求全部列车的 最小正整数 时速（单位：千米每小时），如果无法准时到达，则返回 -1 。</p>
+<p>生成的测试用例保证答案不超过 107 ，且 hour 的 小数点后最多存在两位数字 。 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：dist = [1,3,2], hour = 2.7</span><br><span class="line">输出：3</span><br><span class="line">解释：速度为 3 时：</span><br><span class="line">- 第 1 趟列车运行需要 1/3 = 0.33333 小时。</span><br><span class="line">- 由于不是在整数时间到达，故需要等待至第 1 小时才能搭乘列车。第 2 趟列车运行需要 3/3 = 1 小时。</span><br><span class="line">- 由于是在整数时间到达，可以立即换乘在第 2 小时发车的列车。第 3 趟列车运行需要 2/3 = 0.66667 小时。</span><br><span class="line">- 你将会在第 2.66667 小时到达。 </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>二分</li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minSpeedOnTime</span>(<span class="params">self, dist: List[<span class="built_in">int</span>], hour: <span class="built_in">float</span></span>) -&gt; int:</span></span><br><span class="line">        len_dist = <span class="built_in">len</span>(dist)</span><br><span class="line">        <span class="keyword">if</span> hour &lt; len_dist-<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        lower_bound = ceil(<span class="built_in">sum</span>(dist)/hour)</span><br><span class="line">        </span><br><span class="line">        l = lower_bound</span><br><span class="line">        r = <span class="number">10</span>**<span class="number">7</span> + <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            mid  = (l+r)&gt;&gt;<span class="number">1</span></span><br><span class="line">            </span><br><span class="line">            temp = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(len_dist): <span class="comment">#calculate hour</span></span><br><span class="line">                <span class="keyword">if</span> j == <span class="built_in">len</span>(dist)-<span class="number">1</span>:</span><br><span class="line">                    temp += dist[j]/mid</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    temp = ceil(dist[j]/mid) + temp</span><br><span class="line">           </span><br><span class="line">            <span class="keyword">if</span> temp &lt;= hour:</span><br><span class="line">                r = mid </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                l = mid+<span class="number">1</span></span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(nlogn)$ 遍历一遍</li>
+<li>空间复杂度：$O(1)$  </li>
+</ul>
+<h1 id="3-题目"><a href="#3-题目" class="headerlink" title="3. 题目"></a>3. 题目</h1><p> <a href="https://leetcode-cn.com/problems/jump-game-vii/">1871. 跳跃游戏 VII</a></p>
+<h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个下标从 0 开始的二进制字符串 s 和两个整数 minJump 和 maxJump 。一开始，你在下标 0 处，且该位置的值一定为 ‘0’ 。当同时满足如下条件时，你可以从下标 i 移动到下标 j 处：</p>
+<p>i + minJump &lt;= j &lt;= min(i + maxJump, s.length - 1) 且<br>s[j] == ‘0’.<br>如果你可以到达 s 的下标 s.length - 1 处，请你返回 true ，否则返回 false 。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：s = "011010", minJump = 2, maxJump = 3</span><br><span class="line">输出：true</span><br><span class="line">解释：</span><br><span class="line">第一步，从下标 0 移动到下标 3 。</span><br><span class="line">第二步，从下标 3 移动到下标 5 。 </span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>大牛的， 自己还不会这个题。</li>
+</ul>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canReach</span>(<span class="params">self, s: <span class="built_in">str</span>, mn: <span class="built_in">int</span>, mx: <span class="built_in">int</span></span>) -&gt; bool:</span></span><br><span class="line">        q = deque()</span><br><span class="line">        q.append(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(s)):</span><br><span class="line">            <span class="keyword">if</span> s[i] == <span class="string">'1'</span>:</span><br><span class="line">                <span class="keyword">continue</span>            </span><br><span class="line">            <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">len</span>(q) == <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">                <span class="keyword">elif</span> q[<span class="number">0</span>] + mn &lt;= i &lt;= q[<span class="number">0</span>] + mx:</span><br><span class="line">                    q.append(i)</span><br><span class="line">                    <span class="keyword">if</span> i == <span class="built_in">len</span>(s) - <span class="number">1</span>:</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">elif</span> q[<span class="number">0</span>] + mx &lt; i:</span><br><span class="line">                    q.popleft()</span><br><span class="line">                <span class="keyword">elif</span> q[<span class="number">0</span>] + mn &gt; i:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="comment"># print(i, q)</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度。</p>
+<ul>
+<li>时间复杂度：$O(n)$ 遍历一遍</li>
+<li>空间复杂度：$O(1)$ </li>
+</ul>
+]]></content>
+      <categories>
+        <category>力扣</category>
+        <category>力扣周赛</category>
       </categories>
       <tags>
         <tag>python</tag>
