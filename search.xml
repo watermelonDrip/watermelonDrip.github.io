@@ -1663,7 +1663,11 @@
 </li>
 <li><p>markdown github code block</p>
 </li>
-<li><p><img src= "/img/watermelon.gif" data-lazy-src="direction.png" style="zoom:40%"></p>
+<li><p>‘<img src= "/img/watermelon.gif" data-lazy-src="direction.png" style="zoom:40%">‘</p>
+</li>
+<li><p><a href="https://carbon.now.sh/?bg=rgba%28171%2C+184%2C+195%2C+1%29&amp;t=monokai&amp;wt=none&amp;l=auto&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false">Create and share beautiful images of your source code.</a></p>
+</li>
+<li><p><a href="https://sspai.com/post/52176">我的最后一款笔记应用-Notion</a></p>
 </li>
 </ul>
 ]]></content>
@@ -3640,9 +3644,9 @@ max(dp[i-1][j],dp[i][j-1]) , S_{1_i} != S_{2_j}
 <h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h3 id="LC1091-计算在网格中从原点到特定点的最短路径长度-计算在网格中从原点到特定点的最短路径长度"><a href="#LC1091-计算在网格中从原点到特定点的最短路径长度-计算在网格中从原点到特定点的最短路径长度" class="headerlink" title="(LC1091)计算在网格中从原点到特定点的最短路径长度   计算在网格中从原点到特定点的最短路径长度 "></a>(LC1091)计算在网格中从原点到特定点的最短路径长度   <a href="https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/">计算在网格中从原点到特定点的最短路径长度 </a></h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>给你一个 n x n 的二进制矩阵 grid 中，返回矩阵中最短畅通路径的长度。如果不存在这样的路径，返回 -1 。二进制矩阵中的 畅通路径 是一条从 左上角 单元格（即，(0, 0)）到 右下角 单元格（即，(n - 1, n - 1)）的路径，该路径同时满足下述要求：路径途经的所有单元格都的值都是 0 。路径中所有相邻的单元格应当在 8 个方向之一 上连通（即，相邻两单元之间彼此不同且共享一条边或者一个角）。畅通路径的长度 是该路径途经的单元格总数。<br></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：grid = [[0,1],[1,0]]</span><br><span class="line">输出：2</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h4 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h4><ul>
 <li><code>Deque(class collections.deque([iterable[,maxlen]]))</code><a href="`collections`中 `deque`的使用">使用戳一戳</a><ul>
-<li>Deque是双边队列（double-ended queue），具有队列和栈的性质，在 list 的基础上增加了移动、旋转和增删等。</li>
+<li>Deque是双边队列（double-ended queue），具有<strong>队列和栈</strong>的性质，在 list 的基础上增加了移动、旋转和增删等。</li>
 <li>Deque队列是由栈或者queue队列生成的（发音是”deck”,”double-ended queue”的简称）。</li>
-<li>Deque是一个双端队列, 如果要经常从两端append 的数据, 选择这个数据结构就比较好了, 如果要实现随机访问,不建议用这个,请用列表。Deque 优势就是可以从两边append ,appendleft 数据。这一点list 是没有的。<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">queue = deque([<span class="string">"Eric"</span>, <span class="string">"John"</span>, <span class="string">"Michael"</span>])</span><br><span class="line">queue.append(<span class="string">"Terry"</span>)           <span class="comment"># Terry 入队</span></span><br><span class="line">queue.append(<span class="string">"Graham"</span>)          <span class="comment"># Graham 入队</span></span><br><span class="line">queue.popleft()                 <span class="comment"># 队首元素出队</span></span><br><span class="line"><span class="comment">#输出: 'Eric'</span></span><br><span class="line">queue.popleft()                 <span class="comment"># 队首元素出队</span></span><br><span class="line"><span class="comment">#输出: 'John'</span></span><br><span class="line">print(queue)                           <span class="comment"># 队列中剩下的元素</span></span><br><span class="line"><span class="comment">#输出: deque(['Michael', 'Terry', 'Graham'])</span></span><br></pre></td></tr></tbody></table></figure>
+<li>Deque是一个双端队列, 如果要经常从两端append的数据, 选择这个数据结构就比较好了, 如果要实现随机访问,不建议用这个,请用列表list。Deque 优势就是可以从两边append ,appendleft 数据。这一点list是没有的。<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">queue = deque([<span class="string">"Eric"</span>, <span class="string">"John"</span>, <span class="string">"Michael"</span>])</span><br><span class="line">queue.append(<span class="string">"Terry"</span>)           <span class="comment"># Terry 入队</span></span><br><span class="line">queue.append(<span class="string">"Graham"</span>)          <span class="comment"># Graham 入队</span></span><br><span class="line">queue.popleft()                 <span class="comment"># 队首元素出队</span></span><br><span class="line"><span class="comment">#输出: 'Eric'</span></span><br><span class="line">queue.popleft()                 <span class="comment"># 队首元素出队</span></span><br><span class="line"><span class="comment">#输出: 'John'</span></span><br><span class="line">print(queue)                           <span class="comment"># 队列中剩下的元素</span></span><br><span class="line"><span class="comment">#输出: deque(['Michael', 'Terry', 'Graham'])</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
 </li>
